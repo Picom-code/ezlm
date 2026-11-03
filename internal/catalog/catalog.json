@@ -1,5 +1,5 @@
 {
- "version": 6,
+ "version": 7,
  "models": [
   {
    "id": "ternary-bonsai-2-27b",
@@ -1871,14 +1871,6 @@
    "vision": true,
    "notes": "Coding-agent specialist (SWE-agent/OpenHands style). Full-attention dense: KV heavy (40 layers x 8 x 128). Older (2025-12) - Qwen3.8-27B is stronger at coding; keep for EU/Apache coding niche. Ministral 3 (3B/8B/14B, 2025-12) also still current but low on v5 (~2-3).",
    "quants": [
-    {
-     "name": "UD-IQ2_XXS",
-     "files": [
-      "Devstral-Small-2-24B-Instruct-2512-UD-IQ2_XXS.gguf"
-     ],
-     "bytes": 6751440032,
-     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
-    },
     {
      "name": "UD-IQ3_XXS",
      "files": [
