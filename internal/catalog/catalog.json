@@ -1,5 +1,5 @@
 {
- "version": 7,
+ "version": 8,
  "models": [
   {
    "id": "ternary-bonsai-2-27b",
@@ -2292,14 +2292,6 @@
    "vision": false,
    "notes": "Released 2026-08-25. Dense GQA transformer (not the 4.0 hybrid Mamba). 128K native, extendable to 512K. Enterprise/US-origin/Apache pick; reasoning-augmented tool calling. Granite 4.2 3B (2.24GB Q4_K_M) scores 4.7 on v5 - surprisingly close to 8B.",
    "quants": [
-    {
-     "name": "Q2_K",
-     "files": [
-      "granite-4.2-8b-Q2_K.gguf"
-     ],
-     "bytes": 3412312192,
-     "repo": "ibm-granite/granite-4.2-8b-GGUF"
-    },
     {
      "name": "Q3_K_M",
      "files": [
