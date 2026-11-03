@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EZLM for Windows</title>
+<meta name="description" content="Your own AI, running on your PC. EZLM picks the smartest model your computer can run, sets it up, and gives you a private address and key. Free beta for Windows 10 and 11.">
+<meta property="og:title" content="EZLM for Windows">
+<meta property="og:description" content="Your own AI, running on your PC. Free beta for Windows 10 and 11.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://picom-code.github.io/ezlm/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23000'/%3E%3Cg fill='%23e6e6e6'%3E%3Crect x='3' y='3' width='10' height='2'/%3E%3Crect x='3' y='7' width='7' height='2'/%3E%3Crect x='3' y='11' width='10' height='2'/%3E%3Crect x='3' y='3' width='2' height='10'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap">
+<style>
+  /* EZLM's own palette (the app's tokens). Deliberately one dark world, like the app. */
+  :root {
+    color-scheme: dark;
+    --ground: #000000;
+    --panel: #0b0b0b;
+    --raise: #121212;
+    --ink: #e6e6e6;
+    --soft: #a3a3a3;
+    --dim: #8a8a8a;
+    --faint: #3a3a3a;
+    --rule: #262626;
+    --signal: #b9a8ff;
+    --signal-ghost: rgba(185, 168, 255, 0.22);
+    --ok: #8fe3b5;
+    --gold: #e8c872;
+    --mono: "JetBrains Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+    --step: clamp(15px, 0.35vw + 13.6px, 16px);
+  }
+  html { background: var(--ground); }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font: 400 var(--step)/1.7 var(--mono);
+    -webkit-font-smoothing: antialiased;
+    padding: 0 clamp(16px, 4vw, 40px);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+
+  /* top bar */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; border-bottom: 1px solid var(--rule); }
+  .mark { font-weight: 800; font-size: 18px; letter-spacing: 0.02em; text-decoration: none; }
+  .mark .ez { color: var(--faint); }
+  .top nav { display: flex; gap: clamp(14px, 3vw, 28px); font-size: 13px; color: var(--dim); }
+  .top nav a { text-decoration: none; }
+  .top nav a:hover { color: var(--ink); }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; padding-block: clamp(40px, 7vw, 88px) clamp(48px, 7vw, 96px); }
+  /* The logo is drawn from the same square blocks as the memory bars. */
+  .pixlogo { --px: clamp(7px, 1.05vw, 12px); display: grid; grid-template-columns: repeat(23, var(--px)); grid-auto-rows: var(--px); gap: calc(var(--px) * 0.22); margin: 0 0 34px; width: max-content; max-width: 100%; }
+  .pixlogo i.z { background: #4f4f4f; }
+  .pixlogo i.l { background: var(--ink); }
+  h1 { margin: 0; font-weight: 800; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance; max-width: 20ch; }
+  .lede { margin: 18px 0 0; color: var(--soft); max-width: 50ch; }
+  .cta { margin-top: 34px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+  .download {
+    display: inline-flex; align-items: center; gap: 14px; padding: 15px 26px 15px 22px;
+    background: var(--ink); color: #000; text-decoration: none; font-weight: 800; font-size: 16px; letter-spacing: 0.01em;
+    border: 1px solid var(--ink); transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .download:hover { background: #fff; }
+  .download:active { transform: translateY(1px); }
+  .download svg { width: 20px; height: 20px; flex: none; }
+  .download kbd { font: inherit; font-weight: 500; font-size: 13px; color: #555; margin-left: 4px; }
+  .howlink { font-size: 13px; color: var(--dim); text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 4px; }
+  .howlink:hover { color: var(--ink); }
+  .meta { margin-top: 16px; font-size: 12.5px; color: var(--dim); line-height: 1.6; }
+  .meta b { color: var(--soft); font-weight: 500; }
+
+  /* the app window with the pour */
+  .window { background: var(--panel); border: 1px solid var(--rule); box-shadow: 0 30px 80px -30px rgba(185, 168, 255, 0.16); min-width: 0; }
+  .titlebar { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+  .titlebar .mark { font-size: 13px; }
+  .winctl { display: flex; gap: 18px; color: var(--faint); font-size: 12px; user-select: none; }
+  .pane { padding: clamp(16px, 2.6vw, 26px); display: grid; gap: 18px; }
+  .status { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .model { min-width: 0; }
+  .model strong { display: block; font-size: 15px; font-weight: 700; }
+  .model span { display: block; color: var(--dim); font-size: 12px; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 700; white-space: nowrap; color: var(--gold); }
+  .badge i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; display: inline-block; }
+  .badge.live { color: var(--ok); }
+  .pour { border: 1px solid var(--rule); padding: 14px 16px 16px; display: grid; gap: 14px; }
+  .pour-head { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 700; }
+  .pour-head .pct { color: var(--dim); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .pour-head.done { color: var(--ok); }
+  .row { display: grid; gap: 7px; }
+  .row-head { display: flex; justify-content: space-between; gap: 10px; font-size: 12px; color: var(--dim); }
+  .row-head .n { font-variant-numeric: tabular-nums; }
+  .row-head .n b { color: var(--ink); font-weight: 500; }
+  .bar { display: grid; grid-template-columns: repeat(var(--blocks, 44), minmax(0, 1fr)); gap: 2px; height: 14px; }
+  .bar > i { background: #1f1f1f; }
+  .bar > i.a { background: #4a4a4a; }
+  .bar > i.m { background: var(--signal); }
+  .bar > i.g { background: var(--signal-ghost); }
+  .bar > i.e { background: #f4f0ff; box-shadow: 0 0 8px rgba(185, 168, 255, 0.9); }
+  .bar > i.s { background: #d9d0ff; }
+  .bar.ok > i.m, .bar.ok > i.e, .bar.ok > i.s { background: var(--ok); box-shadow: none; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 11px; color: var(--dim); }
+  .legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; vertical-align: -0.5px; background: var(--c); }
+  .endpoint { border-top: 1px solid var(--rule); padding-top: 14px; display: grid; gap: 6px; font-size: 13px; min-height: 66px; }
+  .endpoint .k { color: var(--dim); display: inline-block; width: 46px; }
+  .endpoint .v { color: var(--ink); }
+  .endpoint .hint { color: var(--dim); font-size: 12px; }
+  .caret::after { content: "▍"; color: var(--signal); }
+
+  /* sections */
+  section { padding-block: clamp(48px, 7vw, 84px); border-top: 1px solid var(--rule); }
+  h2 { margin: 0 0 10px; font-size: clamp(21px, 2.1vw, 26px); font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; }
+  .sub { margin: 0; color: var(--soft); max-width: 60ch; }
+
+  .steps { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--rule); }
+  .steps li { padding: 22px 20px 24px; border-left: 1px solid var(--rule); display: grid; gap: 10px; align-content: start; }
+  .steps li:first-child { border-left: 0; }
+  .num { display: inline-grid; place-items: center; width: 24px; height: 24px; border: 1px solid var(--faint); color: var(--soft); font-size: 12px; font-weight: 700; }
+  .steps li:last-child .num { background: var(--ink); color: #000; border-color: var(--ink); }
+  .steps h3 { margin: 0; font-size: 15px; font-weight: 700; }
+  .steps p { margin: 0; color: var(--dim); font-size: 13.5px; line-height: 1.65; }
+
+  .features { margin: 36px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 56px; }
+  .feature { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 4px 12px; }
+  .feature .glyph { color: var(--signal); font-weight: 700; line-height: 1.7; }
+  .feature h3 { margin: 0; font-size: 15px; font-weight: 700; }
+  .feature p { grid-column: 2; margin: 0; color: var(--dim); font-size: 14px; max-width: 52ch; }
+
+  .reqs { margin: 32px 0 0; border-top: 1px solid var(--rule); }
+  .req { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+  .req dt { color: var(--dim); }
+  .req dd { margin: 0; color: var(--ink); }
+  .req dd small { display: block; color: var(--dim); font-size: 12.5px; margin-top: 2px; }
+
+  .install { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .install ol { margin: 26px 0 0; padding: 0; list-style: none; display: grid; gap: 14px; counter-reset: s; }
+  .install li { counter-increment: s; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; font-size: 14.5px; color: var(--soft); }
+  .install li::before { content: counter(s); color: var(--dim); font-weight: 700; }
+  .install li b { color: var(--ink); font-weight: 700; }
+  .smartscreen { background: #0f2b4a; color: #fff; padding: 22px 22px 18px; font-family: "Segoe UI", system-ui, sans-serif; max-width: 420px; }
+  .smartscreen h4 { margin: 0 0 10px; font-size: 21px; font-weight: 400; }
+  .smartscreen p { margin: 0 0 12px; font-size: 13px; line-height: 1.5; color: #d6e2f0; }
+  .smartscreen .more { text-decoration: underline; color: #fff; font-size: 13px; outline: 2px dashed var(--gold); outline-offset: 3px; }
+  .smartscreen .btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+  .smartscreen .btns span { padding: 6px 18px; background: #e6e6e6; color: #000; font-size: 13px; }
+  .smartscreen .btns span.run { outline: 2px dashed var(--gold); outline-offset: 2px; }
+  .caption { margin-top: 10px; font-size: 12px; color: var(--dim); }
+
+  .final { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; }
+  footer { border-top: 1px solid var(--rule); padding-block: 28px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12.5px; color: var(--dim); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: minmax(0, 1fr); }
+    .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps li:nth-child(3) { border-left: 0; }
+    .steps li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    .install { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 620px) {
+    .features { grid-template-columns: minmax(0, 1fr); }
+    .steps { grid-template-columns: minmax(0, 1fr); }
+    .steps li { border-left: 0; border-top: 1px solid var(--rule); }
+    .steps li:first-child { border-top: 0; }
+    .req { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .top nav a:not(:last-child) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+<style>body { margin: 0; } html { scroll-behavior: smooth; } @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#top" aria-label="EZLM"><span class="ez">EZ</span>LM</a>
+    <nav aria-label="Page">
+      <a href="#how">How it works</a>
+      <a href="#features">What you get</a>
+      <a href="#install">Installing the beta</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <div class="pixlogo" role="img" aria-label="EZLM"><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i></i><i class="l"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i class="l"></i><i class="z"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="z"></i><i></i><i class="l"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i class="l"></i><i></i><i class="l"></i><i class="l"></i><i class="z"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="z"></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i class="l"></i><i></i><i class="l"></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i></i><i></i><i></i><i></i><i class="z"></i><i></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i class="l"></i><i></i><i class="l"></i><i class="z"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="z"></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i class="l"></i><i class="z"></i><i></i><i></i><i></i><i></i><i></i><i class="z"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i></i><i></i><i class="l"></i><i></i><i></i><i></i><i class="l"></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i class="z"></i><i></i><i class="l"></i><i class="l"></i><i class="l"></i><i class="l"></i><i class="l"></i><i></i><i class="l"></i><i></i><i></i><i></i><i class="l"></i></div>
+        <h1>Your own AI, running on your PC.</h1>
+        <p class="lede">EZLM looks at your computer, picks the smartest model it can run well, sets everything up, and hands you a private address and key. No account, no cloud, no command line.</p>
+        <div class="cta">
+          <a class="download" id="download" href="https://github.com/picom-code/ezlm/releases/download/v0.1.0-beta/EZLM-Setup-0.1.0.exe" rel="noopener">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M0 2.8 8.2 1.7v7.8H0zM9.2 1.5 20 0v9.5H9.2zM0 10.5h8.2v7.8L0 17.2zM9.2 10.5H20V20l-10.8-1.5z"/></svg>
+            Download for Windows <kbd>123 MB</kbd>
+          </a>
+          <a class="howlink" href="#install">How to install the beta</a>
+        </div>
+        <p class="meta">Free beta, version 0.1.0. <b>Windows 10 or 11</b>, on regular and ARM PCs.<br>Installs just for you, no administrator password.</p>
+      </div>
+
+      <div class="window" role="img" aria-label="The EZLM app loading Qwen3.8 Flash Next into memory: system memory fills to 43 GB, then graphics memory to 11 GB, then it shows the model is live with its local address.">
+        <div class="titlebar">
+          <span class="mark"><span class="ez">EZ</span>LM</span>
+          <span class="winctl" aria-hidden="true"><span>─</span><span>☐</span><span>✕</span></span>
+        </div>
+        <div class="pane">
+          <div class="status">
+            <div class="model"><strong>Qwen3.8 Flash Next</strong><span>GSQ IQ2_XS, 64k context, RTX 4070 SUPER</span></div>
+            <span class="badge" id="badge"><i></i><span id="badge-text">Loading model…</span></span>
+          </div>
+          <div class="pour">
+            <div class="pour-head" id="pour-head"><span id="pour-title">Pouring Qwen3.8 Flash Next into memory</span><span class="pct" id="pct">71%</span></div>
+            <div class="row">
+              <div class="row-head"><span>System memory</span><span class="n" id="ram-n"><b>38 GB</b> of 43 GB</span></div>
+              <div class="bar" id="ram" style="--blocks: 44"></div>
+            </div>
+            <div class="row">
+              <div class="row-head"><span>Graphics memory</span><span class="n" id="gpu-n"><b>4.6 GB</b> of 11 GB</span></div>
+              <div class="bar" id="gpu" style="--blocks: 44"></div>
+            </div>
+            <div class="legend">
+              <span style="--c: #4a4a4a">Other apps</span>
+              <span style="--c: var(--signal)">The model</span>
+              <span style="--c: var(--signal-ghost)">Where it's going</span>
+            </div>
+          </div>
+          <div class="endpoint" id="endpoint">
+            <div class="hint" id="ep-hint">Reading the model into memory so your first questions are fast.</div>
+            <div id="ep-url" hidden><span class="k">URL</span><span class="v" id="ep-url-v"></span></div>
+            <div id="ep-key" hidden><span class="k">Key</span><span class="v" id="ep-key-v"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="how" aria-labelledby="how-title">
+      <h2 id="how-title">From download to your own AI in four steps</h2>
+      <p class="sub">The same four steps every time, and EZLM does the work in each one.</p>
+      <ol class="steps">
+        <li><span class="num">1</span><h3>Scan</h3><p>Checks your processor, memory, graphics card and disk, and what's already using them.</p></li>
+        <li><span class="num">2</span><h3>Choose</h3><p>Picks the smartest model that runs well here. Pick Balanced, Smartest or Fastest if you want a say.</p></li>
+        <li><span class="num">3</span><h3>Install</h3><p>Downloads the AI engine and the model. Cancel any time; it picks up where it stopped.</p></li>
+        <li><span class="num">4</span><h3>Ready</h3><p>You get an address and a key that work in any app that supports the OpenAI API.</p></li>
+      </ol>
+    </section>
+
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title">What you get</h2>
+      <p class="sub">A small app that keeps your model running well, without you having to think about it.</p>
+      <div class="features">
+        <div class="feature"><span class="glyph" aria-hidden="true">▮</span><h3>Watch it load</h3><p>See the model pour into your system memory and graphics card as it loads, measured live from your hardware.</p></div>
+        <div class="feature"><span class="glyph" aria-hidden="true">⇄</span><h3>Switch models any time</h3><p>Your address, keys and connected apps stay the same. Your current model keeps answering while a new one downloads.</p></div>
+        <div class="feature"><span class="glyph" aria-hidden="true">◐</span><h3>Model mode</h3><p>Frees up memory by asking, one app at a time, whether it can close the ones you're not using. Nothing closes without your OK.</p></div>
+        <div class="feature"><span class="glyph" aria-hidden="true">⌁</span><h3>Plugs into your tools</h3><p>One click connects OpenCode or Hermes. Anything that speaks the OpenAI API works with your address and key.</p></div>
+        <div class="feature"><span class="glyph" aria-hidden="true">⚿</span><h3>Keys you control</h3><p>Give each device its own key, and rotate or revoke one without breaking the others.</p></div>
+        <div class="feature"><span class="glyph" aria-hidden="true">⌂</span><h3>Stays on your PC</h3><p>The model runs on your hardware. Nothing you type is sent anywhere else.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="req-title">
+      <h2 id="req-title">What your PC needs</h2>
+      <p class="sub">EZLM sizes the model to your computer, so most PCs from the last few years can run something good.</p>
+      <dl class="reqs">
+        <div class="req"><dt>Windows</dt><dd>Windows 10 (version 2004 or later) or Windows 11<small>Regular (x64) and ARM PCs, including Snapdragon and NVIDIA RTX Spark laptops</small></dd></div>
+        <div class="req"><dt>Graphics</dt><dd>An NVIDIA graphics card makes it fastest<small>AMD and Intel graphics run through Vulkan; no graphics card works too, just slower</small></dd></div>
+        <div class="req"><dt>Memory</dt><dd>16 GB or more is a good start<small>More memory means smarter models: a 12 GB graphics card with 62 GB of memory runs a 180B-parameter model at about 20 words a second</small></dd></div>
+        <div class="req"><dt>Disk space</dt><dd>1 to 70 GB, depending on the model<small>EZLM tells you before a download needs more room than you have</small></dd></div>
+      </dl>
+    </section>
+
+    <section id="install" aria-labelledby="install-title">
+      <div class="install">
+        <div>
+          <h2 id="install-title">Installing the beta</h2>
+          <p class="sub">This beta isn't code-signed yet, so Windows asks you to confirm the first time.</p>
+          <ol>
+            <li><span>Open <b>EZLM-Setup-0.1.0.exe</b> from your downloads.</span></li>
+            <li><span>If Windows shows <b>Windows protected your PC</b>, click <b>More info</b>, then <b>Run anyway</b>.</span></li>
+            <li><span>Click through the installer. It opens EZLM at the end and starts the scan.</span></li>
+            <li><span>Something not right? In EZLM, press <b>Copy details for support</b> and send it to whoever invited you. Your keys are hidden in it.</span></li>
+          </ol>
+        </div>
+        <div>
+          <div class="smartscreen" aria-hidden="true">
+            <h4>Windows protected your PC</h4>
+            <p>Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
+            <span class="more">More info</span>
+            <div class="btns"><span class="run">Run anyway</span><span>Don't run</span></div>
+          </div>
+          <p class="caption">Click "More info" first; "Run anyway" appears after it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Download">
+      <div class="final">
+        <div>
+          <h2>Ready when you are.</h2>
+          <p class="sub">About five minutes of your time. The download that follows depends on the model EZLM picks for your PC.</p>
+        </div>
+        <a class="download" href="https://github.com/picom-code/ezlm/releases/download/v0.1.0-beta/EZLM-Setup-0.1.0.exe" rel="noopener">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M0 2.8 8.2 1.7v7.8H0zM9.2 1.5 20 0v9.5H9.2zM0 10.5h8.2v7.8L0 17.2zM9.2 10.5H20V20l-10.8-1.5z"/></svg>
+          Download for Windows <kbd>123 MB</kbd>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span><span class="mark" style="font-size:12.5px"><span class="ez">EZ</span>LM</span> beta 0.1.0. Your own AI model, on your own computer.</span>
+    <span><a href="https://github.com/picom-code/ezlm/releases/latest" style="color:inherit">All downloads, including the Mac beta (Apple Silicon)</a></span>
+  </footer>
+</div>
+
+<script>
+(() => {
+  // The pour, as the app draws it: other apps in grey, the model filling block
+  // by block toward a faint outline of its final size, a bright leading edge,
+  // then a green flash when it's loaded. Numbers are from a real load on an
+  // RTX 4070 SUPER with 62 GB of memory.
+  const RAM = { el: document.getElementById('ram'), n: document.getElementById('ram-n'), total: 62, apps: 13, need: 43 };
+  const GPU = { el: document.getElementById('gpu'), n: document.getElementById('gpu-n'), total: 12, apps: 0.3, need: 11 };
+  const head = document.getElementById('pour-head'), title = document.getElementById('pour-title'), pct = document.getElementById('pct');
+  const badge = document.getElementById('badge'), badgeText = document.getElementById('badge-text');
+  const hint = document.getElementById('ep-hint'), urlRow = document.getElementById('ep-url'), keyRow = document.getElementById('ep-key');
+  const urlV = document.getElementById('ep-url-v'), keyV = document.getElementById('ep-key-v');
+  const N = 44;
+  for (const b of [RAM, GPU]) {
+    b.blocks = Array.from({ length: N }, () => b.el.appendChild(document.createElement('i')));
+    b.classes = new Array(N).fill('');
+  }
+
+  function paint(b, fill, t, done) {
+    // fill: 0..1 of the model's share loaded
+    const ia = Math.round(b.apps / b.total * N);
+    const ig = Math.min(N, Math.round((b.apps + b.need) / b.total * N));
+    const im = Math.min(ig, ia + Math.round((ig - ia) * fill));
+    const span = im - ia;
+    const shim = !done && span > 3 ? ia + Math.floor((t * 26) % (span + 8)) : -1;
+    for (let k = 0; k < N; k++) {
+      let c = '';
+      if (k < ia) c = 'a';
+      else if (k < im) c = (!done && k >= im - 2) ? 'e' : (k === shim ? 's' : 'm');
+      else if (k < ig) c = 'g';
+      if (b.classes[k] !== c) { b.blocks[k].className = c; b.classes[k] = c; }
+    }
+    b.el.classList.toggle('ok', done);
+    const gb = v => v < 10 ? v.toFixed(1) + ' GB' : Math.round(v) + ' GB';
+    b.n.innerHTML = done ? '<b>' + gb(b.need) + '</b> loaded' : '<b>' + gb(b.need * fill) + '</b> of ' + gb(b.need);
+  }
+
+  const URL_TEXT = 'http://127.0.0.1:8080/v1', KEY_TEXT = 'ezlm-4ldL••••••••••••';
+  const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+
+  // One loop: pour system memory (the pre-read), then graphics memory, flash,
+  // show the address and key, hold, start over.
+  function frame(t) {
+    const T = 13.5, s = t % T;
+    const ram = ease(s / 4.2), gpu = ease((s - 3.2) / 3.0);
+    const loaded = s >= 6.4;
+    paint(RAM, ram, t, loaded);
+    paint(GPU, gpu, t, loaded);
+    const total = (RAM.need * ram + GPU.need * gpu) / (RAM.need + GPU.need);
+    head.classList.toggle('done', loaded);
+    title.textContent = loaded ? 'Loaded Qwen3.8 Flash Next' : 'Pouring Qwen3.8 Flash Next into memory';
+    pct.textContent = loaded ? '100%' : Math.round(total * 100) + '%';
+    badge.classList.toggle('live', loaded);
+    badgeText.textContent = loaded ? 'Live' : 'Loading model…';
+    const typed = Math.max(0, s - 7.0);
+    const u = Math.min(URL_TEXT.length, Math.floor(typed * 22));
+    const k = Math.min(KEY_TEXT.length, Math.max(0, Math.floor((typed - 1.4) * 22)));
+    urlRow.hidden = !loaded; keyRow.hidden = !loaded || typed < 1.4;
+    hint.textContent = loaded ? 'Your AI is live. Use these in any app that supports the OpenAI API.' : (s < 3.2 ? 'Reading the model into memory so your first questions are fast.' : 'Loading the model onto your graphics card.');
+    urlV.textContent = URL_TEXT.slice(0, u); urlV.className = 'v' + (loaded && u < URL_TEXT.length ? ' caret' : '');
+    keyV.textContent = KEY_TEXT.slice(0, k); keyV.className = 'v' + (k > 0 && k < KEY_TEXT.length ? ' caret' : '');
+  }
+
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  if (still.matches) {
+    // No motion: show the finished state.
+    paint(RAM, 1, 0, true); paint(GPU, 1, 0, true); frame(12);
+    return;
+  }
+  // First frame (what a thumbnail captures) is mid-pour, then it runs.
+  let t0 = null;
+  frame(5.2);
+  function tick(now) {
+    if (t0 === null) t0 = now - 5200;
+    frame((now - t0) / 1000);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
