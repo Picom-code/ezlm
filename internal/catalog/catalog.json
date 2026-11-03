@@ -1,0 +1,4218 @@
+{
+ "version": 3,
+ "models": [
+  {
+   "id": "ternary-bonsai-2-27b",
+   "name": "Ternary Bonsai 2 27B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 27.36,
+   "moe": false,
+   "score": 18.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: PrismML reports 98.2% of Qwen3.8-27B FP16 on a 14-20 benchmark suite (84.78 vs 86.32), but knowledge -5.7 pts and agentic -1.8 pts, which v5 weights heavily -> ~90% of Qwen3.8-27B Xhigh (20.1)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "active_params_b": 27.36,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-17. Ternary {-1,0,+1} g128 compression of Qwen3.8-27B (QAT on TPU v5). Beats unsloth IQ2_XXS (7.27GB, 72.59 avg) by 12 pts at smaller size; within 0.4 pts of UD-Q4_K_XL (17.6GB). Category deltas vs FP16: math 96.6/97.1, coding 89.4/89.1, IF 82.7/81.3, agentic 74.9/76.7, knowledge 79.9/85.6, vision 66.2/71.4. Speed (llama-bench tg128, PQ2_0 unless noted): RTX 5090 129.9, RTX PRO 60",
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-27B-Q2_0.gguf"
+     ],
+     "bytes": 7626008928
+    }
+   ]
+  },
+  {
+   "id": "ternary-bonsai-2-9b",
+   "name": "Ternary Bonsai 2 9B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 9.41,
+   "moe": false,
+   "score": 4.5,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: ternary compression of Qwen3.5-9B (v5-equivalent ~5, see qwen3.5-9b)",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+   "active_params_b": 9.41,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-23. Base Qwen3.5-9B (24 Gated DeltaNet + 8 full-attention layers). mmproj Q8_0 0.62GB. No published per-device speed table yet.",
+   "draft": {
+    "repo": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+    "file": "Ternary-Bonsai-2-9B-DFlash2-Q8_0.gguf",
+    "bytes": 1574233856,
+    "type": "draft-dflash"
+   },
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-9B-Q2_0.gguf"
+     ],
+     "bytes": 2556640128
+    }
+   ]
+  },
+  {
+   "id": "ternary-bonsai-2-4b",
+   "name": "Ternary Bonsai 2 4B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 4.66,
+   "moe": false,
+   "score": 2.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: ternary Qwen3.5-4B",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+   "active_params_b": 4.66,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-23. Base Qwen3.5-4B. mmproj Q8_0 0.37GB.",
+   "draft": {
+    "repo": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+    "file": "Ternary-Bonsai-2-4B-DFlash2-BF16.gguf",
+    "bytes": 1575278208,
+    "type": "draft-dflash"
+   },
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-4B-Q2_0.gguf"
+     ],
+     "bytes": 1212103520
+    }
+   ]
+  },
+  {
+   "id": "ternary-bonsai-2-2b",
+   "name": "Ternary Bonsai 2 2B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 2.21,
+   "moe": false,
+   "score": 1.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: ternary Qwen3.5-2B",
+   "layers": 24,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-2B-gguf",
+   "active_params_b": 2.21,
+   "kv_layers": 6,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-23. Base Qwen3.5-2B (1.88B LM + 0.33B vision). PrismML: speculative decoding slower than plain decode at this size. Fits phones/Raspberry Pi class devices (<0.6GB).",
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-2B-Q2_0.gguf"
+     ],
+     "bytes": 546689504
+    }
+   ]
+  },
+  {
+   "id": "bonsai-8b-1bit",
+   "name": "Bonsai 8B (1-bit)",
+   "family": "Bonsai",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 8.19,
+   "moe": false,
+   "score": 2.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: 1-bit Qwen3-8B (Mar 2026), below Qwen3.5-9B",
+   "layers": 36,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 65536,
+   "tool_calling": true,
+   "repo": "prism-ml/Bonsai-8B-gguf",
+   "active_params_b": 8.19,
+   "kv_layers": 36,
+   "vision": false,
+   "native_1bit": true,
+   "notes": "Released 2026-03-18. 1.16GB. tg128: RTX 4090 ~368 (PrismML), RTX 3090 263, RTX 3080 197, GB10 159, M4 Pro 116.8 (PrismML: 131), Strix Halo ROCm 96 / Vulkan 64, GTX 1080 Ti 101, RTX A2000 63, iPhone 17 Pro Max ~44 (PrismML), i3-7100 CPU 3.6. Sibling sizes: Bonsai 4B Q1_0 0.57GB, Bonsai 1.7B Q1_0 0.25GB (1.7B: RTX 3090 599 t/s, M4 Pro 308, i3 CPU 14.3). Ternary Bonsai 8B Q2_0 2.18GB superseded by Bo",
+   "quants": [
+    {
+     "name": "Q1_0",
+     "files": [
+      "Bonsai-8B-Q1_0.gguf"
+     ],
+     "bytes": 1158654496
+    }
+   ]
+  },
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8 27B",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 20.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) - Xhigh effort. Medium 17.5, Low 15.7, Non-reasoning 10.0. (Was 34 on v4.3.)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-27B",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "notes": "Released 2026-08-05. 48 Gated DeltaNet + 16 full-attn layers -> tiny KV. Strongest dense model <70B on AA v5 except Nanbeige4.3-33B (20.4). Speeds: RTX 4090 Q4_K_M 49 tok/s no-MTP (kingy.ai, b10453), 69.6 -> 147.5 tok/s code with MTP n-max 6 p-min 0.75 (81% accept); RTX 5090 ~172 tok/s code with MTP; RTX 3090 41.6 -> 66.4 with MTP n-max 2. VRAM Q4_K_M: 16.6GB @8K ctx, 20.3GB @64K (F16 KV).",
+   "draft": {
+    "repo": "ggml-org/Qwen3.8-27B-GGUF",
+    "file": "mtp-Qwen3.8-27B-Q8_0.gguf",
+    "bytes": 3164006816,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "GSQ-RCO-IQ2_XS",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_XS.gguf"
+     ],
+     "bytes": 8422841472,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.94
+    },
+    {
+     "name": "GSQ-RCO-IQ2_XS-mtp",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_XS-mtp.gguf"
+     ],
+     "bytes": 8771311680,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "mtp": true,
+     "quality": 0.94
+    },
+    {
+     "name": "GSQ-RCO-IQ2_S",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_S.gguf"
+     ],
+     "bytes": 9259510912,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.95
+    },
+    {
+     "name": "GSQ-RCO-IQ2_S-mtp",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_S-mtp.gguf"
+     ],
+     "bytes": 9607981120,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "mtp": true,
+     "quality": 0.95
+    },
+    {
+     "name": "GSQ-RCO-IQ3_XXS",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf"
+     ],
+     "bytes": 10094357632,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.985
+    },
+    {
+     "name": "GSQ-RCO-IQ3_XXS-mtp",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ3_XXS-mtp.gguf"
+     ],
+     "bytes": 10442827840,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "mtp": true,
+     "quality": 0.985
+    },
+    {
+     "name": "GSQ-RCO-IQ3_S",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ3_S.gguf"
+     ],
+     "bytes": 11771546784,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.995
+    },
+    {
+     "name": "GSQ-RCO-IQ3_S-mtp",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp.gguf"
+     ],
+     "bytes": 12120016960,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "mtp": true,
+     "quality": 0.995
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.8-27B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 7266070528,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_S",
+     "files": [
+      "Qwen3.8-27B-UD-IQ2_S.gguf"
+     ],
+     "bytes": 8371970048,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 9828981664,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.8-27B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 10934860704,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_S",
+     "files": [
+      "Qwen3.8-27B-UD-IQ3_S.gguf"
+     ],
+     "bytes": 12040883104,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 13146393504,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "Qwen3.8-27B-UD-IQ4_XS.gguf"
+     ],
+     "bytes": 14252845984,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 17559178144,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 20876938144,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q6_K",
+     "files": [
+      "Qwen3.8-27B-UD-Q6_K.gguf"
+     ],
+     "bytes": 21983677344,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Qwen3.8-27B-Q8_0.gguf"
+     ],
+     "bytes": 29047086048,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "qwen3.8-flash-next",
+   "name": "Qwen3.8 Flash Next",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "qwen-community-1.0 (UNVERIFIED terms)",
+   "params_b": 180.0,
+   "moe": true,
+   "score": 27.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 27.7 (legacy-component fit 26.8); AA lists components but no official v5 index (FrontierCode/CritPt-v2/TB-Science incomplete). v4.3 score 40. Treat as ~= GLM-5.3-Flash (27.8), below DeepSeek V4.1 Flash (32.5 max / 28.5 high)",
+   "layers": 48,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-Flash-Next",
+   "active_params_b": 6.0,
+   "kv_layers": 12,
+   "vision": true,
+   "notes": "Released 2026-08-24. 125B backbone (512 experts, top-10, 6B active) + 51B n-gram embedding table (lookup, read one row/token -> can stay mmapped on SSD/RAM, never needs VRAM) + 4B MTP. Hybrid Gated DeltaNet + Qwen Sparse Attention (12 KV layers). llama.cpp: qwen4exp arch merged 2026-08-27 (PR #27742",
+   "draft": {
+    "repo": "ggml-org/Qwen3.8-Flash-Next-GGUF",
+    "file": "mtp-Qwen3.8-Flash-Next-Q4_0.gguf",
+    "bytes": 2199652672,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "GSQ-RCO-Q2_0",
+     "files": [
+      "Q2_0/Qwen3.8-Flash-Next-GSQ-RCO-Q2_0-00001-of-00002.gguf",
+      "Q2_0/Qwen3.8-Flash-Next-GSQ-RCO-Q2_0-00002-of-00002.gguf"
+     ],
+     "bytes": 66423878624,
+     "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+     "lazy_bytes": 22584118732,
+     "args": []
+    },
+    {
+     "name": "GSQ-RCO-IQ2_XS",
+     "files": [
+      "IQ2_XS/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+      "IQ2_XS/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00002-of-00002.gguf"
+     ],
+     "bytes": 68026093024,
+     "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+     "quality": 0.94,
+     "lazy_bytes": 23128871628,
+     "args": []
+    },
+    {
+     "name": "GSQ-RCO-IQ3_XXS",
+     "files": [
+      "IQ3_XXS/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf",
+      "IQ3_XXS/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00002-of-00002.gguf"
+     ],
+     "bytes": 75839998528,
+     "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+     "quality": 0.985,
+     "lazy_bytes": 25785599499,
+     "args": []
+    },
+    {
+     "name": "GSQ-RCO-IQ3_S",
+     "files": [
+      "IQ3_S/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf",
+      "IQ3_S/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf"
+     ],
+     "bytes": 83617662656,
+     "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+     "quality": 0.995,
+     "lazy_bytes": 28430005303,
+     "args": []
+    },
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00001-of-00003.gguf",
+      "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00002-of-00003.gguf",
+      "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00003-of-00003.gguf"
+     ],
+     "bytes": 72546461344,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 24665796856,
+     "args": []
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00001-of-00003.gguf",
+      "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00002-of-00003.gguf",
+      "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00003-of-00003.gguf"
+     ],
+     "bytes": 74538755776,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 25343176963,
+     "args": []
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00001-of-00003.gguf",
+      "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00002-of-00003.gguf",
+      "UD-Q2_K_XL/Qwen3.8-Flash-Next-UD-Q2_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 78869128864,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 26815503813,
+     "args": []
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00001-of-00003.gguf",
+      "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00002-of-00003.gguf",
+      "UD-IQ3_XXS/Qwen3.8-Flash-Next-UD-IQ3_XXS-00003-of-00003.gguf"
+     ],
+     "bytes": 81961823936,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 27867020138,
+     "args": []
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00001-of-00003.gguf",
+      "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00002-of-00003.gguf",
+      "UD-Q3_K_XL/Qwen3.8-Flash-Next-UD-Q3_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 89986353824,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 30595360300,
+     "args": []
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00001-of-00003.gguf",
+      "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00002-of-00003.gguf",
+      "UD-IQ4_XS/Qwen3.8-Flash-Next-UD-IQ4_XS-00003-of-00003.gguf"
+     ],
+     "bytes": 93682584224,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 31852078636,
+     "args": []
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf",
+      "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00002-of-00004.gguf",
+      "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00003-of-00004.gguf",
+      "UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 111334654784,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 37853782626,
+     "args": []
+    },
+    {
+     "name": "IQ4_NL",
+     "files": [
+      "Qwen3.8-Flash-Next-IQ4_NL-00001-of-00002.gguf",
+      "Qwen3.8-Flash-Next-IQ4_NL-00002-of-00002.gguf"
+     ],
+     "bytes": 102048919008,
+     "repo": "ggml-org/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 34696632462,
+     "args": []
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Q8_0/Qwen3.8-Flash-Next-Q8_0-00001-of-00006.gguf",
+      "Q8_0/Qwen3.8-Flash-Next-Q8_0-00002-of-00006.gguf",
+      "Q8_0/Qwen3.8-Flash-Next-Q8_0-00003-of-00006.gguf",
+      "Q8_0/Qwen3.8-Flash-Next-Q8_0-00004-of-00006.gguf",
+      "Q8_0/Qwen3.8-Flash-Next-Q8_0-00005-of-00006.gguf",
+      "Q8_0/Qwen3.8-Flash-Next-Q8_0-00006-of-00006.gguf"
+     ],
+     "bytes": 188225033248,
+     "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
+     "lazy_bytes": 63996511304,
+     "args": []
+    }
+   ]
+  },
+  {
+   "id": "qwen3.6-35b-a3b",
+   "name": "Qwen3.6 35B A3B",
+   "family": "Qwen3.6",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 35.95,
+   "moe": true,
+   "score": 9.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 9.5 (legacy fit 7.9). AA-Briefcase 713 vs Qwen3.8-27B 1393, AutomationBench 5% vs 48%. Was 43 on v4.0 (vs Qwen3.6-27B 46, Gemma 4 31B 39)",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.6-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-04-15. Very fast (3B active; AA API 133 t/s) but clearly below Qwen3.8-27B: LCBv6 74.6 vs 90.3, SWE-Pro well below. Good choice only when speed/CPU-offload matters more than quality.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 10756586464,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 12290628576,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 13211155424,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_S",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ3_S.gguf"
+     ],
+     "bytes": 13676723168,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 16845511648,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ4_XS.gguf"
+     ],
+     "bytes": 17730509792,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "MXFP4_MOE",
+     "files": [
+      "Qwen3.6-35B-A3B-MXFP4_MOE.gguf"
+     ],
+     "bytes": 21706144736,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 22360456160,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 26592508896,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Qwen3.6-35B-A3B-Q8_0.gguf"
+     ],
+     "bytes": 36903140320,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS (MTP)",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 14069266720,
+     "repo": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-IQ4_XS (MTP)",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ4_XS.gguf"
+     ],
+     "bytes": 18209036576,
+     "repo": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-Q4_K_XL (MTP)",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 22853663008,
+     "repo": "unsloth/Qwen3.6-35B-A3B-MTP-GGUF",
+     "mtp": true
+    }
+   ]
+  },
+  {
+   "id": "qwen3.6-27b",
+   "name": "Qwen3.6 27B",
+   "family": "Qwen3.6",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 12.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Not on AA v5 leaderboard. v4.0 was 46 (vs 35B-A3B 43, Qwen3.8-27B later 34 on v4.3); LCBv6 83.9 vs Qwen3.8-27B 90.3, SWE-Pro 53.5 vs 61.7 -> placed between Qwen3.6-35B-A3B (~9.5) and Qwen3.8-27B medium (17.5)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.6-27B",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "notes": "Superseded by Qwen3.8-27B (same architecture, same file sizes, much better). Keep only as fallback. RTX 3090 + MTP ~60 t/s code (club-3090).",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.6-27B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 9567265920,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.6-27B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 12203615360,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.6-27B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 14787986560,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Qwen3.6-27B-IQ4_XS.gguf"
+     ],
+     "bytes": 15705859200,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.6-27B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 17909097600,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "Qwen3.6-27B-Q6_K.gguf"
+     ],
+     "bytes": 22884406400,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Qwen3.6-27B-Q8_0.gguf"
+     ],
+     "bytes": 29047084160,
+     "repo": "unsloth/Qwen3.6-27B-MTP-GGUF",
+     "mtp": true
+    }
+   ]
+  },
+  {
+   "id": "qwen3.5-122b-a10b",
+   "name": "Qwen3.5 122B A10B",
+   "family": "Qwen3.5",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 125.09,
+   "moe": true,
+   "score": 7.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 7.4 (legacy fit 7.5)",
+   "layers": 48,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.5-122B-A10B",
+   "active_params_b": 10.0,
+   "kv_layers": 12,
+   "vision": true,
+   "notes": "Released 2026-02. Now dominated: Qwen3.8 Flash Next (similar hot size, 6B active) and Qwen3.8-27B both score much higher. Include only for hardware where Flash Next isn't supported/too large.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS (MTP)",
+     "files": [
+      "Qwen3.5-122B-A10B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 40282507968,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-Q2_K_XL (MTP)",
+     "files": [
+      "Qwen3.5-122B-A10B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 42849544896,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-IQ3_XXS (MTP)",
+     "files": [
+      "Qwen3.5-122B-A10B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 47842478784,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-IQ4_XS (MTP)",
+     "files": [
+      "UD-IQ4_XS/Qwen3.5-122B-A10B-UD-IQ4_XS-00001-of-00003.gguf",
+      "UD-IQ4_XS/Qwen3.5-122B-A10B-UD-IQ4_XS-00002-of-00003.gguf",
+      "UD-IQ4_XS/Qwen3.5-122B-A10B-UD-IQ4_XS-00003-of-00003.gguf"
+     ],
+     "bytes": 61927783424,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "MXFP4_MOE (MTP)",
+     "files": [
+      "MXFP4_MOE/Qwen3.5-122B-A10B-MXFP4_MOE-00001-of-00003.gguf",
+      "MXFP4_MOE/Qwen3.5-122B-A10B-MXFP4_MOE-00002-of-00003.gguf",
+      "MXFP4_MOE/Qwen3.5-122B-A10B-MXFP4_MOE-00003-of-00003.gguf"
+     ],
+     "bytes": 76230560800,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "UD-Q4_K_XL (MTP)",
+     "files": [
+      "UD-Q4_K_XL/Qwen3.5-122B-A10B-UD-Q4_K_XL-00001-of-00003.gguf",
+      "UD-Q4_K_XL/Qwen3.5-122B-A10B-UD-Q4_K_XL-00002-of-00003.gguf",
+      "UD-Q4_K_XL/Qwen3.5-122B-A10B-UD-Q4_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 78646479904,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q8_0 (MTP)",
+     "files": [
+      "Q8_0/Qwen3.5-122B-A10B-Q8_0-00001-of-00004.gguf",
+      "Q8_0/Qwen3.5-122B-A10B-Q8_0-00002-of-00004.gguf",
+      "Q8_0/Qwen3.5-122B-A10B-Q8_0-00003-of-00004.gguf",
+      "Q8_0/Qwen3.5-122B-A10B-Q8_0-00004-of-00004.gguf"
+     ],
+     "bytes": 132554132608,
+     "repo": "unsloth/Qwen3.5-122B-A10B-MTP-GGUF",
+     "mtp": true
+    }
+   ]
+  },
+  {
+   "id": "qwen3.5-9b",
+   "name": "Qwen3.5 9B",
+   "family": "Qwen3.5",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 9.65,
+   "moe": false,
+   "score": 5.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: 9B predicted 6.3 (legacy fit 2.3) -> 5",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.5-9B",
+   "active_params_b": 9.65,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj ~0.67-0.92GB.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.5-9B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 3190613216,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.5-9B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 4016235744,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.5-9B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 5053834464,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Qwen3.5-9B-IQ4_XS.gguf"
+     ],
+     "bytes": 5168653536,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Qwen3.5-9B-Q4_K_M.gguf"
+     ],
+     "bytes": 5680522464,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.5-9B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5966095584,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "Qwen3.5-9B-Q6_K.gguf"
+     ],
+     "bytes": 7458301152,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Qwen3.5-9B-Q8_0.gguf"
+     ],
+     "bytes": 9527502048,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL (MTP)",
+     "files": [
+      "Qwen3.5-9B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 6135034208,
+     "repo": "unsloth/Qwen3.5-9B-MTP-GGUF",
+     "mtp": true
+    }
+   ]
+  },
+  {
+   "id": "qwen3.5-4b",
+   "name": "Qwen3.5 4B",
+   "family": "Qwen3.5",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 4.66,
+   "moe": false,
+   "score": 2.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: 4B legacy GPQA/HLE/LCR fit, floor-compressed",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.5-4B",
+   "active_params_b": 4.66,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj ~0.67-0.92GB.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.5-4B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 1520217248,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.5-4B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 1949047968,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.5-4B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 2436420768,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Qwen3.5-4B-IQ4_XS.gguf"
+     ],
+     "bytes": 2477053088,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Qwen3.5-4B-Q4_K_M.gguf"
+     ],
+     "bytes": 2740937888,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.5-4B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 2912109728,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "Qwen3.5-4B-Q6_K.gguf"
+     ],
+     "bytes": 3525956768,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Qwen3.5-4B-Q8_0.gguf"
+     ],
+     "bytes": 4482403488,
+     "repo": "unsloth/Qwen3.5-4B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "qwen3.5-2b",
+   "name": "Qwen3.5 2B",
+   "family": "Qwen3.5",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 2.27,
+   "moe": false,
+   "score": 1.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: 2B legacy GPQA/HLE/LCR fit, floor-compressed",
+   "layers": 24,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.5-2B",
+   "active_params_b": 2.27,
+   "kv_layers": 6,
+   "vision": true,
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj ~0.67-0.92GB.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.5-2B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 768270592,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.5-2B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 931823872,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.5-2B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 1159274752,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Qwen3.5-2B-IQ4_XS.gguf"
+     ],
+     "bytes": 1172996352,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Qwen3.5-2B-Q4_K_M.gguf"
+     ],
+     "bytes": 1280835840,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.5-2B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 1339752704,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "Qwen3.5-2B-Q6_K.gguf"
+     ],
+     "bytes": 1574961408,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Qwen3.5-2B-Q8_0.gguf"
+     ],
+     "bytes": 2012012800,
+     "repo": "unsloth/Qwen3.5-2B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-31b",
+   "name": "Gemma 4 31B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 31.27,
+   "moe": false,
+   "score": 8.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 7.3; partial v5 components (AutomationBench 5%, GDP.pdf 6%, Briefcase 369, TB4 0%) imply ~8. Below Qwen3.6-35B-A3B (~9.5), above gpt-oss-120b (~7). v4.0 was 39",
+   "layers": 60,
+   "kv_heads": 4,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-31B-it",
+   "active_params_b": 31.27,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-03-11. 50 sliding-window layers (16 KV heads x 256, window 1024) + 10 global layers (4 KV heads x 512) -> KV heavier than Qwen hybrids (OOM at 64K F16 KV on 24GB with Q4_K_M). RTX 4090 Q4_K_M 45 tok/s decode. Strong tool calling and doc QA; weaker coding than Qwen3.8.",
+   "draft": {
+    "repo": "unsloth/gemma-4-31B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-31B-it-Q8_0.gguf",
+    "bytes": 514687104,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "gemma-4-31B-it-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 8534295488,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "gemma-4-31B-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 11837782976,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "gemma-4-31B-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 15380222912,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "gemma-4-31B-it-IQ4_XS.gguf"
+     ],
+     "bytes": 16372460480,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "QAT-Q4_0",
+     "files": [
+      "gemma-4-31B_q4_0-it.gguf"
+     ],
+     "bytes": 17651001568,
+     "repo": "google/gemma-4-31B-it-qat-q4_0-gguf"
+    },
+    {
+     "name": "QAT-UD-Q4_K_XL",
+     "files": [
+      "gemma-4-31B-it-qat-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 17287670048,
+     "repo": "unsloth/gemma-4-31B-it-qat-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gemma-4-31B-it-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 18822970304,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "gemma-4-31B-it-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 21890429888,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "gemma-4-31B-it-Q6_K.gguf"
+     ],
+     "bytes": 25201486784,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "gemma-4-31B-it-Q8_0.gguf"
+     ],
+     "bytes": 32635677632,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-26b-a4b",
+   "name": "Gemma 4 26B A4B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 25.81,
+   "moe": true,
+   "score": 5.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 5.1; partial v5 components imply ~6",
+   "layers": 30,
+   "kv_heads": 2,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-26B-A4B-it",
+   "active_params_b": 3.8,
+   "kv_layers": 5,
+   "vision": true,
+   "notes": "128 experts (~3.8B active). 25 sliding (8 KV x 256, window 1024) + 5 global layers. Good CPU-offload candidate for 8-12GB GPUs.",
+   "draft": {
+    "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-26B-A4B-it-Q8_0.gguf",
+    "bytes": 461766816,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "gemma-4-26B-A4B-it-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 9922480608,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "gemma-4-26B-A4B-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 11416548832,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "gemma-4-26B-A4B-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 12907280096,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "gemma-4-26B-A4B-it-UD-IQ4_XS.gguf"
+     ],
+     "bytes": 13597177568,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "MXFP4_MOE",
+     "files": [
+      "gemma-4-26B-A4B-it-MXFP4_MOE.gguf"
+     ],
+     "bytes": 16551048928,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gemma-4-26B-A4B-it-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 17010980576,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "UD-Q6_K",
+     "files": [
+      "gemma-4-26B-A4B-it-UD-Q6_K.gguf"
+     ],
+     "bytes": 23172478688,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "gemma-4-26B-A4B-it-Q8_0.gguf"
+     ],
+     "bytes": 26859861728,
+     "repo": "unsloth/gemma-4-26B-A4B-it-GGUF"
+    },
+    {
+     "name": "QAT-Q4_0",
+     "files": [
+      "gemma-4-26B_q4_0-it.gguf"
+     ],
+     "bytes": 14439363584,
+     "repo": "google/gemma-4-26B-A4B-it-qat-q4_0-gguf"
+    },
+    {
+     "name": "QAT-UD-Q4_K_XL",
+     "files": [
+      "gemma-4-26B-A4B-it-qat-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 14249047104,
+     "repo": "unsloth/gemma-4-26B-A4B-it-qat-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-12b",
+   "name": "Gemma 4 12B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 11.96,
+   "moe": false,
+   "score": 3.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 3.3",
+   "layers": 48,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-12B-it",
+   "active_params_b": 11.96,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-05-23 ('unified' any-to-any). 40 sliding (8 KV x 256) + 8 global (1 KV x 512). Small mmproj (175MB).",
+   "draft": {
+    "repo": "unsloth/gemma-4-12b-it-GGUF",
+    "file": "MTP/mtp-gemma-4-12b-it-Q8_0.gguf",
+    "bytes": 465109248,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "gemma-4-12b-it-UD-IQ2_M.gguf"
+     ],
+     "bytes": 4213353280,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "gemma-4-12b-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 4639716160,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "gemma-4-12b-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 6022684480,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "gemma-4-12b-it-IQ4_XS.gguf"
+     ],
+     "bytes": 6375734080,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gemma-4-12b-it-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 7366423360,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "gemma-4-12b-it-Q6_K.gguf"
+     ],
+     "bytes": 9786022720,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "gemma-4-12b-it-Q8_0.gguf"
+     ],
+     "bytes": 12669647680,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "QAT-Q4_0",
+     "files": [
+      "gemma-4-12b-it-qat-q4_0.gguf"
+     ],
+     "bytes": 6975879296,
+     "repo": "google/gemma-4-12B-it-qat-q4_0-gguf"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-e4b",
+   "name": "Gemma 4 E4B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 8.0,
+   "moe": false,
+   "score": 2.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components (floor-compressed; legacy GPQA E4B 0.58 / E2B 0.43)",
+   "layers": 42,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "google/gemma-4-E4B-it",
+   "active_params_b": 4.0,
+   "kv_layers": 7,
+   "vision": true,
+   "notes": "'Effective 4B' (Per-Layer Embeddings make total 8.0B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Phone/edge tier.",
+   "draft": {
+    "repo": "unsloth/gemma-4-E4B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-E4B-it-Q8_0.gguf",
+    "bytes": 98653248,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "gemma-4-E4B-it-UD-IQ2_M.gguf"
+     ],
+     "bytes": 3545083008,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "gemma-4-E4B-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 3717115008,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "gemma-4-E4B-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 4588440704,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "gemma-4-E4B-it-IQ4_XS.gguf"
+     ],
+     "bytes": 4715416704,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "gemma-4-E4B-it-Q4_K_M.gguf"
+     ],
+     "bytes": 4977171584,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gemma-4-E4B-it-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5126306944,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "gemma-4-E4B-it-Q6_K.gguf"
+     ],
+     "bytes": 7074929792,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "gemma-4-E4B-it-Q8_0.gguf"
+     ],
+     "bytes": 8192953472,
+     "repo": "unsloth/gemma-4-E4B-it-GGUF"
+    },
+    {
+     "name": "QAT-Q4_0",
+     "files": [
+      "gemma-4-E4B_q4_0-it.gguf"
+     ],
+     "bytes": 5154941280,
+     "repo": "google/gemma-4-E4B-it-qat-q4_0-gguf"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-e2b",
+   "name": "Gemma 4 E2B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 5.12,
+   "moe": false,
+   "score": 1.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components (floor-compressed; legacy GPQA E4B 0.58 / E2B 0.43)",
+   "layers": 35,
+   "kv_heads": 1,
+   "head_dim": 256,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "google/gemma-4-E2B-it",
+   "active_params_b": 2.0,
+   "kv_layers": 7,
+   "vision": true,
+   "notes": "'Effective 2B' (Per-Layer Embeddings make total 5.12B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Phone/edge tier.",
+   "draft": {
+    "repo": "unsloth/gemma-4-E2B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-E2B-it-Q8_0.gguf",
+    "bytes": 97817664,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "gemma-4-E2B-it-UD-IQ2_M.gguf"
+     ],
+     "bytes": 2290860128,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "gemma-4-E2B-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 2372993120,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "gemma-4-E2B-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 2923782240,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "gemma-4-E2B-it-IQ4_XS.gguf"
+     ],
+     "bytes": 2983944288,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "gemma-4-E2B-it-Q4_K_M.gguf"
+     ],
+     "bytes": 3106738272,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gemma-4-E2B-it-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 3184496736,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "gemma-4-E2B-it-Q6_K.gguf"
+     ],
+     "bytes": 4501721184,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "gemma-4-E2B-it-Q8_0.gguf"
+     ],
+     "bytes": 5048352864,
+     "repo": "unsloth/gemma-4-E2B-it-GGUF"
+    },
+    {
+     "name": "QAT-Q4_0",
+     "files": [
+      "gemma-4-E2B_q4_0-it.gguf"
+     ],
+     "bytes": 3349516256,
+     "repo": "google/gemma-4-E2B-it-qat-q4_0-gguf"
+    }
+   ]
+  },
+  {
+   "id": "gpt-oss-120b",
+   "name": "gpt-oss-120b",
+   "family": "gpt-oss",
+   "vendor": "OpenAI",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 116.83,
+   "moe": true,
+   "score": 7.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: strict fit 3.0 is depressed by 0% AA-Briefcase/AutomationBench (harness/tool-format failure suspected); legacy fit 8.7 -> 7. v4.0 was 33 (below Gemma 4 31B 39)",
+   "layers": 36,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "openai/gpt-oss-120b",
+   "active_params_b": 5.1,
+   "kv_layers": 18,
+   "vision": false,
+   "no_kv_quant": true,
+   "notes": "Aug 2025 - oldest model kept; still the main US-made mid-size MoE besides Muse/Nemotron. Half the layers sliding-window(128). DGX Spark MXFP4: tg32 ~60 t/s, pp2048 ~1950 (120b). Stale vs 2026 Qwen/GLM; keep for license/US-origin/speed reasons.",
+   "quants": [
+    {
+     "name": "MXFP4",
+     "files": [
+      "gpt-oss-120b-MXFP4.gguf"
+     ],
+     "bytes": 63387346208,
+     "repo": "ggml-org/gpt-oss-120b-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/gpt-oss-120b-UD-Q4_K_XL-00001-of-00002.gguf",
+      "UD-Q4_K_XL/gpt-oss-120b-UD-Q4_K_XL-00002-of-00002.gguf"
+     ],
+     "bytes": 63016311392,
+     "repo": "unsloth/gpt-oss-120b-GGUF"
+    },
+    {
+     "name": "F16",
+     "files": [
+      "gpt-oss-120b-F16.gguf"
+     ],
+     "bytes": 65369017728,
+     "repo": "unsloth/gpt-oss-120b-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gpt-oss-20b",
+   "name": "gpt-oss-20b",
+   "family": "gpt-oss",
+   "vendor": "OpenAI",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 20.91,
+   "moe": true,
+   "score": 5.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: strict fit 2.8, legacy fit 7.2 -> 5",
+   "layers": 24,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "openai/gpt-oss-20b",
+   "active_params_b": 3.6,
+   "kv_layers": 12,
+   "vision": false,
+   "no_kv_quant": true,
+   "notes": "Aug 2025 - oldest model kept; still the main US-made mid-size MoE besides Muse/Nemotron. Half the layers sliding-window(128). DGX Spark MXFP4: tg32 ~60 t/s, pp2048 ~1950 (120b). Stale vs 2026 Qwen/GLM; keep for license/US-origin/speed reasons.",
+   "quants": [
+    {
+     "name": "MXFP4",
+     "files": [
+      "gpt-oss-20b-MXFP4.gguf"
+     ],
+     "bytes": 12109566624,
+     "repo": "ggml-org/gpt-oss-20b-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gpt-oss-20b-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 11872347328,
+     "repo": "unsloth/gpt-oss-20b-GGUF"
+    },
+    {
+     "name": "F16",
+     "files": [
+      "gpt-oss-20b-F16.gguf"
+     ],
+     "bytes": 13792639168,
+     "repo": "unsloth/gpt-oss-20b-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "glm-5.3-flash",
+   "name": "GLM-5.3 Flash",
+   "family": "GLM-5.3",
+   "vendor": "Zhipu AI (Z.ai)",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 321.32,
+   "moe": true,
+   "score": 27.8,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (reasoning; default effort max)",
+   "layers": 45,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "zai-org/GLM-5.3-Flash",
+   "active_params_b": 18.0,
+   "kv_layers": 11,
+   "vision": true,
+   "notes": "Released 2026-08-25. 288 experts top-8; 34 KDA linear-attention layers (no KV) + 11 DSA/MLA layers (latent 512) -> very small KV. llama.cpp: glm5-next merged 2026-09-30 (PR #27773), NextN MTP merged 2026-10-07 (PR #29928; embedded head, no separate file; acceptance 0.78 @ draft 3). Quant notes: UD-IQ1_S works but degrades tool contracts & vision (classmethod). Speeds: DGX Spark UD-Q2_K_XL 17.7 t/s",
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00001-of-00003.gguf",
+      "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00002-of-00003.gguf",
+      "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00003-of-00003.gguf"
+     ],
+     "bytes": 93087245088,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00001-of-00003.gguf",
+      "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00002-of-00003.gguf",
+      "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00003-of-00003.gguf"
+     ],
+     "bytes": 97579344672,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00001-of-00004.gguf",
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00002-of-00004.gguf",
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00003-of-00004.gguf",
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00004-of-00004.gguf"
+     ],
+     "bytes": 101844951904,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00001-of-00004.gguf",
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00002-of-00004.gguf",
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00003-of-00004.gguf",
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 108720071552,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf"
+     ],
+     "bytes": 120367571840,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00001-of-00004.gguf",
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00002-of-00004.gguf",
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00003-of-00004.gguf",
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 147535922080,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "UD-IQ4_XS/GLM-5.3-Flash-UD-IQ4_XS-00001-of-00005.gguf",
+      "UD-IQ4_XS/GLM-5.3-Flash-UD-IQ4_XS-00002-of-00005.gguf",
+      "UD-IQ4_XS/GLM-5.3-Flash-UD-IQ4_XS-00003-of-00005.gguf",
+      "UD-IQ4_XS/GLM-5.3-Flash-UD-IQ4_XS-00004-of-00005.gguf",
+      "UD-IQ4_XS/GLM-5.3-Flash-UD-IQ4_XS-00005-of-00005.gguf"
+     ],
+     "bytes": 156822111200,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/GLM-5.3-Flash-UD-Q4_K_XL-00001-of-00006.gguf",
+      "UD-Q4_K_XL/GLM-5.3-Flash-UD-Q4_K_XL-00002-of-00006.gguf",
+      "UD-Q4_K_XL/GLM-5.3-Flash-UD-Q4_K_XL-00003-of-00006.gguf",
+      "UD-Q4_K_XL/GLM-5.3-Flash-UD-Q4_K_XL-00004-of-00006.gguf",
+      "UD-Q4_K_XL/GLM-5.3-Flash-UD-Q4_K_XL-00005-of-00006.gguf",
+      "UD-Q4_K_XL/GLM-5.3-Flash-UD-Q4_K_XL-00006-of-00006.gguf"
+     ],
+     "bytes": 199707321472,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Q8_0/GLM-5.3-Flash-Q8_0-00001-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00002-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00003-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00004-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00005-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00006-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00007-of-00008.gguf",
+      "Q8_0/GLM-5.3-Flash-Q8_0-00008-of-00008.gguf"
+     ],
+     "bytes": 340981966208,
+     "repo": "unsloth/GLM-5.3-Flash-GGUF"
+    },
+    {
+     "name": "antirez-Q2",
+     "files": [
+      "GLM-5.3-Flash-Q2.gguf"
+     ],
+     "bytes": 96505816384,
+     "repo": "antirez/glm-5.3-flash-gguf"
+    },
+    {
+     "name": "antirez-Q4_K",
+     "files": [
+      "GLM-5.3-Flash-Q4_K.gguf"
+     ],
+     "bytes": 190875526464,
+     "repo": "antirez/glm-5.3-flash-gguf"
+    }
+   ]
+  },
+  {
+   "id": "glm-5.3",
+   "name": "GLM-5.3",
+   "family": "GLM-5.3",
+   "vendor": "Zhipu AI (Z.ai)",
+   "country": "CN",
+   "license": "GLM-5.3 license (license:other on HF; UNVERIFIED terms)",
+   "params_b": 753.33,
+   "moe": true,
+   "score": 31.7,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (Max). Low effort 23.1",
+   "layers": 78,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "zai-org/GLM-5.3",
+   "active_params_b": 40.0,
+   "kv_layers": 78,
+   "vision": false,
+   "notes": "Released 2026-08-25. DSA (DeepSeek sparse attention) + MLA (latent 512 + rope 64 per layer). Active params ~40B UNVERIFIED (GLM-5 lineage 744B-A40B). Tied #1 open-weights on AA v5 with DeepSeek V4.1 Flash but ~2.5x larger to run.",
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00001-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00002-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00003-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00004-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00005-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00006-of-00006.gguf"
+     ],
+     "bytes": 216715365893,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00001-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00002-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00003-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00004-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00005-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00006-of-00006.gguf"
+     ],
+     "bytes": 228492971557,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00001-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00002-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00003-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00004-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00005-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00006-of-00006.gguf"
+     ],
+     "bytes": 238577585701,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00001-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00002-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00003-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00004-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00005-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00006-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00007-of-00007.gguf"
+     ],
+     "bytes": 253878406789,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00001-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00002-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00003-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00004-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00005-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00006-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00007-of-00007.gguf"
+     ],
+     "bytes": 281688436357,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00001-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00002-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00003-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00004-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00005-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00006-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00007-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00008-of-00009.gguf",
+      "UD-Q3_K_XL/GLM-5.3-UD-Q3_K_XL-00009-of-00009.gguf"
+     ],
+     "bytes": 342965977029,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00001-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00002-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00003-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00004-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00005-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00006-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00007-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00008-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00009-of-00009.gguf"
+     ],
+     "bytes": 365313228709,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00001-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00002-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00003-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00004-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00005-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00006-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00007-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00008-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00009-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00010-of-00011.gguf",
+      "UD-Q4_K_XL/GLM-5.3-UD-Q4_K_XL-00011-of-00011.gguf"
+     ],
+     "bytes": 467289116837,
+     "repo": "unsloth/GLM-5.3-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "deepseek-v4.1-flash-1017",
+   "name": "DeepSeek V4.1 Flash (1017)",
+   "family": "DeepSeek V4",
+   "vendor": "DeepSeek",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 763.21,
+   "moe": true,
+   "score": 32.5,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (Max). High 28.5, Non-reasoning 18.5. #1 open-weights model with released weights",
+   "layers": 40,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "active_params_b": 16.0,
+   "kv_layers": 40,
+   "vision": true,
+   "notes": "Released 2026-09-10 (1017 refresh 2026-10-17). 552B backbone (384 experts top-6; 8B active prefill / 16B decode) + 196B Engram lookup tables + vision. Compressed sparse attention (MQA 1 KV head x 512, sliding 128 + compressed blocks) -> KV math UNVERIFIED for simple formula. llama.cpp native support since b11870 (2026-10-25). Speeds: RTX 5090 32GB + 128GB RAM, MXFP4 experts streamed from NVMe: 5.1",
+   "draft": {
+    "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+    "file": "dspark-DeepSeek-V4.1-Flash-1017-Q8_0.gguf",
+    "bytes": 7976914240,
+    "type": "draft-dspark"
+   },
+   "quants": [
+    {
+     "name": "GSQ-RCO-IQ1_M",
+     "files": [
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ1_M-00001-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ1_M-00002-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ1_M-00003-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ1_M-00004-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ1_M-00005-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-Engram-IQ4_NL.gguf"
+     ],
+     "bytes": 231316485152,
+     "repo": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
+     "lazy_bytes": 110595290816
+    },
+    {
+     "name": "GSQ-RCO-IQ2_XXS",
+     "files": [
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XXS-00001-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XXS-00002-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XXS-00003-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XXS-00004-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XXS-00005-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-Engram-IQ4_NL.gguf"
+     ],
+     "bytes": 248834257920,
+     "repo": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
+     "lazy_bytes": 110595290816,
+     "quality": 0.92
+    },
+    {
+     "name": "GSQ-RCO-IQ2_XS",
+     "files": [
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XS-00001-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XS-00002-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XS-00003-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XS-00004-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-1017-GSQ-RCO-IQ2_XS-00005-of-00006.gguf",
+      "DeepSeek-V4.1-Flash-Engram-IQ4_NL.gguf"
+     ],
+     "bytes": 265821189184,
+     "repo": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
+     "lazy_bytes": 110595290816,
+     "quality": 0.94
+    },
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00001-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00002-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00003-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00004-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00005-of-00005.gguf"
+     ],
+     "bytes": 232979608420,
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00001-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00002-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00003-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00004-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00005-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00006-of-00006.gguf"
+     ],
+     "bytes": 300475464795,
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00001-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00002-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00003-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00004-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00005-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00006-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00007-of-00007.gguf"
+     ],
+     "bytes": 334793544836,
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00001-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00002-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00003-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00004-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00005-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00006-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00007-of-00007.gguf"
+     ],
+     "bytes": 394736596867,
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00001-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00002-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00003-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00004-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00005-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00006-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00007-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00008-of-00009.gguf",
+      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00009-of-00009.gguf"
+     ],
+     "bytes": 500707576573,
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
+    },
+    {
+     "name": "antirez-MXFP4-experts",
+     "files": [
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00001-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00002-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00003-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00004-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00005-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00006-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00007-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00008-of-00009.gguf",
+      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00009-of-00009.gguf"
+     ],
+     "bytes": 501602535360,
+     "repo": "antirez/deepseek-v4.1-flash-gguf"
+    }
+   ]
+  },
+  {
+   "id": "minimax-m3.1-flash",
+   "name": "MiniMax M3.1 Flash",
+   "family": "MiniMax M3",
+   "vendor": "MiniMax",
+   "country": "CN",
+   "license": "minimax-community (UNVERIFIED terms)",
+   "params_b": 428.0,
+   "moe": true,
+   "score": 28.9,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 60,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "MiniMaxAI/MiniMax-M3.1-Flash",
+   "active_params_b": 23.0,
+   "kv_layers": 60,
+   "vision": true,
+   "notes": "Released 2026-10-17. QAT (FP4 experts) so Q4_K_XL ~= full quality. Sparse attention in early layers; kv_layers=60 assumes all layers hold KV (UNVERIFIED). Strong agentic/coding (DeepSWE 73.7). llama.cpp mainline support UNVERIFIED (unsloth GGUFs published 2026-10-23).",
+   "draft": {
+    "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+    "file": "dspark-MiniMax-M3.1-Flash-Q8_0.gguf",
+    "bytes": 2089384768,
+    "type": "draft-dspark"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00001-of-00004.gguf",
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00002-of-00004.gguf",
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00003-of-00004.gguf",
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00004-of-00004.gguf"
+     ],
+     "bytes": 129361076548,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00001-of-00004.gguf",
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00002-of-00004.gguf",
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00003-of-00004.gguf",
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00004-of-00004.gguf"
+     ],
+     "bytes": 134947889444,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00001-of-00004.gguf",
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00002-of-00004.gguf",
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00003-of-00004.gguf",
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 143910068580,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00001-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00002-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00003-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00004-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00005-of-00005.gguf"
+     ],
+     "bytes": 160048968132,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    },
+    {
+     "name": "UD-IQ3_S",
+     "files": [
+      "UD-IQ3_S/MiniMax-M3.1-Flash-UD-IQ3_S-00001-of-00005.gguf",
+      "UD-IQ3_S/MiniMax-M3.1-Flash-UD-IQ3_S-00002-of-00005.gguf",
+      "UD-IQ3_S/MiniMax-M3.1-Flash-UD-IQ3_S-00003-of-00005.gguf",
+      "UD-IQ3_S/MiniMax-M3.1-Flash-UD-IQ3_S-00004-of-00005.gguf",
+      "UD-IQ3_S/MiniMax-M3.1-Flash-UD-IQ3_S-00005-of-00005.gguf"
+     ],
+     "bytes": 175450454084,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00001-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00002-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00003-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00004-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00005-of-00005.gguf"
+     ],
+     "bytes": 193951346788,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00001-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00002-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00003-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00004-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00005-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00006-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00007-of-00007.gguf"
+     ],
+     "bytes": 249402105310,
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "kimi-k3",
+   "name": "Kimi K3",
+   "family": "Kimi K3",
+   "vendor": "Moonshot AI",
+   "country": "CN",
+   "license": "Kimi K3 License (modified/proprietary open-weight; UNVERIFIED terms)",
+   "params_b": 2780.0,
+   "moe": true,
+   "score": 28.0,
+   "score_source": "UNVERIFIED ESTIMATE: not listed on AA v5 leaderboard (Kimi models dropped sharply in v5 per OfficeChai; K3.1 Pro, weights unreleased, = 46). Top open model on LMArena text (1488, #16 overall). Placed near GLM-5.3-Flash/MiniMax-M3.1-Flash",
+   "layers": 93,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "moonshotai/Kimi-K3",
+   "active_params_b": 104.0,
+   "kv_layers": 24,
+   "vision": true,
+   "notes": "Released 2026-06-13. 896 experts top-16; 69 KDA linear layers + 24 MLA full-attention layers. Native MXFP4 weights => UD-Q4_K_XL (1.51TB) is effectively lossless; Q1_0/TQ1_0 (466/509GB) are the only sub-512GB options. Only for 512GB+ unified-memory or multi-node rigs.",
+   "quants": [
+    {
+     "name": "UD-Q1_0",
+     "files": [
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00001-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00002-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00003-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00004-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00005-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00006-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00007-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00008-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00009-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00010-of-00011.gguf",
+      "UD-Q1_0/Kimi-K3-UD-Q1_0-00011-of-00011.gguf"
+     ],
+     "bytes": 466369456320,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-TQ1_0",
+     "files": [
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00001-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00002-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00003-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00004-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00005-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00006-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00007-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00008-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00009-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00010-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00011-of-00012.gguf",
+      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00012-of-00012.gguf"
+     ],
+     "bytes": 508912281952,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-TQ2_0",
+     "files": [
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00001-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00002-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00003-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00004-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00005-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00006-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00007-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00008-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00009-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00010-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00011-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00012-of-00013.gguf",
+      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00013-of-00013.gguf"
+     ],
+     "bytes": 551455107488,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00001-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00002-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00003-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00004-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00005-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00006-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00007-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00008-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00009-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00010-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00011-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00012-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00013-of-00014.gguf",
+      "UD-IQ1_S/Kimi-K3-UD-IQ1_S-00014-of-00014.gguf"
+     ],
+     "bytes": 594040923616,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00001-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00002-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00003-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00004-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00005-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00006-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00007-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00008-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00009-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00010-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00011-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00012-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00013-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00014-of-00015.gguf",
+      "UD-IQ1_M/Kimi-K3-UD-IQ1_M-00015-of-00015.gguf"
+     ],
+     "bytes": 648872012448,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00001-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00002-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00003-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00004-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00005-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00006-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00007-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00008-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00009-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00010-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00011-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00012-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00013-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00014-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00015-of-00016.gguf",
+      "UD-IQ2_XXS/Kimi-K3-UD-IQ2_XXS-00016-of-00016.gguf"
+     ],
+     "bytes": 711067773664,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00001-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00002-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00003-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00004-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00005-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00006-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00007-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00008-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00009-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00010-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00011-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00012-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00013-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00014-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00015-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00016-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00017-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00018-of-00019.gguf",
+      "UD-Q2_K_XL/Kimi-K3-UD-Q2_K_XL-00019-of-00019.gguf"
+     ],
+     "bytes": 861277858912,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00001-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00002-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00003-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00004-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00005-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00006-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00007-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00008-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00009-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00010-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00011-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00012-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00013-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00014-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00015-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00016-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00017-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00018-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00019-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00020-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00021-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00022-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00023-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00024-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00025-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00026-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00027-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00028-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00029-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00030-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00031-of-00032.gguf",
+      "UD-Q4_K_XL/Kimi-K3-UD-Q4_K_XL-00032-of-00032.gguf"
+     ],
+     "bytes": 1508668683104,
+     "repo": "unsloth/Kimi-K3-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "muse-spark-open",
+   "name": "Muse Spark Open 816B A42B",
+   "family": "Muse",
+   "vendor": "Meta",
+   "country": "US",
+   "license": "Muse Model License (gated; UNVERIFIED terms)",
+   "params_b": 822.0,
+   "moe": true,
+   "score": 24.7,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (Xhigh)",
+   "layers": 62,
+   "kv_heads": 16,
+   "head_dim": 64,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "meta-models/Muse-Spark-Open-816B-A42B",
+   "active_params_b": 42.0,
+   "kv_layers": 16,
+   "vision": true,
+   "notes": "Released 2026-09-15. Meta's successor to Llama (Llama 4 now stale). 256 experts top-8; 16 full + 46 sliding(2048) layers. Text+image+video+audio in. DFlash2 drafters exist for vLLM/SGLang (nvidia/, RadixArk/) - no GGUF drafter yet. Best US-origin open model on AA v5.",
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/Muse-Spark-Open-816B-A42B-UD-IQ1_S-00001-of-00005.gguf",
+      "UD-IQ1_S/Muse-Spark-Open-816B-A42B-UD-IQ1_S-00002-of-00005.gguf",
+      "UD-IQ1_S/Muse-Spark-Open-816B-A42B-UD-IQ1_S-00003-of-00005.gguf",
+      "UD-IQ1_S/Muse-Spark-Open-816B-A42B-UD-IQ1_S-00004-of-00005.gguf",
+      "UD-IQ1_S/Muse-Spark-Open-816B-A42B-UD-IQ1_S-00005-of-00005.gguf"
+     ],
+     "bytes": 175639574392,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/Muse-Spark-Open-816B-A42B-UD-IQ1_M-00001-of-00006.gguf",
+      "UD-IQ1_M/Muse-Spark-Open-816B-A42B-UD-IQ1_M-00002-of-00006.gguf",
+      "UD-IQ1_M/Muse-Spark-Open-816B-A42B-UD-IQ1_M-00003-of-00006.gguf",
+      "UD-IQ1_M/Muse-Spark-Open-816B-A42B-UD-IQ1_M-00004-of-00006.gguf",
+      "UD-IQ1_M/Muse-Spark-Open-816B-A42B-UD-IQ1_M-00005-of-00006.gguf",
+      "UD-IQ1_M/Muse-Spark-Open-816B-A42B-UD-IQ1_M-00006-of-00006.gguf"
+     ],
+     "bytes": 208925571064,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/Muse-Spark-Open-816B-A42B-UD-IQ2_XXS-00001-of-00006.gguf",
+      "UD-IQ2_XXS/Muse-Spark-Open-816B-A42B-UD-IQ2_XXS-00002-of-00006.gguf",
+      "UD-IQ2_XXS/Muse-Spark-Open-816B-A42B-UD-IQ2_XXS-00003-of-00006.gguf",
+      "UD-IQ2_XXS/Muse-Spark-Open-816B-A42B-UD-IQ2_XXS-00004-of-00006.gguf",
+      "UD-IQ2_XXS/Muse-Spark-Open-816B-A42B-UD-IQ2_XXS-00005-of-00006.gguf",
+      "UD-IQ2_XXS/Muse-Spark-Open-816B-A42B-UD-IQ2_XXS-00006-of-00006.gguf"
+     ],
+     "bytes": 225568569304,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_S",
+     "files": [
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00001-of-00007.gguf",
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00002-of-00007.gguf",
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00003-of-00007.gguf",
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00004-of-00007.gguf",
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00005-of-00007.gguf",
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00006-of-00007.gguf",
+      "UD-IQ2_S/Muse-Spark-Open-816B-A42B-UD-IQ2_S-00007-of-00007.gguf"
+     ],
+     "bytes": 275497564280,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00001-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00002-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00003-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00004-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00005-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00006-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00007-of-00008.gguf",
+      "UD-Q2_K_XL/Muse-Spark-Open-816B-A42B-UD-Q2_K_XL-00008-of-00008.gguf"
+     ],
+     "bytes": 311225649368,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00001-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00002-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00003-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00004-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00005-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00006-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00007-of-00008.gguf",
+      "UD-IQ3_XXS/Muse-Spark-Open-816B-A42B-UD-IQ3_XXS-00008-of-00008.gguf"
+     ],
+     "bytes": 340350896376,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00001-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00002-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00003-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00004-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00005-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00006-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00007-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00008-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00009-of-00010.gguf",
+      "UD-Q3_K_XL/Muse-Spark-Open-816B-A42B-UD-Q3_K_XL-00010-of-00010.gguf"
+     ],
+     "bytes": 401483491832,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00001-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00002-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00003-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00004-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00005-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00006-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00007-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00008-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00009-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00010-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00011-of-00012.gguf",
+      "UD-Q4_K_XL/Muse-Spark-Open-816B-A42B-UD-Q4_K_XL-00012-of-00012.gguf"
+     ],
+     "bytes": 505502231288,
+     "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "muse-glimmer-30b",
+   "name": "Muse Glimmer 30B",
+   "family": "Muse",
+   "vendor": "Meta",
+   "country": "US",
+   "license": "Muse Model License (UNVERIFIED terms)",
+   "params_b": 30.0,
+   "moe": false,
+   "score": 6.3,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (High)",
+   "layers": 52,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "meta-models/Muse-Glimmer-30B",
+   "active_params_b": 30.0,
+   "kv_layers": 13,
+   "vision": true,
+   "notes": "Released 2026-08-09. Dense ~30B (param count approximate). 13 full + 39 sliding(2048) layers. US-origin alternative to Qwen3.8-27B but much weaker (6.3 vs 20.1).",
+   "draft": {
+    "repo": "unsloth/Muse-Glimmer-30B-GGUF",
+    "file": "dflash-kquant.gguf",
+    "bytes": 1631205312,
+    "type": "draft-dflash"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Muse-Glimmer-30B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 10746373152,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XS",
+     "files": [
+      "Muse-Glimmer-30B-UD-IQ2_XS.gguf"
+     ],
+     "bytes": 11513104416,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Muse-Glimmer-30B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 13130658848,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Muse-Glimmer-30B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 13360983072,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Muse-Glimmer-30B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 15878222368,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Muse-Glimmer-30B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 21789618976,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "UD-Q6_K_XL",
+     "files": [
+      "Muse-Glimmer-30B-UD-Q6_K_XL.gguf"
+     ],
+     "bytes": 26265362976,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Muse-Glimmer-30B-Q8_0.gguf"
+     ],
+     "bytes": 29612957984,
+     "repo": "unsloth/Muse-Glimmer-30B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "mistral-large-4",
+   "name": "Mistral Large 4 1T A52B",
+   "family": "Mistral Large 4",
+   "vendor": "Mistral AI",
+   "country": "FR",
+   "license": "Mistral license (license:other on HF; UNVERIFIED terms)",
+   "params_b": 1000.0,
+   "moe": true,
+   "score": 26.0,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (High). Medium 23.1",
+   "layers": 72,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "mistralai/Mistral-Large-4-1T-A52B",
+   "active_params_b": 52.0,
+   "kv_layers": 72,
+   "vision": true,
+   "notes": "Released 2026-09-30. MLA (latent 512 + rope 64) with indexed sparse attention, 128 experts top-4. Best EU-origin open model.",
+   "draft": {
+    "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
+    "file": "dspark-Mistral-Large-4-1T-A52B-Q8_0.gguf",
+    "bytes": 2245605984,
+    "type": "draft-dspark"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "files": [
+      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00001-of-00006.gguf",
+      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00002-of-00006.gguf",
+      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00003-of-00006.gguf",
+      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00004-of-00006.gguf",
+      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00005-of-00006.gguf",
+      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00006-of-00006.gguf"
+     ],
+     "bytes": 233009564322,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00001-of-00007.gguf",
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00002-of-00007.gguf",
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00003-of-00007.gguf",
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00004-of-00007.gguf",
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00005-of-00007.gguf",
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00006-of-00007.gguf",
+      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00007-of-00007.gguf"
+     ],
+     "bytes": 259584674562,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00001-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00002-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00003-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00004-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00005-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00006-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00007-of-00008.gguf",
+      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00008-of-00008.gguf"
+     ],
+     "bytes": 302467238722,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00001-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00002-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00003-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00004-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00005-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00006-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00007-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00008-of-00009.gguf",
+      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00009-of-00009.gguf"
+     ],
+     "bytes": 378254511138,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00001-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00002-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00003-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00004-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00005-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00006-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00007-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00008-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00009-of-00010.gguf",
+      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00010-of-00010.gguf"
+     ],
+     "bytes": 423515245634,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00001-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00002-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00003-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00004-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00005-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00006-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00007-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00008-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00009-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00010-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00011-of-00012.gguf",
+      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00012-of-00012.gguf"
+     ],
+     "bytes": 492746427746,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00001-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00002-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00003-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00004-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00005-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00006-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00007-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00008-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00009-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00010-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00011-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00012-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00013-of-00014.gguf",
+      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00014-of-00014.gguf"
+     ],
+     "bytes": 604787428898,
+     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "mistral-small-4-119b",
+   "name": "Mistral Small 4 119B",
+   "family": "Mistral Small 4",
+   "vendor": "Mistral AI",
+   "country": "FR",
+   "license": "Apache-2.0",
+   "params_b": 119.4,
+   "moe": true,
+   "score": 4.3,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (Reasoning)",
+   "layers": 36,
+   "kv_heads": 1,
+   "head_dim": 320,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "mistralai/Mistral-Small-4-119B-2603",
+   "active_params_b": 6.5,
+   "kv_layers": 36,
+   "vision": true,
+   "notes": "Released 2026-03. 128 experts top-4 (active ~6.5B UNVERIFIED), MLA latent 256 + rope 64. Weak on v5; mainly for Apache-2.0 EU-origin needs. EAGLE head exists for vLLM only.",
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "Mistral-Small-4-119B-2603-UD-IQ1_M.gguf"
+     ],
+     "bytes": 32306941632,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Mistral-Small-4-119B-2603-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 34924187328,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "Mistral-Small-4-119B-2603-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 40199278272,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Mistral-Small-4-119B-2603-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 42797027008,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "UD-IQ4_XS/Mistral-Small-4-119B-2603-UD-IQ4_XS-00001-of-00003.gguf",
+      "UD-IQ4_XS/Mistral-Small-4-119B-2603-UD-IQ4_XS-00002-of-00003.gguf",
+      "UD-IQ4_XS/Mistral-Small-4-119B-2603-UD-IQ4_XS-00003-of-00003.gguf"
+     ],
+     "bytes": 58126815232,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "MXFP4_MOE",
+     "files": [
+      "MXFP4_MOE/Mistral-Small-4-119B-2603-MXFP4_MOE-00001-of-00003.gguf",
+      "MXFP4_MOE/Mistral-Small-4-119B-2603-MXFP4_MOE-00002-of-00003.gguf",
+      "MXFP4_MOE/Mistral-Small-4-119B-2603-MXFP4_MOE-00003-of-00003.gguf"
+     ],
+     "bytes": 71812829184,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/Mistral-Small-4-119B-2603-UD-Q4_K_XL-00001-of-00003.gguf",
+      "UD-Q4_K_XL/Mistral-Small-4-119B-2603-UD-Q4_K_XL-00002-of-00003.gguf",
+      "UD-Q4_K_XL/Mistral-Small-4-119B-2603-UD-Q4_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 74161639424,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Q8_0/Mistral-Small-4-119B-2603-Q8_0-00001-of-00004.gguf",
+      "Q8_0/Mistral-Small-4-119B-2603-Q8_0-00002-of-00004.gguf",
+      "Q8_0/Mistral-Small-4-119B-2603-Q8_0-00003-of-00004.gguf",
+      "Q8_0/Mistral-Small-4-119B-2603-Q8_0-00004-of-00004.gguf"
+     ],
+     "bytes": 126472999072,
+     "repo": "unsloth/Mistral-Small-4-119B-2603-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "devstral-small-2-24b",
+   "name": "Devstral Small 2 24B",
+   "family": "Devstral 2",
+   "vendor": "Mistral AI",
+   "country": "FR",
+   "license": "Apache-2.0",
+   "params_b": 24.0,
+   "moe": false,
+   "score": 4.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED (not on AA v5; Dec 2025 coding-agent model, assumed ~Ministral-3-14B/Mistral-Small-4 level on the general index)",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 393216,
+   "tool_calling": true,
+   "repo": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+   "active_params_b": 24.0,
+   "kv_layers": 40,
+   "vision": true,
+   "notes": "Coding-agent specialist (SWE-agent/OpenHands style). Full-attention dense: KV heavy (40 layers x 8 x 128). Older (2025-12) - Qwen3.8-27B is stronger at coding; keep for EU/Apache coding niche. Ministral 3 (3B/8B/14B, 2025-12) also still current but low on v5 (~2-3).",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 6751440032,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 9409744032,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 11851410592,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-IQ4_XS.gguf"
+     ],
+     "bytes": 12780424352,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 14506151072,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 16766364832,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Devstral-Small-2-24B-Instruct-2512-Q8_0.gguf"
+     ],
+     "bytes": 25055317152,
+     "repo": "unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-super-vl-120b-a12b",
+   "name": "Nemotron 3.5 Super VL 120B A12B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 124.45,
+   "moe": true,
+   "score": 13.6,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 88,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "active_params_b": 12.0,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-10-12. Hybrid Mamba2/MoE: 40 Mamba + 40 MoE (512 experts, top-22) + 8 attention blocks -> tiny KV. Best US mid-size open model on v5 after Muse Spark. LiLiCorr NVFP4 correction file (1.35GB) also published.",
+   "draft": {
+    "repo": "ggml-org/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+    "file": "mtp-NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-Q4_0.gguf",
+    "bytes": 2270017280,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ1_M-00001-of-00002.gguf",
+      "UD-IQ1_M/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ1_M-00002-of-00002.gguf"
+     ],
+     "bytes": 46140308288,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ2_XXS-00001-of-00003.gguf",
+      "UD-IQ2_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ2_XXS-00002-of-00003.gguf",
+      "UD-IQ2_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ2_XXS-00003-of-00003.gguf"
+     ],
+     "bytes": 51120348072,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "UD-Q2_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q2_K_XL-00001-of-00003.gguf",
+      "UD-Q2_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q2_K_XL-00002-of-00003.gguf",
+      "UD-Q2_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q2_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 57788537768,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "UD-IQ3_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ3_XXS-00001-of-00003.gguf",
+      "UD-IQ3_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ3_XXS-00002-of-00003.gguf",
+      "UD-IQ3_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ3_XXS-00003-of-00003.gguf"
+     ],
+     "bytes": 59764210568,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00001-of-00003.gguf",
+      "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00002-of-00003.gguf",
+      "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 65761541032,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q4_K_XL-00001-of-00003.gguf",
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q4_K_XL-00002-of-00003.gguf",
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q4_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 86907243432,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "Q4_0",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-Q4_0.gguf"
+     ],
+     "bytes": 71933775840,
+     "repo": "ggml-org/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "NVFP4",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-NVFP4.gguf"
+     ],
+     "bytes": 76918795904,
+     "repo": "ggml-org/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-Q8_0.gguf"
+     ],
+     "bytes": 128472993760,
+     "repo": "ggml-org/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-bolt-74b-a9b",
+   "name": "Nemotron 3.5 Bolt 74B A9B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 74.89,
+   "moe": true,
+   "score": 11.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 13.1; partial v5 components (AutomationBench 15%, Briefcase 912) imply ~11",
+   "layers": 88,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+   "active_params_b": 9.0,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-10-09. Star-Elastic compression of Super VL (heterogeneous expert counts, top-k 22->9). Same 8 attention layers. NVIDIA recipes: 28GB (32GB GPU, 65K ctx) / 32GB (48GB GPU, 262K ctx).",
+   "draft": {
+    "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF",
+    "file": "dflash-NVIDIA-Nemotron-3.5-Bolt-74B-A9B-NVFP4.gguf",
+    "bytes": 998242560,
+    "type": "draft-dflash"
+   },
+   "quants": [
+    {
+     "name": "NVIDIA-24GB (IQ2_XXS QAD)",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB.gguf"
+     ],
+     "bytes": 22018326528,
+     "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF"
+    },
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-IQ1_M.gguf"
+     ],
+     "bytes": 20307471360,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-IQ2_M.gguf"
+     ],
+     "bytes": 24607493120,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 28753128448,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 31561116672,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 39027158016,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q4_K_XL-00001-of-00003.gguf",
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q4_K_XL-00002-of-00003.gguf",
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q4_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 50219478368,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Q8_0/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-Q8_0-00001-of-00003.gguf",
+      "Q8_0/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-Q8_0-00002-of-00003.gguf",
+      "Q8_0/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-Q8_0-00003-of-00003.gguf"
+     ],
+     "bytes": 78852779040,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-lightning-30b-a3b",
+   "name": "Nemotron 3.5 Lightning 30B A3B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 31.58,
+   "moe": true,
+   "score": 5.5,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 52,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+   "active_params_b": 3.0,
+   "kv_layers": 6,
+   "vision": false,
+   "notes": "Released 2026-08-01. 23 Mamba + 23 MoE (128 experts top-6) + 6 attention. Note: low-bit unsloth quants barely shrink (IQ1_M..IQ3_XXS all ~19.4-19.8GB) because Mamba/shared tensors are kept high-precision.",
+   "draft": {
+    "repo": "ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+    "file": "mtp-NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf",
+    "bytes": 1155907520,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 19758307392,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 21235202112,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "name": "MXFP4_MOE",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-MXFP4_MOE.gguf"
+     ],
+     "bytes": 23210817600,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 25505724480,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 30414829632,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q8_0.gguf"
+     ],
+     "bytes": 35004643392,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    },
+    {
+     "name": "Q4_0",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Q4_0.gguf"
+     ],
+     "bytes": 18898091584,
+     "repo": "ggml-org/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "granite-4.2-30b",
+   "name": "Granite 4.2 30B",
+   "family": "Granite 4.2",
+   "vendor": "IBM",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 29.28,
+   "moe": false,
+   "score": 5.2,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 5.2",
+   "layers": 64,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "ibm-granite/granite-4.2-30b",
+   "active_params_b": 29.28,
+   "kv_layers": 64,
+   "vision": false,
+   "notes": "Released 2026-08-25. Dense GQA transformer (not the 4.0 hybrid Mamba). 128K native, extendable to 512K. Enterprise/US-origin/Apache pick; reasoning-augmented tool calling. Granite 4.2 3B (2.24GB Q4_K_M) scores 4.7 on v5 - surprisingly close to 8B.",
+   "quants": [
+    {
+     "name": "Q2_K",
+     "files": [
+      "granite-4.2-30b-Q2_K.gguf"
+     ],
+     "bytes": 10858656480,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    },
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "granite-4.2-30b-Q3_K_M.gguf"
+     ],
+     "bytes": 14133162720,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    },
+    {
+     "name": "Q4_0",
+     "files": [
+      "granite-4.2-30b-Q4_0.gguf"
+     ],
+     "bytes": 16579556064,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "granite-4.2-30b-Q4_K_M.gguf"
+     ],
+     "bytes": 17721455328,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    },
+    {
+     "name": "Q5_0",
+     "files": [
+      "granite-4.2-30b-Q5_0.gguf"
+     ],
+     "bytes": 20187706080,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "granite-4.2-30b-Q6_K.gguf"
+     ],
+     "bytes": 24021365472,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "granite-4.2-30b-Q8_0.gguf"
+     ],
+     "bytes": 31111705312,
+     "repo": "ibm-granite/granite-4.2-30b-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "granite-4.2-8b",
+   "name": "Granite 4.2 8B",
+   "family": "Granite 4.2",
+   "vendor": "IBM",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 8.79,
+   "moe": false,
+   "score": 5.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "ibm-granite/granite-4.2-8b",
+   "active_params_b": 8.79,
+   "kv_layers": 40,
+   "vision": false,
+   "notes": "Released 2026-08-25. Dense GQA transformer (not the 4.0 hybrid Mamba). 128K native, extendable to 512K. Enterprise/US-origin/Apache pick; reasoning-augmented tool calling. Granite 4.2 3B (2.24GB Q4_K_M) scores 4.7 on v5 - surprisingly close to 8B.",
+   "quants": [
+    {
+     "name": "Q2_K",
+     "files": [
+      "granite-4.2-8b-Q2_K.gguf"
+     ],
+     "bytes": 3412312192,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "granite-4.2-8b-Q3_K_M.gguf"
+     ],
+     "bytes": 4347052160,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q4_0",
+     "files": [
+      "granite-4.2-8b-Q4_0.gguf"
+     ],
+     "bytes": 5055955072,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "granite-4.2-8b-Q4_K_M.gguf"
+     ],
+     "bytes": 5347917952,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q5_0",
+     "files": [
+      "granite-4.2-8b-Q5_0.gguf"
+     ],
+     "bytes": 6103482496,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "granite-4.2-8b-Q6_K.gguf"
+     ],
+     "bytes": 7216480384,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "granite-4.2-8b-Q8_0.gguf"
+     ],
+     "bytes": 9345613952,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "lfm3-1.7b",
+   "name": "LFM3 1.7B",
+   "family": "LFM3",
+   "vendor": "Liquid AI",
+   "country": "US",
+   "license": "LFM Open License v1.0 (free below a revenue threshold; UNVERIFIED amount)",
+   "params_b": 1.73,
+   "moe": false,
+   "score": 1.5,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED (no AA data for LFM3; LFM2.5-1.2B legacy GPQA 0.33)",
+   "layers": 24,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "LiquidAI/LFM3-1.7B",
+   "active_params_b": 1.73,
+   "kv_layers": 6,
+   "vision": false,
+   "notes": "Released 2026-10-23. Tri-hybrid: 13 gated short-conv + 5 sliding-window(256) + 6 global attention layers -> tiny KV, very fast on CPU/phones. Vision variant LFM3-VL-2B (same GGUF sizes + 0.2GB mmproj). Liquid also released d1-2B diffusion LM (not included).",
+   "quants": [
+    {
+     "name": "QAD-Q4_0",
+     "files": [
+      "LFM3-1.7B-QAD-Q4_0.gguf"
+     ],
+     "bytes": 1049615680,
+     "repo": "LiquidAI/LFM3-1.7B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "LFM3-1.7B-Q4_K_M.gguf"
+     ],
+     "bytes": 1099627808,
+     "repo": "LiquidAI/LFM3-1.7B-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "LFM3-1.7B-Q6_K.gguf"
+     ],
+     "bytes": 1427638304,
+     "repo": "LiquidAI/LFM3-1.7B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "LFM3-1.7B-Q8_0.gguf"
+     ],
+     "bytes": 1846238496,
+     "repo": "LiquidAI/LFM3-1.7B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "nanbeige4.3-33b",
+   "name": "Nanbeige4.3 33B",
+   "family": "Nanbeige4.3",
+   "vendor": "Nanbeige (Kanzhun / BOSS Zhipin)",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 33.12,
+   "moe": false,
+   "score": 20.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (highest dense model on v5; brand-new, 2026-10-24 - verify with own evals)",
+   "layers": 52,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "Nanbeige/Nanbeige4.3-33B",
+   "active_params_b": 33.12,
+   "kv_layers": 52,
+   "vision": false,
+   "notes": "Llama-architecture dense 33B, full attention on all 52 layers (KV ~6x heavier per token than Qwen3.8-27B). Scores level with Qwen3.8-27B Xhigh on v5 (AutomationBench 53% vs 48%, TB4 30% vs 6%, but HLE-D 7% vs 15%, Omniscience much lower). Tool calling UNVERIFIED.",
+   "quants": [
+    {
+     "name": "IQ2_XXS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_XXS.gguf"
+     ],
+     "bytes": 10071403648,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ2_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_XS.gguf"
+     ],
+     "bytes": 10634407040,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ2_S",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_S.gguf"
+     ],
+     "bytes": 11150560384,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ3_XXS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ3_XXS.gguf"
+     ],
+     "bytes": 14489959552,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ3_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ3_XS.gguf"
+     ],
+     "bytes": 15212665984,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ3_M",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ3_M.gguf"
+     ],
+     "bytes": 17802005632,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ4_XS.gguf"
+     ],
+     "bytes": 18635041920,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-Q4_K_M.gguf"
+     ],
+     "bytes": 20788825216,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "Q6_K_S",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-Q6_K_S.gguf"
+     ],
+     "bytes": 27750272128,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-Q8_0.gguf"
+     ],
+     "bytes": 35195128960,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "hy3",
+   "name": "Hy3 (Hunyuan 3) 295B A21B",
+   "family": "Hunyuan",
+   "vendor": "Tencent",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 295.0,
+   "moe": true,
+   "score": 14.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 14.4 (legacy fit 15.2)",
+   "layers": 80,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "tencent/Hy3",
+   "active_params_b": 21.0,
+   "kv_layers": 80,
+   "vision": false,
+   "notes": "192 experts top-8, 3.8B MTP layer (embedded in *-mtp.gguf from Tencent's AngelSlim). Full GQA attention on all 80 layers -> large KV at long context. Dominated by GLM-5.3-Flash at similar size.",
+   "quants": [
+    {
+     "name": "IQ1_M",
+     "files": [
+      "Hy3-IQ1_M.gguf"
+     ],
+     "bytes": 89446312384,
+     "repo": "AngelSlim/Hy3-GGUF"
+    },
+    {
+     "name": "IQ1_M-mtp",
+     "files": [
+      "Hy3-IQ1_M-mtp.gguf"
+     ],
+     "bytes": 91756066272,
+     "repo": "AngelSlim/Hy3-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q2_K_XL",
+     "files": [
+      "Hy3-Q2_K_XL.gguf"
+     ],
+     "bytes": 100141427136,
+     "repo": "AngelSlim/Hy3-GGUF"
+    },
+    {
+     "name": "Q2_K_XL-mtp",
+     "files": [
+      "Hy3-Q2_K_XL-mtp.gguf"
+     ],
+     "bytes": 101573522912,
+     "repo": "AngelSlim/Hy3-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "Hy3-Q3_K_M.gguf"
+     ],
+     "bytes": 134597913024,
+     "repo": "AngelSlim/Hy3-GGUF"
+    },
+    {
+     "name": "Q3_K_M-mtp",
+     "files": [
+      "Hy3-Q3_K_M-mtp.gguf"
+     ],
+     "bytes": 136454632928,
+     "repo": "AngelSlim/Hy3-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Hy3-Q4_K_M.gguf"
+     ],
+     "bytes": 182328371648,
+     "repo": "AngelSlim/Hy3-GGUF"
+    },
+    {
+     "name": "Q4_K_M-mtp",
+     "files": [
+      "Hy3-Q4_K_M-mtp.gguf"
+     ],
+     "bytes": 184656950752,
+     "repo": "AngelSlim/Hy3-GGUF",
+     "mtp": true
+    }
+   ]
+  },
+  {
+   "id": "mimo-v2.6-flash",
+   "name": "MiMo V2.6 Flash",
+   "family": "MiMo V2.6",
+   "vendor": "Xiaomi",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 310.76,
+   "moe": true,
+   "score": 26.7,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 48,
+   "kv_heads": 4,
+   "head_dim": 192,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+   "active_params_b": 15.0,
+   "kv_layers": 9,
+   "vision": true,
+   "notes": "Released 2026-09-21. 256 experts top-8 (active ~15B UNVERIFIED); 9 full-attention + 39 sliding(128) layers; 3 MTP layers. Few community GGUFs yet (ggml-org only has Q2_K/MXFP4).",
+   "draft": {
+    "repo": "ggml-org/MiMo-V2.6-Flash-RL-GGUF",
+    "file": "mtp-MiMo-V2.6-Flash-RL-Q4_0.gguf",
+    "bytes": 1264898368,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "Q2_K",
+     "files": [
+      "MiMo-V2.6-Flash-RL-Q2_K-00001-of-00002.gguf",
+      "MiMo-V2.6-Flash-RL-Q2_K-00002-of-00002.gguf"
+     ],
+     "bytes": 126365949344,
+     "repo": "ggml-org/MiMo-V2.6-Flash-RL-GGUF"
+    },
+    {
+     "name": "MXFP4",
+     "files": [
+      "MiMo-V2.6-Flash-RL-MXFP4-00001-of-00002.gguf",
+      "MiMo-V2.6-Flash-RL-MXFP4-00002-of-00002.gguf"
+     ],
+     "bytes": 167369465248,
+     "repo": "ggml-org/MiMo-V2.6-Flash-RL-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "bonsai-27b-1bit",
+   "name": "Bonsai 27B (1-bit)",
+   "family": "Bonsai",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 9.5,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: 89.5% of Qwen3.6-27B FP16 on PrismML 15-benchmark suite (coding 81.9 vs 88.7); Qwen3.6-27B v5-equiv ~12",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Bonsai-27B-gguf",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": true,
+   "quants": [
+    {
+     "name": "Q1_0",
+     "files": [
+      "Bonsai-27B-Q1_0.gguf"
+     ],
+     "bytes": 3803452480
+    }
+   ]
+  },
+  {
+   "id": "granite-4.2-3b",
+   "name": "Granite 4.2 3B",
+   "family": "Granite 4.2",
+   "vendor": "IBM",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 3.66,
+   "active_params_b": 3.66,
+   "moe": false,
+   "score": 4.7,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02); cross-checked on the artificialanalysis.ai/models/granite-4-2-3b page data (intelligenceIndex 4.72)",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "kv_layers": 40,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "vision": false,
+   "repo": "ibm-granite/granite-4.2-3b",
+   "notes": "Released 2026-08-25. Dense GQA transformer (GraniteForCausalLM, 40 layers, 40 Q / 8 KV heads, head_dim 64, 3,659,737,600 params), post-trained from Granite-4.1-3B-Base with built-in <think> reasoning (thinking / non-thinking / low-effort modes). 128K native (card: long-context extension to 512K). Reasoning-augmented tool calling (qwen3_coder-style tool calls per the card). No unsloth repo exists; quants are IBM's official GGUFs, plus an imatrix IQ4_XS from bartowski. llama.cpp: supported in b11960 (arch granite).",
+   "quants": [
+    {
+     "name": "Q2_K",
+     "files": [
+      "granite-4.2-3b-Q2_K.gguf"
+     ],
+     "bytes": 1455736352,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "granite-4.2-3b-Q3_K_M.gguf"
+     ],
+     "bytes": 1835968032,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "granite-4.2-3b-IQ4_XS.gguf"
+     ],
+     "bytes": 2075830688,
+     "repo": "bartowski/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "Q4_0",
+     "files": [
+      "granite-4.2-3b-Q4_0.gguf"
+     ],
+     "bytes": 2129118752,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "granite-4.2-3b-Q4_K_M.gguf"
+     ],
+     "bytes": 2244011552,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "Q5_0",
+     "files": [
+      "granite-4.2-3b-Q5_0.gguf"
+     ],
+     "bytes": 2554447392,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "granite-4.2-3b-Q6_K.gguf"
+     ],
+     "bytes": 3006359072,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "granite-4.2-3b-Q8_0.gguf"
+     ],
+     "bytes": 3892651552,
+     "repo": "ibm-granite/granite-4.2-3b-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "ling-3.1-flash-1019",
+   "name": "Ling 3.1 Flash (1019)",
+   "family": "Ling 3.1",
+   "vendor": "InclusionAI",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 572.12,
+   "active_params_b": 25.0,
+   "moe": true,
+   "score": 29.5,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02); cross-checked on the artificialanalysis.ai/models/ling-3-1-flash-1019 page data (intelligenceIndex 29.47)",
+   "layers": 72,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "kv_layers": 9,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "vision": false,
+   "repo": "inclusionAI/Ling-3.1-flash-1019",
+   "notes": "Released 2026-10-22 (AA release date; HF weights repo created 2026-10-27). Post-training refresh of Ling-3.1-flash (better agentic/science scores). Hybrid-linear MoE (BailingMoeV3ForCausalLM / bailing_hybrid): 72 layers = 63 KDA linear-attention + 9 gated-MLA full-attention layers (7:1, every 8th layer), first 4 layers dense, 512 routed experts top-8 + 1 shared, plus 1 MTP (NextN) layer. Card: 560B total / 25B active (572.12B = safetensors incl. MTP; AA also lists 25B active; the SGLang cookbook says 'about 17B active', so the active figure is UNVERIFIED beyond the vendor/AA number). KV: MLA latent 512 + 64 rope = 576 per token per full-attention layer (GGUF stores 1 KV head on those 9 layers); the 63 KDA layers keep a fixed-size recurrent state instead of a KV cache. Native context 262,144 (config, GGUF and SGLang cookbook); the advertised 1M (1,048,576) needs YaRN factor 4 (SGLang override; the llama.cpp equivalent --rope-scaling yarn --rope-scale 4 --yarn-orig-ctx 262144 is UNVERIFIED for this arch). Text only. No unsloth or ggml-org GGUFs; bartowski imatrix quants built with llama.cpp b11913. Every quant embeds the MTP layer (Q4_0, Q8_0 in the Q8_0 file), usable with --spec-type draft-mtp. llama.cpp: supported in b11960 (arch bailingmoe3).",
+   "quants": [
+    {
+     "name": "IQ1_M",
+     "files": [
+      "Ling-3.1-flash-1019-IQ1_M/Ling-3.1-flash-1019-IQ1_M-00001-of-00004.gguf",
+      "Ling-3.1-flash-1019-IQ1_M/Ling-3.1-flash-1019-IQ1_M-00002-of-00004.gguf",
+      "Ling-3.1-flash-1019-IQ1_M/Ling-3.1-flash-1019-IQ1_M-00003-of-00004.gguf",
+      "Ling-3.1-flash-1019-IQ1_M/Ling-3.1-flash-1019-IQ1_M-00004-of-00004.gguf"
+     ],
+     "bytes": 145087687200,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "IQ2_XXS",
+     "files": [
+      "Ling-3.1-flash-1019-IQ2_XXS/Ling-3.1-flash-1019-IQ2_XXS-00001-of-00005.gguf",
+      "Ling-3.1-flash-1019-IQ2_XXS/Ling-3.1-flash-1019-IQ2_XXS-00002-of-00005.gguf",
+      "Ling-3.1-flash-1019-IQ2_XXS/Ling-3.1-flash-1019-IQ2_XXS-00003-of-00005.gguf",
+      "Ling-3.1-flash-1019-IQ2_XXS/Ling-3.1-flash-1019-IQ2_XXS-00004-of-00005.gguf",
+      "Ling-3.1-flash-1019-IQ2_XXS/Ling-3.1-flash-1019-IQ2_XXS-00005-of-00005.gguf"
+     ],
+     "bytes": 170789808736,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "IQ2_M",
+     "files": [
+      "Ling-3.1-flash-1019-IQ2_M/Ling-3.1-flash-1019-IQ2_M-00001-of-00006.gguf",
+      "Ling-3.1-flash-1019-IQ2_M/Ling-3.1-flash-1019-IQ2_M-00002-of-00006.gguf",
+      "Ling-3.1-flash-1019-IQ2_M/Ling-3.1-flash-1019-IQ2_M-00003-of-00006.gguf",
+      "Ling-3.1-flash-1019-IQ2_M/Ling-3.1-flash-1019-IQ2_M-00004-of-00006.gguf",
+      "Ling-3.1-flash-1019-IQ2_M/Ling-3.1-flash-1019-IQ2_M-00005-of-00006.gguf",
+      "Ling-3.1-flash-1019-IQ2_M/Ling-3.1-flash-1019-IQ2_M-00006-of-00006.gguf"
+     ],
+     "bytes": 213027941120,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "IQ3_XXS",
+     "files": [
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00001-of-00007.gguf",
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00002-of-00007.gguf",
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00003-of-00007.gguf",
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00004-of-00007.gguf",
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00005-of-00007.gguf",
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00006-of-00007.gguf",
+      "Ling-3.1-flash-1019-IQ3_XXS/Ling-3.1-flash-1019-IQ3_XXS-00007-of-00007.gguf"
+     ],
+     "bytes": 247367822176,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00001-of-00007.gguf",
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00002-of-00007.gguf",
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00003-of-00007.gguf",
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00004-of-00007.gguf",
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00005-of-00007.gguf",
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00006-of-00007.gguf",
+      "Ling-3.1-flash-1019-Q3_K_M/Ling-3.1-flash-1019-Q3_K_M-00007-of-00007.gguf"
+     ],
+     "bytes": 275057306464,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00001-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00002-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00003-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00004-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00005-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00006-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00007-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00008-of-00009.gguf",
+      "Ling-3.1-flash-1019-IQ4_XS/Ling-3.1-flash-1019-IQ4_XS-00009-of-00009.gguf"
+     ],
+     "bytes": 317077154944,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00001-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00002-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00003-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00004-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00005-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00006-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00007-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00008-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00009-of-00010.gguf",
+      "Ling-3.1-flash-1019-Q4_K_M/Ling-3.1-flash-1019-Q4_K_M-00010-of-00010.gguf"
+     ],
+     "bytes": 357969521856,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00001-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00002-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00003-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00004-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00005-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00006-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00007-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00008-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00009-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00010-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00011-of-00012.gguf",
+      "Ling-3.1-flash-1019-Q5_K_M/Ling-3.1-flash-1019-Q5_K_M-00012-of-00012.gguf"
+     ],
+     "bytes": 436319120864,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00001-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00002-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00003-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00004-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00005-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00006-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00007-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00008-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00009-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00010-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00011-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00012-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00013-of-00014.gguf",
+      "Ling-3.1-flash-1019-Q6_K/Ling-3.1-flash-1019-Q6_K-00014-of-00014.gguf"
+     ],
+     "bytes": 501582491360,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00001-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00002-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00003-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00004-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00005-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00006-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00007-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00008-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00009-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00010-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00011-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00012-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00013-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00014-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00015-of-00016.gguf",
+      "Ling-3.1-flash-1019-Q8_0/Ling-3.1-flash-1019-Q8_0-00016-of-00016.gguf"
+     ],
+     "bytes": 608380104352,
+     "repo": "bartowski/Ling-3.1-flash-1019-GGUF",
+     "mtp": true
+    }
+   ]
+  },
+  {
+   "id": "mimo-v2.6-pro",
+   "name": "MiMo V2.6 Pro",
+   "family": "MiMo V2.6",
+   "vendor": "Xiaomi",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 1024.22,
+   "active_params_b": 42.0,
+   "moe": true,
+   "score": 29.9,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02); cross-checked on the artificialanalysis.ai/models/mimo-v2-6-pro page data (intelligenceIndex 29.89; AA links XiaomiMiMo/MiMo-V2.6-Pro-RL)",
+   "layers": 70,
+   "kv_heads": 8,
+   "head_dim": 192,
+   "kv_layers": 10,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "vision": true,
+   "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+   "notes": "Released 2026-09-21. Flagship of MiMo-V2.6; AA's 'MiMo-V2.6-Pro' is this -RL checkpoint (the later -MOPD upgrade, which fixes tool-call repetition, has no separate AA score). Omnimodal sparse MoE: text/image/video/audio in (mmproj-MiMo-V2.6-Pro-RL-Q8_0.gguf, 1.61GB, in the same repo); 1.02T total (1,024.22B safetensors) / 42B active, 384 experts top-8, no shared experts; 70 layers = 60 sliding-window (128) + 10 global-attention, 128 Q / 8 KV heads, head_dim 192 (V 128), attention sinks on the SWA layers. Native MXFP4 experts, so the MXFP4 GGUF is effectively full quality; the Q2_K keeps the expert down-projections at MXFP4 and has no imatrix. Only ggml-org quants exist for -RL (no unsloth/bartowski). AesSedai has smaller BPW2.0-3.5 quants (255.8-447.5 GB) for -MOPD only. The draft is the 3-layer MTP sidecar (--spec-type draft-mtp); the repo also ships a 5-layer DFlash drafter (dflash-MiMo-V2.6-Pro-RL-Q8_0.gguf, 4.94GB). GGUFs were converted with llama.cpp commit 4ebdf2c (2026-10-02, an ancestor of b11960). llama.cpp: supported in b11960 (arch mimo2; MTP draft support since PR #26228). Open llama.cpp issue #29931 reports tool-call JSON corruption at long context with MiMo-V2.6 over RPC.",
+   "draft": {
+    "repo": "ggml-org/MiMo-V2.6-Pro-RL-GGUF",
+    "file": "mtp-MiMo-V2.6-Pro-RL-Q4_0.gguf",
+    "bytes": 2149176480,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "Q2_K",
+     "files": [
+      "MiMo-V2.6-Pro-RL-Q2_K-00001-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-Q2_K-00002-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-Q2_K-00003-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-Q2_K-00004-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-Q2_K-00005-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-Q2_K-00006-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-Q2_K-00007-of-00007.gguf"
+     ],
+     "bytes": 418769299904,
+     "repo": "ggml-org/MiMo-V2.6-Pro-RL-GGUF"
+    },
+    {
+     "name": "MXFP4",
+     "files": [
+      "MiMo-V2.6-Pro-RL-MXFP4-00001-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-MXFP4-00002-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-MXFP4-00003-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-MXFP4-00004-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-MXFP4-00005-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-MXFP4-00006-of-00007.gguf",
+      "MiMo-V2.6-Pro-RL-MXFP4-00007-of-00007.gguf"
+     ],
+     "bytes": 554211764672,
+     "repo": "ggml-org/MiMo-V2.6-Pro-RL-GGUF"
+    }
+   ]
+  }
+ ]
+}
