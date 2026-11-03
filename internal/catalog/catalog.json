@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "models": [
   {
    "id": "ternary-bonsai-2-27b",
@@ -1250,7 +1250,11 @@
      "bytes": 32635677632,
      "repo": "unsloth/gemma-4-31B-it-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 50,
+   "swa_kv_heads": 16,
+   "swa_head_dim": 256,
+   "swa_window": 1024
   },
   {
    "id": "gemma-4-26b-a4b",
@@ -1360,7 +1364,11 @@
      "bytes": 14249047104,
      "repo": "unsloth/gemma-4-26B-A4B-it-qat-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 25,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 256,
+   "swa_window": 1024
   },
   {
    "id": "gemma-4-12b",
@@ -1454,7 +1462,11 @@
      "bytes": 6975879296,
      "repo": "google/gemma-4-12B-it-qat-q4_0-gguf"
     }
-   ]
+   ],
+   "swa_layers": 40,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 256,
+   "swa_window": 1024
   },
   {
    "id": "gemma-4-e4b",
@@ -1469,7 +1481,7 @@
    "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components (floor-compressed; legacy GPQA E4B 0.58 / E2B 0.43)",
    "layers": 42,
    "kv_heads": 2,
-   "head_dim": 256,
+   "head_dim": 512,
    "ctx_max": 131072,
    "tool_calling": true,
    "repo": "google/gemma-4-E4B-it",
@@ -1556,7 +1568,11 @@
      "bytes": 5154941280,
      "repo": "google/gemma-4-E4B-it-qat-q4_0-gguf"
     }
-   ]
+   ],
+   "swa_layers": 35,
+   "swa_kv_heads": 2,
+   "swa_head_dim": 256,
+   "swa_window": 512
   },
   {
    "id": "gemma-4-e2b",
@@ -1571,7 +1587,7 @@
    "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components (floor-compressed; legacy GPQA E4B 0.58 / E2B 0.43)",
    "layers": 35,
    "kv_heads": 1,
-   "head_dim": 256,
+   "head_dim": 512,
    "ctx_max": 131072,
    "tool_calling": true,
    "repo": "google/gemma-4-E2B-it",
@@ -1658,7 +1674,11 @@
      "bytes": 3349516256,
      "repo": "google/gemma-4-E2B-it-qat-q4_0-gguf"
     }
-   ]
+   ],
+   "swa_layers": 28,
+   "swa_kv_heads": 1,
+   "swa_head_dim": 256,
+   "swa_window": 512
   },
   {
    "id": "gpt-oss-120b",
@@ -1708,7 +1728,11 @@
      "bytes": 65369017728,
      "repo": "unsloth/gpt-oss-120b-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 18,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 64,
+   "swa_window": 128
   },
   {
    "id": "gpt-oss-20b",
@@ -1757,7 +1781,11 @@
      "bytes": 13792639168,
      "repo": "unsloth/gpt-oss-20b-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 12,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 64,
+   "swa_window": 128
   },
   {
    "id": "glm-5.3-flash",
@@ -2168,38 +2196,6 @@
      ],
      "bytes": 394736596867,
      "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
-    },
-    {
-     "name": "UD-Q4_K_XL",
-     "files": [
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00001-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00002-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00003-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00004-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00005-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00006-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00007-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00008-of-00009.gguf",
-      "UD-Q4_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q4_K_XL-00009-of-00009.gguf"
-     ],
-     "bytes": 500707576573,
-     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF"
-    },
-    {
-     "name": "antirez-MXFP4-experts",
-     "files": [
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00001-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00002-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00003-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00004-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00005-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00006-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00007-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00008-of-00009.gguf",
-      "DeepSeek-V4.1-Flash-1017-MXFP4-experts-00009-of-00009.gguf"
-     ],
-     "bytes": 501602535360,
-     "repo": "antirez/deepseek-v4.1-flash-gguf"
     }
    ]
   },
@@ -2338,63 +2334,6 @@
    "vision": true,
    "notes": "Released 2026-06-13. 896 experts top-16; 69 KDA linear layers + 24 MLA full-attention layers. Native MXFP4 weights => UD-Q4_K_XL (1.51TB) is effectively lossless; Q1_0/TQ1_0 (466/509GB) are the only sub-512GB options. Only for 512GB+ unified-memory or multi-node rigs.",
    "quants": [
-    {
-     "name": "UD-Q1_0",
-     "files": [
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00001-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00002-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00003-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00004-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00005-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00006-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00007-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00008-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00009-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00010-of-00011.gguf",
-      "UD-Q1_0/Kimi-K3-UD-Q1_0-00011-of-00011.gguf"
-     ],
-     "bytes": 466369456320,
-     "repo": "unsloth/Kimi-K3-GGUF"
-    },
-    {
-     "name": "UD-TQ1_0",
-     "files": [
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00001-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00002-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00003-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00004-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00005-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00006-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00007-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00008-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00009-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00010-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00011-of-00012.gguf",
-      "UD-TQ1_0/Kimi-K3-UD-TQ1_0-00012-of-00012.gguf"
-     ],
-     "bytes": 508912281952,
-     "repo": "unsloth/Kimi-K3-GGUF"
-    },
-    {
-     "name": "UD-TQ2_0",
-     "files": [
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00001-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00002-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00003-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00004-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00005-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00006-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00007-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00008-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00009-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00010-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00011-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00012-of-00013.gguf",
-      "UD-TQ2_0/Kimi-K3-UD-TQ2_0-00013-of-00013.gguf"
-     ],
-     "bytes": 551455107488,
-     "repo": "unsloth/Kimi-K3-GGUF"
-    },
     {
      "name": "UD-IQ1_S",
      "files": [
@@ -2668,7 +2607,11 @@
      "bytes": 505502231288,
      "repo": "unsloth/Muse-Spark-Open-816B-A42B-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 46,
+   "swa_kv_heads": 16,
+   "swa_head_dim": 64,
+   "swa_window": 2048
   },
   {
    "id": "muse-glimmer-30b",
@@ -2762,152 +2705,11 @@
      "bytes": 29612957984,
      "repo": "unsloth/Muse-Glimmer-30B-GGUF"
     }
-   ]
-  },
-  {
-   "id": "mistral-large-4",
-   "name": "Mistral Large 4 1T A52B",
-   "family": "Mistral Large 4",
-   "vendor": "Mistral AI",
-   "country": "FR",
-   "license": "Mistral license (license:other on HF; UNVERIFIED terms)",
-   "params_b": 1000.0,
-   "moe": true,
-   "score": 26.0,
-   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (High). Medium 23.1",
-   "layers": 72,
-   "kv_heads": 1,
-   "head_dim": 576,
-   "ctx_max": 1048576,
-   "tool_calling": true,
-   "repo": "mistralai/Mistral-Large-4-1T-A52B",
-   "active_params_b": 52.0,
-   "kv_layers": 72,
-   "vision": true,
-   "notes": "Released 2026-09-30. MLA (latent 512 + rope 64) with indexed sparse attention, 128 experts top-4. Best EU-origin open model.",
-   "draft": {
-    "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF",
-    "file": "dspark-Mistral-Large-4-1T-A52B-Q8_0.gguf",
-    "bytes": 2245605984,
-    "type": "draft-dspark"
-   },
-   "quants": [
-    {
-     "name": "UD-IQ1_S",
-     "files": [
-      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00001-of-00006.gguf",
-      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00002-of-00006.gguf",
-      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00003-of-00006.gguf",
-      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00004-of-00006.gguf",
-      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00005-of-00006.gguf",
-      "UD-IQ1_S/Mistral-Large-4-1T-A52B-UD-IQ1_S-00006-of-00006.gguf"
-     ],
-     "bytes": 233009564322,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    },
-    {
-     "name": "UD-IQ1_M",
-     "files": [
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00001-of-00007.gguf",
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00002-of-00007.gguf",
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00003-of-00007.gguf",
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00004-of-00007.gguf",
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00005-of-00007.gguf",
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00006-of-00007.gguf",
-      "UD-IQ1_M/Mistral-Large-4-1T-A52B-UD-IQ1_M-00007-of-00007.gguf"
-     ],
-     "bytes": 259584674562,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    },
-    {
-     "name": "UD-IQ2_XXS",
-     "files": [
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00001-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00002-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00003-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00004-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00005-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00006-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00007-of-00008.gguf",
-      "UD-IQ2_XXS/Mistral-Large-4-1T-A52B-UD-IQ2_XXS-00008-of-00008.gguf"
-     ],
-     "bytes": 302467238722,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    },
-    {
-     "name": "UD-Q2_K_XL",
-     "files": [
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00001-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00002-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00003-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00004-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00005-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00006-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00007-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00008-of-00009.gguf",
-      "UD-Q2_K_XL/Mistral-Large-4-1T-A52B-UD-Q2_K_XL-00009-of-00009.gguf"
-     ],
-     "bytes": 378254511138,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    },
-    {
-     "name": "UD-IQ3_XXS",
-     "files": [
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00001-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00002-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00003-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00004-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00005-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00006-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00007-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00008-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00009-of-00010.gguf",
-      "UD-IQ3_XXS/Mistral-Large-4-1T-A52B-UD-IQ3_XXS-00010-of-00010.gguf"
-     ],
-     "bytes": 423515245634,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    },
-    {
-     "name": "UD-Q3_K_XL",
-     "files": [
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00001-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00002-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00003-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00004-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00005-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00006-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00007-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00008-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00009-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00010-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00011-of-00012.gguf",
-      "UD-Q3_K_XL/Mistral-Large-4-1T-A52B-UD-Q3_K_XL-00012-of-00012.gguf"
-     ],
-     "bytes": 492746427746,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    },
-    {
-     "name": "UD-Q4_K_XL",
-     "files": [
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00001-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00002-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00003-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00004-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00005-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00006-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00007-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00008-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00009-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00010-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00011-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00012-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00013-of-00014.gguf",
-      "UD-Q4_K_XL/Mistral-Large-4-1T-A52B-UD-Q4_K_XL-00014-of-00014.gguf"
-     ],
-     "bytes": 604787428898,
-     "repo": "unsloth/Mistral-Large-4-1T-A52B-GGUF"
-    }
-   ]
+   ],
+   "swa_layers": 39,
+   "swa_kv_heads": 2,
+   "swa_head_dim": 128,
+   "swa_window": 2048
   },
   {
    "id": "mistral-small-4-119b",
@@ -3597,7 +3399,11 @@
      "bytes": 1846238496,
      "repo": "LiquidAI/LFM3-1.7B-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 5,
+   "swa_kv_heads": 4,
+   "swa_head_dim": 128,
+   "swa_window": 256
   },
   {
    "id": "nanbeige4.3-33b",
@@ -3841,7 +3647,11 @@
      "bytes": 167369465248,
      "repo": "ggml-org/MiMo-V2.6-Flash-RL-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 39,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 192,
+   "swa_window": 128
   },
   {
    "id": "bonsai-27b-1bit",
@@ -4212,7 +4022,11 @@
      "bytes": 554211764672,
      "repo": "ggml-org/MiMo-V2.6-Pro-RL-GGUF"
     }
-   ]
+   ],
+   "swa_layers": 60,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 192,
+   "swa_window": 128
   }
  ]
 }
