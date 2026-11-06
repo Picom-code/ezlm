@@ -1,0 +1,6 @@
+# Source: https://github.com/odysseus-dev/odysseus/issues/6612 (Windows 11 25H2, RX 9070 16 GB)
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0002
+# qwMemorySize is the 64-bit value the scan must use, not Win32_VideoController.AdapterRAM.
+DriverDesc REG_SZ "AMD Radeon RX 9070"
+ProviderName REG_SZ "Advanced Micro Devices, Inc."
+HardwareInformation.qwMemorySize REG_QWORD 0x3FB000000

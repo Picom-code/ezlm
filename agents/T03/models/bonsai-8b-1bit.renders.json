@@ -1,0 +1,500 @@
+{
+ "id": "bonsai-8b-1bit",
+ "repo": "prism-ml/Bonsai-8B-gguf",
+ "file": "Bonsai-8B-Q1_0.gguf",
+ "template_source": "tokenizer.chat_template",
+ "jinja2": true,
+ "llamacpp_defaults": {
+  "enable_thinking": true,
+  "add_generation_prompt": true
+ },
+ "vars_referenced": [
+  "add_generation_prompt",
+  "messages",
+  "tools"
+ ],
+ "renders": {
+  "plain": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "system_user": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a terse weather bot."
+     },
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<|im_start|>system\nYou are a terse weather bot.<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "tool_call": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "type": "function",
+        "id": "call_1",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Paris\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 21}",
+      "tool_call_id": "call_1"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "prompt": "<|im_start|>system\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "parallel_tools": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "Weather in Paris and Berlin?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "type": "function",
+        "id": "call_1",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Paris\"}"
+        }
+       },
+       {
+        "type": "function",
+        "id": "call_2",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Berlin\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 21}",
+      "tool_call_id": "call_1"
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 19}",
+      "tool_call_id": "call_2"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "prompt": "<|im_start|>system\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call><|im_end|>\n<|im_start|>user\nWeather in Paris and Berlin?<|im_end|>\n<|im_start|>assistant\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response>\n<tool_response>\n{\"temp_c\": 19}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "thinking_on": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "thinking_off": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": false
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "developer_role": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "developer",
+      "content": "Answer in Celsius."
+     },
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "add_generation_prompt_off": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": false,
+    "enable_thinking": true
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n",
+   "error": null
+  },
+  "assistant_reasoning_history": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "It is mild.",
+      "reasoning_content": "Check the forecast first."
+     },
+     {
+      "role": "user",
+      "content": "And in Berlin?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\nIt is mild.<|im_end|>\n<|im_start|>user\nAnd in Berlin?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_none": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "none"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_minimal": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "minimal"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_low": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "low"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_medium": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "medium"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_high": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "high"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_xhigh": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "xhigh"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_max": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "max"
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_nested_reasoning": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning": {
+     "effort": "high"
+    }
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "effort_nested_thinking": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "thinking": {
+     "effort": "high"
+    }
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "thinking_var_on": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "thinking": true
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "thinking_var_off": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "thinking": false
+   },
+   "prompt": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  },
+  "tool_call_object_args": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "type": "function",
+        "id": "call_1",
+        "function": {
+         "name": "get_weather",
+         "arguments": {
+          "city": "Paris"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 21}",
+      "tool_call_id": "call_1"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "prompt": "<|im_start|>system\n# Tools\n\nYou may call one or more functions to assist with the user query.\n\nYou are provided with function signatures within <tools></tools> XML tags:\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null
+  }
+ }
+}

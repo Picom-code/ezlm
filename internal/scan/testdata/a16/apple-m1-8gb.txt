@@ -1,0 +1,5 @@
+# The smallest Apple Silicon Mac.
+# sysctl
+hw.memsize: 8589934592
+machdep.cpu.brand_string: Apple M1
+iogpu.wired_limit_mb: 0

@@ -1,0 +1,20 @@
+{
+ "id": "ternary-bonsai-2-2b",
+ "repo": "prism-ml/Ternary-Bonsai-2-2B-gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "xml: <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>, preceded by a <tools> block of JSON tool definitions inside the system turn",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "developer role: Jinja Exception: Unexpected message role. (raw template; llama-server maps developer to system before rendering)",
+  "tool_calls whose function.arguments is a JSON string: TypeError while iterating arguments|items (llama-server sends object arguments because caps reports supports_object_arguments)",
+  "messages with no user turn: Jinja Exception: No user query found in messages.",
+  "system message not first: Jinja Exception: System message must be at the beginning.",
+  "system content containing an image item: Jinja Exception: System message cannot contain images."
+ ],
+ "notes": "Qwen3.5-style ChatML template. reasoning_effort is never referenced: all six effort values plus a nested reasoning.effort render byte-identical to no effort at all, so they are silently ignored, not rejected (supports_reasoning_effort=false in llama-server caps). enable_thinking is the only thinking switch: false renders an empty  thinking\\n\\n</think> block in the generation prompt; the alternative variable name thinking is ignored. Tools are described as JSON in <tools> and called as XML, and tool responses are folded into a user turn wrapped in <tool_response>. The template is vision-aware (user image items become <|vision_start|><|image_pad|><|vision_end|>) but rejects images in the system turn. It also requires at least one real user query."
+}

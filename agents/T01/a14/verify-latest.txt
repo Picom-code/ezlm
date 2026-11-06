@@ -1,0 +1,16 @@
+llama.cpp v0.9.0: 170 architectures, 45 tensor types; checking 13 files sets
+granite-4.2-30b                Q2_K                     ok
+granite-4.2-30b                Q3_K_M                   ok
+granite-4.2-30b                Q4_0                     ok
+granite-4.2-30b                Q4_K_M                   ok
+granite-4.2-30b                Q5_0                     ok
+granite-4.2-30b                Q6_K                     ok
+granite-4.2-30b                Q8_0                     ok
+granite-4.2-8b                 Q3_K_M                   ok
+granite-4.2-8b                 Q4_0                     ok
+granite-4.2-8b                 Q4_K_M                   ok
+granite-4.2-8b                 Q5_0                     ok
+granite-4.2-8b                 Q6_K                     ok
+granite-4.2-8b                 Q8_0                     ok
+
+0 file set(s) with errors

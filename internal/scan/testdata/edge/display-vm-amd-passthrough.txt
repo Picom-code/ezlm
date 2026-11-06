@@ -1,0 +1,4 @@
+# A Windows guest with a Radeon RX 7900 XTX passed through and no rocm-smi
+# inside the guest: the display-class entry is the only source of its size.
+AMD Radeon RX 7900 XTX | Advanced Micro Devices, Inc. | 25753026560
+Microsoft Basic Display Adapter | Microsoft | 0

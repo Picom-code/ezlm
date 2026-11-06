@@ -1,0 +1,14 @@
+{
+ "id": "qwen3.5-122b-a10b",
+ "repo": "Qwen/Qwen3.5-122B-A10B",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "<tools> block holding OpenAI tool objects ({\"type\":\"function\",\"function\":{...}}); calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call> (qwen3-coder XML form)",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [],
+ "notes": "The template never reads reasoning_effort or reasoning_strength: every effort value renders byte-identical, so b11960 caps sets supports_reasoning_effort=false and /props reasoning_effort_levels is empty. Any effort level is accepted by the server and ignored by the template. enable_thinking=false renders an empty  thinking\\n\\n</think>\\n\\n block. Leading developer messages are merged into the system turn; developer messages later in the list are dropped by the `role != 'developer'` loop guard."
+}

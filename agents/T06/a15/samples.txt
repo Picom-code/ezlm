@@ -1,0 +1,84 @@
+# T06/a15 check_assets.py proof
+# Run 2026-11-06, worktree work/subs/T06/a15, branch agent/T06-a15.
+# At run time GitHub's REST API was rate limited (60 requests/hour per address,
+# shared by all T06 agents), so the script fell back to the release page
+# (source=html). The picks are identical either way; see REPORT.md.
+#
+# "latest" is GitHub's latest stable release, v0.9.0, whose nightly-tag.txt
+# names b12110. b12144 is the newest build by date and is shown as well.
+
+$ python3 agents/T06/check_assets.py b11960 latest b12144
+tag b11960  source=html  assets=36
+platform       backend  cuda13  pick                                            cudart                                                 status
+-------------  -------  ------  ----------------------------------------------  -----------------------------------------------------  ------
+darwin/arm64   metal    no      llama-b11960-bin-macos-arm64.tar.gz             -                                                      ok
+darwin/amd64   cpu      no      llama-b11960-bin-macos-x64.tar.gz               -                                                      ok
+linux/amd64    cuda     no      llama-b11960-bin-ubuntu-cuda-12.8-x64.tar.gz    cudart-llama-b11960-bin-ubuntu-cuda-12.8-x64.tar.gz    ok
+linux/amd64    cuda     yes     llama-b11960-bin-ubuntu-cuda-13.4-x64.tar.gz    cudart-llama-b11960-bin-ubuntu-cuda-13.4-x64.tar.gz    ok
+linux/amd64    rocm     no      llama-b11960-bin-ubuntu-vulkan-x64.tar.gz       -                                                      ok
+linux/amd64    vulkan   no      llama-b11960-bin-ubuntu-vulkan-x64.tar.gz       -                                                      ok
+linux/amd64    cpu      no      llama-b11960-bin-ubuntu-x64.tar.gz              -                                                      ok
+linux/arm64    cuda     yes     llama-b11960-bin-ubuntu-cuda-13.4-arm64.tar.gz  cudart-llama-b11960-bin-ubuntu-cuda-13.4-arm64.tar.gz  ok
+linux/arm64    vulkan   no      llama-b11960-bin-ubuntu-vulkan-arm64.tar.gz     -                                                      ok
+linux/arm64    cpu      no      llama-b11960-bin-ubuntu-arm64.tar.gz            -                                                      ok
+windows/amd64  cuda     no      llama-b11960-bin-win-cuda-12.4-x64.zip          cudart-llama-bin-win-cuda-12.4-x64.zip                 ok
+windows/amd64  cuda     yes     llama-b11960-bin-win-cuda-13.4-x64.zip          cudart-llama-bin-win-cuda-13.4-x64.zip                 ok
+windows/amd64  rocm     no      llama-b11960-bin-win-vulkan-x64.zip             -                                                      ok
+windows/amd64  vulkan   no      llama-b11960-bin-win-vulkan-x64.zip             -                                                      ok
+windows/amd64  cpu      no      llama-b11960-bin-win-cpu-x64.zip                -                                                      ok
+windows/arm64  cuda     yes     llama-b11960-bin-win-cuda-13.4-arm64.zip        cudart-llama-bin-win-cuda-13.4-arm64.zip               ok
+windows/arm64  vulkan   no      llama-b11960-bin-win-vulkan-arm64.zip           -                                                      ok
+windows/arm64  cpu      no      llama-b11960-bin-win-cpu-arm64.zip              -                                                      ok
+summary: 18 rows, 18 ok, 0 no match, 0 without cudart
+pinned.go: every pick present
+
+tag b12110  source=html  assets=38
+platform       backend  cuda13  pick                                            cudart                                                 status
+-------------  -------  ------  ----------------------------------------------  -----------------------------------------------------  ------
+darwin/arm64   metal    no      llama-b12110-bin-macos-arm64.tar.gz             -                                                      ok
+darwin/amd64   cpu      no      llama-b12110-bin-macos-x64.tar.gz               -                                                      ok
+linux/amd64    cuda     no      llama-b12110-bin-ubuntu-cuda-12.8-x64.tar.gz    cudart-llama-b12110-bin-ubuntu-cuda-12.8-x64.tar.gz    ok
+linux/amd64    cuda     yes     llama-b12110-bin-ubuntu-cuda-13.4-x64.tar.gz    cudart-llama-b12110-bin-ubuntu-cuda-13.4-x64.tar.gz    ok
+linux/amd64    rocm     no      llama-b12110-bin-ubuntu-vulkan-x64.tar.gz       -                                                      ok
+linux/amd64    vulkan   no      llama-b12110-bin-ubuntu-vulkan-x64.tar.gz       -                                                      ok
+linux/amd64    cpu      no      llama-b12110-bin-ubuntu-x64.tar.gz              -                                                      ok
+linux/arm64    cuda     yes     llama-b12110-bin-ubuntu-cuda-13.4-arm64.tar.gz  cudart-llama-b12110-bin-ubuntu-cuda-13.4-arm64.tar.gz  ok
+linux/arm64    vulkan   no      llama-b12110-bin-ubuntu-vulkan-arm64.tar.gz     -                                                      ok
+linux/arm64    cpu      no      llama-b12110-bin-ubuntu-arm64.tar.gz            -                                                      ok
+windows/amd64  cuda     no      llama-b12110-bin-win-cuda-12.4-x64.zip          cudart-llama-bin-win-cuda-12.4-x64.zip                 ok
+windows/amd64  cuda     yes     llama-b12110-bin-win-cuda-13.4-x64.zip          cudart-llama-bin-win-cuda-13.4-x64.zip                 ok
+windows/amd64  rocm     no      llama-b12110-bin-win-vulkan-x64.zip             -                                                      ok
+windows/amd64  vulkan   no      llama-b12110-bin-win-vulkan-x64.zip             -                                                      ok
+windows/amd64  cpu      no      llama-b12110-bin-win-cpu-x64.zip                -                                                      ok
+windows/arm64  cuda     yes     llama-b12110-bin-win-cuda-13.4-arm64.zip        cudart-llama-bin-win-cuda-13.4-arm64.zip               ok
+windows/arm64  vulkan   no      llama-b12110-bin-win-vulkan-arm64.zip           -                                                      ok
+windows/arm64  cpu      no      llama-b12110-bin-win-cpu-arm64.zip              -                                                      ok
+summary: 18 rows, 18 ok, 0 no match, 0 without cudart
+
+tag b12144  source=html  assets=38
+platform       backend  cuda13  pick                                            cudart                                                 status
+-------------  -------  ------  ----------------------------------------------  -----------------------------------------------------  ------
+darwin/arm64   metal    no      llama-b12144-bin-macos-arm64.tar.gz             -                                                      ok
+darwin/amd64   cpu      no      llama-b12144-bin-macos-x64.tar.gz               -                                                      ok
+linux/amd64    cuda     no      llama-b12144-bin-ubuntu-cuda-12.8-x64.tar.gz    cudart-llama-b12144-bin-ubuntu-cuda-12.8-x64.tar.gz    ok
+linux/amd64    cuda     yes     llama-b12144-bin-ubuntu-cuda-13.4-x64.tar.gz    cudart-llama-b12144-bin-ubuntu-cuda-13.4-x64.tar.gz    ok
+linux/amd64    rocm     no      llama-b12144-bin-ubuntu-vulkan-x64.tar.gz       -                                                      ok
+linux/amd64    vulkan   no      llama-b12144-bin-ubuntu-vulkan-x64.tar.gz       -                                                      ok
+linux/amd64    cpu      no      llama-b12144-bin-ubuntu-x64.tar.gz              -                                                      ok
+linux/arm64    cuda     yes     llama-b12144-bin-ubuntu-cuda-13.4-arm64.tar.gz  cudart-llama-b12144-bin-ubuntu-cuda-13.4-arm64.tar.gz  ok
+linux/arm64    vulkan   no      llama-b12144-bin-ubuntu-vulkan-arm64.tar.gz     -                                                      ok
+linux/arm64    cpu      no      llama-b12144-bin-ubuntu-arm64.tar.gz            -                                                      ok
+windows/amd64  cuda     no      llama-b12144-bin-win-cuda-12.4-x64.zip          cudart-llama-bin-win-cuda-12.4-x64.zip                 ok
+windows/amd64  cuda     yes     llama-b12144-bin-win-cuda-13.4-x64.zip          cudart-llama-bin-win-cuda-13.4-x64.zip                 ok
+windows/amd64  rocm     no      llama-b12144-bin-win-vulkan-x64.zip             -                                                      ok
+windows/amd64  vulkan   no      llama-b12144-bin-win-vulkan-x64.zip             -                                                      ok
+windows/amd64  cpu      no      llama-b12144-bin-win-cpu-x64.zip                -                                                      ok
+windows/arm64  cuda     yes     llama-b12144-bin-win-cuda-13.4-arm64.zip        cudart-llama-bin-win-cuda-13.4-arm64.zip               ok
+windows/arm64  vulkan   no      llama-b12144-bin-win-vulkan-arm64.zip           -                                                      ok
+windows/arm64  cpu      no      llama-b12144-bin-win-cpu-arm64.zip              -                                                      ok
+summary: 18 rows, 18 ok, 0 no match, 0 without cudart
+
+$ python3 agents/T06/check_assets.py --head b12144
+# (table omitted; it is identical to the b12144 table above)
+summary: 18 rows, 18 ok, 0 no match, 0 without cudart
+head: 22 urls checked, all present

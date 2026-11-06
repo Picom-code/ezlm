@@ -1,0 +1,10 @@
+# Apple M2 Pro (Mac mini, 2023): 12-core CPU, 8 performance + 4 efficiency, 32 GB.
+# Synthetic case built from the documented `sysctl -a` format and Apple's specs.
+hw.memsize: 34359738368
+hw.physicalcpu: 12
+hw.logicalcpu: 12
+hw.perflevel0.physicalcpu: 8
+hw.perflevel1.physicalcpu: 4
+hw.optional.arm64: 1
+machdep.cpu.brand_string: Apple M2 Pro
+sysctl.proc_translated: 0

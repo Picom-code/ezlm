@@ -1,0 +1,9 @@
+llama.cpp v0.9.0: 170 architectures, 45 tensor types; checking 6 files sets
+gpt-oss-120b                   MXFP4                    ok
+gpt-oss-120b                   UD-Q4_K_XL               ok
+gpt-oss-120b                   F16                      ok
+gpt-oss-20b                    UD-Q4_K_XL               ok
+gpt-oss-20b                    MXFP4                    ok
+gpt-oss-20b                    F16                      ok
+
+0 file set(s) with errors

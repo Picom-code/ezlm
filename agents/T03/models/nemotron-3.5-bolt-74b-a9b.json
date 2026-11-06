@@ -1,0 +1,23 @@
+{
+ "id": "nemotron-3.5-bolt-74b-a9b",
+ "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "ChatML turns (<|im_start|>role ... <|im_end|>). Tool definitions go in the system turn as a <tools> XML block: <function><name>..</name><description>..</description><parameters><parameter><name>..</name><type>..</type><description>..</description></parameter>...</parameters></function>. A call is emitted in an assistant turn as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>, one block per call (parallel calls are consecutive blocks). Results come back in a user turn as <tool_response>CONTENT</tool_response>, one per result.",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": [
+  "none",
+  "low",
+  "medium",
+  "high",
+  "xhigh",
+  "max"
+ ],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [],
+ "notes": "The template's own effort knob is the boolean medium_effort, not the OAI string: medium_effort=true appends \"\\n\\n{reasoning effort: efficient}\" to the last user message (extra_medium_effort_true); medium_effort=false changes nothing. OAI reasoning_effort cannot reach that boolean, so use chat_template_kwargs={\"medium_effort\": true}. The template also has a vision-aware render_content macro (image/video parts). ChatML template. reasoning_effort is never read: all six levels render byte-identical to a request with no effort, so none of them is accepted. b11960 turns OAI reasoning_effort=none into enable_thinking=false, so none disables thinking through the server, not the template. b11960 also probes minimal, which is ignored too. The only thinking control is enable_thinking. An empty system turn is always emitted when no system message is given (system_message is set to \"\" but the `is defined` test passes). History reasoning is truncated by default (truncate_history_thinking); preserve_reasoning=true flips it. b11960 maps developer to system before rendering for all models except GPT-OSS, so the template's developer branch is normally not reached. Header read from the quant repo below; the BF16 repo has no GGUF.",
+ "gguf": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB.gguf"
+}

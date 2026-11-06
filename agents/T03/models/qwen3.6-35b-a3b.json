@@ -1,0 +1,14 @@
+{
+ "id": "qwen3.6-35b-a3b",
+ "repo": "Qwen/Qwen3.6-35B-A3B",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "xml <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call> blocks; tool definitions as JSON lines in a <tools> block in the system message",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [],
+ "notes": "reasoning_effort is never referenced by the template, so all six levels render byte-identical to a plain call: silently ignored, not accepted and not rejected. developer is accepted and merged with a leading system message into one system turn. Mid-conversation system or developer messages are silently dropped (no error). Unknown roles are silently dropped. enable_thinking=false renders an empty ' thinking\\n\\n</think>\\n\\n' block; true or absent renders ' thinking\\n'. The preserve_thinking kwarg only affects assistant history, not the generation prompt. llama.cpp caps will report supports_reasoning_effort=false for this template (caps.cpp:569-593)."
+}

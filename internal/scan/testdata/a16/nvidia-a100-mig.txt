@@ -1,0 +1,9 @@
+# A server with MIG enabled and an NPU row nvidia-smi lists without memory.
+# query-gpu
+NVIDIA A100-SXM4-80GB, 81920, 40960, 570.86.10
+NVIDIA A100-SXM4-80GB, 81920, 20480, 570.86.10
+NVIDIA NPU, [N/A], [N/A], 570.86.10
+# compute-apps
+[N/A], [N/A], [N/A]
+# header
+| NVIDIA-SMI 570.86.10   Driver Version: 570.86.10   CUDA Version: 12.6     |

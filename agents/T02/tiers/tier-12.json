@@ -1,0 +1,329 @@
+{
+ "tier": "12",
+ "models": [
+  {
+   "id": "nanbeige4.3-33b",
+   "name": "Nanbeige4.3 33B",
+   "family": "Nanbeige4.3",
+   "vendor": "Nanbeige (Kanzhun / BOSS Zhipin)",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 33.12,
+   "moe": false,
+   "score": 20.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06) (highest dense model on v5; brand-new, 2026-10-24 - verify with own evals)",
+   "layers": 52,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "Nanbeige/Nanbeige4.3-33B",
+   "active_params_b": 33.12,
+   "kv_layers": 52,
+   "vision": false,
+   "notes": "Released 2026-10-24. Llama-architecture dense 33B with full attention on all 52 layers: KV is ~208 KB/token at F16, so 12 GB needs q8_0 KV and at most 8K context. Highest dense AA v5 score in this tier (AutomationBench 53%, TB4 30%), but HLE-D 6.9% and Omniscience much lower than Qwen3.8-27B. Tool calling UNVERIFIED.",
+   "quants": [
+    {
+     "name": "IQ2_XXS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_XXS.gguf"
+     ],
+     "bytes": 10071403648,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ2_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_XS.gguf"
+     ],
+     "bytes": 10634407040,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    }
+   ],
+   "native_1bit": false
+  },
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8 27B",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 20.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06) - Xhigh effort. Medium 17.5, Low 15.7, Non-reasoning 10.0.",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-27B",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "notes": "Released 2026-08-05. 48 Gated DeltaNet + 16 full-attention layers give a tiny KV cache. AA v5: GPQA-Diamond 90.5%, Terminal-Bench 2.1 79.8%, tau3-Banking 48.0%, HLE 33.9%. GSQ-RCO quants are measured at 0.94-0.985 of FP16 quality. No MTP draft in this tier entry: the catalog's 3.16 GB Q8_0 draft pushes the model into split mode on a 12 GB card, and the 1.68 GB Q4_0 draft only fits by dropping from 64K to 32K context, so the planner gets a better plan without a draft.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.8-27B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 7266070528,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "GSQ-RCO-IQ2_XS",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_XS.gguf"
+     ],
+     "bytes": 8422841472,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.94
+    },
+    {
+     "name": "GSQ-RCO-IQ2_S",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_S.gguf"
+     ],
+     "bytes": 9259510912,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.95
+    },
+    {
+     "name": "GSQ-RCO-IQ3_XXS",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf"
+     ],
+     "bytes": 10094357632,
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "quality": 0.985
+    }
+   ],
+   "native_1bit": false
+  },
+  {
+   "id": "ternary-bonsai-2-27b",
+   "name": "Ternary Bonsai 2 27B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 27.36,
+   "moe": false,
+   "score": 18.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: PrismML reports 98.2% of Qwen3.8-27B FP16 on a 14-20 benchmark suite (84.78 vs 86.32), but knowledge -5.7 pts and agentic -1.8 pts, which v5 weights heavily -> ~90% of Qwen3.8-27B Xhigh (20.1)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "active_params_b": 27.36,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-17. Native ternary {-1,0,+1} QAT compression of Qwen3.8-27B; the 7.63 GB Q2_0 is the real format, not a 2-bit copy, so it keeps near-FP16 quality (vendor: 98.2% of Qwen3.8-27B FP16). Same 16-full-attention-layer KV as Qwen3.8-27B, so 32K context fits 12 GB. Vendor category deltas vs FP16: coding 89.4 vs 89.1, agentic 74.9 vs 76.7, knowledge 79.9 vs 85.6.",
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-27B-Q2_0.gguf"
+     ],
+     "bytes": 7626008928
+    }
+   ]
+  },
+  {
+   "id": "qwen3.6-35b-a3b",
+   "name": "Qwen3.6 35B A3B",
+   "family": "Qwen3.6",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 35.95,
+   "moe": true,
+   "score": 9.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 9.5 (legacy fit 7.9). AA-Briefcase 713 vs Qwen3.8-27B 1393, AutomationBench 5% vs 48%. Was 43 on v4.0 (vs Qwen3.6-27B 46, Gemma 4 31B 39)",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.6-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-04-15. 35.9B MoE with 3B active: the 10.76 GB UD-IQ2_XXS is the only file that fits 12 GB fully, but the 10-layer KV cache is tiny, so 8K context fits on a 12 GB Linux CUDA card. AA v5 components: GPQA 84.1%, TB2.1 44.9%, tau2 95.3%, HLE 22.2%. Use UD-Q4_K_XL (22.4 GB) with expert offload when the machine has 32 GB RAM.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 10756586464,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    }
+   ],
+   "native_1bit": false
+  },
+  {
+   "id": "k2-horizon-7b",
+   "name": "K2 Horizon 7B",
+   "family": "K2 Horizon",
+   "vendor": "Institute of Foundation Models (IFM)",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 9.0,
+   "moe": false,
+   "score": 8.9,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's published v5 component scores (AutomationBench 20.9%, Terminal-Bench 4.0 1.0%, HLE-Diamond missing, GDP.pdf 3.2%, AA-Briefcase 1013) via the same linear fit on 98 models with an official v5 index (RMSE 1.7 pts); the model has no official v5 index yet. Cross-check: vendor card reports SWE-bench Verified 72.4%, Terminal-Bench 2.1 44.6%, HLE 19.5%.",
+   "layers": 36,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "IFM/K2-Horizon-7B",
+   "active_params_b": 9.0,
+   "kv_layers": 36,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-01. 9.0B dense (the name says 7B), 36 layers, 512K context, Apache-2.0. The chat template supports reasoning_effort high/medium/low, enable_thinking and tool calls, and llama.cpp b11960 has the k2_horizon reasoning and tool parsers. Best small-model coding evidence in this tier: vendor SWE-bench Verified 72.4%, TB2.1 44.6%; AA GPQA-Diamond 75.3%, TB2.1 44.2%, HLE 18.2%, tau3-Banking 27.6%. Q6_K (7.39 GB) fits 12 GB with 16K context, Q8_0 (9.57 GB) with 8K. Vendor country is not stated on the card or the GitHub org (UNVERIFIED).",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "K2-Horizon-7B-Q4_K_M.gguf"
+     ],
+     "bytes": 5592217984,
+     "repo": "IFM/K2-Horizon-7B-GGUF"
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "K2-Horizon-7B-Q5_K_M.gguf"
+     ],
+     "bytes": 6466075008,
+     "repo": "IFM/K2-Horizon-7B-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "K2-Horizon-7B-Q6_K.gguf"
+     ],
+     "bytes": 7394548096,
+     "repo": "IFM/K2-Horizon-7B-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "K2-Horizon-7B-Q8_0.gguf"
+     ],
+     "bytes": 9573964160,
+     "repo": "IFM/K2-Horizon-7B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-31b",
+   "name": "Gemma 4 31B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 31.27,
+   "moe": false,
+   "score": 4.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06), official index. The catalog's 8.0 estimate (2026-11-02, legacy-component fit) is superseded by this published number.",
+   "layers": 60,
+   "kv_heads": 4,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-31B-it",
+   "active_params_b": 31.27,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-02. 60 layers: 50 sliding (16 KV x 256, window 1024) + 10 global (4 KV x 512). The SWA cache is ~2.3 GB at 8K and does not grow with context, so the 8.53 GB IQ2_XXS fits a 12 GB card only in split mode at 16K (~8 tok/s), and not a 10 GB unified budget. AA components: GPQA 85.7%, TB2.1 43.4%, tau2 59.9%, IFBench 75.6%. Use it when image quality matters more than speed; Gemma 4 12B is the fast 6-bit alternative.",
+   "draft": {
+    "repo": "unsloth/gemma-4-31B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-31B-it-Q8_0.gguf",
+    "bytes": 514687104,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "gemma-4-31B-it-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 8534295488,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    }
+   ],
+   "swa_layers": 50,
+   "swa_kv_heads": 16,
+   "swa_head_dim": 256,
+   "swa_window": 1024
+  },
+  {
+   "id": "gemma-4-12b",
+   "name": "Gemma 4 12B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 11.96,
+   "moe": false,
+   "score": 3.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 3.3",
+   "layers": 48,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-12B-it",
+   "active_params_b": 11.96,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-05-23 ('unified' any-to-any, vision). 40 sliding (8 KV x 256, window 1024) + 8 global (1 KV x 512) layers: the SWA cache costs ~1.0 GB at 8K, so Q6_K (9.79 GB) just fits a 12 GB card and QAT-Q4_0 (6.98 GB) fits with room. AA components: GPQA 75.3%, IFBench 73.5%, MMMU-Pro 69.7%, TB2.1 27.3%, tau2 36.3%. Pick this when images or a reliable 6-bit general model matter more than raw score.",
+   "draft": {
+    "repo": "unsloth/gemma-4-12b-it-GGUF",
+    "file": "MTP/mtp-gemma-4-12b-it-Q8_0.gguf",
+    "bytes": 465109248,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "QAT-Q4_0",
+     "files": [
+      "gemma-4-12b-it-qat-q4_0.gguf"
+     ],
+     "bytes": 6975879296,
+     "repo": "google/gemma-4-12B-it-qat-q4_0-gguf"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "gemma-4-12b-it-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 7366423360,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "gemma-4-12b-it-Q6_K.gguf"
+     ],
+     "bytes": 9786022720,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    }
+   ],
+   "swa_layers": 40,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 256,
+   "swa_window": 1024,
+   "native_1bit": false
+  }
+ ]
+}

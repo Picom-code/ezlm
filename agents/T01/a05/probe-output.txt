@@ -1,0 +1,20 @@
+
+== gemma-4-12b, 10 GB, quants [QAT-Q4_0]
+  as-is                       : QAT-Q4_0 (eff 2.961, gpu)
+  QAT- prefix stripped        : Q4_0 (eff 3.241, gpu)
+  quality override 0.985      : QAT-Q4_0 (eff 3.241, gpu)
+
+== gemma-4-12b, 10 GB, quants [QAT-Q4_0 UD-IQ3_XXS]
+  as-is                       : UD-IQ3_XXS (eff 3.307, gpu)
+  QAT- prefix stripped        : UD-IQ3_XXS (eff 3.307, gpu)
+  quality override 0.985      : UD-IQ3_XXS (eff 3.307, gpu)
+
+== gemma-4-26b-a4b, 16 GB, quants [QAT-Q4_0 UD-IQ3_XXS]
+  as-is                       : UD-IQ3_XXS (eff 5.197, gpu)
+  QAT- prefix stripped        : Q4_0 (eff 5.417, hybrid)
+  quality override 0.985      : QAT-Q4_0 (eff 5.417, hybrid)
+
+== gemma-4-26b-a4b, 18 GB, quants [QAT-UD-Q4_K_XL UD-IQ3_XXS]
+  as-is                       : UD-IQ3_XXS (eff 5.197, gpu)
+  QAT- prefix stripped        : UD-Q4_K_XL (eff 5.417, gpu)
+  quality override 0.985      : QAT-UD-Q4_K_XL (eff 5.417, gpu)

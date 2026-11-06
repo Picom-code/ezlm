@@ -1,0 +1,14 @@
+{
+  "id": "gemma-4-31b",
+  "repo": "unsloth/gemma-4-31B-it-GGUF",
+  "template_source": "tokenizer.chat_template",
+  "tool_call_format": "gemma dsl: <|tool_call>call:NAME{key:value,...}<tool_call|>; tool definitions are <|tool>declaration:NAME{...}<tool|> blocks in the system turn",
+  "tools_supported": true,
+  "thinking_toggle": "enable_thinking",
+  "effort_levels_accepted": [],
+  "effort_levels_rejected": [],
+  "system_role": true,
+  "developer_role": true,
+  "known_template_errors": [],
+  "notes": "Gemma 4 turn format (<|turn>role ... <turn|>), reasoning channel (<|channel>thought ... <channel|>). All six reasoning_effort values plus an unknown value render byte-identically to thinking_on: the template never reads reasoning_effort, so effort is silently ignored (caps.supports_reasoning_effort is false). Thinking is toggled only by enable_thinking: true injects <|think|> at the top of the first system turn and the generation prompt is a bare <|turn>model; false writes an empty <|channel>thought\\n<channel|> at the generation prompt. developer is accepted: as the first message it is rendered as a system turn. The template's string-arguments branch (the shape the server sends, because supports_object_arguments is false) emits quoted keys inside the call DSL, e.g. call:get_weather{\"city\": \"Paris\"}, not Gemma's unquoted key:value form; the object-arguments branch renders the canonical form."
+}

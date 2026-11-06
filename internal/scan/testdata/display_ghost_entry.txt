@@ -1,0 +1,5 @@
+# Synthetic, built from the documented display-class entry layout: a stale entry
+# left behind by a removed card. It has a name but no HardwareInformation values.
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0004
+DriverDesc REG_SZ "AMD Radeon RX 580 Series"
+ProviderName REG_SZ "Advanced Micro Devices, Inc."

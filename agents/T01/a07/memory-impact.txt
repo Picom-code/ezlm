@@ -1,0 +1,8 @@
+gemma-4-e4b: ctx 131072, window 512, kv_heads 2, head_dim 512, swa_head_dim 256
+  f16   old   3.67 GiB  new   2.10 GiB  saved  1.57 GiB
+  q8_0  old   1.95 GiB  new   1.11 GiB  saved  0.84 GiB
+  q4_0  old   1.03 GiB  new   0.59 GiB  saved  0.44 GiB
+gemma-4-e2b: ctx 131072, window 512, kv_heads 1, head_dim 512, swa_head_dim 256
+  f16   old   1.82 GiB  new   0.78 GiB  saved  1.04 GiB
+  q8_0  old   0.97 GiB  new   0.41 GiB  saved  0.55 GiB
+  q4_0  old   0.51 GiB  new   0.22 GiB  saved  0.29 GiB

@@ -1,0 +1,45 @@
+gguf_info.py against all 32 catalog models, 2026-11-06
+=======================================================
+
+One process per model (python3 agents/T02/gguf_info.py <repo> <file> --json).
+Split files were run with --parts. The comparison covers layers, kv_heads,
+head_dim, kv_layers, ctx_max and the swa_* fields; params_b is reported
+only as a warning because it is a model-card number, not a file number.
+Every KV field matched on every model. The lines marked DIFF are:
+  - params_b, the card counts tensors that are not in the GGUF (report finding 4)
+  - ctx_max on nemotron-3.5-lightning (report finding 1)
+
+ternary-bonsai-2-27b              1.62s req=1 params=  26.90B OK
+ternary-bonsai-2-9b               1.44s req=1 params=   8.95B DIFF params_b: catalog=9.41 tensors=8.95
+ternary-bonsai-2-4b               1.55s req=1 params=   4.21B DIFF params_b: catalog=4.66 tensors=4.21
+ternary-bonsai-2-2b               1.42s req=1 params=   1.88B DIFF params_b: catalog=2.21 tensors=1.88
+bonsai-8b-1bit                    1.50s req=1 params=   8.19B OK
+qwen3.8-27b                       1.55s req=1 params=  26.90B DIFF params_b: catalog=27.78 tensors=26.9
+qwen3.8-flash-next                2.38s req=2 params= 176.94B OK
+qwen3.6-35b-a3b                   1.73s req=1 params=  34.66B DIFF params_b: catalog=35.95 tensors=34.66
+qwen3.6-27b                       1.61s req=1 params=  27.32B OK
+qwen3.5-122b-a10b                 1.72s req=1 params= 124.64B OK
+qwen3.5-9b                        1.83s req=1 params=   8.95B DIFF params_b: catalog=9.65 tensors=8.95
+qwen3.5-4b                        1.53s req=1 params=   4.21B DIFF params_b: catalog=4.66 tensors=4.21
+qwen3.5-2b                        1.52s req=1 params=   1.88B DIFF params_b: catalog=2.27 tensors=1.88
+gemma-4-31b                       1.83s req=1 params=  30.70B OK
+gemma-4-26b-a4b                   1.93s req=1 params=  25.23B DIFF params_b: catalog=25.81 tensors=25.23
+gemma-4-12b                       1.96s req=1 params=  11.91B OK
+gemma-4-e4b                       1.67s req=1 params=   7.52B DIFF params_b: catalog=8.0 tensors=7.52
+gemma-4-e2b                       1.85s req=1 params=   4.65B DIFF params_b: catalog=5.12 tensors=4.65
+gpt-oss-120b                      1.56s req=1 params= 116.83B OK
+gpt-oss-20b                       1.52s req=1 params=  20.91B OK
+muse-glimmer-30b                  1.60s req=1 params=  27.85B DIFF params_b: catalog=30.0 tensors=27.85
+mistral-small-4-119b              1.82s req=1 params= 118.97B OK
+devstral-small-2-24b              1.91s req=1 params=  23.57B OK
+nemotron-3.5-super-vl-120b-a12b   2.67s req=2 params= 123.61B OK
+nemotron-3.5-bolt-74b-a9b         1.25s req=1 params=  74.04B OK
+nemotron-3.5-lightning-30b-a3b    1.68s req=1 params=  32.91B DIFF ctx_max: catalog=262144 file=1048576; params_b: catalog=31.58 tensors=32.91
+granite-4.2-30b                   1.48s req=1 params=  29.28B OK
+granite-4.2-8b                    1.60s req=1 params=   8.79B OK
+lfm3-1.7b                         1.73s req=1 params=   1.73B OK
+nanbeige4.3-33b                   1.79s req=1 params=  33.12B OK
+bonsai-27b-1bit                   1.71s req=1 params=  26.90B DIFF params_b: catalog=27.78 tensors=26.9
+granite-4.2-3b                    1.57s req=1 params=   3.66B OK
+
+14 model(s) with differences

@@ -1,0 +1,263 @@
+{
+ "tier": "24",
+ "models": [
+  {
+   "id": "nanbeige4.3-33b",
+   "name": "Nanbeige4.3 33B",
+   "family": "Nanbeige4.3",
+   "vendor": "Nanbeige (Kanzhun / BOSS Zhipin)",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 33.12,
+   "moe": false,
+   "score": 20.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (highest dense model on v5; brand-new, 2026-10-24 - verify with own evals)",
+   "layers": 52,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "Nanbeige/Nanbeige4.3-33B",
+   "active_params_b": 33.12,
+   "kv_layers": 52,
+   "vision": false,
+   "notes": "Llama-architecture dense 33B, full attention on all 52 layers (KV ~6x heavier per token than Qwen3.8-27B). Scores level with Qwen3.8-27B Xhigh on v5 (AutomationBench 53% vs 48%, TB4 30% vs 6%, but HLE-D 7% vs 15%, Omniscience much lower). Tool calling UNVERIFIED.",
+   "native_1bit": false,
+   "quants": [
+    {
+     "name": "IQ3_M",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ3_M.gguf"
+     ],
+     "bytes": 17802005632,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ4_XS.gguf"
+     ],
+     "bytes": 18635041920,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-Q4_K_M.gguf"
+     ],
+     "bytes": 20788825216,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8 27B",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 20.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) - Xhigh effort. Medium 17.5, Low 15.7, Non-reasoning 10.0. (Was 34 on v4.3.)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-27B",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "notes": "Released 2026-08-05. 48 Gated DeltaNet + 16 full-attn layers -> tiny KV. Strongest dense model <70B on AA v5 except Nanbeige4.3-33B (20.4). Speeds: RTX 4090 Q4_K_M 49 tok/s no-MTP (kingy.ai, b10453), 69.6 -> 147.5 tok/s code with MTP n-max 6 p-min 0.75 (81% accept); RTX 5090 ~172 tok/s code with MTP; RTX 3090 41.6 -> 66.4 with MTP n-max 2. VRAM Q4_K_M: 16.6GB @8K ctx, 20.3GB @64K (F16 KV).",
+   "native_1bit": false,
+   "quants": [
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "Qwen3.8-27B-UD-IQ4_XS.gguf"
+     ],
+     "bytes": 14252845984,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 17559178144,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 20876938144,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "ternary-bonsai-2-27b",
+   "name": "Ternary Bonsai 2 27B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 27.36,
+   "moe": false,
+   "score": 18.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: PrismML reports 98.2% of Qwen3.8-27B FP16 on a 14-20 benchmark suite (84.78 vs 86.32), but knowledge -5.7 pts and agentic -1.8 pts, which v5 weights heavily -> ~90% of Qwen3.8-27B Xhigh (20.1)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "active_params_b": 27.36,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-17. Ternary {-1,0,+1} g128 compression of Qwen3.8-27B (QAT on TPU v5). Beats unsloth IQ2_XXS (7.27GB, 72.59 avg) by 12 pts at smaller size; within 0.4 pts of UD-Q4_K_XL (17.6GB). Category deltas vs FP16: math 96.6/97.1, coding 89.4/89.1, IF 82.7/81.3, agentic 74.9/76.7, knowledge 79.9/85.6, vision 66.2/71.4. Speed (llama-bench tg128, PQ2_0 unless noted): RTX 5090 129.9, RTX PRO 60",
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-27B-Q2_0.gguf"
+     ],
+     "bytes": 7626008928
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-bolt-74b-a9b",
+   "name": "Nemotron 3.5 Bolt 74B A9B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 74.89,
+   "moe": true,
+   "score": 11.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 13.1; partial v5 components (AutomationBench 15%, Briefcase 912) imply ~11",
+   "layers": 88,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+   "active_params_b": 9.0,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-10-09. Star-Elastic compression of Super VL (heterogeneous expert counts, top-k 22->9). Same 8 attention layers. NVIDIA recipes: 28GB (32GB GPU, 65K ctx) / 32GB (48GB GPU, 262K ctx).",
+   "native_1bit": false,
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-IQ1_M.gguf"
+     ],
+     "bytes": 20307471360,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "NVIDIA-24GB (IQ2_XXS QAD)",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB.gguf"
+     ],
+     "bytes": 22018326528,
+     "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "qwen3.6-35b-a3b",
+   "name": "Qwen3.6 35B A3B",
+   "family": "Qwen3.6",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 35.95,
+   "moe": true,
+   "score": 9.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 9.5 (legacy fit 7.9). AA-Briefcase 713 vs Qwen3.8-27B 1393, AutomationBench 5% vs 48%. Was 43 on v4.0 (vs Qwen3.6-27B 46, Gemma 4 31B 39)",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.6-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-04-15. Very fast (3B active; AA API 133 t/s) but clearly below Qwen3.8-27B: LCBv6 74.6 vs 90.3, SWE-Pro well below. Good choice only when speed/CPU-offload matters more than quality.",
+   "native_1bit": false,
+   "quants": [
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 16845511648,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ4_XS.gguf"
+     ],
+     "bytes": 17730509792,
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gpt-oss-20b",
+   "name": "gpt-oss-20b",
+   "family": "gpt-oss",
+   "vendor": "OpenAI",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 20.91,
+   "moe": true,
+   "score": 5.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: strict fit 2.8, legacy fit 7.2 -> 5",
+   "layers": 24,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "openai/gpt-oss-20b",
+   "active_params_b": 3.6,
+   "kv_layers": 12,
+   "vision": false,
+   "notes": "Aug 2025 - oldest model kept; still the main US-made mid-size MoE besides Muse/Nemotron. Half the layers sliding-window(128). DGX Spark MXFP4: tg32 ~60 t/s, pp2048 ~1950 (120b). Stale vs 2026 Qwen/GLM; keep for license/US-origin/speed reasons.",
+   "no_kv_quant": true,
+   "swa_layers": 12,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 64,
+   "swa_window": 128,
+   "native_1bit": false,
+   "quants": [
+    {
+     "name": "MXFP4",
+     "files": [
+      "gpt-oss-20b-MXFP4.gguf"
+     ],
+     "bytes": 12109566624,
+     "repo": "ggml-org/gpt-oss-20b-GGUF"
+    },
+    {
+     "name": "F16",
+     "files": [
+      "gpt-oss-20b-F16.gguf"
+     ],
+     "bytes": 13792639168,
+     "repo": "unsloth/gpt-oss-20b-GGUF"
+    }
+   ]
+  }
+ ]
+}

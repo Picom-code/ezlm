@@ -1,0 +1,216 @@
+{
+ "id": "gemma-4-12b",
+ "repo": "unsloth/gemma-4-12b-it-GGUF",
+ "file": "gemma-4-12b-it-UD-IQ2_M.gguf",
+ "url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/main/gemma-4-12b-it-UD-IQ2_M.gguf",
+ "template_source": "tokenizer.chat_template",
+ "named_templates": [],
+ "jinja2_version": "3.1.6",
+ "environment": "jinja2, trim_blocks=False, lstrip_blocks=False, default Undefined (like minja: missing keys are falsy)",
+ "preprocessing": [],
+ "cases": {
+  "plain": {
+   "description": "one user message",
+   "kwargs": [],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "system_user": {
+   "description": "system plus user",
+   "kwargs": [],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>system\nYou are a helpful assistant.<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+  },
+  "tool_call": {
+   "description": "tool definition, assistant tool call, tool result",
+   "kwargs": [],
+   "tools": [
+    "get_weather"
+   ],
+   "ok": true,
+   "output": "<bos><|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>,unit:<|\"|>celsius<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>18 degrees and clear.<|\"|>}<tool_response|>"
+  },
+  "tool_call_string_args": {
+   "description": "same, but arguments is an OpenAI JSON string",
+   "kwargs": [],
+   "tools": [
+    "get_weather"
+   ],
+   "ok": true,
+   "output": "<bos><|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{\"city\": \"Paris\"}<tool_call|><|tool_response>response:get_weather{value:<|\"|>18 degrees and clear.<|\"|>}<tool_response|>"
+  },
+  "parallel_tools": {
+   "description": "two tool calls in one assistant message, two results",
+   "kwargs": [],
+   "tools": [
+    "get_weather",
+    "get_time"
+   ],
+   "ok": true,
+   "output": "<bos><|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><|tool>declaration:get_time{description:<|\"|>Get the current time in a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>}<tool_call|><|tool_call>call:get_time{city:<|\"|>Paris<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>18 degrees and clear.<|\"|>}<tool_response|><|tool_response>response:get_time{value:<|\"|>09:30 local time.<|\"|>}<tool_response|>"
+  },
+  "thinking_on": {
+   "description": "enable_thinking true",
+   "kwargs": [
+    "enable_thinking"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "same_as_plain_baseline": false
+  },
+  "thinking_off": {
+   "description": "enable_thinking false",
+   "kwargs": [
+    "enable_thinking"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "thinking_var_on": {
+   "description": "the `thinking` variable instead",
+   "kwargs": [
+    "thinking"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "thinking_var_off": {
+   "description": "the `thinking` variable instead",
+   "kwargs": [
+    "thinking"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "gen_prompt_off": {
+   "description": "no generation prompt",
+   "kwargs": [
+    "add_generation_prompt"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n",
+   "same_as_plain_baseline": false
+  },
+  "effort_none": {
+   "description": "reasoning_effort=none",
+   "kwargs": [
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_low": {
+   "description": "reasoning_effort=low",
+   "kwargs": [
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_medium": {
+   "description": "reasoning_effort=medium",
+   "kwargs": [
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_high": {
+   "description": "reasoning_effort=high",
+   "kwargs": [
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_xhigh": {
+   "description": "reasoning_effort=xhigh",
+   "kwargs": [
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_max": {
+   "description": "reasoning_effort=max",
+   "kwargs": [
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_nested": {
+   "description": "reasoning.effort=high",
+   "kwargs": [
+    "reasoning"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_thinking_nested": {
+   "description": "thinking.effort=high",
+   "kwargs": [
+    "thinking"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "same_as_plain_baseline": true
+  },
+  "effort_with_thinking_on": {
+   "description": "enable_thinking true plus reasoning_effort=high",
+   "kwargs": [
+    "enable_thinking",
+    "reasoning_effort"
+   ],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "same_as_plain_baseline": false
+  },
+  "developer_role": {
+   "description": "a developer role message",
+   "kwargs": [],
+   "tools": [],
+   "ok": true,
+   "output": "<bos><|turn>system\nAnswer in one sentence.<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+  }
+ },
+ "variables_read": [
+  "add_generation_prompt",
+  "bos_token",
+  "developer",
+  "enable_thinking",
+  "messages",
+  "preserve_thinking",
+  "reasoning",
+  "thinking",
+  "tools"
+ ],
+ "baseline_error": null
+}

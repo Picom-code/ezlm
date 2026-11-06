@@ -1,0 +1,8 @@
+# Source: https://github.com/AlexsJones/llmfit/issues/1180 (Arc A770 16 GB, driver 32.0.101.5972)
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000
+# qwMemorySize 16106127360 bytes; Win32_VideoController.AdapterRAM saturates at 4293918720.
+DriverDesc REG_SZ "Intel(R) Arc(TM) A770 Graphics"
+ProviderName REG_SZ "Intel Corporation"
+HardwareInformation.qwMemorySize REG_QWORD 0x3C0000000
+# The same driver also writes the saturated 32-bit MemorySize; qwMemorySize must win.
+HardwareInformation.MemorySize REG_BINARY 00 f0 ff 7f

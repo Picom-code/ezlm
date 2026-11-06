@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ezlm/qwen3.6-35b-a3b",
+  "provider": {
+    "ezlm": {
+      "models": {
+        "qwen3.6-35b-a3b": {
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          },
+          "name": "Qwen3.6 35B A3B",
+          "tool_call": true
+        }
+      },
+      "name": "EZLM (local)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "apiKey": "{file:C:/Users/picom/.config/opencode/ezlm.key}",
+        "baseURL": "http://127.0.0.1:8080/v1"
+      }
+    }
+  }
+}

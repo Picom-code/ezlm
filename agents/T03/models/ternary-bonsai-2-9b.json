@@ -1,0 +1,18 @@
+{
+ "id": "ternary-bonsai-2-9b",
+ "repo": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "xml <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call> blocks; tool definitions as JSON lines in a <tools> block in the system message",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "Unexpected message role. (developer role, or any role other than system/user/assistant/tool)",
+  "System message must be at the beginning. (a system message that is not messages[0])",
+  "No user query found in messages. (no user role anywhere in messages)"
+ ],
+ "notes": "reasoning_effort is never referenced by the template, so all six levels render byte-identical to a plain call: silently ignored, not accepted and not rejected. enable_thinking=false renders an empty ' thinking\\n\\n</think>\\n\\n' block after the assistant header; true or absent renders ' thinking\\n'. A developer role raises, but llama.cpp b11960 maps developer to system before rendering (chat.cpp:1517), so the server path works. With tools, the tool block replaces the system turn and any leading system content is appended after </IMPORTANT>. llama.cpp caps will report supports_reasoning_effort=false for this template (caps.cpp:569-593)."
+}

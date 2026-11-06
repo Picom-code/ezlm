@@ -1,0 +1,85 @@
+{
+  "id": "granite-4.2-8b",
+  "source": "https://huggingface.co/ibm-granite/granite-4.2-8b-GGUF/resolve/main/granite-4.2-8b-Q3_K_M.gguf",
+  "renderer": "jinja2 (python)",
+  "templates": {
+    "tokenizer.chat_template": {
+      "plain": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "system_user": {
+        "ok": true,
+        "output": "\n<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "tool_call": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"name\": \"get_weather\", \"description\": \"Get the current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\", \"description\": \"City name.\"}, \"unit\": {\"type\": \"string\", \"enum\": [\"c\", \"f\"]}}, \"required\": [\"city\"]}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n\n        \n            <|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=unit>\nc\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18, \"condition\": \"cloudy\"}\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "parallel_tools": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"name\": \"get_weather\", \"description\": \"Get the current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\", \"description\": \"City name.\"}, \"unit\": {\"type\": \"string\", \"enum\": [\"c\", \"f\"]}}, \"required\": [\"city\"]}}\n{\"name\": \"get_time\", \"description\": \"Get the current time in a timezone.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"tz\": {\"type\": \"string\"}}, \"required\": [\"tz\"]}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris and the time in Tokyo?<|im_end|>\n\n        \n            <|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=unit>\nc\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_time>\n<parameter=tz>\nAsia/Tokyo\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18}\n</tool_response>\n<tool_response>\n{\"time\": \"13:00\"}\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "thinking_on": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "thinking_off": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think></think>"
+      },
+      "thinking_var_true": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "thinking_var_false": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_none": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_minimal": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_low": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?\n\n{reasoning effort: low}<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_medium": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_high": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_xhigh": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_max": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_reasoning_object": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "effort_thinking_object": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "developer_role": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>developer\nYou are terse.<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+      },
+      "no_generation_prompt": {
+        "ok": true,
+        "output": "\n<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n"
+      }
+    }
+  }
+}

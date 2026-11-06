@@ -1,0 +1,7 @@
+Caption                     : NVIDIA GeForce RTX 4090
+AdapterRAM                  : 4293918720
+ConfigManagerErrorCode      : 0
+DriverVersion               : 32.0.15.6094
+Name                        : NVIDIA GeForce RTX 4090
+PNPDeviceID                 : PCI\VEN_10DE&DEV_2684&SUBSYS_88A21043&REV_A1\4&2F3C1A5E&0&0008
+VideoProcessor              : NVIDIA GeForce RTX 4090

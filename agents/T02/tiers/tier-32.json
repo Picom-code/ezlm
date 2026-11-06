@@ -1,0 +1,294 @@
+{
+ "tier": "32",
+ "models": [
+  {
+   "id": "nanbeige4.3-33b",
+   "name": "Nanbeige4.3 33B",
+   "family": "Nanbeige4.3",
+   "vendor": "Nanbeige (Kanzhun / BOSS Zhipin)",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 33.12,
+   "moe": false,
+   "score": 20.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (highest dense model on v5; brand-new, 2026-10-24 - verify with own evals)",
+   "layers": 52,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "Nanbeige/Nanbeige4.3-33B",
+   "active_params_b": 33.12,
+   "kv_layers": 52,
+   "vision": false,
+   "notes": "Llama-architecture dense 33B, full attention on all 52 layers (KV ~6x heavier per token than Qwen3.8-27B). Scores level with Qwen3.8-27B Xhigh on v5 (AutomationBench 53% vs 48%, TB4 30% vs 6%, but HLE-D 7% vs 15%, Omniscience much lower). Tool calling UNVERIFIED. 32 GB tier: IQ4_XS (18.64 GB) reaches about 96K context on Linux and 85K on Windows; Q4_K_M (20.79 GB) is the quality option at about 78K and 67K. All 52 layers are full attention, so 128K of q8 KV costs 14.0 GB and does not fit; 64K is the practical ceiling.",
+   "quants": [
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ4_XS.gguf"
+     ],
+     "bytes": 18635041920,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-Q4_K_M.gguf"
+     ],
+     "bytes": 20788825216,
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8 27B",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 20.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) - Xhigh effort. Medium 17.5, Low 15.7, Non-reasoning 10.0. (Was 34 on v4.3.)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-27B",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "notes": "Released 2026-08-05. 48 Gated DeltaNet + 16 full-attn layers -> tiny KV. Strongest dense model <70B on AA v5 except Nanbeige4.3-33B (20.4). Speeds: RTX 4090 Q4_K_M 49 tok/s no-MTP (kingy.ai, b10453), 69.6 -> 147.5 tok/s code with MTP n-max 6 p-min 0.75 (81% accept); RTX 5090 ~172 tok/s code with MTP; RTX 3090 41.6 -> 66.4 with MTP n-max 2. VRAM Q4_K_M: 16.6GB @8K ctx, 20.3GB @64K (F16 KV). 32 GB tier: UD-Q6_K (21.98 GB) reaches about 205K context on Linux, 172K on Windows and 139K on Vulkan; UD-Q5_K_XL (20.88 GB) reaches about 233K, 200K and 168K. Only 16 of 64 layers grow a KV cache, so context is cheap and both quants are close to the 256K native limit.",
+   "draft": {
+    "repo": "ggml-org/Qwen3.8-27B-GGUF",
+    "file": "mtp-Qwen3.8-27B-Q8_0.gguf",
+    "bytes": 3164006816,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Qwen3.8-27B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 20876938144,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+     "name": "UD-Q6_K",
+     "files": [
+      "Qwen3.8-27B-UD-Q6_K.gguf"
+     ],
+     "bytes": 21983677344,
+     "repo": "unsloth/Qwen3.8-27B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "ternary-bonsai-2-27b",
+   "name": "Ternary Bonsai 2 27B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 27.36,
+   "moe": false,
+   "score": 18.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: PrismML reports 98.2% of Qwen3.8-27B FP16 on a 14-20 benchmark suite (84.78 vs 86.32), but knowledge -5.7 pts and agentic -1.8 pts, which v5 weights heavily -> ~90% of Qwen3.8-27B Xhigh (20.1)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "active_params_b": 27.36,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-17. Ternary {-1,0,+1} g128 compression of Qwen3.8-27B (QAT on TPU v5). Beats unsloth IQ2_XXS (7.27GB, 72.59 avg) by 12 pts at smaller size; within 0.4 pts of UD-Q4_K_XL (17.6GB). Category deltas vs FP16: math 96.6/97.1, coding 89.4/89.1, IF 82.7/81.3, agentic 74.9/76.7, knowledge 79.9/85.6, vision 66.2/71.4. Speed (llama-bench tg128, PQ2_0 unless noted): RTX 5090 129.9, RTX PRO 60 32 GB tier: the single Q2_0 quant (7.63 GB) leaves about 23 GB for KV and compute, so the full 256K native context fits with room to spare (18.2 GB total) and the model can share a card with another workload. Vision needs the separate mmproj file.",
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-27B-Q2_0.gguf"
+     ],
+     "bytes": 7626008928,
+     "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf"
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-bolt-74b-a9b",
+   "name": "Nemotron 3.5 Bolt 74B A9B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 74.89,
+   "moe": true,
+   "score": 11.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 13.1; partial v5 components (AutomationBench 15%, Briefcase 912) imply ~11",
+   "layers": 88,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+   "active_params_b": 9.0,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-10-09. Star-Elastic compression of Super VL (heterogeneous expert counts, top-k 22->9). Same 8 attention layers. NVIDIA recipes: 28GB (32GB GPU, 65K ctx) / 32GB (48GB GPU, 262K ctx). 32 GB tier: UD-IQ2_M (24.61 GB) is the largest model that fits comfortably here, at the full 256K context on Linux (27.4 GB), 488K of headroom on Windows and 338K on Vulkan; UD-Q2_K_XL (28.75 GB) is a Linux-only option at about 150K. Only 8 of 88 layers carry a KV cache, so context is nearly free.",
+   "draft": {
+    "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF",
+    "file": "dflash-NVIDIA-Nemotron-3.5-Bolt-74B-A9B-NVFP4.gguf",
+    "bytes": 998242560,
+    "type": "draft-dflash"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-IQ2_M.gguf"
+     ],
+     "bytes": 24607493120,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 28753128448,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-31b",
+   "name": "Gemma 4 31B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 31.27,
+   "moe": false,
+   "score": 8.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 7.3; partial v5 components (AutomationBench 5%, GDP.pdf 6%, Briefcase 369, TB4 0%) imply ~8. Below Qwen3.6-35B-A3B (~9.5), above gpt-oss-120b (~7). v4.0 was 39",
+   "layers": 60,
+   "kv_heads": 4,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-31B-it",
+   "active_params_b": 31.27,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-03-11. 50 sliding-window layers (16 KV heads x 256, window 1024) + 10 global layers (4 KV heads x 512) -> KV heavier than Qwen hybrids (OOM at 64K F16 KV on 24GB with Q4_K_M). RTX 4090 Q4_K_M 45 tok/s decode. Strong tool calling and doc QA; weaker coding than Qwen3.8. 32 GB tier: UD-Q5_K_XL (21.89 GB) reaches about 160K context on Linux and 133K on Windows, and about 29.2 GB at 128K including the sliding-window cache, which is at the edge of the Windows budget; Q6_K (25.20 GB) reaches about 92K on Linux, 65K on Windows and 38K on Vulkan. The 512-wide global head makes KV expensive per layer, which caps context before the weights do. The 0.51 GB MTP draft is optional.",
+   "draft": {
+    "repo": "unsloth/gemma-4-31B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-31B-it-Q8_0.gguf",
+    "bytes": 514687104,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "gemma-4-31B-it-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 21890429888,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "gemma-4-31B-it-Q6_K.gguf"
+     ],
+     "bytes": 25201486784,
+     "repo": "unsloth/gemma-4-31B-it-GGUF"
+    }
+   ],
+   "swa_layers": 50,
+   "swa_kv_heads": 16,
+   "swa_head_dim": 256,
+   "swa_window": 1024
+  },
+  {
+   "id": "k2-horizon-mova-36b-a4b",
+   "name": "K2 Horizon MoVA 36B A4B",
+   "family": "K2 Horizon",
+   "vendor": "IFM (Institute of Foundation Models)",
+   "country": "AE",
+   "license": "Apache-2.0",
+   "params_b": 37.44,
+   "moe": true,
+   "score": 13.0,
+   "score_source": "ESTIMATE: v5-equivalent from AA's published v5 components (AA-Briefcase 1164.8, GDPval-AA 1196.7, AutomationBench 26.1%, GDP.pdf 4.2%, HLE-Diamond 23.4%, AA-LCR 71.7%, TB2.1 56.6%, SciCode 40.0%, GPQA 82.2%, tau3-Banking 32.0%) via linear fit on 38 models with an official v5 index (RMSE 2.9) -> 14.1; legacy fit (HLE, AA-LCR, GDPval, CritPt) on 87 models -> 12.7; use 13.0. Fetched 2026-11-06.",
+   "layers": 48,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "IFM/K2-Horizon-MoVA-36B-A4B",
+   "active_params_b": 4.0,
+   "kv_layers": 48,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-01. Mixture-of-Experts with Mixture-of-Values attention: 100 experts, top-8 plus one shared, 4B active out of 37.4B counted (36B nominal). Native 524K context, fully open (training data, recipe and code published). AA components fetched 2026-11-06: AA-Briefcase 1164.8, GDPval-AA 1196.7, AutomationBench 26.1%, HLE-Diamond 23.4%, AA-LCR 71.7%, TB2.1 56.6%, SciCode 40.0%, GPQA 82.2%, tau3-Banking 32.0%. Vendor card: tau3-Banking 26.8, TB2.1 58.6, HLE 25.2, GPQA 80.8. All 48 layers are full attention, so KV costs 12.9 GB at 64K f16; that is what caps context at this tier. Reasoning effort and tool calling are in the chat template. 32 GB tier: Q4_K_M (22.37 GB) reaches about 70K context on Linux, 58K on Windows and 46K on Vulkan; Q5_K_M (26.44 GB) only reaches about 32K on Linux. All 48 layers are full attention, so KV costs 12.9 GB at 64K f16, which is what caps context here.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf"
+     ],
+     "bytes": 22368011616,
+     "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "ornith-1.5-35b-a3b",
+   "name": "Ornith 1.5 35B A3B",
+   "family": "Ornith",
+   "vendor": "Ornith AI",
+   "country": "US",
+   "license": "MIT",
+   "params_b": 35.0,
+   "moe": true,
+   "score": 13.0,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor Terminal-Bench 2.1 is 67.8 (Terminus-2) vs 52.5 for Qwen3.6-35B-A3B on the same harness; scaling through AA's measured 44.9 for Qwen3.6-35B-A3B (catalog 9.5) and the Qwen3.6-27B (60.7, 12.0) and Qwen3.8-27B (79.8, 20.1) points gives 12 to 14. Vendor GPQA Diamond 89.2 and HLE 25.6 support it. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "ornith-ai/Ornith-1.5-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-18 by Ornith AI. 35B total, about 3B active, Qwen3.5-MoE backbone with linear attention in 30 of 40 layers, so only 10 layers carry a growing KV cache. Vendor numbers, five-run averages: Terminal-Bench 2.1 67.8 (Terminus-2) and 68.5 (Claude Code), SWE-bench Verified 79.0, SWE-bench Pro 59.6, GPQA Diamond 89.2, HLE 25.6, NL2Repo 46.2. The image projector is a separate mmproj file. Not on Artificial Analysis on 2026-11-06. 32 GB tier: Q5_K_M (25.49 GB) runs the full 256K context on a Linux budget (30.0 GB total), 217K on Windows and 132K on Vulkan; Q4_K_M (21.86 GB) runs 256K on every 32 GB budget (26.3 GB).",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Ornith-1.5-35B-A3B-Q4_K_M.gguf"
+     ],
+     "bytes": 21864081056,
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF"
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "Ornith-1.5-35B-A3B-Q5_K_M.gguf"
+     ],
+     "bytes": 25492186784,
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF"
+    }
+   ]
+  }
+ ]
+}

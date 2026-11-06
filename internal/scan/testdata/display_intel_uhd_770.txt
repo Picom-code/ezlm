@@ -1,0 +1,8 @@
+# Source: https://github.com/AlexsJones/llmfit/issues/1180 (UHD 770, 1 GiB shared)
+# Synthetic combination: some integrated-graphics driver entries carry a zero
+# qwMemorySize and the real size only in the 32-bit MemorySize value.
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001
+DriverDesc REG_SZ "Intel(R) UHD Graphics 770"
+ProviderName REG_SZ "Intel Corporation"
+HardwareInformation.qwMemorySize REG_QWORD 0x0
+HardwareInformation.MemorySize REG_DWORD 0x40000000

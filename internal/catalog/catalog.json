@@ -22,7 +22,7 @@
    "kv_layers": 16,
    "vision": true,
    "native_1bit": true,
-   "notes": "Released 2026-09-17. Ternary {-1,0,+1} g128 compression of Qwen3.8-27B (QAT on TPU v5). Beats unsloth IQ2_XXS (7.27GB, 72.59 avg) by 12 pts at smaller size; within 0.4 pts of UD-Q4_K_XL (17.6GB). Category deltas vs FP16: math 96.6/97.1, coding 89.4/89.1, IF 82.7/81.3, agentic 74.9/76.7, knowledge 79.9/85.6, vision 66.2/71.4. Speed (llama-bench tg128, PQ2_0 unless noted): RTX 5090 129.9, RTX PRO 60",
+   "notes": "Released 2026-09-17. Ternary {-1,0,+1} g128 compression of Qwen3.8-27B (QAT on TPU v5). Beats unsloth IQ2_XXS (7.27GB, 72.59 avg) by 12 pts at smaller size; within 0.4 pts of UD-Q4_K_XL (17.6GB). Category deltas vs FP16: math 96.6/97.1, coding 89.4/89.1, IF 82.7/81.3, agentic 74.9/76.7, knowledge 79.9/85.6, vision 66.2/71.4. Speed (llama-bench tg128, PQ2_0): RTX 5090 129.9, RTX PRO 6000 124.8, H100 113.9, RTX 6000 Ada 82.8, RTX 4090 81.2, L40S 74.4, A100 73.9, L4 29.8, M5 Pro 28.1.",
    "quants": [
     {
      "name": "Q2_0",
@@ -78,7 +78,7 @@
    "vendor": "PrismML",
    "country": "US",
    "license": "Apache-2.0",
-   "params_b": 4.66,
+   "params_b": 4.54,
    "moe": false,
    "score": 2.0,
    "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: ternary Qwen3.5-4B",
@@ -88,7 +88,7 @@
    "ctx_max": 262144,
    "tool_calling": true,
    "repo": "prism-ml/Ternary-Bonsai-2-4B-gguf",
-   "active_params_b": 4.66,
+   "active_params_b": 4.54,
    "kv_layers": 8,
    "vision": true,
    "native_1bit": true,
@@ -162,7 +162,7 @@
    "kv_layers": 36,
    "vision": false,
    "native_1bit": true,
-   "notes": "Released 2026-03-18. 1.16GB. tg128: RTX 4090 ~368 (PrismML), RTX 3090 263, RTX 3080 197, GB10 159, M4 Pro 116.8 (PrismML: 131), Strix Halo ROCm 96 / Vulkan 64, GTX 1080 Ti 101, RTX A2000 63, iPhone 17 Pro Max ~44 (PrismML), i3-7100 CPU 3.6. Sibling sizes: Bonsai 4B Q1_0 0.57GB, Bonsai 1.7B Q1_0 0.25GB (1.7B: RTX 3090 599 t/s, M4 Pro 308, i3 CPU 14.3). Ternary Bonsai 8B Q2_0 2.18GB superseded by Bo",
+   "notes": "Released 2026-03-18. 1.16GB. tg128: RTX 4090 ~368 (PrismML), RTX 3090 263, RTX 3080 197, GB10 159, M4 Pro 116.8 (PrismML: 131), Strix Halo ROCm 96 / Vulkan 64, GTX 1080 Ti 101, RTX A2000 63, iPhone 17 Pro Max ~44 (PrismML), i3-7100 CPU 3.6. Sibling sizes: Bonsai 4B Q1_0 0.57GB, Bonsai 1.7B Q1_0 0.25GB (1.7B: RTX 3090 599 t/s, M4 Pro 308, i3 CPU 14.3). Ternary Bonsai 8B Q2_0 2.18GB superseded by Bonsai 2.",
    "quants": [
     {
      "name": "Q1_0",
@@ -299,7 +299,8 @@
       "Qwen3.8-27B-UD-Q2_K_XL.gguf"
      ],
      "bytes": 9828981664,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-IQ3_XXS",
@@ -307,7 +308,8 @@
       "Qwen3.8-27B-UD-IQ3_XXS.gguf"
      ],
      "bytes": 10934860704,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-IQ3_S",
@@ -315,7 +317,8 @@
       "Qwen3.8-27B-UD-IQ3_S.gguf"
      ],
      "bytes": 12040883104,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-Q3_K_XL",
@@ -323,7 +326,8 @@
       "Qwen3.8-27B-UD-Q3_K_XL.gguf"
      ],
      "bytes": 13146393504,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-IQ4_XS",
@@ -331,7 +335,8 @@
       "Qwen3.8-27B-UD-IQ4_XS.gguf"
      ],
      "bytes": 14252845984,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-Q4_K_XL",
@@ -339,7 +344,8 @@
       "Qwen3.8-27B-UD-Q4_K_XL.gguf"
      ],
      "bytes": 17559178144,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-Q5_K_XL",
@@ -347,7 +353,8 @@
       "Qwen3.8-27B-UD-Q5_K_XL.gguf"
      ],
      "bytes": 20876938144,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-Q6_K",
@@ -355,7 +362,8 @@
       "Qwen3.8-27B-UD-Q6_K.gguf"
      ],
      "bytes": 21983677344,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     },
     {
      "name": "Q8_0",
@@ -363,7 +371,8 @@
       "Qwen3.8-27B-Q8_0.gguf"
      ],
      "bytes": 29047086048,
-     "repo": "unsloth/Qwen3.8-27B-GGUF"
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "mtp": true
     }
    ]
   },
@@ -373,7 +382,7 @@
    "family": "Qwen3.8",
    "vendor": "Alibaba Qwen",
    "country": "CN",
-   "license": "qwen-community-1.0 (UNVERIFIED terms)",
+   "license": "qwen-community-1.0",
    "params_b": 180.0,
    "moe": true,
    "score": 27.0,
@@ -387,7 +396,7 @@
    "active_params_b": 6.0,
    "kv_layers": 12,
    "vision": true,
-   "notes": "Released 2026-08-24. 125B backbone (512 experts, top-10, 6B active) + 51B n-gram embedding table (lookup, read one row/token -> can stay mmapped on SSD/RAM, never needs VRAM) + 4B MTP. Hybrid Gated DeltaNet + Qwen Sparse Attention (12 KV layers). llama.cpp: qwen4exp arch merged 2026-08-27 (PR #27742",
+   "notes": "Released 2026-08-24. 125B backbone (512 experts, top-10, 6B active) + 51B n-gram embedding table (lookup, read one row/token -> can stay mmapped on SSD/RAM, never needs VRAM) + 4B MTP. Hybrid Gated DeltaNet + Qwen Sparse Attention (12 KV layers). llama.cpp: qwen4exp arch merged 2026-08-27 (PR #27742)",
    "draft": {
     "repo": "ggml-org/Qwen3.8-Flash-Next-GGUF",
     "file": "mtp-Qwen3.8-Flash-Next-Q4_0.gguf",
@@ -403,7 +412,7 @@
      ],
      "bytes": 66423878624,
      "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
-     "lazy_bytes": 22584118732,
+     "lazy_bytes": 28800138432,
      "args": []
     },
     {
@@ -415,7 +424,7 @@
      "bytes": 68026093024,
      "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
      "quality": 0.94,
-     "lazy_bytes": 23128871628,
+     "lazy_bytes": 28800138432,
      "args": []
     },
     {
@@ -427,7 +436,7 @@
      "bytes": 75839998528,
      "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
      "quality": 0.985,
-     "lazy_bytes": 25785599499,
+     "lazy_bytes": 28800138432,
      "args": []
     },
     {
@@ -437,9 +446,9 @@
       "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00002-of-00003.gguf",
       "UD-IQ1_S/Qwen3.8-Flash-Next-UD-IQ1_S-00003-of-00003.gguf"
      ],
-     "bytes": 72546461344,
+     "bytes": 66379180698,
      "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
-     "lazy_bytes": 24665796856,
+     "lazy_bytes": 28800138432,
      "args": []
     },
     {
@@ -449,9 +458,9 @@
       "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00002-of-00003.gguf",
       "UD-IQ1_M/Qwen3.8-Flash-Next-UD-IQ1_M-00003-of-00003.gguf"
      ],
-     "bytes": 74538755776,
+     "bytes": 68007094938,
      "repo": "unsloth/Qwen3.8-Flash-Next-GGUF",
-     "lazy_bytes": 25343176963,
+     "lazy_bytes": 28800138432,
      "args": []
     }
    ]
@@ -864,7 +873,7 @@
    "active_params_b": 4.66,
    "kv_layers": 8,
    "vision": true,
-   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj ~0.67-0.92GB.",
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj F16 ~0.67GB (F32 ~1.33GB).",
    "quants": [
     {
      "name": "UD-IQ2_XXS",
@@ -952,7 +961,7 @@
    "active_params_b": 2.27,
    "kv_layers": 6,
    "vision": true,
-   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj ~0.67-0.92GB.",
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size). Hybrid DeltaNet (1/4 full attn). Natively multimodal; mmproj F16 ~0.67GB (F32 ~1.33GB).",
    "quants": [
     {
      "name": "UD-IQ2_XXS",
@@ -1363,10 +1372,10 @@
    "ctx_max": 131072,
    "tool_calling": true,
    "repo": "google/gemma-4-E4B-it",
-   "active_params_b": 4.0,
-   "kv_layers": 7,
+   "active_params_b": 4.5,
+   "kv_layers": 4,
    "vision": true,
-   "notes": "'Effective 4B' (Per-Layer Embeddings make total 8.0B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Phone/edge tier.",
+   "notes": "'Effective 4.5B' (Per-Layer Embeddings make total 8.0B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Last 18 layers share KV caches. Phone/edge tier.",
    "draft": {
     "repo": "unsloth/gemma-4-E4B-it-GGUF",
     "file": "MTP/mtp-gemma-4-E4B-it-Q8_0.gguf",
@@ -1447,7 +1456,7 @@
      "repo": "google/gemma-4-E4B-it-qat-q4_0-gguf"
     }
    ],
-   "swa_layers": 35,
+   "swa_layers": 20,
    "swa_kv_heads": 2,
    "swa_head_dim": 256,
    "swa_window": 512
@@ -1469,10 +1478,10 @@
    "ctx_max": 131072,
    "tool_calling": true,
    "repo": "google/gemma-4-E2B-it",
-   "active_params_b": 2.0,
-   "kv_layers": 7,
+   "active_params_b": 2.3,
+   "kv_layers": 3,
    "vision": true,
-   "notes": "'Effective 2B' (Per-Layer Embeddings make total 5.12B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Phone/edge tier.",
+   "notes": "'Effective 2.3B' (Per-Layer Embeddings make total 5.12B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Last 20 layers share KV caches. Phone/edge tier.",
    "draft": {
     "repo": "unsloth/gemma-4-E2B-it-GGUF",
     "file": "MTP/mtp-gemma-4-E2B-it-Q8_0.gguf",
@@ -1553,7 +1562,7 @@
      "repo": "google/gemma-4-E2B-it-qat-q4_0-gguf"
     }
    ],
-   "swa_layers": 28,
+   "swa_layers": 12,
    "swa_kv_heads": 1,
    "swa_head_dim": 256,
    "swa_window": 512
@@ -1633,7 +1642,7 @@
    "kv_layers": 12,
    "vision": false,
    "no_kv_quant": true,
-   "notes": "Aug 2025 - oldest model kept; still the main US-made mid-size MoE besides Muse/Nemotron. Half the layers sliding-window(128). DGX Spark MXFP4: tg32 ~60 t/s, pp2048 ~1950 (120b). Stale vs 2026 Qwen/GLM; keep for license/US-origin/speed reasons.",
+   "notes": "Aug 2025 - oldest model kept; the small US-made MoE (21B total, 3.6B active) that runs from a 12 GB MXFP4 file. Half the layers sliding-window(128). Stale vs 2026 Qwen/GLM; keep for license/US-origin/speed reasons.",
    "quants": [
     {
      "name": "MXFP4",
@@ -1671,8 +1680,8 @@
    "family": "Muse",
    "vendor": "Meta",
    "country": "US",
-   "license": "Muse Model License (UNVERIFIED terms)",
-   "params_b": 30.0,
+   "license": "Apache-2.0",
+   "params_b": 29.78,
    "moe": false,
    "score": 6.3,
    "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (High)",
@@ -1682,10 +1691,10 @@
    "ctx_max": 131072,
    "tool_calling": true,
    "repo": "meta-models/Muse-Glimmer-30B",
-   "active_params_b": 30.0,
+   "active_params_b": 29.78,
    "kv_layers": 13,
    "vision": true,
-   "notes": "Released 2026-08-09. Dense ~30B (param count approximate). 13 full + 39 sliding(2048) layers. US-origin alternative to Qwen3.8-27B but much weaker (6.3 vs 20.1).",
+   "notes": "Released 2026-08-09. Dense 29.78B total: 27.85B language model plus a 1.9B perception encoder in a separate mmproj. 13 full + 39 sliding(2048) layers. US-origin alternative to Qwen3.8-27B but much weaker (6.3 vs 20.1).",
    "draft": {
     "repo": "unsloth/Muse-Glimmer-30B-GGUF",
     "file": "dflash-kquant.gguf",
@@ -1783,7 +1792,7 @@
    "active_params_b": 6.5,
    "kv_layers": 36,
    "vision": true,
-   "notes": "Released 2026-03. 128 experts top-4 (active ~6.5B UNVERIFIED), MLA latent 256 + rope 64. Weak on v5; mainly for Apache-2.0 EU-origin needs. EAGLE head exists for vLLM only.",
+   "notes": "Released 2026-03. 128 experts top-4 (6.5B active per token, per the model card), MLA latent 256 + rope 64. Weak on v5; mainly for Apache-2.0 EU-origin needs. EAGLE head exists for vLLM only.",
    "quants": [
     {
      "name": "UD-IQ1_M",
@@ -1956,7 +1965,8 @@
       "UD-IQ1_M/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ1_M-00002-of-00002.gguf"
      ],
      "bytes": 46140308288,
-     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-IQ2_XXS",
@@ -1966,7 +1976,8 @@
       "UD-IQ2_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ2_XXS-00003-of-00003.gguf"
      ],
      "bytes": 51120348072,
-     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-Q2_K_XL",
@@ -1976,7 +1987,8 @@
       "UD-Q2_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q2_K_XL-00003-of-00003.gguf"
      ],
      "bytes": 57788537768,
-     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-IQ3_XXS",
@@ -1986,7 +1998,8 @@
       "UD-IQ3_XXS/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ3_XXS-00003-of-00003.gguf"
      ],
      "bytes": 59764210568,
-     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "mtp": true
     },
     {
      "name": "UD-Q3_K_XL",
@@ -1996,7 +2009,8 @@
       "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00003-of-00003.gguf"
      ],
      "bytes": 65761541032,
-     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF"
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "mtp": true
     },
     {
      "name": "Q4_0",
@@ -2118,7 +2132,7 @@
    "layers": 52,
    "kv_heads": 2,
    "head_dim": 128,
-   "ctx_max": 262144,
+   "ctx_max": 1048576,
    "tool_calling": true,
    "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
    "active_params_b": 3.0,
@@ -2348,7 +2362,7 @@
    "family": "LFM3",
    "vendor": "Liquid AI",
    "country": "US",
-   "license": "LFM Open License v1.0 (free below a revenue threshold; UNVERIFIED amount)",
+   "license": "LFM Open License v1.0 (free below $10M annual revenue)",
    "params_b": 1.73,
    "moe": false,
    "score": 1.5,
@@ -2422,7 +2436,7 @@
    "active_params_b": 33.12,
    "kv_layers": 52,
    "vision": false,
-   "notes": "Llama-architecture dense 33B, full attention on all 52 layers (KV ~6x heavier per token than Qwen3.8-27B). Scores level with Qwen3.8-27B Xhigh on v5 (AutomationBench 53% vs 48%, TB4 30% vs 6%, but HLE-D 7% vs 15%, Omniscience much lower). Tool calling UNVERIFIED.",
+   "notes": "Llama-architecture dense 33B, full attention on all 52 layers (KV ~3.3x heavier per token than Qwen3.8-27B: 106,496 vs 32,768 elements). Scores level with Qwen3.8-27B Xhigh on v5 (AutomationBench 53% vs 48%, TB4 30% vs 6%, but HLE-D 7% vs 15%, Omniscience much lower). Tool calling verified: the GGUF chat template renders tools as <tool_call> (xml or json).",
    "quants": [
     {
      "name": "IQ2_XXS",
@@ -2513,7 +2527,7 @@
    "vendor": "PrismML",
    "country": "US",
    "license": "Apache-2.0",
-   "params_b": 27.78,
+   "params_b": 27.36,
    "moe": false,
    "score": 9.5,
    "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: 89.5% of Qwen3.6-27B FP16 on PrismML 15-benchmark suite (coding 81.9 vs 88.7); Qwen3.6-27B v5-equiv ~12",
@@ -2523,7 +2537,7 @@
    "ctx_max": 262144,
    "tool_calling": true,
    "repo": "prism-ml/Bonsai-27B-gguf",
-   "active_params_b": 27.78,
+   "active_params_b": 27.36,
    "kv_layers": 16,
    "vision": true,
    "native_1bit": true,

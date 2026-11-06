@@ -1,0 +1,7 @@
+Caption                     : AMD Radeon RX 7800 XT
+AdapterRAM                  : 4293918720
+ConfigManagerErrorCode      : 43
+DriverVersion               : 31.0.24033.1003
+Name                        : AMD Radeon RX 7800 XT
+PNPDeviceID                 : PCI\VEN_1002&DEV_747E&SUBSYS_E1B61002&REV_C8\6&1B2C3D4E&0&00000019
+VideoProcessor              : AMD Radeon Graphics Processor (0x747E)

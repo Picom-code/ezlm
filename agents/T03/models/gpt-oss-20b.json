@@ -1,0 +1,30 @@
+{
+ "id": "gpt-oss-20b",
+ "repo": "openai/gpt-oss-20b",
+ "gguf_repo": "ggml-org/gpt-oss-20b-GGUF",
+ "gguf_file": "gpt-oss-20b-MXFP4.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "harmony channels: tool defs rendered as a TypeScript namespace in the developer message; a call is '<|start|>assistant to=functions.NAME<|channel|>commentary json<|message|>{args}<|call|>'; a result is '<|start|>functions.NAME to=assistant<|channel|>commentary<|message|>\"{result}\"<|end|>' (result JSON-encoded)",
+ "tools_supported": true,
+ "thinking_toggle": "none: the template never reads enable_thinking or thinking; reasoning is a 'Reasoning: <reasoning_effort>' line in the system message (default medium). Disabling thinking is server-side (reasoning_budget_tokens=0).",
+ "effort_levels_accepted": [
+  "none",
+  "minimal",
+  "low",
+  "medium",
+  "high",
+  "xhigh",
+  "max"
+ ],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [
+  "assistant content containing '<|channel|>...<|message|>' raises 'You have passed a message containing <|channel|> tags in the content field...' (b11960 patches this check to '{%- if false %}' in common_chat_templates_init)",
+  "a tool message with no preceding assistant tool call raises 'Message has tool role, but there was no previous assistant message with a tool call!'",
+  "a second or later tool_calls entry in one assistant message is silently dropped: the template renders only message.tool_calls[0]",
+  "an empty messages list raises UndefinedError (messages[0] is read unconditionally)",
+  "a developer message that is not messages[0] is silently dropped; only the first developer/system message becomes '# Instructions'"
+ ],
+ "notes": "Both gpt-oss models ship the identical template (sha256 a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146). effort values are interpolated verbatim and never validated, so every level renders, but the model was trained on low/medium/high only; 'none' is intercepted by the server before the template (server-common.cpp:1497-1504 erases the kwarg and sets enable_thinking=false, which this template ignores), so 'none' does NOT shorten reasoning. b11960 detects supports_parallel_tool_calls=false from this template. Tool-call arguments must be an object; a JSON string is double-encoded by |tojson unless llama.cpp's func_args_not_string normalization runs."
+}

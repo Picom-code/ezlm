@@ -1,0 +1,22 @@
+{
+  "id": "devstral-small-2-24b",
+  "repo": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+  "template_source": "tokenizer.chat_template",
+  "tool_call_format": "[TOOL_CALLS]<name>[ARGS]<json-arguments> in the assistant turn; tool definitions in [AVAILABLE_TOOLS]<json>[/AVAILABLE_TOOLS]; tool results in [TOOL_RESULTS]<text>[/TOOL_RESULTS]",
+  "tools_supported": true,
+  "thinking_toggle": "none",
+  "effort_levels_accepted": [],
+  "effort_levels_rejected": [],
+  "effort_levels_ignored": ["none", "low", "medium", "high", "xhigh", "max"],
+  "system_role": true,
+  "developer_role": false,
+  "known_template_errors": [
+    "Only user, assistant and tool roles are supported, got developer. (any developer message)",
+    "After the optional system message, conversation roles must alternate user and assistant roles except for tool calls and results. (two user turns in a row, a system message that is not messages[0])",
+    "Only text chunks are supported in assistant message contents. (assistant content block of type thinking; b11960's Ministral-3 handler injects one when reasoning_content is set)",
+    "Only text, image and image_url chunks are supported in user message content. (unknown block type in a user message)",
+    "Only text chunks are supported in system message contents. (non-text block in the system message)",
+    "Unsloth custom template does not support years > 2032. Error year = [YYYY] (strftime_now returns a year above 2032 on a 1st of the month)"
+  ],
+  "notes": "Mistral [SYSTEM_PROMPT]/[INST] format. The template has no thinking or effort variable at all: enable_thinking, reasoning_effort, reasoning_strength, medium_effort and thinking are silently ignored, and add_generation_prompt adds nothing because generation follows the last [/INST]. When the first message is not a system message the template injects a ~2.5 KB default Le Chat system prompt that embeds today's and yesterday's date. Only messages[0] may be a system message. b11960 detects this template as Ministral 3 ([SYSTEM_PROMPT]+[TOOL_CALLS]+[ARGS], no [CALL_ID]) and runs common_chat_params_init_ministral_3, which claims supports_thinking=true with [THINK]/[/THINK] tags and rewrites system/assistant content into typed blocks; the template itself never emits or accepts thinking, so an assistant history entry with reasoning_content becomes a thinking block and raises 'Only text chunks are supported in assistant message contents.'. The template's 'Assistant message must have a string or a list of chunks' raise is patched to 'if false' by b11960 for [TOOL_CALLS] templates."
+}

@@ -1,0 +1,599 @@
+{
+  "cases": [
+    {
+      "arg_shape": null,
+      "case": "plain",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>user\nHello<turn|>\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "system_user",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "You are a helpful assistant.",
+            "role": "system"
+          },
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\nYou are a helpful assistant.<turn|>\n<|turn>user\nHello<turn|>\n"
+    },
+    {
+      "arg_shape": "string",
+      "case": "tool_call__args_string",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "What is the weather in Paris?",
+            "role": "user"
+          },
+          {
+            "content": "",
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "function": {
+                  "arguments": "{\"city\": \"Paris\", \"units\": \"celsius\"}",
+                  "name": "get_weather"
+                },
+                "id": "call_1",
+                "type": "function"
+              }
+            ]
+          },
+          {
+            "content": "{\"temperature_c\": 18, \"conditions\": \"clear\"}",
+            "role": "tool",
+            "tool_call_id": "call_1"
+          }
+        ],
+        "tools": [
+          {
+            "function": {
+              "description": "Get the current weather for a city.",
+              "name": "get_weather",
+              "parameters": {
+                "properties": {
+                  "city": {
+                    "description": "City name.",
+                    "type": "string"
+                  },
+                  "units": {
+                    "enum": [
+                      "celsius",
+                      "fahrenheit"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},units:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{\"city\": \"Paris\", \"units\": \"celsius\"}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temperature_c\": 18, \"conditions\": \"clear\"}<|\"|>}<tool_response|>"
+    },
+    {
+      "arg_shape": "string",
+      "case": "parallel_tools__args_string",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "What is the weather and the time in Paris?",
+            "role": "user"
+          },
+          {
+            "content": "",
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "function": {
+                  "arguments": "{\"city\": \"Paris\", \"units\": \"celsius\"}",
+                  "name": "get_weather"
+                },
+                "id": "call_1",
+                "type": "function"
+              },
+              {
+                "function": {
+                  "arguments": "{\"city\": \"Paris\"}",
+                  "name": "get_time"
+                },
+                "id": "call_2",
+                "type": "function"
+              }
+            ]
+          },
+          {
+            "content": "{\"temperature_c\": 18}",
+            "role": "tool",
+            "tool_call_id": "call_1"
+          },
+          {
+            "content": "{\"local_time\": \"12:00\"}",
+            "role": "tool",
+            "tool_call_id": "call_2"
+          }
+        ],
+        "tools": [
+          {
+            "function": {
+              "description": "Get the current weather for a city.",
+              "name": "get_weather",
+              "parameters": {
+                "properties": {
+                  "city": {
+                    "description": "City name.",
+                    "type": "string"
+                  },
+                  "units": {
+                    "enum": [
+                      "celsius",
+                      "fahrenheit"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "function"
+          },
+          {
+            "function": {
+              "description": "Get the current time for a city.",
+              "name": "get_time",
+              "parameters": {
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},units:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><|tool>declaration:get_time{description:<|\"|>Get the current time for a city.<|\"|>,parameters:{properties:{city:{type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather and the time in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{\"city\": \"Paris\", \"units\": \"celsius\"}<tool_call|><|tool_call>call:get_time{\"city\": \"Paris\"}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temperature_c\": 18}<|\"|>}<tool_response|><|tool_response>response:get_time{value:<|\"|>{\"local_time\": \"12:00\"}<|\"|>}<tool_response|>"
+    },
+    {
+      "arg_shape": null,
+      "case": "thinking_on",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "thinking_off",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": false,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>user\nHello<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+    },
+    {
+      "arg_shape": "object",
+      "case": "tool_call__args_object",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "What is the weather in Paris?",
+            "role": "user"
+          },
+          {
+            "content": "",
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "function": {
+                  "arguments": {
+                    "city": "Paris",
+                    "units": "celsius"
+                  },
+                  "name": "get_weather"
+                },
+                "id": "call_1",
+                "type": "function"
+              }
+            ]
+          },
+          {
+            "content": "{\"temperature_c\": 18, \"conditions\": \"clear\"}",
+            "role": "tool",
+            "tool_call_id": "call_1"
+          }
+        ],
+        "tools": [
+          {
+            "function": {
+              "description": "Get the current weather for a city.",
+              "name": "get_weather",
+              "parameters": {
+                "properties": {
+                  "city": {
+                    "description": "City name.",
+                    "type": "string"
+                  },
+                  "units": {
+                    "enum": [
+                      "celsius",
+                      "fahrenheit"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},units:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>,units:<|\"|>celsius<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temperature_c\": 18, \"conditions\": \"clear\"}<|\"|>}<tool_response|>"
+    },
+    {
+      "arg_shape": "object",
+      "case": "parallel_tools__args_object",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "What is the weather and the time in Paris?",
+            "role": "user"
+          },
+          {
+            "content": "",
+            "role": "assistant",
+            "tool_calls": [
+              {
+                "function": {
+                  "arguments": {
+                    "city": "Paris",
+                    "units": "celsius"
+                  },
+                  "name": "get_weather"
+                },
+                "id": "call_1",
+                "type": "function"
+              },
+              {
+                "function": {
+                  "arguments": {
+                    "city": "Paris"
+                  },
+                  "name": "get_time"
+                },
+                "id": "call_2",
+                "type": "function"
+              }
+            ]
+          },
+          {
+            "content": "{\"temperature_c\": 18}",
+            "role": "tool",
+            "tool_call_id": "call_1"
+          },
+          {
+            "content": "{\"local_time\": \"12:00\"}",
+            "role": "tool",
+            "tool_call_id": "call_2"
+          }
+        ],
+        "tools": [
+          {
+            "function": {
+              "description": "Get the current weather for a city.",
+              "name": "get_weather",
+              "parameters": {
+                "properties": {
+                  "city": {
+                    "description": "City name.",
+                    "type": "string"
+                  },
+                  "units": {
+                    "enum": [
+                      "celsius",
+                      "fahrenheit"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "function"
+          },
+          {
+            "function": {
+              "description": "Get the current time for a city.",
+              "name": "get_time",
+              "parameters": {
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ],
+                "type": "object"
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name.<|\"|>,type:<|\"|>STRING<|\"|>},units:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><|tool>declaration:get_time{description:<|\"|>Get the current time for a city.<|\"|>,parameters:{properties:{city:{type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather and the time in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>,units:<|\"|>celsius<|\"|>}<tool_call|><|tool_call>call:get_time{city:<|\"|>Paris<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temperature_c\": 18}<|\"|>}<tool_response|><|tool_response>response:get_time{value:<|\"|>{\"local_time\": \"12:00\"}<|\"|>}<tool_response|>"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_none",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "none"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_low",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "low"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_medium",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "medium"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_high",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "high"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_xhigh",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "xhigh"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_max",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "max"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_unknown",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": true,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ],
+        "reasoning_effort": "REASONING_EFFORT_UNKNOWN"
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\n<|think|>\n<turn|>\n<|turn>user\nHello<turn|>\n<|turn>model\n"
+    },
+    {
+      "arg_shape": null,
+      "case": "effort_none_server",
+      "context": {
+        "add_generation_prompt": true,
+        "bos_token": "",
+        "enable_thinking": false,
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>user\nHello<turn|>\n<|turn>model\n<|channel>thought\n<channel|>"
+    },
+    {
+      "arg_shape": null,
+      "case": "developer_role",
+      "context": {
+        "bos_token": "",
+        "eos_token": "",
+        "messages": [
+          {
+            "content": "You are a helpful assistant.",
+            "role": "developer"
+          },
+          {
+            "content": "Hello",
+            "role": "user"
+          }
+        ]
+      },
+      "error": null,
+      "ok": true,
+      "output": "<|turn>system\nYou are a helpful assistant.<turn|>\n<|turn>user\nHello<turn|>\n"
+    }
+  ],
+  "file": "gemma-4-31B-it-UD-IQ2_XXS.gguf",
+  "id": "gemma-4-31b",
+  "llamacpp_tag": "b11960",
+  "repo": "unsloth/gemma-4-31B-it-GGUF",
+  "summary": {
+    "effort_distinct_renders": 2,
+    "failed": 0,
+    "ok": 17,
+    "thinking_on_off_differ": true,
+    "total": 17
+  },
+  "template_source": "tokenizer.chat_template",
+  "url": "https://huggingface.co/unsloth/gemma-4-31B-it-GGUF/resolve/main/gemma-4-31B-it-UD-IQ2_XXS.gguf"
+}

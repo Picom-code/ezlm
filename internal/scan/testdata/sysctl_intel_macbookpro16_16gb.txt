@@ -1,0 +1,8 @@
+# Intel Mac (MacBook Pro 16-inch, 2019): Core i9-9880H, 8 cores, 16 GB.
+# Synthetic case built from the documented `sysctl -a` format and Apple's specs.
+# An Intel Mac has no hw.optional.arm64, hw.perflevel* or sysctl.proc_translated.
+hw.memsize: 17179869184
+hw.physicalcpu: 8
+hw.logicalcpu: 16
+hw.model: MacBookPro16,1
+machdep.cpu.brand_string: Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz

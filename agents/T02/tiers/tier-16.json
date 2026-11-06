@@ -1,0 +1,245 @@
+{
+  "tier": "16",
+  "models": [
+    {
+      "id": "qwen3.8-27b",
+      "name": "Qwen3.8 27B",
+      "family": "Qwen3.8",
+      "vendor": "Alibaba Qwen",
+      "country": "CN",
+      "license": "Apache-2.0",
+      "params_b": 27.78,
+      "moe": false,
+      "score": 20.1,
+      "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) - Xhigh effort. Medium 17.5, Low 15.7, Non-reasoning 10.0. (Was 34 on v4.3.)",
+      "layers": 64,
+      "kv_heads": 4,
+      "head_dim": 256,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "Qwen/Qwen3.8-27B",
+      "active_params_b": 27.78,
+      "kv_layers": 16,
+      "vision": true,
+      "notes": "Released 2026-08-05. 48 Gated DeltaNet + 16 full-attn layers -> tiny KV. Strongest dense model <70B on AA v5 except Nanbeige4.3-33B (20.4). Speeds: RTX 4090 Q4_K_M 49 tok/s no-MTP (kingy.ai, b10453), 69.6 -> 147.5 tok/s code with MTP n-max 6 p-min 0.75 (81% accept); RTX 5090 ~172 tok/s code with MTP; RTX 3090 41.6 -> 66.4 with MTP n-max 2. VRAM Q4_K_M: 16.6GB @8K ctx, 20.3GB @64K (F16 KV).",
+      "draft": {
+        "repo": "ggml-org/Qwen3.8-27B-GGUF",
+        "file": "mtp-Qwen3.8-27B-Q8_0.gguf",
+        "bytes": 3164006816,
+        "type": "draft-mtp"
+      },
+      "quants": [
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "Qwen3.8-27B-UD-IQ3_XXS.gguf"
+          ],
+          "bytes": 10934860704,
+          "repo": "unsloth/Qwen3.8-27B-GGUF"
+        },
+        {
+          "name": "UD-IQ3_S",
+          "files": [
+            "Qwen3.8-27B-UD-IQ3_S.gguf"
+          ],
+          "bytes": 12040883104,
+          "repo": "unsloth/Qwen3.8-27B-GGUF"
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "files": [
+            "Qwen3.8-27B-UD-Q3_K_XL.gguf"
+          ],
+          "bytes": 13146393504,
+          "repo": "unsloth/Qwen3.8-27B-GGUF"
+        },
+        {
+          "name": "UD-IQ4_XS",
+          "files": [
+            "Qwen3.8-27B-UD-IQ4_XS.gguf"
+          ],
+          "bytes": 14252845984,
+          "repo": "unsloth/Qwen3.8-27B-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "nanbeige4.3-33b",
+      "name": "Nanbeige4.3 33B",
+      "family": "Nanbeige4.3",
+      "vendor": "Nanbeige (Kanzhun / BOSS Zhipin)",
+      "country": "CN",
+      "license": "Apache-2.0",
+      "params_b": 33.12,
+      "moe": false,
+      "score": 20.4,
+      "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02) (highest dense model on v5; brand-new, 2026-10-24 - verify with own evals)",
+      "layers": 52,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 524288,
+      "tool_calling": true,
+      "repo": "Nanbeige/Nanbeige4.3-33B",
+      "active_params_b": 33.12,
+      "kv_layers": 52,
+      "vision": false,
+      "notes": "Llama-architecture dense 33B, full attention on all 52 layers (KV ~6x heavier per token than Qwen3.8-27B). Scores level with Qwen3.8-27B Xhigh on v5 (AutomationBench 53% vs 48%, TB4 30% vs 6%, but HLE-D 7% vs 15%, Omniscience much lower). Tool calling UNVERIFIED.",
+      "quants": [
+        {
+          "name": "IQ2_XXS",
+          "files": [
+            "Nanbeige_Nanbeige4.3-33B-IQ2_XXS.gguf"
+          ],
+          "bytes": 10071403648,
+          "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+        },
+        {
+          "name": "IQ2_XS",
+          "files": [
+            "Nanbeige_Nanbeige4.3-33B-IQ2_XS.gguf"
+          ],
+          "bytes": 10634407040,
+          "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+        },
+        {
+          "name": "IQ2_S",
+          "files": [
+            "Nanbeige_Nanbeige4.3-33B-IQ2_S.gguf"
+          ],
+          "bytes": 11150560384,
+          "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+        },
+        {
+          "name": "IQ3_XXS",
+          "files": [
+            "Nanbeige_Nanbeige4.3-33B-IQ3_XXS.gguf"
+          ],
+          "bytes": 14489959552,
+          "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "ternary-bonsai-2-27b",
+      "name": "Ternary Bonsai 2 27B",
+      "family": "Bonsai 2",
+      "vendor": "PrismML",
+      "country": "US",
+      "license": "Apache-2.0",
+      "params_b": 27.36,
+      "moe": false,
+      "score": 18.0,
+      "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: PrismML reports 98.2% of Qwen3.8-27B FP16 on a 14-20 benchmark suite (84.78 vs 86.32), but knowledge -5.7 pts and agentic -1.8 pts, which v5 weights heavily -> ~90% of Qwen3.8-27B Xhigh (20.1)",
+      "layers": 64,
+      "kv_heads": 4,
+      "head_dim": 256,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+      "active_params_b": 27.36,
+      "kv_layers": 16,
+      "vision": true,
+      "native_1bit": true,
+      "notes": "Released 2026-09-17. Ternary {-1,0,+1} g128 compression of Qwen3.8-27B (QAT on TPU v5). Beats unsloth IQ2_XXS (7.27GB, 72.59 avg) by 12 pts at smaller size; within 0.4 pts of UD-Q4_K_XL (17.6GB). Category deltas vs FP16: math 96.6/97.1, coding 89.4/89.1, IF 82.7/81.3, agentic 74.9/76.7, knowledge 79.9/85.6, vision 66.2/71.4. Speed (llama-bench tg128, PQ2_0 unless noted): RTX 5090 129.9, RTX PRO 60",
+      "quants": [
+        {
+          "name": "Q2_0",
+          "files": [
+            "Ternary-Bonsai-2-27B-Q2_0.gguf"
+          ],
+          "bytes": 7626008928
+        }
+      ]
+    },
+    {
+      "id": "qwen3.6-35b-a3b",
+      "name": "Qwen3.6 35B A3B",
+      "family": "Qwen3.6",
+      "vendor": "Alibaba Qwen",
+      "country": "CN",
+      "license": "Apache-2.0",
+      "params_b": 35.95,
+      "moe": true,
+      "score": 9.5,
+      "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 9.5 (legacy fit 7.9). AA-Briefcase 713 vs Qwen3.8-27B 1393, AutomationBench 5% vs 48%. Was 43 on v4.0 (vs Qwen3.6-27B 46, Gemma 4 31B 39)",
+      "layers": 40,
+      "kv_heads": 2,
+      "head_dim": 256,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "Qwen/Qwen3.6-35B-A3B",
+      "active_params_b": 3.0,
+      "kv_layers": 10,
+      "vision": true,
+      "notes": "Released 2026-04-15. Very fast (3B active; AA API 133 t/s) but clearly below Qwen3.8-27B: LCBv6 74.6 vs 90.3, SWE-Pro well below. Good choice only when speed/CPU-offload matters more than quality.",
+      "quants": [
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf"
+          ],
+          "bytes": 13211155424,
+          "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+        },
+        {
+          "name": "UD-IQ3_S",
+          "files": [
+            "Qwen3.6-35B-A3B-UD-IQ3_S.gguf"
+          ],
+          "bytes": 13676723168,
+          "repo": "unsloth/Qwen3.6-35B-A3B-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "gemma-4-31b",
+      "name": "Gemma 4 31B",
+      "family": "Gemma 4",
+      "vendor": "Google",
+      "country": "US",
+      "license": "Apache-2.0",
+      "params_b": 31.27,
+      "moe": false,
+      "score": 8.0,
+      "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 7.3; partial v5 components (AutomationBench 5%, GDP.pdf 6%, Briefcase 369, TB4 0%) imply ~8. Below Qwen3.6-35B-A3B (~9.5), above gpt-oss-120b (~7). v4.0 was 39",
+      "layers": 60,
+      "kv_heads": 4,
+      "head_dim": 512,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "google/gemma-4-31B-it",
+      "active_params_b": 31.27,
+      "kv_layers": 10,
+      "vision": true,
+      "notes": "Released 2026-03-11. 50 sliding-window layers (16 KV heads x 256, window 1024) + 10 global layers (4 KV heads x 512) -> KV heavier than Qwen hybrids (OOM at 64K F16 KV on 24GB with Q4_K_M). RTX 4090 Q4_K_M 45 tok/s decode. Strong tool calling and doc QA; weaker coding than Qwen3.8.",
+      "draft": {
+        "repo": "unsloth/gemma-4-31B-it-GGUF",
+        "file": "MTP/mtp-gemma-4-31B-it-Q8_0.gguf",
+        "bytes": 514687104,
+        "type": "draft-mtp"
+      },
+      "quants": [
+        {
+          "name": "UD-IQ2_XXS",
+          "files": [
+            "gemma-4-31B-it-UD-IQ2_XXS.gguf"
+          ],
+          "bytes": 8534295488,
+          "repo": "unsloth/gemma-4-31B-it-GGUF"
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "gemma-4-31B-it-UD-IQ3_XXS.gguf"
+          ],
+          "bytes": 11837782976,
+          "repo": "unsloth/gemma-4-31B-it-GGUF"
+        }
+      ],
+      "swa_layers": 50,
+      "swa_kv_heads": 16,
+      "swa_head_dim": 256,
+      "swa_window": 1024
+    }
+  ]
+}

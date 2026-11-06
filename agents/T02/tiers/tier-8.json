@@ -1,0 +1,337 @@
+{
+ "tier": "8",
+ "models": [
+  {
+   "id": "ornith-1.5-9b",
+   "name": "Ornith 1.5 9B",
+   "family": "Ornith 1.5",
+   "vendor": "Ornith AI",
+   "country": "US",
+   "license": "MIT",
+   "params_b": 9.65,
+   "moe": false,
+   "score": 9.0,
+   "score_source": "ESTIMATE (vendor benchmarks; no AA v5 index yet): Ornith model card 2026-08-19 reports Terminal-Bench 2.1 46.2 (Terminus-2) / 47.0 (Claude Code), SWE-bench Verified 70.6, SWE-bench Pro 47.5, SWE-bench Multilingual 54.4, GPQA-Diamond 86.4, HLE 20.2 (30.5 with tools), MCP-Atlas 54.2, Toolathlon 41.2, WideSearch 59.5, BrowseComp 56.4, ClawEval 66.5, mean of 5 runs. Anchored to catalog v5 anchors: clearly above Gemma-4-31B (8.0) on TB2.1, SWE-V, GPQA and ClawEval, just below Qwen3.6-35B-A3B (9.5) on agentic suites -> 9.0. Vendor-reported, not independently reproduced.",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "ornith-ai/Ornith-1.5-9B",
+   "active_params_b": 9.65,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-19. Dense 9.65B on the Qwen3.5-9B architecture (qwen35, hybrid DeltaNet with full attention every 4th layer, 32 layers + 1 MTP/NextN head in the GGUF). Self-improvement loop over tasks, scaffolds and rollouts (Ornith 1.5). Coding is its strength: within 4-7 pts of Qwen3.6-35B-A3B on Terminal-Bench and SWE-bench at a quarter of the weights. Native 262K context; mmproj is separate (0.92GB). MIT, so the most permissive strong pick here. Chat template supports tool calls. At 8 GB: Q5_K_M (6.19GiB) leaves ~0.8GiB for a 16K KV cache and compute buffers; Q4_K_M (5.38GiB) is the safe pick on an 8GB unified machine (7.0GiB budget).",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Ornith-1.5-9B-Q4_K_M.gguf"
+     ],
+     "bytes": 5780090816,
+     "repo": "ornith-ai/Ornith-1.5-9B-GGUF"
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "Ornith-1.5-9B-Q5_K_M.gguf"
+     ],
+     "bytes": 6642544576,
+     "repo": "ornith-ai/Ornith-1.5-9B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "granite-4.2-8b",
+   "name": "Granite 4.2 8B",
+   "family": "Granite 4.2",
+   "vendor": "IBM",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 8.79,
+   "moe": false,
+   "score": 5.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "ibm-granite/granite-4.2-8b",
+   "active_params_b": 8.79,
+   "kv_layers": 40,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-08-25. Already in the catalog; kept here because it is the best-scoring model at this tier with an official AA v5 number. Dense GQA transformer (not the 4.0 hybrid Mamba), 128K native, reasoning-augmented tool calling. Its KV cache is the expensive part: 40 layers x 8 KV heads x 128 = 160KiB/token at f16, so 8K context needs ~1.2GiB; use q8_0 KV (0.61GiB) and Q5_0 to stay under 7GiB. Enterprise/Apache alternative to Qwen/Ornith.",
+   "quants": [
+    {
+     "name": "Q4_0",
+     "files": [
+      "granite-4.2-8b-Q4_0.gguf"
+     ],
+     "bytes": 5055955072,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "granite-4.2-8b-Q4_K_M.gguf"
+     ],
+     "bytes": 5347917952,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    },
+    {
+     "name": "Q5_0",
+     "files": [
+      "granite-4.2-8b-Q5_0.gguf"
+     ],
+     "bytes": 6103482496,
+     "repo": "ibm-granite/granite-4.2-8b-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "qwen3.5-9b",
+   "name": "Qwen3.5 9B",
+   "family": "Qwen3.5",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 9.65,
+   "moe": false,
+   "score": 5.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: 9B predicted 6.3 (legacy fit 2.3) -> 5 (catalog value, unchanged)",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.5-9B",
+   "active_params_b": 9.65,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size) and now clearly outclassed by Ornith-1.5-9B, which uses the same architecture: Ornith card puts Qwen3.5-9B at Terminal-Bench 2.1 21.3 vs 46.2, SWE-bench Verified 53.2 vs 70.6. Kept for its 32KiB/token KV cache (8x cheaper than Granite 4.2 8B at long context), native 262K context, vision mmproj and mature llama.cpp support. Catalog quants trimmed to those that fit 8GB; Q6_K (6.95GiB) is too tight once KV and buffers are counted.",
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "Qwen3.5-9B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 4016235744,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "Qwen3.5-9B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 5053834464,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Qwen3.5-9B-IQ4_XS.gguf"
+     ],
+     "bytes": 5168653536,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Qwen3.5-9B-Q4_K_M.gguf"
+     ],
+     "bytes": 5680522464,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "Qwen3.5-9B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5966095584,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "Qwen3.5-9B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 6743680224,
+     "repo": "unsloth/Qwen3.5-9B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-12b",
+   "name": "Gemma 4 12B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 11.96,
+   "moe": false,
+   "score": 3.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 3.3 (catalog value, unchanged)",
+   "layers": 48,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-12B-it",
+   "active_params_b": 11.96,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "swa_layers": 40,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 256,
+   "swa_window": 1024,
+   "notes": "Released 2026-05-23 ('unified' any-to-any: text, image, audio in; text out). 40 sliding-window layers (8 KV x 256, window 1024) plus 8 global layers (1 KV x 512). The sliding-window cache is a fixed ~0.94GiB at 8K context and does not grow, so the KV cost is dominated by it, not by context length. That is why only Q3-class quants fit 8GB: IQ4_XS (5.94GiB) plus cache and buffers is ~7.4GiB, too much for a 7.0GiB unified budget. Best reason to pick it is the any-to-any input and Google tooling; it is the weakest general model of the six.",
+   "draft": {
+    "repo": "unsloth/gemma-4-12b-it-GGUF",
+    "file": "MTP/mtp-gemma-4-12b-it-Q8_0.gguf",
+    "bytes": 465109248,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "gemma-4-12b-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 4639716160,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "gemma-4-12b-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 6022684480,
+     "repo": "unsloth/gemma-4-12b-it-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-bolt-e4b",
+   "name": "Nemotron 3.5 Bolt E4B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 8.0,
+   "moe": false,
+   "score": 3.5,
+   "score_source": "ESTIMATE (no AA v5): NVIDIA model card 2026-10-05 benchmarks against Gemma-4-E4B-it (catalog 2.0) and Qwen3.5-4B (catalog 2.0). Bolt wins MultiChallenge 53.1 vs 42.1/51.8, RoleBench 67.1 vs 50.0/53.7, BFCL-v3 68.5 vs 66.4/71.0, ToolSandbox 68.8 vs 65.4/69.5, Tau2-Bench 55.1 vs 38.5/75.1, IFBench 63.8 vs 42.8/58.9, LongMemEval 72.1 vs 71.0/66.9; loses Tau2 to Qwen3.5-4B. -> 3.5, vendor-reported.",
+   "layers": 42,
+   "kv_heads": 2,
+   "head_dim": 512,
+   "ctx_max": 65536,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16",
+   "active_params_b": 4.0,
+   "kv_layers": 4,
+   "vision": true,
+   "native_1bit": false,
+   "swa_layers": 20,
+   "swa_kv_heads": 2,
+   "swa_head_dim": 256,
+   "swa_window": 512,
+   "notes": "Released 2026-10-05. NVIDIA post-train of Gemma-4-E4B (gemma4 arch, 8.0B total / 4B effective via per-layer embeddings), built for low-TTFT voice and device assistants. 42 blocks, 18 trailing layers share a KV cache, so only 4 global + 20 sliding-window caches are allocated: 16KiB/token global plus a fixed ~0.1GiB window cache. That makes it the long-context pick of this tier: UD-Q5_K_XL (5.43GiB) plus a 64K cache and buffers is ~6.9GiB, so it runs the full 64K at Q5 on an 8GB machine. Also the cheapest at high context. Vendor states 64K input though the GGUF advertises 131072. DFlash drafter (0.37GiB) is available for speculative decoding. Weaker at hard reasoning and code than the three 9B-class models.",
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 3703968960,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 4219133120,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5060482240,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 5832930496,
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "lfm2.5-8b-a1b",
+   "name": "LFM2.5 8B A1B",
+   "family": "LFM2.5",
+   "vendor": "Liquid AI",
+   "country": "US",
+   "license": "LFM Open License v1.0",
+   "params_b": 8.47,
+   "moe": true,
+   "score": 3.0,
+   "score_source": "ESTIMATE (no AA v5): Liquid model card 2026-05-28 reports AA-Omniscience index -24.70 (accuracy 8.67, non-hallucination 63.47), IFEval 91.84, IFBench 56.47, Multi-IF 79.93, MATH500 88.76, AIME25 42.53, BFCLv3 64.79, BFCLv4 48.50, Tau2 Telecom 88.07, Tau2 Retail 39.82, versus Gemma-4-E4B-it (catalog 2.0) and Qwen3.5-4B (catalog 2.0) on the same table. Strong instruction following and tool use for 1B active, weak knowledge -> 3.0.",
+   "layers": 24,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 128000,
+   "tool_calling": true,
+   "repo": "LiquidAI/LFM2.5-8B-A1B",
+   "active_params_b": 1.0,
+   "kv_layers": 6,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-05-28. MoE: 24 blocks (2 dense leading), 32 experts with top-4 routing, 1B active of 8.47B total. Hybrid short-conv + GQA: only 6 of 24 layers keep a KV cache (8 heads x 64), so the cache is 12KiB/token, the cheapest here by 2.7x against Ornith/Qwen. That allows the full 128K context at Q5_K_XL (5.95GiB) on a 7.0GiB budget. Very fast on CPU/edge, good instruction following and BFCL scores, but weak world knowledge (AA-Omniscience -24.7) and only 8K trained reasoning depth in practice; pick it for agents that need speed and tool calls, not for knowledge work. Non-commercial restrictions may apply under the LFM Open License; check the licence text before shipping.",
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "LFM2.5-8B-A1B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 3272339040,
+     "repo": "unsloth/LFM2.5-8B-A1B-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "LFM2.5-8B-A1B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 4003114592,
+     "repo": "unsloth/LFM2.5-8B-A1B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "LFM2.5-8B-A1B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5351583328,
+     "repo": "unsloth/LFM2.5-8B-A1B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "LFM2.5-8B-A1B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 6393081440,
+     "repo": "unsloth/LFM2.5-8B-A1B-GGUF"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "card0": {
+    "VRAM Total Memory (B)": "17163091968",
+    "VRAM Total Used Memory (B)": "1073741824",
+    "Card Series": "Radeon RX 6800 XT",
+    "Card Model": "0x73bf",
+    "Card Vendor": "Advanced Micro Devices, Inc. [AMD/ATI]"
+  },
+  "card1": {
+    "VRAM Total Memory (B)": "8573157376",
+    "VRAM Total Used Memory (B)": "0",
+    "Card Series": "Radeon RX 6600",
+    "Card Model": "0x73ff",
+    "Card Vendor": "Advanced Micro Devices, Inc. [AMD/ATI]"
+  }
+}

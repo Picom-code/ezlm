@@ -1,0 +1,6 @@
+# nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version
+# --format=csv,noheader,nounits. Synthetic, built from the documented CSV
+# format: a laptop GPU under the WDDM driver model, where the driver counts
+# shared system memory in "free" and reports more free than the card has.
+# Every consumer of MemFree assumes MemFree <= MemTotal.
+NVIDIA GeForce RTX 3050 Laptop GPU, 4096, 6144, 566.36

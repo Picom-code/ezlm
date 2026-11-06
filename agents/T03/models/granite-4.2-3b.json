@@ -1,0 +1,16 @@
+{
+ "id": "granite-4.2-3b",
+ "repo": "ibm-granite/granite-4.2-3b",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "<tools> JSON block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call> (granite 4.x XML form, not JSON)",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [
+  "low"
+ ],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [],
+ "notes": "reasoning_effort is used only as `reasoning_effort == \"low\"`, which appends \"\\n\\n{reasoning effort: low}\" to the last user turn. minimal/medium/high/xhigh/max render byte-identical to the default and are silently ignored, so b11960 /props reports reasoning_effort_levels [\"low\"]. enable_thinking defaults to true; false renders an empty  thinking</think> block. developer is emitted as a real <|im_start|>developer turn (the server maps it to system first for templates without <|channel|>)."
+}

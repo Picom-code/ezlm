@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!DOCTYPE nvidia_smi_log SYSTEM "nvsmi_device_v12.dtd">
+<nvidia_smi_log>
+	<timestamp>Fri Nov  6 06:00:00 2026</timestamp>
+	<driver_version>550.54.14</driver_version>
+	<gpu id="00000000:01:00.0">
+		<product_name>NVIDIA GeForce RTX 4090</product_name>
+		<fb_memory_usage>
+			<total>24564 MiB</total>
+			<reserved>345 MiB</reserved>
+			<used>245 MiB</used>
+			<free>24319 MiB</free>
+		</fb_memory_usage>
+		<compute_mode>Default</compute_mode>
+	</gpu>
+</nvidia_smi_log>

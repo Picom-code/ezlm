@@ -1,0 +1,17 @@
+{
+  "id": "nemotron-3.5-super-vl-120b-a12b",
+  "repo": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+  "template_source": "tokenizer.chat_template",
+  "tool_call_format": "<tool_call><function=<name>><parameter=<key>><value></parameter></function></tool_call> in the assistant turn; tool definitions as an XML <tools><function><name>..</name><parameters><parameter>..</parameter></parameters></function></tools> block in the system turn; tool results as <tool_response>..</tool_response> blocks inside a user turn (parallel results share one user turn)",
+  "tools_supported": true,
+  "thinking_toggle": "enable_thinking",
+  "effort_levels_accepted": [],
+  "effort_levels_rejected": [],
+  "effort_levels_ignored": ["none", "low", "medium", "high", "xhigh", "max"],
+  "system_role": true,
+  "developer_role": true,
+  "known_template_errors": [
+    "assistant tool_calls[].function.arguments sent as a JSON string raises in the arguments|items filter (TypeError: Can only get item pairs from a mapping in jinja2; minja raises Function 'items' expected value of type value_object). Send arguments as an object."
+  ],
+  "notes": "ChatML-style template with a Qwen3-like tool block. Thinking is toggled by the boolean enable_thinking (default true): true ends the prompt with '<|im_start|>assistant\\n thinking\\n', false with '<|im_start|>assistant\\n thinking</think>'. There is no reasoning_effort variable; the template only reads the boolean medium_effort, which appends '\\n\\n{reasoning effort: efficient}' to the last user message (needs chat_template_kwargs). reasoning_effort, reasoning_strength and reasoning.effort are all silently ignored, so b11960's caps report supports_reasoning_effort=false. The template always emits a system turn, an empty '<|im_start|>system\\n<|im_end|>' when no system message is sent. Assistant history reasoning_content is kept only when truncate_history_thinking is false (b11960 sets that from preserve_reasoning); by default older thinking is truncated. A developer message renders as '<|im_start|>developer' through the generic else branch; the template does not raise, but it is not a documented training role. Typed content blocks of type thinking are silently dropped; reasoning history must arrive as reasoning_content."
+}

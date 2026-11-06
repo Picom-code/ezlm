@@ -1,0 +1,237 @@
+{
+ "tier": "24",
+ "models": [
+  {
+   "id": "ornith-1.5-35b-a3b",
+   "name": "Ornith 1.5 35B A3B",
+   "family": "Ornith",
+   "vendor": "Ornith AI",
+   "country": "US",
+   "license": "MIT",
+   "params_b": 35.0,
+   "moe": true,
+   "score": 13.0,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor Terminal-Bench 2.1 is 67.8 (Terminus-2) vs 52.5 for Qwen3.6-35B-A3B on the same harness; scaling through AA's measured 44.9 for Qwen3.6-35B-A3B (catalog 9.5) and the Qwen3.6-27B (60.7, 12.0) and Qwen3.8-27B (79.8, 20.1) points gives 12 to 14. Vendor GPQA Diamond 89.2 and HLE 25.6 support it. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "ornith-ai/Ornith-1.5-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-18 by Ornith AI. 35B total, about 3B active, Qwen3.5-MoE backbone with linear attention in 30 of 40 layers, so only 10 layers carry a growing KV cache. Vendor numbers, five-run averages: Terminal-Bench 2.1 67.8 (Terminus-2) and 68.5 (Claude Code), SWE-bench Verified 79.0, SWE-bench Pro 59.6, GPQA Diamond 89.2, HLE 25.6, NL2Repo 46.2. Q3_K_XL (17.8 GB) fits 24 GB with 64K context and q8 KV; 256K context still fits a Linux budget. The image projector is a separate mmproj file. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "IQ3_XS",
+     "files": [
+      "Ornith-1.5-35B-A3B-IQ3_XS.gguf"
+     ],
+     "bytes": 16689088160,
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF"
+    },
+    {
+     "name": "Q3_K_XL",
+     "files": [
+      "Ornith-1.5-35B-A3B-Q3_K_XL.gguf"
+     ],
+     "bytes": 17801889440,
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF"
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Ornith-1.5-35B-A3B-IQ4_XS.gguf"
+     ],
+     "bytes": 19278554784,
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF"
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Ornith-1.5-35B-A3B-Q4_K_M.gguf"
+     ],
+     "bytes": 21864081056,
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "groot-19b-a3b",
+   "name": "Groot 19B A3B",
+   "family": "Groot",
+   "vendor": "Groot Team",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 19.0,
+   "moe": true,
+   "score": 10.0,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor 16-benchmark average is 41.44 vs 38.08 for Qwen3.6-35B-A3B and 30.05 for Gemma-4-26B-A4B; Terminal-Bench 2.1 is 52.10 vs 43.82 and LongBench v2 is 62.03 vs 48.12. That is 8.8% above the catalog's 9.5 for Qwen3.6-35B-A3B; 19B total limits knowledge capacity, so 10.0. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "GrootTeam/Groot-19B-A3B-261023",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-23 by the Groot Team, post-trained from Qwen3.6-35B-A3B on under 0.1B tokens. 19B total, about 3B active, 10 full-attention layers with linear attention elsewhere. Vendor numbers: 16-benchmark average 41.44, Terminal-Bench 2.1 52.10, NL2Repo 35.65, LongBench v2 62.03. Q8_0 (20.2 GB) fits 24 GB with 64K context, so this tier can run a near-lossless quant; the vendor claims 256K on a 24 GB RTX 4090. The image projector is a separate mmproj file. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q4_K_M.gguf"
+     ],
+     "bytes": 12484339584,
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF"
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q5_K_M.gguf"
+     ],
+     "bytes": 14719903616,
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF"
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q6_K.gguf"
+     ],
+     "bytes": 16791324544,
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF"
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q8_0.gguf"
+     ],
+     "bytes": 20230129536,
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF"
+    }
+   ]
+  },
+  {
+   "id": "flint-40b-a2.5b",
+   "name": "Flint 40B A2.5B",
+   "family": "Flint",
+   "vendor": "Recursive",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 39.8,
+   "moe": true,
+   "score": 10.5,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): coding-agent specialist; vendor Terminal-Bench 2.1 is 54.9 (Terminus 2), SWE-bench Verified 74.2 and SWE-bench Pro v2 89.7. Qwen3.6-35B-A3B measures 44.9 on AA's Terminal-Bench 2.1 and scores 9.5 here, so 54.9 maps near 10.5; general knowledge is untested. Treat as UNVERIFIED.",
+   "layers": 49,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "RecursiveSI/flint",
+   "active_params_b": 2.5,
+   "kv_layers": 14,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10 by Recursive Superintelligence for coding agents. 39.8B total, about 2.5B active, 49 layers: 14 full-attention plus 35 sliding-window layers (window 513), so long context is cheap. Vendor numbers, with web-retrieved solutions counted as failures: Terminal-Bench 2.1 54.9, SWE-bench Pro v2 89.7, SWE-bench Verified 74.2. UD-Q3_K_XL (18.5 GB) fits 24 GB with 64K context; UD-Q4_K_XL (25.1 GB) does not. Coding-focused, so general chat and knowledge are unproven. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "flint-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 11855541696,
+     "repo": "unsloth/flint-GGUF"
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "files": [
+      "flint-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 13562207680,
+     "repo": "unsloth/flint-GGUF"
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "files": [
+      "flint-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 14535427520,
+     "repo": "unsloth/flint-GGUF"
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "flint-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 18494977472,
+     "repo": "unsloth/flint-GGUF"
+    }
+   ],
+   "swa_layers": 35,
+   "swa_kv_heads": 4,
+   "swa_head_dim": 128,
+   "swa_window": 513
+  },
+  {
+   "id": "lfm2.5-24b-a2b",
+   "name": "LFM2.5 24B A2B",
+   "family": "LFM2.5",
+   "vendor": "Liquid AI",
+   "country": "US",
+   "license": "LFM Open License 1.0",
+   "params_b": 24.0,
+   "moe": true,
+   "score": 7.5,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor LiveClaw is 48.09 vs 38.19 for Qwen3.6-35B-A3B, so agentic tasks sit slightly above the catalog's 9.5 for Qwen3.6-35B-A3B, but 2B active parameters limit knowledge and reasoning, hence 7.5. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "LiquidAI/LFM2.5-24B-A2B",
+   "active_params_b": 2.0,
+   "kv_layers": 10,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10-09 by Liquid AI. 24B total, about 2B active, 40 layers: 10 full-attention and 30 short-convolution layers, so the KV cache is small and speed is high. Vendor: LiveClaw 48.09 vs 38.19 for Qwen3.6-35B-A3B; Liquid claims 184 tok/s on an Apple M5 Max. UD-Q5_K_XL (17.9 GB) fits 24 GB with 64K context; UD-Q6_K_XL (21.9 GB) is tight on Windows. Licence is the LFM Open License 1.0, not an OSI licence. Text only. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 10947100928,
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF"
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 14876901632,
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF"
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 17918820608,
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF"
+    },
+    {
+     "name": "UD-Q6_K_XL",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q6_K_XL.gguf"
+     ],
+     "bytes": 21861204224,
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF"
+    }
+   ]
+  }
+ ]
+}

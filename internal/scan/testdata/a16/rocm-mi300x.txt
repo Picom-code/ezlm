@@ -1,0 +1,3 @@
+# An MI300X server, rocm-smi 6.x JSON.
+# rocm-smi
+{"card0": {"Card Series": "AMD Instinct MI300X", "VRAM Total Memory (B)": "205520896000", "VRAM Total Used Memory (B)": "8589934592"}}

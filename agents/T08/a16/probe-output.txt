@@ -1,0 +1,32 @@
+=== RUN   TestA16Probe
+    a16probe_test.go:44: A prerelease/draft: latest=0.2.0-beta available=true err=""
+    a16probe_test.go:59: B Newer("1.10","1.9")=true
+    a16probe_test.go:59: B Newer("1.2.3.4","1.2.3")=false
+    a16probe_test.go:59: B Newer("1.2.3","1.2.3.4")=true
+    a16probe_test.go:59: B Newer("v","0.1.0")=false
+    a16probe_test.go:59: B Newer("v1","0.0.9")=true
+    a16probe_test.go:59: B Newer("","0.1.0")=false
+    a16probe_test.go:59: B Newer("v1.2.3-beta+build","1.2.3-beta")=true
+    a16probe_test.go:59: B Newer("１.２.３","1.2.2")=false
+    a16probe_test.go:59: B Newer("9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.0.0","1.0.0")=true
+    a16probe_test.go:70: C malformed tag: latest=1.2.3.4 available=false err=""
+    a16probe_test.go:89: D digest missing          -> path="/var/folders/9f/6pr5z1pj37z_wgvwk2lf2fww0000gn/T/TestA16Probe486136185/001/EZLM-update/EZLM.dmg" err=<nil>
+    a16probe_test.go:89: D digest wrong algorithm  -> path="/var/folders/9f/6pr5z1pj37z_wgvwk2lf2fww0000gn/T/TestA16Probe486136185/001/EZLM-update/EZLM.dmg" err=<nil>
+    a16probe_test.go:89: D digest sha1 length      -> path="" err=checksum mismatch for EZLM.dmg
+    a16probe_test.go:89: D digest mismatch         -> path="" err=checksum mismatch for EZLM.dmg
+    a16probe_test.go:89: D digest good             -> path="/var/folders/9f/6pr5z1pj37z_wgvwk2lf2fww0000gn/T/TestA16Probe486136185/001/EZLM-update/EZLM.dmg" err=<nil>
+    a16probe_test.go:100: E replay: path="" err=checksum mismatch for EZLM.dmg content="" (digest of body was sha256:204676736cea6)
+    a16probe_test.go:108: E2 replay/no-digest: path="/var/folders/9f/6pr5z1pj37z_wgvwk2lf2fww0000gn/T/TestA16Probe486136185/001/EZLM-update/EZLM.dmg" err=<nil> content="replayed!!!!!!!"
+    a16probe_test.go:131: F 403 primary        requests=1 elapsed=0s err="checking for updates failed (403 Forbidden)"
+    a16probe_test.go:131: F 429 retry-after    requests=1 elapsed=0s err="checking for updates failed (429 Too Many Requests)"
+    a16probe_test.go:131: F 403 secondary      requests=1 elapsed=0s err="checking for updates failed (403 Forbidden)"
+    a16probe_test.go:147: G truncated: tries=5 path="" err=the connection to the download server keeps dropping. Check the internet connection and try again: EZLM picks up where it stopped (unexpected EOF)
+    a16probe_test.go:160: G2 chunked short: tries=1 path="" err=the downloaded file came out the wrong size (5 bytes instead of 100), so EZLM deleted it. Try again, and if it happens again, report this problem part-left=false
+    a16probe_test.go:175: H cross-host redirect: latest=0.3.0 available=true err=""
+    a16probe_test.go:183: I assetFor("windows","EZLM.dmg")=false
+    a16probe_test.go:183: I assetFor("windows","EZLM-Setup-linux-amd64.exe")=true
+    a16probe_test.go:183: I assetFor("darwin","EZLM.dmg")=true
+    a16probe_test.go:183: I assetFor("linux","EZLM.dmg")=false
+--- PASS: TestA16Probe (20.02s)
+PASS
+ok  	github.com/picom-code/ezlm/internal/update	(cached)

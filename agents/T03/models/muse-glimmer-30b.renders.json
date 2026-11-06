@@ -1,0 +1,603 @@
+{
+ "id": "muse-glimmer-30b",
+ "repo": "unsloth/Muse-Glimmer-30B-GGUF",
+ "file": "Muse-Glimmer-30B-UD-IQ2_XXS.gguf",
+ "template_source": "tokenizer.chat_template",
+ "gguf_source": "https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF/resolve/main/Muse-Glimmer-30B-UD-IQ2_XXS.gguf",
+ "rendered_at": "2026-11-06T04:48:31-06:00",
+ "python": "3.13.7",
+ "jinja2": "3.1.6",
+ "environment": "jinja2 ImmutableSandboxedEnvironment(trim_blocks=True, lstrip_blocks=True); raise_exception raises; strftime_now=time.strftime; tojson=json.dumps(ensure_ascii=False, sort_keys=True); bos/eos from the GGUF tokenizer metadata",
+ "context_defaults": {
+  "add_generation_prompt": true,
+  "bos_token": "<|begin_of_text|>",
+  "eos_token": "<|end_of_text|>",
+  "tools": []
+ },
+ "cases": [
+  {
+   "name": "plain",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "plain_no_gen_prompt",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": false
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|>",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "system_user",
+   "vars": {
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a terse assistant."
+     },
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a terse assistant.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "tool_call",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "id": "call_1",
+        "type": "function",
+        "function": {
+         "name": "get_weather",
+         "arguments": {
+          "city": "Paris"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_1",
+      "name": "get_weather",
+      "content": "{\"temp_c\": 18}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\nIn this environment you have access to a set of tools you can use to answer the user's question.\n\nYou can invoke a function by writing a \"<atem:function_calls>\" block like the following:\n<atem:function_calls>\n<atem:invoke name=\"$FUNCTION_NAME\">\n<atem:parameter name=\"$PARAMETER_NAME\">$PARAMETER_VALUE</atem:parameter>\n...\n</atem:invoke>\n</atem:function_calls>\n\nString and scalar parameters should be specified as is, while lists and objects should use JSON format. Note that spaces for string values are not stripped. The output is not expected to be valid XML and is parsed with regular expressions.\nHere are the functions available in JSONSchema format:\n// Tool metadata\n{\"name\": \"get_weather\", \"description\": \"\"}\n// Function schemas\n{\"name\": \"get_weather\", \"description\": \"Current weather for a city.\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name.\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}\n\nHere's an example of how to call a function in the tool set:\n(If the tool namespace is not specified, invoke the function directly as `example_function_name` rather than `example_tool_name.example_function_name`)\n\nto=example_tool_name.example_function_name\n\n<atem:function_calls>\n<atem:invoke name=\"example_tool_name.example_function_name\">\n<atem:parameter name=\"example_parameter_1\">value_1</atem:parameter>\n<atem:parameter name=\"example_parameter_2\">This is the value for the second parameter\nthat can span\n\"multiple\" lines\n</atem:parameter>\n</atem:invoke>\n</atem:function_calls>\n\n# Valid recipients: \"self\", \"get_weather.*\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant to=get_weather<|message|><atem:function_calls>\n<atem:invoke name=\"get_weather\">\n<atem:parameter name=\"city\">Paris</atem:parameter>\n</atem:invoke>\n</atem:function_calls><|eot|><|start|>tool get_weather<|message|><tool_output name=\"get_weather\">\n{\"temp_c\": 18}\n</tool_output><|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "tool_call_string_args",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "id": "call_1",
+        "type": "function",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Paris\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_1",
+      "name": "get_weather",
+      "content": "{\"temp_c\": 18}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": false,
+   "output": null,
+   "error": "Onyx ATEM chat template requires tool_call.function.arguments to be a dict (mapping); a JSON string cannot be parsed in the HF jinja sandbox."
+  },
+  {
+   "name": "parallel_tools",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "Compare the weather in Paris and Rome."
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "id": "call_1",
+        "type": "function",
+        "function": {
+         "name": "get_weather",
+         "arguments": {
+          "city": "Paris"
+         }
+        }
+       },
+       {
+        "id": "call_2",
+        "type": "function",
+        "function": {
+         "name": "get_weather",
+         "arguments": {
+          "city": "Rome"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_1",
+      "name": "get_weather",
+      "content": "{\"temp_c\": 18}"
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_2",
+      "name": "get_weather",
+      "content": "{\"temp_c\": 24}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\nIn this environment you have access to a set of tools you can use to answer the user's question.\n\nYou can invoke a function by writing a \"<atem:function_calls>\" block like the following:\n<atem:function_calls>\n<atem:invoke name=\"$FUNCTION_NAME\">\n<atem:parameter name=\"$PARAMETER_NAME\">$PARAMETER_VALUE</atem:parameter>\n...\n</atem:invoke>\n</atem:function_calls>\n\nString and scalar parameters should be specified as is, while lists and objects should use JSON format. Note that spaces for string values are not stripped. The output is not expected to be valid XML and is parsed with regular expressions.\nHere are the functions available in JSONSchema format:\n// Tool metadata\n{\"name\": \"get_weather\", \"description\": \"\"}\n// Function schemas\n{\"name\": \"get_weather\", \"description\": \"Current weather for a city.\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name.\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}\n\nHere's an example of how to call a function in the tool set:\n(If the tool namespace is not specified, invoke the function directly as `example_function_name` rather than `example_tool_name.example_function_name`)\n\nto=example_tool_name.example_function_name\n\n<atem:function_calls>\n<atem:invoke name=\"example_tool_name.example_function_name\">\n<atem:parameter name=\"example_parameter_1\">value_1</atem:parameter>\n<atem:parameter name=\"example_parameter_2\">This is the value for the second parameter\nthat can span\n\"multiple\" lines\n</atem:parameter>\n</atem:invoke>\n</atem:function_calls>\n\n# Valid recipients: \"self\", \"get_weather.*\", \"user\".<|eot|><|start|>user<|message|>Compare the weather in Paris and Rome.<|eot|><|start|>assistant to=get_weather<|message|><atem:function_calls>\n<atem:invoke name=\"get_weather\">\n<atem:parameter name=\"city\">Paris</atem:parameter>\n</atem:invoke>\n</atem:function_calls><|eom|><|start|>assistant to=get_weather<|message|><atem:function_calls>\n<atem:invoke name=\"get_weather\">\n<atem:parameter name=\"city\">Rome</atem:parameter>\n</atem:invoke>\n</atem:function_calls><|eot|><|start|>tool get_weather<|message|><tool_output name=\"get_weather\">\n{\"temp_c\": 18}\n</tool_output><|eot|><|start|>tool get_weather<|message|><tool_output name=\"get_weather\">\n{\"temp_c\": 24}\n</tool_output><|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "thinking_on",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "enable_thinking": true
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "thinking_off",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "enable_thinking": false
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "developer_role",
+   "vars": {
+    "messages": [
+     {
+      "role": "developer",
+      "content": "You are a terse assistant."
+     },
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "effort_none",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "enable_thinking": false
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "effort_low",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "low",
+    "reasoning_strength": "low"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: low.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "effort_medium",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "medium",
+    "reasoning_strength": "medium"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: medium.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "effort_high",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "high",
+    "reasoning_strength": "high"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "effort_xhigh",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "xhigh",
+    "reasoning_strength": "xhigh"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: xhigh.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "effort_max",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "max",
+    "reasoning_strength": "max"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: max.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "effort_minimal",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "minimal",
+    "reasoning_strength": "minimal"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: minimal.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "reasoning_effort_high_raw",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_effort": "high"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "reasoning_strength_high",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_strength": "high"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "reasoning_strength_none",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_strength": "none"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: none.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "reasoning_strength_xhigh",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_strength": "xhigh"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: xhigh.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "reasoning_strength_garbage",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning_strength": "REASONING_EFFORT_UNKNOWN"
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: REASONING_EFFORT_UNKNOWN.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": false
+  },
+  {
+   "name": "thinking_var_on",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "thinking": true
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "reasoning_effort_dict",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "reasoning": {
+     "effort": "high"
+    }
+   },
+   "ok": true,
+   "output": "<|begin_of_text|><|start|>system<|message|>You are a helpful AI assistant.\nKnowledge cutoff: 2026-01-04.\nCurrent date: 2026-11-06.\n\nReasoning strength: high.\n\n# Valid recipients: \"self\", \"user\".<|eot|><|start|>user<|message|>What is the weather in Paris?<|eot|><|start|>assistant",
+   "error": null,
+   "same_as_plain": true
+  },
+  {
+   "name": "tool_call_json_string_args_only",
+   "vars": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "id": "call_1",
+        "type": "function",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Paris\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "tool_call_id": "call_1",
+      "name": "get_weather",
+      "content": "{\"temp_c\": 18}"
+     }
+    ],
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": false,
+   "output": null,
+   "error": "Onyx ATEM chat template requires tool_call.function.arguments to be a dict (mapping); a JSON string cannot be parsed in the HF jinja sandbox."
+  }
+ ],
+ "summary": {
+  "total": 24,
+  "ok": 22,
+  "raised": 2,
+  "raised_cases": [
+   "tool_call_string_args",
+   "tool_call_json_string_args_only"
+  ]
+ }
+}

@@ -1,0 +1,12 @@
+== b11960: 44 types
+  muse Q8_0: 731 tensors {'Q8_0': 418, 'F32': 313}
+  mistral UD-Q4_K_XL: 579 tensors {'Q8_0': 326, 'F32': 181, 'Q5_K': 33, 'Q4_K': 35, 'Q6_K': 4}
+  mistral MXFP4_MOE: 579 tensors {'Q8_0': 326, 'F32': 181, 'Q5_K': 33, 'MXFP4': 35, 'Q6_K': 4}
+  mistral UD-IQ4_XS: 579 tensors {'Q6_K': 5, 'F32': 181, 'Q8_0': 325, 'IQ4_XS': 32, 'IQ3_S': 36}
+  muse UD-IQ2_XXS: 731 tensors {'Q6_K': 2, 'F32': 313, 'IQ2_XXS': 104, 'IQ4_XS': 52, 'IQ3_S': 52, 'Q5_K': 52, 'IQ3_XXS': 52, 'IQ2_S': 104}
+== b12144: 45 types
+  muse Q8_0: 731 tensors {'Q8_0': 418, 'F32': 313}
+  mistral UD-Q4_K_XL: 579 tensors {'Q8_0': 326, 'F32': 181, 'Q5_K': 33, 'Q4_K': 35, 'Q6_K': 4}
+  mistral MXFP4_MOE: 579 tensors {'Q8_0': 326, 'F32': 181, 'Q5_K': 33, 'MXFP4': 35, 'Q6_K': 4}
+  mistral UD-IQ4_XS: 579 tensors {'Q6_K': 5, 'F32': 181, 'Q8_0': 325, 'IQ4_XS': 32, 'IQ3_S': 36}
+  muse UD-IQ2_XXS: 731 tensors {'Q6_K': 2, 'F32': 313, 'IQ2_XXS': 104, 'IQ4_XS': 52, 'IQ3_S': 52, 'Q5_K': 52, 'IQ3_XXS': 52, 'IQ2_S': 104}

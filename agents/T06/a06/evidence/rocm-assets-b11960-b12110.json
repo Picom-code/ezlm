@@ -1,0 +1,42 @@
+{
+  "b11960": {
+    "tag_name": "b11960",
+    "published_at": "2026-10-28T12:45:39Z",
+    "assets": [
+      {
+        "name": "llama-b11960-bin-ubuntu-rocm-10.0-x64.tar.gz",
+        "size": 251572351,
+        "digest": "sha256:63546b0175840c75b261bcb55e75cce49852c6d632eee352edbfa62c3bf120e3",
+        "browser_download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11960/llama-b11960-bin-ubuntu-rocm-10.0-x64.tar.gz",
+        "content_type": "application/json; charset=utf-8"
+      },
+      {
+        "name": "llama-b11960-bin-win-rocm-10.0-x64.zip",
+        "size": 264908778,
+        "digest": "sha256:7036a6008ea4b83229f5db5b0624f5c880a0c49c57aa38d904d0419ce74783b4",
+        "browser_download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b11960/llama-b11960-bin-win-rocm-10.0-x64.zip",
+        "content_type": "application/json; charset=utf-8"
+      }
+    ]
+  },
+  "b12110": {
+    "tag_name": "b12110",
+    "published_at": "2026-11-04T12:52:04Z",
+    "assets": [
+      {
+        "name": "llama-b12110-bin-ubuntu-rocm-10.0-x64.tar.gz",
+        "size": 255523680,
+        "digest": "sha256:664b5c218ec9a38d1e7b543bae7407dc62a4051ba09ddc51bd29f68ee77da674",
+        "browser_download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b12110/llama-b12110-bin-ubuntu-rocm-10.0-x64.tar.gz",
+        "content_type": "application/json; charset=utf-8"
+      },
+      {
+        "name": "llama-b12110-bin-win-rocm-10.0-x64.zip",
+        "size": 267435610,
+        "digest": "sha256:097f408356dbaaa318c1b4be75f5d524bdab01541203adf16bf6e486b75deae4",
+        "browser_download_url": "https://github.com/ggml-org/llama.cpp/releases/download/b12110/llama-b12110-bin-win-rocm-10.0-x64.zip",
+        "content_type": "application/json; charset=utf-8"
+      }
+    ]
+  }
+}

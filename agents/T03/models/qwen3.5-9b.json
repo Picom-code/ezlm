@@ -1,0 +1,18 @@
+{
+ "id": "qwen3.5-9b",
+ "repo": "unsloth/Qwen3.5-9B-GGUF",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "xml: tool definitions in a <tools> JSON block in the system turn; assistant emits <tool_call><function=NAME><parameter=K>V</parameter></function></tool_call>; results come back as <tool_response> inside a user turn",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "developer role: 'Unexpected message role.'",
+  "system message after the first turn: 'System message must be at the beginning.'",
+  "no messages: 'No messages provided.'"
+ ],
+ "notes": "Thinking is OFF by default: with no enable_thinking the prompt ends '<|im_start|>assistant\\n<think>\\n\\n</think>\\n\\n'; enable_thinking=true ends '<|im_start|>assistant\\n thinking\\n'. reasoning_effort is never referenced, so all six levels plus reasoning.effort and thinking.effort render byte-identical output and are silently ignored (b11960 caps would report supports_reasoning_effort=false, reasoning_effort_levels=[]). No preserve_thinking: it is an older Qwen3.5 variant than b11960's bundled models/templates/Qwen3.5-4B.jinja, which defaults thinking on. Tool arguments must be a JSON object; if arguments is a string the guard 'tool_call.arguments is mapping' is false and every <parameter> is silently dropped, producing <function=get_weather> with no parameters. With tools present the system content is folded into the generated '# Tools' system turn. Parallel calls render as consecutive <tool_call> blocks, and consecutive tool results merge into one user turn."
+}

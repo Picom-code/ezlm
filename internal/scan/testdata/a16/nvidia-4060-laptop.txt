@@ -1,0 +1,7 @@
+# A Windows laptop: WDDM reports no per-process compute memory ([N/A]).
+# query-gpu
+NVIDIA GeForce RTX 4060 Laptop GPU, 8188, 6200, 566.36
+# compute-apps
+[N/A], [N/A], [N/A]
+# header
+| NVIDIA-SMI 566.36   Driver Version: 566.36   CUDA Version: 12.7     |

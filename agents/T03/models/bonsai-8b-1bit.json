@@ -1,0 +1,17 @@
+{
+ "id": "bonsai-8b-1bit",
+ "repo": "prism-ml/Bonsai-8B-gguf",
+ "file": "Bonsai-8B-Q1_0.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "json in <tool_call> tags: <tool_call>\\n{\"name\": <name>, \"arguments\": <json-object>}\\n</tool_call>; tool definitions are one JSON object per line inside a <tools> system block; tool results are wrapped in <tool_response>...</tool_response> inside a user turn",
+ "tools_supported": true,
+ "thinking_toggle": "none",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": ["none", "minimal", "low", "medium", "high", "xhigh", "max"],
+ "template_reads_reasoning_effort": false,
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [],
+ "notes": "Qwen3-style ChatML template. It reads only messages, tools and add_generation_prompt: no enable_thinking/thinking and no reasoning_effort variable, so thinking_on/off and all six effort levels render byte-identical to plain. The generation prompt always ends with an empty ' thinking\\n\\n</think>' block. A system message is only honoured at messages[0] (a later system message is rendered inline). developer role messages are silently dropped (the role matches no branch). reasoning_content on assistant history is rendered as a think block only for assistant turns after the last user message. All 21 render cases passed; no raise_exception path."
+}

@@ -1,0 +1,15 @@
+arch nemotron_h_moe  block_count 53
+head_count_kv: 7 layers with cache, values [2], indices [5, 12, 19, 26, 33, 42, 52]
+key_length 128 value_length 128
+context_length 1048576  rope.dimension_count 84
+nemotron_h_moe.expert_count 128
+nemotron_h_moe.expert_shared_count 1
+nemotron_h_moe.expert_used_count 6
+nemotron_h_moe.nextn_predict_layers 1
+nemotron_h_moe.ssm.conv_kernel 4
+nemotron_h_moe.ssm.group_count 8
+nemotron_h_moe.ssm.inner_size 4096
+nemotron_h_moe.ssm.state_size 128
+nemotron_h_moe.ssm.time_step_rank 64
+total tensors elements 32,913,266,240 = 32.91B
+by ggml_type: {0: '0.01B', 6: '1.28B', 8: '1.92B', 14: '0.33B', 20: '29.37B', 30: '0.00B'}

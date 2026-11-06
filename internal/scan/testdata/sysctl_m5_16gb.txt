@@ -1,0 +1,11 @@
+# Apple M5 (MacBook Pro 14-inch, 2025): 10-core CPU, 4 performance + 6 efficiency, 16 GB.
+# Synthetic case built from the documented `sysctl -a` format and Apple's specs.
+hw.memsize: 17179869184
+hw.physicalcpu: 10
+hw.logicalcpu: 10
+hw.perflevel0.physicalcpu: 4
+hw.perflevel1.physicalcpu: 6
+hw.optional.arm64: 1
+machdep.cpu.brand_string: Apple M5
+sysctl.proc_translated: 0
+iogpu.wired_limit_mb: 0

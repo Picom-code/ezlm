@@ -1,0 +1,28 @@
+# Windows CUDA assets from api.github.com/repos/ggml-org/llama.cpp/releases/tags/<tag>
+# fetched 2026-11-06 (GET only). Columns: tag, asset, bytes, sha256[:16], url
+# b11960 = pinned tag; b12110 = build named by v0.9.0 nightly-tag.txt (latest release);
+# b12144 = newest build when the brief was written; b12167 = newest build at fetch time.
+b11960	cudart-llama-bin-win-cuda-12.4-x64.zip	391443627	8c79a9b226de4b3c	https://github.com/ggml-org/llama.cpp/releases/download/b11960/cudart-llama-bin-win-cuda-12.4-x64.zip
+b11960	cudart-llama-bin-win-cuda-13.4-arm64.zip	153262407	642dcde8805b3e31	https://github.com/ggml-org/llama.cpp/releases/download/b11960/cudart-llama-bin-win-cuda-13.4-arm64.zip
+b11960	cudart-llama-bin-win-cuda-13.4-x64.zip	423535356	738f8c251ac22b70	https://github.com/ggml-org/llama.cpp/releases/download/b11960/cudart-llama-bin-win-cuda-13.4-x64.zip
+b11960	llama-b11960-bin-win-cuda-12.4-x64.zip	279763224	8d9d819261de10cc	https://github.com/ggml-org/llama.cpp/releases/download/b11960/llama-b11960-bin-win-cuda-12.4-x64.zip
+b11960	llama-b11960-bin-win-cuda-13.4-arm64.zip	152745165	3bde5e443757db13	https://github.com/ggml-org/llama.cpp/releases/download/b11960/llama-b11960-bin-win-cuda-13.4-arm64.zip
+b11960	llama-b11960-bin-win-cuda-13.4-x64.zip	164986387	31c75ea62b80f081	https://github.com/ggml-org/llama.cpp/releases/download/b11960/llama-b11960-bin-win-cuda-13.4-x64.zip
+b12110	cudart-llama-bin-win-cuda-12.4-x64.zip	391443627	8c79a9b226de4b3c	https://github.com/ggml-org/llama.cpp/releases/download/b12110/cudart-llama-bin-win-cuda-12.4-x64.zip
+b12110	cudart-llama-bin-win-cuda-13.4-arm64.zip	153262407	642dcde8805b3e31	https://github.com/ggml-org/llama.cpp/releases/download/b12110/cudart-llama-bin-win-cuda-13.4-arm64.zip
+b12110	cudart-llama-bin-win-cuda-13.4-x64.zip	423535356	738f8c251ac22b70	https://github.com/ggml-org/llama.cpp/releases/download/b12110/cudart-llama-bin-win-cuda-13.4-x64.zip
+b12110	llama-b12110-bin-win-cuda-12.4-x64.zip	287014657	1ce755bc3a061889	https://github.com/ggml-org/llama.cpp/releases/download/b12110/llama-b12110-bin-win-cuda-12.4-x64.zip
+b12110	llama-b12110-bin-win-cuda-13.4-arm64.zip	156812884	b981f7b4d73d6145	https://github.com/ggml-org/llama.cpp/releases/download/b12110/llama-b12110-bin-win-cuda-13.4-arm64.zip
+b12110	llama-b12110-bin-win-cuda-13.4-x64.zip	169175655	dc910a969190b5d4	https://github.com/ggml-org/llama.cpp/releases/download/b12110/llama-b12110-bin-win-cuda-13.4-x64.zip
+b12144	cudart-llama-bin-win-cuda-12.4-x64.zip	391443627	8c79a9b226de4b3c	https://github.com/ggml-org/llama.cpp/releases/download/b12144/cudart-llama-bin-win-cuda-12.4-x64.zip
+b12144	cudart-llama-bin-win-cuda-13.4-arm64.zip	153262407	642dcde8805b3e31	https://github.com/ggml-org/llama.cpp/releases/download/b12144/cudart-llama-bin-win-cuda-13.4-arm64.zip
+b12144	cudart-llama-bin-win-cuda-13.4-x64.zip	423535356	738f8c251ac22b70	https://github.com/ggml-org/llama.cpp/releases/download/b12144/cudart-llama-bin-win-cuda-13.4-x64.zip
+b12144	llama-b12144-bin-win-cuda-12.4-x64.zip	288363637	fab315401a4784fa	https://github.com/ggml-org/llama.cpp/releases/download/b12144/llama-b12144-bin-win-cuda-12.4-x64.zip
+b12144	llama-b12144-bin-win-cuda-13.4-arm64.zip	157924987	026e6645ce0980b8	https://github.com/ggml-org/llama.cpp/releases/download/b12144/llama-b12144-bin-win-cuda-13.4-arm64.zip
+b12144	llama-b12144-bin-win-cuda-13.4-x64.zip	170311229	19809fbc335671be	https://github.com/ggml-org/llama.cpp/releases/download/b12144/llama-b12144-bin-win-cuda-13.4-x64.zip
+b12167	cudart-llama-bin-win-cuda-12.4-x64.zip	391443627	8c79a9b226de4b3c	https://github.com/ggml-org/llama.cpp/releases/download/b12167/cudart-llama-bin-win-cuda-12.4-x64.zip
+b12167	cudart-llama-bin-win-cuda-13.4-arm64.zip	153262407	642dcde8805b3e31	https://github.com/ggml-org/llama.cpp/releases/download/b12167/cudart-llama-bin-win-cuda-13.4-arm64.zip
+b12167	cudart-llama-bin-win-cuda-13.4-x64.zip	423535356	738f8c251ac22b70	https://github.com/ggml-org/llama.cpp/releases/download/b12167/cudart-llama-bin-win-cuda-13.4-x64.zip
+b12167	llama-b12167-bin-win-cuda-12.4-x64.zip	288703403	2fcea9d2e62b481c	https://github.com/ggml-org/llama.cpp/releases/download/b12167/llama-b12167-bin-win-cuda-12.4-x64.zip
+b12167	llama-b12167-bin-win-cuda-13.4-arm64.zip	157983181	0db6c2205b6a5341	https://github.com/ggml-org/llama.cpp/releases/download/b12167/llama-b12167-bin-win-cuda-13.4-arm64.zip
+b12167	llama-b12167-bin-win-cuda-13.4-x64.zip	170364196	ed57938edd216a2f	https://github.com/ggml-org/llama.cpp/releases/download/b12167/llama-b12167-bin-win-cuda-13.4-x64.zip

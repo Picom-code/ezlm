@@ -1,0 +1,118 @@
+{
+ "id": "qwen3.5-2b",
+ "repo": "Qwen/Qwen3.5-2B",
+ "template_source": "tokenizer.chat_template",
+ "engine": "jinja2 3.1.6, llama.cpp b11960 common/jinja conventions",
+ "baseline_for_changes": "thinking_on",
+ "cases": {
+  "plain": {
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "exception": null
+  },
+  "system_user": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "exception": null
+  },
+  "tool_call": {
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"Get the current weather for a city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"City name.\"},\"unit\":{\"type\":\"string\",\"enum\":[\"c\",\"f\"]}},\"required\":[\"city\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=unit>\nc\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18, \"conditions\": \"clear\"}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "exception": null
+  },
+  "parallel_tools": {
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"Get the current weather for a city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"City name.\"},\"unit\":{\"type\":\"string\",\"enum\":[\"c\",\"f\"]}},\"required\":[\"city\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris and Berlin?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=unit>\nc\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nBerlin\n</parameter>\n<parameter=unit>\nf\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18}\n</tool_response>\n<tool_response>\n{\"temp_f\": 64}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "exception": null
+  },
+  "thinking_on": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null
+  },
+  "thinking_off": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "exception": null
+  },
+  "effort_none": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "effort_low": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "effort_medium": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "effort_high": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "effort_xhigh": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "effort_max": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "developer_role": {
+   "ok": false,
+   "output": null,
+   "exception": "raise_exception: Unexpected message role."
+  },
+  "extra_tool_call_string_args": {
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"Get the current weather for a city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"City name.\"},\"unit\":{\"type\":\"string\",\"enum\":[\"c\",\"f\"]}},\"required\":[\"city\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18, \"conditions\": \"clear\"}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "exception": null
+  },
+  "extra_developer_mid_history": {
+   "ok": false,
+   "output": null,
+   "exception": "raise_exception: Unexpected message role."
+  },
+  "extra_system_mid_history": {
+   "ok": false,
+   "output": null,
+   "exception": "raise_exception: System message must be at the beginning."
+  },
+  "extra_no_user_query": {
+   "ok": false,
+   "output": null,
+   "exception": "raise_exception: No user query found in messages."
+  },
+  "extra_reasoning_strength": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "extra_reasoning_object": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  },
+  "extra_thinking_object": {
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a concise assistant.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "exception": null,
+   "changes_render": false
+  }
+ }
+}

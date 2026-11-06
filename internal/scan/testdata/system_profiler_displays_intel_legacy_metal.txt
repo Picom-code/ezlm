@@ -1,0 +1,25 @@
+Graphics/Displays:
+
+    Intel UHD Graphics 630:
+
+      Chipset Model: Intel UHD Graphics 630
+      Type: GPU
+      Bus: Built-In
+      VRAM (Dynamic, Max): 1536 MB
+      Vendor: Intel (0x8086)
+      Device ID: 0x3e9b
+      Revision ID: 0x0000
+      Metal: Supported, feature set macOS GPUFamily2 v1
+
+    Radeon Pro 560X:
+
+      Chipset Model: Radeon Pro 560X
+      Type: GPU
+      Bus: PCIe
+      PCIe Lane Width: x8
+      VRAM (Total): 4096 MB
+      Vendor: ATI (0x1002)
+      Device ID: 0x67ef
+      Revision ID: 0x00c1
+      ROM Revision: 113-D0008A-042
+      Metal: Supported, feature set macOS GPUFamily2 v1

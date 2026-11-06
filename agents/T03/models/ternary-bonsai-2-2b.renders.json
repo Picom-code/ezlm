@@ -1,0 +1,99 @@
+{
+ "model": "ternary-bonsai-2-2b",
+ "cases": {
+  "tokenizer.chat_template": {
+   "plain": {
+    "status": "ok",
+    "output": "<|im_start|>user\nHello, how are you?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "system_user": {
+    "status": "ok",
+    "output": "<|im_start|>system\nYou are a terse assistant.<|im_end|>\n<|im_start|>user\nHello, how are you?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "tool_call": {
+    "status": "ok",
+    "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "parallel_tools": {
+    "status": "ok",
+    "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n{\"function\": {\"description\": \"Get the current time for a city.\", \"name\": \"get_time\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWeather and time in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_time>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response>\n<tool_response>\n{\"time\": \"12:00\"}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "tool_call_string_args": {
+    "status": "raised",
+    "exception": "TypeError: Can only get item pairs from a mapping."
+   },
+   "parallel_string_args": {
+    "status": "raised",
+    "exception": "TypeError: Can only get item pairs from a mapping."
+   },
+   "tool_call_json_format": {
+    "status": "ok",
+    "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "thinking_on": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "thinking_off": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+   },
+   "thinking_var_on": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "thinking_var_off": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "no_generation_prompt": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n"
+   },
+   "effort_none": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "effort_low": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "effort_medium": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "effort_high": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "effort_xhigh": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "effort_max": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "effort_nested": {
+    "status": "ok",
+    "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+   },
+   "system_image": {
+    "status": "raised",
+    "exception": "RaiseException: System message cannot contain images."
+   },
+   "no_user_query": {
+    "status": "raised",
+    "exception": "RaiseException: No user query found in messages."
+   },
+   "system_not_first": {
+    "status": "raised",
+    "exception": "RaiseException: System message must be at the beginning."
+   },
+   "developer_role": {
+    "status": "raised",
+    "exception": "RaiseException: Unexpected message role."
+   }
+  }
+ }
+}

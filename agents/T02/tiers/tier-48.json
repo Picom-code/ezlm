@@ -1,0 +1,294 @@
+{
+  "tier": "48",
+  "models": [
+    {
+      "id": "flint-40b-a2b",
+      "name": "Flint 40B A2.5B",
+      "family": "Flint",
+      "vendor": "Recursive",
+      "country": "US",
+      "license": "Apache-2.0",
+      "params_b": 39.79,
+      "moe": true,
+      "score": 12.0,
+      "score_source": "ESTIMATE (no AA v5 index as of 2026-11-06): vendor-reported Terminal-Bench 2.1 54.9% and SWE-bench Verified 74.2% (RecursiveSI/flint model card, fetched 2026-11-06); TB2.1 is level with K2-Horizon-MoVA-36B-A4B (56.6% on AA), which fits to 13.0, so estimate 12.0. Not independently verified.",
+      "layers": 49,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "RecursiveSI/flint",
+      "active_params_b": 2.5,
+      "kv_layers": 14,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-10-21. 39.8B total, about 2.5B active (2.2B body), 49 layers (2 dense + 47 MoE), 256 routed experts top-6 plus a shared expert. 35 sliding-window layers (window 513) and 14 full-attention layers, so KV is only 1.9GB at 64K f16. 262K context. Built for coding agents: vendor-reported Terminal-Bench 2.1 54.9%, SWE-bench Pro v2 89.7%, SWE-bench Verified 74.2% (model card, 2026-11-06); no Artificial Analysis row yet. Multi-turn tool use and reasoning are in the chat template. Apache-2.0.",
+      "swa_layers": 35,
+      "swa_kv_heads": 4,
+      "swa_head_dim": 128,
+      "swa_window": 513,
+      "quants": [
+        {
+          "name": "UD-Q4_K_XL",
+          "files": [
+            "flint-UD-Q4_K_XL.gguf"
+          ],
+          "bytes": 25054688704,
+          "repo": "unsloth/flint-GGUF"
+        },
+        {
+          "name": "UD-Q5_K_XL",
+          "files": [
+            "flint-UD-Q5_K_XL.gguf"
+          ],
+          "bytes": 29919491520,
+          "repo": "unsloth/flint-GGUF"
+        },
+        {
+          "name": "UD-Q6_K_XL",
+          "files": [
+            "flint-UD-Q6_K_XL.gguf"
+          ],
+          "bytes": 36319999424,
+          "repo": "unsloth/flint-GGUF"
+        },
+        {
+          "name": "Q8_0",
+          "files": [
+            "flint-Q8_0.gguf"
+          ],
+          "bytes": 42301076928,
+          "repo": "unsloth/flint-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "k2-horizon-mova-36b-a4b",
+      "name": "K2 Horizon MoVA 36B A4B",
+      "family": "K2 Horizon",
+      "vendor": "IFM (Institute of Foundation Models)",
+      "country": "AE",
+      "license": "Apache-2.0",
+      "params_b": 37.44,
+      "moe": true,
+      "score": 13.0,
+      "score_source": "ESTIMATE: v5-equivalent from AA's published v5 components (AA-Briefcase 1164.8, GDPval-AA 1196.7, AutomationBench 26.1%, GDP.pdf 4.2%, HLE-Diamond 23.4%, AA-LCR 71.7%, TB2.1 56.6%, SciCode 40.0%, GPQA 82.2%, tau3-Banking 32.0%) via linear fit on 38 models with an official v5 index (RMSE 2.9) -> 14.1; legacy fit (HLE, AA-LCR, GDPval, CritPt) on 87 models -> 12.7; use 13.0. Fetched 2026-11-06.",
+      "layers": 48,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 524288,
+      "tool_calling": true,
+      "repo": "IFM/K2-Horizon-MoVA-36B-A4B",
+      "active_params_b": 4.0,
+      "kv_layers": 48,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-09-01. Mixture-of-Experts with Mixture-of-Values attention: 100 experts, top-8 plus one shared, 4B active out of 37.4B counted (36B nominal). Native 524K context, fully open (training data, recipe and code published). AA components fetched 2026-11-06: AA-Briefcase 1164.8, GDPval-AA 1196.7, AutomationBench 26.1%, HLE-Diamond 23.4%, AA-LCR 71.7%, TB2.1 56.6%, SciCode 40.0%, GPQA 82.2%, tau3-Banking 32.0%. Vendor card: tau3-Banking 26.8, TB2.1 58.6, HLE 25.2, GPQA 80.8. All 48 layers are full attention, so KV is 12.9GB at 64K f16 and Q6_K is the sweet spot at 48GB. Reasoning effort and tool calling are in the chat template (43KB).",
+      "quants": [
+        {
+          "name": "Q4_K_M",
+          "files": [
+            "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf"
+          ],
+          "bytes": 22368011616,
+          "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF"
+        },
+        {
+          "name": "Q5_K_M",
+          "files": [
+            "K2-Horizon-MoVA-36B-A4B-Q5_K_M.gguf"
+          ],
+          "bytes": 26439456096,
+          "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF"
+        },
+        {
+          "name": "Q6_K",
+          "files": [
+            "K2-Horizon-MoVA-36B-A4B-Q6_K.gguf"
+          ],
+          "bytes": 30765365856,
+          "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF"
+        },
+        {
+          "name": "Q8_0",
+          "files": [
+            "K2-Horizon-MoVA-36B-A4B-Q8_0.gguf"
+          ],
+          "bytes": 39831174496,
+          "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "hypernova-60b-2605",
+      "name": "HyperNova 60B 2605",
+      "family": "HyperNova",
+      "vendor": "Multiverse Computing",
+      "country": "ES",
+      "license": "Apache-2.0",
+      "params_b": 58.66,
+      "moe": true,
+      "score": 7.0,
+      "score_source": "ESTIMATE: legacy fit (HLE 16.6%, AA-LCR 36.3%, GDPval-AA 448.6, CritPt 0.9%) on 87 models with an official v5 index (RMSE 4.9) -> 8.5; v5-component fit -> 5.6; use 7.0. Low AA-Briefcase 232 and GDP.pdf 0.1% pull it down. AA components fetched 2026-11-06.",
+      "layers": 32,
+      "kv_heads": 8,
+      "head_dim": 64,
+      "ctx_max": 131072,
+      "tool_calling": true,
+      "repo": "MultiverseComputingCAI/Hypernova-60B-2605",
+      "active_params_b": 4.8,
+      "kv_layers": 16,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-04-30. CompactifAI compression of gpt-oss-120b to 58.7B total and 4.8B active (80 experts, top-4). Native OpenAI-style tool calling, configurable reasoning effort, 131K context. Half the layers are sliding-window (128), so KV is only 2.2GB at 64K f16. AA components fetched 2026-11-06: HLE 16.6%, AA-LCR 36.3%, GDPval-AA 448.6, IFBench 66.5%, tau2 63.2%, GPQA 73.3%, AA-Briefcase 232, GDP.pdf 0.1%. Apache-2.0.",
+      "swa_layers": 16,
+      "swa_kv_heads": 8,
+      "swa_head_dim": 64,
+      "swa_window": 128,
+      "quants": [
+        {
+          "name": "IQ3_M",
+          "files": [
+            "Hypernova-60B-2605.i1-IQ3_M.gguf"
+          ],
+          "bytes": 31208056768,
+          "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF"
+        },
+        {
+          "name": "Q3_K_L",
+          "files": [
+            "Hypernova-60B-2605.i1-Q3_K_L.gguf"
+          ],
+          "bytes": 35810895808,
+          "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF"
+        },
+        {
+          "name": "Q4_K_M",
+          "files": [
+            "Hypernova-60B-2605.i1-Q4_K_M.gguf"
+          ],
+          "bytes": 40687403968,
+          "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF"
+        },
+        {
+          "name": "Q5_K_M",
+          "files": [
+            "Hypernova-60B-2605.i1-Q5_K_M.gguf"
+          ],
+          "bytes": 44337746368,
+          "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "exaone-4.5-33b",
+      "name": "EXAONE 4.5 33B",
+      "family": "EXAONE 4.5",
+      "vendor": "LG AI Research",
+      "country": "KR",
+      "license": "EXAONE 1.2-NC (non-commercial)",
+      "params_b": 34.35,
+      "moe": false,
+      "score": 4.2,
+      "score_source": "ESTIMATE: legacy fit (HLE 12.9%, AA-LCR 54.7%, GDPval-AA 474.5, CritPt 0.3%) on 87 models with an official v5 index (RMSE 4.9) -> 4.2. AA has no v5 components for it yet (tau2 78.1%, GPQA 79.4%, TB-hard 20.5% are v4-era). Fetched 2026-11-06.",
+      "layers": 65,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "LGAI-EXAONE/EXAONE-4.5-33B",
+      "active_params_b": 34.35,
+      "kv_layers": 16,
+      "vision": true,
+      "native_1bit": false,
+      "notes": "Released 2026-04-04. 33B dense model plus a 1.2B vision encoder (34.35B counted), 262K context, 3:1 sliding-window (4096) to full attention over 65 blocks, one of which is an MTP layer. Multilingual (en, ko, es, de, ja, vi) with strong document understanding. AA components fetched 2026-11-06: tau2 78.1%, GPQA 79.4%, HLE 12.9%, AA-LCR 54.7%, IFBench 58.0%, TB-hard 20.5%. License is EXAONE 1.2-NC: research and non-commercial use only, which blocks a paid deployment. Tool calling is in the chat template; vision needs the separate mmproj file.",
+      "swa_layers": 49,
+      "swa_kv_heads": 8,
+      "swa_head_dim": 128,
+      "swa_window": 4096,
+      "quants": [
+        {
+          "name": "Q4_K_M",
+          "files": [
+            "EXAONE-4.5-33B-Q4_K_M.gguf"
+          ],
+          "bytes": 20047839424,
+          "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF"
+        },
+        {
+          "name": "Q5_K_M",
+          "files": [
+            "EXAONE-4.5-33B-Q5_K_M.gguf"
+          ],
+          "bytes": 23482253504,
+          "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF"
+        },
+        {
+          "name": "Q6_K",
+          "files": [
+            "EXAONE-4.5-33B-Q6_K.gguf"
+          ],
+          "bytes": 27131318464,
+          "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF"
+        },
+        {
+          "name": "Q8_0",
+          "files": [
+            "EXAONE-4.5-33B-Q8_0.gguf"
+          ],
+          "bytes": 35138742464,
+          "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "kimi-linear-48b-a3b",
+      "name": "Kimi Linear 48B A3B Instruct",
+      "family": "Kimi Linear",
+      "vendor": "Moonshot AI",
+      "country": "CN",
+      "license": "MIT",
+      "params_b": 49.12,
+      "moe": true,
+      "score": 2.0,
+      "score_source": "ESTIMATE (no v5 index): AA v4-era components GPQA 41.2%, HLE 2.5%, AA-LCR 28.0%, LiveCodeBench 37.8%, AIME-2025 36.3% imply a low v5 index (about 2); the legacy fit needs GDPval and CritPt, which AA did not publish for this model. Fetched 2026-11-06. Treat as a long-context specialist, not a general pick.",
+      "layers": 27,
+      "kv_heads": 1,
+      "head_dim": 576,
+      "ctx_max": 1048576,
+      "tool_calling": true,
+      "repo": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
+      "active_params_b": 3.0,
+      "kv_layers": 7,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2025-10-30. Kimi Delta Attention (linear attention) with 7 full-attention layers out of 27; 48B total, 3B active, 256 experts top-8. 1M context and a very small cache: 1.0GB at 64K, 4.1GB at 256K, 16.5GB at 1M f16 (MLA, one KV head). MIT. AA components fetched 2026-11-06: GPQA 41.2%, HLE 2.5%, AA-LCR 28.0%, LiveCodeBench 37.8%, AIME-2025 36.3%. Dated against 2026 models; kept only because it is the cheapest way to get a real 1M-token window at this memory tier. Tool calling is in the chat template.",
+      "quants": [
+        {
+          "name": "Q4_K_M",
+          "files": [
+            "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q4_K_M.gguf"
+          ],
+          "bytes": 30061058720,
+          "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF"
+        },
+        {
+          "name": "Q5_K_M",
+          "files": [
+            "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q5_K_M.gguf"
+          ],
+          "bytes": 35097473696,
+          "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF"
+        },
+        {
+          "name": "Q6_K",
+          "files": [
+            "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q6_K.gguf"
+          ],
+          "bytes": 40460212128,
+          "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF"
+        }
+      ]
+    }
+  ]
+}

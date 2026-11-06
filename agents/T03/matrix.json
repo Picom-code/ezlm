@@ -1,0 +1,727 @@
+{
+ "version": 1,
+ "models": [
+  {
+   "id": "bonsai-27b-1bit",
+   "repo": "prism-ml/Bonsai-27B-gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: tool definitions in a <tools> JSON block in the system turn; assistant emits <tool_call><function=NAME><parameter=K>V</parameter></function></tool_call>; results come back as <tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "developer role: 'Unexpected message role.'",
+    "system message after the first turn: 'System message must be at the beginning.'",
+    "no messages: 'No messages provided.'",
+    "assistant tool_call.arguments as a JSON string: 'Can only get item pairs from a mapping.' (python jinja2; minja filter behaviour unverified)"
+   ],
+   "notes": "Thinking is ON by default: with no enable_thinking the prompt ends '<|im_start|>assistant\\n thinking\\n'; enable_thinking=false renders ' thinking\\n\\n</think>\\n\\n'. reasoning_effort is never referenced by the template, so all six levels plus reasoning.effort and thinking.effort render byte-identical output and are silently ignored (b11960 caps would report supports_reasoning_effort=false, reasoning_effort_levels=[]). preserve_thinking is supported. With tools present the system content is folded into the generated '# Tools' system turn instead of a separate system turn. Parallel calls render as consecutive <tool_call> blocks, and consecutive tool results merge into one user turn. Template body matches llama.cpp b11960's bundled models/templates/Qwen3.5-4B.jinja."
+  },
+  {
+   "id": "bonsai-8b-1bit",
+   "repo": "prism-ml/Bonsai-8B-gguf",
+   "file": "Bonsai-8B-Q1_0.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "json in <tool_call> tags: <tool_call>\\n{\"name\": <name>, \"arguments\": <json-object>}\\n</tool_call>; tool definitions are one JSON object per line inside a <tools> system block; tool results are wrapped in <tool_response>...</tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "none",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "template_reads_reasoning_effort": false,
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [],
+   "notes": "Qwen3-style ChatML template. It reads only messages, tools and add_generation_prompt: no enable_thinking/thinking and no reasoning_effort variable, so thinking_on/off and all six effort levels render byte-identical to plain. The generation prompt always ends with an empty ' thinking\\n\\n</think>' block. A system message is only honoured at messages[0] (a later system message is rendered inline). developer role messages are silently dropped (the role matches no branch). reasoning_content on assistant history is rendered as a think block only for assistant turns after the last user message. All 21 render cases passed; no raise_exception path."
+  },
+  {
+   "id": "devstral-small-2-24b",
+   "repo": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "[TOOL_CALLS]<name>[ARGS]<json-arguments> in the assistant turn; tool definitions in [AVAILABLE_TOOLS]<json>[/AVAILABLE_TOOLS]; tool results in [TOOL_RESULTS]<text>[/TOOL_RESULTS]",
+   "tools_supported": true,
+   "thinking_toggle": "none",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Only user, assistant and tool roles are supported, got developer. (any developer message)",
+    "After the optional system message, conversation roles must alternate user and assistant roles except for tool calls and results. (two user turns in a row, a system message that is not messages[0])",
+    "Only text chunks are supported in assistant message contents. (assistant content block of type thinking; b11960's Ministral-3 handler injects one when reasoning_content is set)",
+    "Only text, image and image_url chunks are supported in user message content. (unknown block type in a user message)",
+    "Only text chunks are supported in system message contents. (non-text block in the system message)",
+    "Unsloth custom template does not support years > 2032. Error year = [YYYY] (strftime_now returns a year above 2032 on a 1st of the month)"
+   ],
+   "notes": "Mistral [SYSTEM_PROMPT]/[INST] format. The template has no thinking or effort variable at all: enable_thinking, reasoning_effort, reasoning_strength, medium_effort and thinking are silently ignored, and add_generation_prompt adds nothing because generation follows the last [/INST]. When the first message is not a system message the template injects a ~2.5 KB default Le Chat system prompt that embeds today's and yesterday's date. Only messages[0] may be a system message. b11960 detects this template as Ministral 3 ([SYSTEM_PROMPT]+[TOOL_CALLS]+[ARGS], no [CALL_ID]) and runs common_chat_params_init_ministral_3, which claims supports_thinking=true with [THINK]/[/THINK] tags and rewrites system/assistant content into typed blocks; the template itself never emits or accepts thinking, so an assistant history entry with reasoning_content becomes a thinking block and raises 'Only text chunks are supported in assistant message contents.'. The template's 'Assistant message must have a string or a list of chunks' raise is patched to 'if false' by b11960 for [TOOL_CALLS] templates."
+  },
+  {
+   "id": "gemma-4-12b",
+   "repo": "unsloth/gemma-4-12b-it-GGUF",
+   "file": "gemma-4-12b-it-UD-IQ2_M.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<|tool_call>call:NAME{key:value,...}<tool_call|> with <|tool_response>response:NAME{value:...}<tool_response|>; strings are wrapped in <|\"|> markers, tool definitions go in a <|tool>...<tool|> block inside the first system turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "enable_thinking defaults to false. True adds <|think|> to the first system turn and leaves the model turn open; false (or absent) closes an empty <|channel>thought\\n<channel|> at the generation prompt. The template never reads reasoning_effort or thinking, so every effort value renders byte-identically to the plain prompt: llama.cpp's b11960 caps will report supports_reasoning_effort=false and reasoning_effort_levels=[]. A developer message in position 0 is rendered as the system turn, identical to role system. Parallel tool calls render as consecutive <|tool_call> blocks followed by consecutive <|tool_response> blocks."
+  },
+  {
+   "id": "gemma-4-26b-a4b",
+   "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+   "file": "gemma-4-26B-A4B-it-UD-IQ2_XXS.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "gemma DSL: <|tool_call>call:name{key:value,...}<tool_call|>; tool declarations in the system turn as <|tool>declaration:name{description:<|\"|>...<|\"|>,parameters:{...}}<tool|>; tool results as <|tool_response>response:name{...}<tool_response|>",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "template_reads_reasoning_effort": false,
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "Gemma 4 turn DSL with <|turn>/<turn|> and a dedicated thinking channel. Thinking is toggled by enable_thinking (default false in the template, but llama.cpp b11960 passes true by default): true emits '<|think|>' in the system turn and leaves the model turn open, false closes an empty '<|channel>thought\\n<channel|>'. The template reads reasoning_effort nowhere, so all six effort levels render byte-identical to plain; b11960 therefore reports supports_reasoning_effort=false. 'none' only changes anything because the server maps it to enable_thinking=false. preserve_thinking (default false) gates reasoning_content in history to turns after the last user message. developer role messages are mapped into the system turn. Tool-call arguments: the template reads arguments as a mapping when given one, so b11960 parses the OpenAI JSON string to an object (workaround::func_args_not_string); string arguments also render, as raw text with the outer braces stripped."
+  },
+  {
+   "id": "gemma-4-31b",
+   "repo": "unsloth/gemma-4-31B-it-GGUF",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "gemma dsl: <|tool_call>call:NAME{key:value,...}<tool_call|>; tool definitions are <|tool>declaration:NAME{...}<tool|> blocks in the system turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "Gemma 4 turn format (<|turn>role ... <turn|>), reasoning channel (<|channel>thought ... <channel|>). All six reasoning_effort values plus an unknown value render byte-identically to thinking_on: the template never reads reasoning_effort, so effort is silently ignored (caps.supports_reasoning_effort is false). Thinking is toggled only by enable_thinking: true injects <|think|> at the top of the first system turn and the generation prompt is a bare <|turn>model; false writes an empty <|channel>thought\\n<channel|> at the generation prompt. developer is accepted: as the first message it is rendered as a system turn. The template's string-arguments branch (the shape the server sends, because supports_object_arguments is false) emits quoted keys inside the call DSL, e.g. call:get_weather{\"city\": \"Paris\"}, not Gemma's unquoted key:value form; the object-arguments branch renders the canonical form."
+  },
+  {
+   "id": "gemma-4-e2b",
+   "repo": "google/gemma-4-E2B-it",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "gemma4-dsl",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "Template has no reasoning_effort or reasoning_strength branch. All six effort values, plus reasoning.effort and thinking.effort, render byte-identically to the no-effort baseline, so effort is silently ignored and llama.cpp b11960 caps reports no effort levels. Thinking is toggled by enable_thinking; reasoning_effort \"none\" works only because the server maps it to enable_thinking=false. developer is accepted and rendered as a system turn. Tools use the Gemma 4 DSL. Header read from unsloth/gemma-4-E2B-it-GGUF/gemma-4-E2B-it-UD-IQ2_M.gguf."
+  },
+  {
+   "id": "gemma-4-e4b",
+   "repo": "google/gemma-4-E4B-it",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "gemma4-dsl",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "Template has no reasoning_effort or reasoning_strength branch. All six effort values, plus reasoning.effort and thinking.effort, render byte-identically to the no-effort baseline, so effort is silently ignored and llama.cpp b11960 caps reports no effort levels. Thinking is toggled by enable_thinking; reasoning_effort \"none\" works only because the server maps it to enable_thinking=false. developer is accepted and rendered as a system turn. Tools use the Gemma 4 DSL. Header read from unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-UD-IQ2_M.gguf."
+  },
+  {
+   "id": "gpt-oss-120b",
+   "repo": "openai/gpt-oss-120b",
+   "gguf_repo": "ggml-org/gpt-oss-120b-GGUF",
+   "gguf_file": "gpt-oss-120b-MXFP4.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "harmony channels: tool defs rendered as a TypeScript namespace in the developer message; a call is '<|start|>assistant to=functions.NAME<|channel|>commentary json<|message|>{args}<|call|>'; a result is '<|start|>functions.NAME to=assistant<|channel|>commentary<|message|>\"{result}\"<|end|>' (result JSON-encoded)",
+   "tools_supported": true,
+   "thinking_toggle": "none: the template never reads enable_thinking or thinking; reasoning is a 'Reasoning: <reasoning_effort>' line in the system message (default medium). Disabling thinking is server-side (reasoning_budget_tokens=0).",
+   "effort_levels_accepted": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "assistant content containing '<|channel|>...<|message|>' raises 'You have passed a message containing <|channel|> tags in the content field...' (b11960 patches this check to '{%- if false %}' in common_chat_templates_init)",
+    "a tool message with no preceding assistant tool call raises 'Message has tool role, but there was no previous assistant message with a tool call!'",
+    "a second or later tool_calls entry in one assistant message is silently dropped: the template renders only message.tool_calls[0]",
+    "an empty messages list raises UndefinedError (messages[0] is read unconditionally)",
+    "a developer message that is not messages[0] is silently dropped; only the first developer/system message becomes '# Instructions'"
+   ],
+   "notes": "Both gpt-oss models ship the identical template (sha256 a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146). effort values are interpolated verbatim and never validated, so every level renders, but the model was trained on low/medium/high only; 'none' is intercepted by the server before the template (server-common.cpp:1497-1504 erases the kwarg and sets enable_thinking=false, which this template ignores), so 'none' does NOT shorten reasoning. b11960 detects supports_parallel_tool_calls=false from this template. Tool-call arguments must be an object; a JSON string is double-encoded by |tojson unless llama.cpp's func_args_not_string normalization runs."
+  },
+  {
+   "id": "gpt-oss-20b",
+   "repo": "openai/gpt-oss-20b",
+   "gguf_repo": "ggml-org/gpt-oss-20b-GGUF",
+   "gguf_file": "gpt-oss-20b-MXFP4.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "harmony channels: tool defs rendered as a TypeScript namespace in the developer message; a call is '<|start|>assistant to=functions.NAME<|channel|>commentary json<|message|>{args}<|call|>'; a result is '<|start|>functions.NAME to=assistant<|channel|>commentary<|message|>\"{result}\"<|end|>' (result JSON-encoded)",
+   "tools_supported": true,
+   "thinking_toggle": "none: the template never reads enable_thinking or thinking; reasoning is a 'Reasoning: <reasoning_effort>' line in the system message (default medium). Disabling thinking is server-side (reasoning_budget_tokens=0).",
+   "effort_levels_accepted": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "assistant content containing '<|channel|>...<|message|>' raises 'You have passed a message containing <|channel|> tags in the content field...' (b11960 patches this check to '{%- if false %}' in common_chat_templates_init)",
+    "a tool message with no preceding assistant tool call raises 'Message has tool role, but there was no previous assistant message with a tool call!'",
+    "a second or later tool_calls entry in one assistant message is silently dropped: the template renders only message.tool_calls[0]",
+    "an empty messages list raises UndefinedError (messages[0] is read unconditionally)",
+    "a developer message that is not messages[0] is silently dropped; only the first developer/system message becomes '# Instructions'"
+   ],
+   "notes": "Both gpt-oss models ship the identical template (sha256 a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146). effort values are interpolated verbatim and never validated, so every level renders, but the model was trained on low/medium/high only; 'none' is intercepted by the server before the template (server-common.cpp:1497-1504 erases the kwarg and sets enable_thinking=false, which this template ignores), so 'none' does NOT shorten reasoning. b11960 detects supports_parallel_tool_calls=false from this template. Tool-call arguments must be an object; a JSON string is double-encoded by |tojson unless llama.cpp's func_args_not_string normalization runs."
+  },
+  {
+   "id": "granite-4.2-30b",
+   "repo": "ibm-granite/granite-4.2-30b",
+   "gguf": "ibm-granite/granite-4.2-30b-GGUF granite-4.2-30b-Q2_K.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tools> JSON block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [
+    "low"
+   ],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "minimal",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "effort_aliases": {},
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "Only reasoning_effort == \"low\" changes the render: it appends \"{reasoning effort: low}\" to the last user turn. Every other value (including none, minimal, medium, high, xhigh, max) renders byte-identical to no reasoning_effort at all, so b11960 reports reasoning_effort_levels [\"low\"] and no effort value produces an error. b11960 has no \"Unexpected reasoning effort\" error: it passes any string to the template and the template silently ignores it. b11960 maps reasoning_effort \"none\" to enable_thinking=false and drops the kwarg before rendering, so none turns thinking off through the toggle, not through effort. enable_thinking=false emits \"<|im_start|>assistant\\n<think></think>\"; assistant history turns without think tags get \"<think></think>\" prepended. The template always emits a system turn, even with no system message (system_message is set to \"\" and then treated as defined), so a plain user chat starts with an empty <|im_start|>system turn. A developer message renders as <|im_start|>developer, but b11960 rewrites developer to system before rendering (common/chat.cpp:1517), so the server never reaches that branch. Tool arguments sent as a JSON string instead of an object raise \"Can only get item pairs from a mapping.\" from the arguments|items loop; b11960 converts object arguments to a mapping first when the caps allow it, so this is only reachable with a hand-rolled prompt. Rendering also leaks whitespace into the prompt: a leading newline before the first system turn, and \"\\n        \\n            \" before an assistant tool-call turn. The 8b template is byte-identical to this one."
+  },
+  {
+   "id": "granite-4.2-3b",
+   "repo": "ibm-granite/granite-4.2-3b",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tools> JSON block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call> (granite 4.x XML form, not JSON)",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [
+    "low"
+   ],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "reasoning_effort is used only as `reasoning_effort == \"low\"`, which appends \"\\n\\n{reasoning effort: low}\" to the last user turn. minimal/medium/high/xhigh/max render byte-identical to the default and are silently ignored, so b11960 /props reports reasoning_effort_levels [\"low\"]. enable_thinking defaults to true; false renders an empty  thinking</think> block. developer is emitted as a real <|im_start|>developer turn (the server maps it to system first for templates without <|channel|>)."
+  },
+  {
+   "id": "granite-4.2-8b",
+   "repo": "ibm-granite/granite-4.2-8b",
+   "gguf": "ibm-granite/granite-4.2-8b-GGUF granite-4.2-8b-Q3_K_M.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tools> JSON block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [
+    "low"
+   ],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "minimal",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "effort_aliases": {},
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "Only reasoning_effort == \"low\" changes the render: it appends \"{reasoning effort: low}\" to the last user turn. Every other value (including none, minimal, medium, high, xhigh, max) renders byte-identical to no reasoning_effort at all, so b11960 reports reasoning_effort_levels [\"low\"] and no effort value produces an error. b11960 has no \"Unexpected reasoning effort\" error: it passes any string to the template and the template silently ignores it. b11960 maps reasoning_effort \"none\" to enable_thinking=false and drops the kwarg before rendering, so none turns thinking off through the toggle, not through effort. enable_thinking=false emits \"<|im_start|>assistant\\n<think></think>\"; assistant history turns without think tags get \"<think></think>\" prepended. The template always emits a system turn, even with no system message (system_message is set to \"\" and then treated as defined), so a plain user chat starts with an empty <|im_start|>system turn. A developer message renders as <|im_start|>developer, but b11960 rewrites developer to system before rendering (common/chat.cpp:1517), so the server never reaches that branch. Tool arguments sent as a JSON string instead of an object raise \"Can only get item pairs from a mapping.\" from the arguments|items loop; b11960 converts object arguments to a mapping first when the caps allow it, so this is only reachable with a hand-rolled prompt. Rendering also leaks whitespace into the prompt: a leading newline before the first system turn, and \"\\n        \\n            \" before an assistant tool-call turn. The 30B template is byte-identical to this one."
+  },
+  {
+   "id": "lfm3-1.7b",
+   "repo": "LiquidAI/LFM3-1.7B-GGUF",
+   "file": "LFM3-1.7B-QAD-Q4_0.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tool_call>\\n<function=NAME>\\n<parameter=key>\\nvalue\\n</parameter>\\n</function>\\n</tool_call> (one block per call, blank line between parallel calls); tool definitions are JSON lines inside a <tools> block appended to the system prompt; results are <|im_start|>tool\\n<tool_response>...\\n</tool_response>",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "assistant tool call with arguments as a JSON string raises: Tool call arguments must be a mapping, got a JSON-encoded string: parse arguments with json.loads() before applying the chat template"
+   ],
+   "notes": "ChatML with <|im_start|>/<|im_end|>. enable_thinking defaults to true: true opens  thinking at the generation prompt, false closes an empty  thinking</think> to suppress reasoning. The template never reads reasoning_effort (or reasoning, or the thinking variable), so all six effort values render byte-identically to the plain prompt and b11960 reports supports_reasoning_effort=false. A developer message is not merged into the system prompt (only messages[0].role == system is); it renders as its own <|im_start|>developer turn, though the server rewrites developer to system before rendering. Tool arguments must be objects, not JSON strings. Contains {% generation %} blocks, which b11960's jinja parser ignores but plain jinja2 does not."
+  },
+  {
+   "id": "mistral-small-4-119b",
+   "repo": "mistralai/Mistral-Small-4-119B-2603",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "mistral: definitions in a `[AVAILABLE_TOOLS]` + JSON array + `[/AVAILABLE_TOOLS]` block; calls as `[TOOL_CALLS]<name>[ARGS]<json>` (one block per call, appended to the assistant turn before `</s>`); results as `[TOOL_RESULTS]<text>[/TOOL_RESULTS]`",
+   "tools_supported": true,
+   "thinking_toggle": "reasoning_effort",
+   "effort_levels_accepted": [
+    "none",
+    "high"
+   ],
+   "effort_levels_rejected": [
+    "low",
+    "medium",
+    "xhigh",
+    "max",
+    "minimal"
+   ],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "reasoning_effort must be either \"none\" or \"high\"",
+    "Only user, assistant and tool roles are supported, got developer.",
+    "After the optional system message, conversation roles must alternate user and assistant roles except for tool calls and results.",
+    "Unsloth custom template does not support years > 2032. Error year = [<year>]",
+    "Only text chunks are supported in system message contents.",
+    "Assistant message must have a string or a list of chunks in content or a list of tool calls."
+   ],
+   "notes": "The template validates reasoning_effort itself and only accepts \"none\" and \"high\"; low, medium, xhigh, max and minimal raise, which surfaces as HTTP 500 with the template's own message (not \"Unexpected reasoning effort\"). \"none\" is also the default when the variable is absent, and b11960 drops a reasoning_effort of \"none\" from the kwargs (server-common.cpp:1497-1506), so it renders as none either way. The template always emits [MODEL_SETTINGS]{\"reasoning_effort\": \"...\"} after the tools block. enable_thinking is ignored. A system message is only accepted as the first message; a system message later in the history raises the alternating-roles error. Non-tool assistant turns must alternate with user turns. When no system message is given the template injects a ~3.4 kB default Le Chat system prompt. The date arithmetic raises after 2032."
+  },
+  {
+   "id": "muse-glimmer-30b",
+   "repo": "meta-models/Muse-Glimmer-30B",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "atem: a <atem:function_calls><atem:invoke name=\"f\"><atem:parameter name=\"k\">v</atem:parameter></atem:invoke></atem:function_calls> block, regex-parsed, inside a `<|start|>assistant to=<tool><|message|>` turn; tool results are `<|start|>tool <name><|message|><tool_output name=\"<name>\">...</tool_output><|eot|>`",
+   "tools_supported": true,
+   "thinking_toggle": "none",
+   "effort_levels_accepted": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max",
+    "minimal"
+   ],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Onyx ATEM chat template requires tool_call.function.arguments to be a dict (mapping); a JSON string cannot be parsed in the HF jinja sandbox."
+   ],
+   "notes": "Template reads reasoning_strength, not reasoning_effort, and validates nothing: any string renders as the literal line 'Reasoning strength: <value>.' The template has no enable_thinking or thinking handling, so thinking_on and thinking_off render byte-identical prompts (verified). b11960's caps_apply_reasoning_effort binds reasoning_effort and reasoning_strength to the same value (common/jinja/caps.cpp:31-36), so OpenAI reasoning_effort does reach the prompt. reasoning_effort \"none\" is dropped by the server (server-common.cpp:1497-1506), so it falls back to the template default \"high\": sending none means high reasoning, not none. A developer role renders without error but the message is silently dropped (output equals a plain user turn). Tool calls must carry object arguments; a JSON string raises."
+  },
+  {
+   "id": "nanbeige4.3-33b",
+   "repo": "Nanbeige/Nanbeige4.3-33B",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>, preceded by a <tools> block of JSON tool definitions inside the system turn; a JSON form {\"name\": ..., \"arguments\": {...}} is available by setting the tool_call_format template variable to json",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "system message not first: Jinja Exception: System message must be at the beginning.",
+    "tool_calls whose function.arguments is a JSON string: TypeError while iterating arguments|items (llama-server sends object arguments because caps reports supports_object_arguments)"
+   ],
+   "notes": "ChatML template with a Chinese default system prompt (\u4f60\u662f\u5357\u5317\u9601...) injected when the first message is not a system turn, so a client that sends no system message still gets one. reasoning_effort is never referenced: none, low, medium, high, xhigh, max and a nested reasoning.effort all render byte-identical, so they are silently ignored rather than rejected (supports_reasoning_effort=false in llama-server caps). enable_thinking is the only thinking switch; preserve_thinking controls whether reasoning_content is kept in history. A developer role renders as a <|im_start|>developer turn without raising, though the default system prompt is still injected first; llama-server maps developer to system before rendering anyway. Tool format defaults to xml; passing tool_call_format=json through chat_template_kwargs switches both the instructions and the emitted <tool_call> blocks to JSON. No user query is tolerated (unlike the Bonsai template), and a system image item is replaced with a plain-text reminder instead of raising."
+  },
+  {
+   "id": "nemotron-3.5-bolt-74b-a9b",
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "ChatML turns (<|im_start|>role ... <|im_end|>). Tool definitions go in the system turn as a <tools> XML block: <function><name>..</name><description>..</description><parameters><parameter><name>..</name><type>..</type><description>..</description></parameter>...</parameters></function>. A call is emitted in an assistant turn as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>, one block per call (parallel calls are consecutive blocks). Results come back in a user turn as <tool_response>CONTENT</tool_response>, one per result.",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "The template's own effort knob is the boolean medium_effort, not the OAI string: medium_effort=true appends \"\\n\\n{reasoning effort: efficient}\" to the last user message (extra_medium_effort_true); medium_effort=false changes nothing. OAI reasoning_effort cannot reach that boolean, so use chat_template_kwargs={\"medium_effort\": true}. The template also has a vision-aware render_content macro (image/video parts). ChatML template. reasoning_effort is never read: all six levels render byte-identical to a request with no effort, so none of them is accepted. b11960 turns OAI reasoning_effort=none into enable_thinking=false, so none disables thinking through the server, not the template. b11960 also probes minimal, which is ignored too. The only thinking control is enable_thinking. An empty system turn is always emitted when no system message is given (system_message is set to \"\" but the `is defined` test passes). History reasoning is truncated by default (truncate_history_thinking); preserve_reasoning=true flips it. b11960 maps developer to system before rendering for all models except GPT-OSS, so the template's developer branch is normally not reached. Header read from the quant repo below; the BF16 repo has no GGUF.",
+   "gguf": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB.gguf"
+  },
+  {
+   "id": "nemotron-3.5-lightning-30b-a3b",
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "ChatML turns (<|im_start|>role ... <|im_end|>). Tool definitions go in the system turn as a <tools> XML block: <function><name>..</name><description>..</description><parameters><parameter><name>..</name><type>..</type><description>..</description></parameter>...</parameters></function>. A call is emitted in an assistant turn as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>, one block per call (parallel calls are consecutive blocks). Results come back in a user turn as <tool_response>CONTENT</tool_response>, one per result.",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "ChatML template. reasoning_effort is never read: all six levels render byte-identical to a request with no effort, so none of them is accepted. b11960 turns OAI reasoning_effort=none into enable_thinking=false, so none disables thinking through the server, not the template. b11960 also probes minimal, which is ignored too. The only thinking control is enable_thinking. An empty system turn is always emitted when no system message is given (system_message is set to \"\" but the `is defined` test passes). History reasoning is truncated by default (truncate_history_thinking); preserve_reasoning=true flips it. b11960 maps developer to system before rendering for all models except GPT-OSS, so the template's developer branch is normally not reached. Header read from the quant repo below; the BF16 repo has no GGUF.",
+   "gguf": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-IQ3_XXS.gguf"
+  },
+  {
+   "id": "nemotron-3.5-super-vl-120b-a12b",
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tool_call><function=<name>><parameter=<key>><value></parameter></function></tool_call> in the assistant turn; tool definitions as an XML <tools><function><name>..</name><parameters><parameter>..</parameter></parameters></function></tools> block in the system turn; tool results as <tool_response>..</tool_response> blocks inside a user turn (parallel results share one user turn)",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "assistant tool_calls[].function.arguments sent as a JSON string raises in the arguments|items filter (TypeError: Can only get item pairs from a mapping in jinja2; minja raises Function 'items' expected value of type value_object). Send arguments as an object."
+   ],
+   "notes": "ChatML-style template with a Qwen3-like tool block. Thinking is toggled by the boolean enable_thinking (default true): true ends the prompt with '<|im_start|>assistant\\n thinking\\n', false with '<|im_start|>assistant\\n thinking</think>'. There is no reasoning_effort variable; the template only reads the boolean medium_effort, which appends '\\n\\n{reasoning effort: efficient}' to the last user message (needs chat_template_kwargs). reasoning_effort, reasoning_strength and reasoning.effort are all silently ignored, so b11960's caps report supports_reasoning_effort=false. The template always emits a system turn, an empty '<|im_start|>system\\n<|im_end|>' when no system message is sent. Assistant history reasoning_content is kept only when truncate_history_thinking is false (b11960 sets that from preserve_reasoning); by default older thinking is truncated. A developer message renders as '<|im_start|>developer' through the generic else branch; the template does not raise, but it is not a documented training role. Typed content blocks of type thinking are silently dropped; reasoning history must arrive as reasoning_content."
+  },
+  {
+   "id": "qwen3.5-122b-a10b",
+   "repo": "Qwen/Qwen3.5-122B-A10B",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tools> block holding OpenAI tool objects ({\"type\":\"function\",\"function\":{...}}); calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call> (qwen3-coder XML form)",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "The template never reads reasoning_effort or reasoning_strength: every effort value renders byte-identical, so b11960 caps sets supports_reasoning_effort=false and /props reasoning_effort_levels is empty. Any effort level is accepted by the server and ignored by the template. enable_thinking=false renders an empty  thinking\\n\\n</think>\\n\\n block. Leading developer messages are merged into the system turn; developer messages later in the list are dropped by the `role != 'developer'` loop guard."
+  },
+  {
+   "id": "qwen3.5-2b",
+   "repo": "Qwen/Qwen3.5-2B",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: a <tools> block of JSON tool schemas in the system turn, then <tool_call><function=NAME><parameter=K>V</parameter></function></tool_call> per call",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Unexpected message role. (role developer, or any role other than system/user/assistant/tool)",
+    "System message must be at the beginning. (system message at index > 0)",
+    "No user query found in messages. (history with no plain user turn, e.g. a tool-only continuation)"
+   ],
+   "notes": "Qwen3.5 GGUF ships one template (no named variants); the 2B template is byte-identical to the 4B one and renders identically. reasoning_effort is never referenced: all six levels render byte-identical to the no-effort render, so effort is silently ignored, not rejected (at the server level b11960 special-cases effort 'none': it sets enable_thinking=false and drops the kwarg, so 'none' still turns thinking off). Thinking is controlled by enable_thinking at the generation prompt: true emits ' thinking\\n', false or absent emits ' thinking\\n\\n</think>\\n\\n' (an empty think block). llama.cpp b11960 maps a developer message to system before rendering, so a leading developer message works; one in mid-history becomes a non-first system message and raises. Tool parameters render only when tool_call.function.arguments is a mapping; with the OpenAI string form the template emits an empty <function=NAME></function> (b11960 converts string arguments to objects for this template because its caps probe sees object-argument use)."
+  },
+  {
+   "id": "qwen3.5-4b",
+   "repo": "Qwen/Qwen3.5-4B",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: a <tools> block of JSON tool schemas in the system turn, then <tool_call><function=NAME><parameter=K>V</parameter></function></tool_call> per call",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Unexpected message role. (role developer, or any role other than system/user/assistant/tool)",
+    "System message must be at the beginning. (system message at index > 0)",
+    "No user query found in messages. (history with no plain user turn, e.g. a tool-only continuation)"
+   ],
+   "notes": "Qwen3.5 GGUF ships one template (no named variants). reasoning_effort is never referenced: all six levels render byte-identical to the no-effort render, so effort is silently ignored, not rejected (at the server level b11960 special-cases effort 'none': it sets enable_thinking=false and drops the kwarg, so 'none' still turns thinking off). Thinking is controlled by enable_thinking at the generation prompt: true emits ' thinking\\n', false or absent emits ' thinking\\n\\n</think>\\n\\n' (an empty think block). llama.cpp b11960 maps a developer message to system before rendering, so a leading developer message works; one in mid-history becomes a non-first system message and raises. Tool parameters render only when tool_call.function.arguments is a mapping; with the OpenAI string form the template emits an empty <function=NAME></function> (b11960 converts string arguments to objects for this template because its caps probe sees object-argument use)."
+  },
+  {
+   "id": "qwen3.5-9b",
+   "repo": "unsloth/Qwen3.5-9B-GGUF",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: tool definitions in a <tools> JSON block in the system turn; assistant emits <tool_call><function=NAME><parameter=K>V</parameter></function></tool_call>; results come back as <tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "developer role: 'Unexpected message role.'",
+    "system message after the first turn: 'System message must be at the beginning.'",
+    "no messages: 'No messages provided.'"
+   ],
+   "notes": "Thinking is OFF by default: with no enable_thinking the prompt ends '<|im_start|>assistant\\n<think>\\n\\n</think>\\n\\n'; enable_thinking=true ends '<|im_start|>assistant\\n thinking\\n'. reasoning_effort is never referenced, so all six levels plus reasoning.effort and thinking.effort render byte-identical output and are silently ignored (b11960 caps would report supports_reasoning_effort=false, reasoning_effort_levels=[]). No preserve_thinking: it is an older Qwen3.5 variant than b11960's bundled models/templates/Qwen3.5-4B.jinja, which defaults thinking on. Tool arguments must be a JSON object; if arguments is a string the guard 'tool_call.arguments is mapping' is false and every <parameter> is silently dropped, producing <function=get_weather> with no parameters. With tools present the system content is folded into the generated '# Tools' system turn. Parallel calls render as consecutive <tool_call> blocks, and consecutive tool results merge into one user turn."
+  },
+  {
+   "id": "qwen3.6-27b",
+   "repo": "Qwen/Qwen3.6-27B",
+   "gguf": "unsloth/Qwen3.6-27B-MTP-GGUF Qwen3.6-27B-UD-IQ2_XXS.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tools> block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "effort_levels_ignored": [
+    "none",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+   ],
+   "effort_aliases": {},
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "No messages provided.",
+    "UndefinedError: 'dict object' has no attribute 'name' (tool call without a function name; raised by jinja2, not by the template)"
+   ],
+   "notes": "The template never reads reasoning_effort, reasoning_strength, reasoning.effort or thinking.effort: all six effort values render byte-identical output, so the variable is silently ignored rather than accepted. b11960 therefore reports no reasoning_effort_levels for this model and no effort value can produce the 500. Thinking is toggled only by enable_thinking, and only in the generation prompt: false emits a closed empty  thinking block. A developer message is accepted as the first message and merged with a following system/developer message, but any system or developer message later in the conversation is silently dropped (no error), unlike qwen3.8. Tool call arguments passed as a JSON string are silently dropped, producing an empty <function=NAME></function> block; there is no arguments check in this template. A tool call with no function name dies on an undefined name instead of a readable error."
+  },
+  {
+   "id": "qwen3.6-35b-a3b",
+   "repo": "Qwen/Qwen3.6-35B-A3B",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call> blocks; tool definitions as JSON lines in a <tools> block in the system message",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [],
+   "notes": "reasoning_effort is never referenced by the template, so all six levels render byte-identical to a plain call: silently ignored, not accepted and not rejected. developer is accepted and merged with a leading system message into one system turn. Mid-conversation system or developer messages are silently dropped (no error). Unknown roles are silently dropped. enable_thinking=false renders an empty ' thinking\\n\\n</think>\\n\\n' block; true or absent renders ' thinking\\n'. The preserve_thinking kwarg only affects assistant history, not the generation prompt. llama.cpp caps will report supports_reasoning_effort=false for this template (caps.cpp:569-593)."
+  },
+  {
+   "id": "qwen3.8-27b",
+   "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "tools advertised as JSON lines inside a <tools> block in the system prompt; calls emitted as XML <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [
+    "low",
+    "medium",
+    "xhigh"
+   ],
+   "effort_levels_rejected": [
+    "none",
+    "high",
+    "max",
+    "minimal"
+   ],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low. (effort_none; the same text appears for high, max and minimal)",
+    "Unexpected message role. (developer_role)"
+   ],
+   "notes": "Template is byte-identical to Qwen/Qwen3.8-27B chat_template.jinja (sha256 c3cf9e34...). Thinking is on by default (enable_thinking undefined or true) and the default reasoning_effort is xhigh, so a plain user message gets an injected system turn 'Reasoning effort is set to xhigh...'. medium is accepted but emits no instruction, so it is silently ignored. Effort is only validated while thinking is on: effort high with enable_thinking=false renders fine. Nested shapes reasoning.effort and thinking.effort are ignored; the template reads only the top-level reasoning_effort. reasoning_effort=none never reaches the template on b11960: the server maps it to enable_thinking=false. No named templates in the GGUF header. The catalog's model repo Qwen/Qwen3.8-27B has no GGUF, so the template was read from the first catalog quant's repo (ISTA-DASLab)."
+  },
+  {
+   "id": "qwen3.8-flash-next",
+   "repo": "Qwen/Qwen3.8-Flash-Next",
+   "gguf": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF Q2_0/Qwen3.8-Flash-Next-GSQ-RCO-Q2_0-00001-of-00002.gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "<tools> block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [
+    "low",
+    "medium",
+    "high",
+    "xhigh"
+   ],
+   "effort_levels_rejected": [
+    "none",
+    "max"
+   ],
+   "effort_levels_ignored": [],
+   "effort_aliases": {
+    "high": "xhigh"
+   },
+   "system_role": true,
+   "developer_role": true,
+   "known_template_errors": [
+    "Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low.",
+    "Unexpected reasoning effort max. Supported types are xhigh (default), medium, and low.",
+    "System message must be at the beginning.",
+    "Tool call arguments for function \"get_weather\" were passed as a JSON string. Parse them into an object before calling apply_chat_template.",
+    "Tool call is missing a function name.",
+    "No messages provided."
+   ],
+   "notes": "Reads reasoning_effort only; reasoning.effort and thinking.effort shapes are silently ignored and fall back to xhigh. high is remapped to xhigh in the template, so it renders the xhigh instruction rather than raising. medium renders with no reasoning instruction at all (accepted but a no-op). Effort is only validated while enable_thinking is not false: with enable_thinking false, effort none and max render fine and are ignored. llama.cpp always passes enable_thinking, so the 'undefined means on' branch is dead in practice. A system or developer message after the first turn raises 'System message must be at the beginning.'; consecutive leading system/developer messages are merged into one. The template accepts developer as a system-equivalent role at the start."
+  },
+  {
+   "id": "ternary-bonsai-2-27b",
+   "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "tools advertised as JSON lines inside a <tools> block in the system prompt; calls emitted as XML <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [
+    "low",
+    "medium",
+    "xhigh"
+   ],
+   "effort_levels_rejected": [
+    "none",
+    "high",
+    "max",
+    "minimal"
+   ],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low. (effort_none; the same text appears for high, max and minimal)",
+    "Unexpected message role. (developer_role)"
+   ],
+   "notes": "Template is byte-identical to Qwen/Qwen3.8-27B chat_template.jinja (sha256 c3cf9e34...). Thinking is on by default (enable_thinking undefined or true) and the default reasoning_effort is xhigh, so a plain user message gets an injected system turn 'Reasoning effort is set to xhigh...'. medium is accepted but emits no instruction, so it is silently ignored. Effort is only validated while thinking is on: effort high with enable_thinking=false renders fine. Nested shapes reasoning.effort and thinking.effort are ignored; the template reads only the top-level reasoning_effort. reasoning_effort=none never reaches the template on b11960: the server maps it to enable_thinking=false. No named templates in the GGUF header."
+  },
+  {
+   "id": "ternary-bonsai-2-2b",
+   "repo": "prism-ml/Ternary-Bonsai-2-2B-gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>, preceded by a <tools> block of JSON tool definitions inside the system turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "developer role: Jinja Exception: Unexpected message role. (raw template; llama-server maps developer to system before rendering)",
+    "tool_calls whose function.arguments is a JSON string: TypeError while iterating arguments|items (llama-server sends object arguments because caps reports supports_object_arguments)",
+    "messages with no user turn: Jinja Exception: No user query found in messages.",
+    "system message not first: Jinja Exception: System message must be at the beginning.",
+    "system content containing an image item: Jinja Exception: System message cannot contain images."
+   ],
+   "notes": "Qwen3.5-style ChatML template. reasoning_effort is never referenced: all six effort values plus a nested reasoning.effort render byte-identical to no effort at all, so they are silently ignored, not rejected (supports_reasoning_effort=false in llama-server caps). enable_thinking is the only thinking switch: false renders an empty  thinking\\n\\n</think> block in the generation prompt; the alternative variable name thinking is ignored. Tools are described as JSON in <tools> and called as XML, and tool responses are folded into a user turn wrapped in <tool_response>. The template is vision-aware (user image items become <|vision_start|><|image_pad|><|vision_end|>) but rejects images in the system turn. It also requires at least one real user query."
+  },
+  {
+   "id": "ternary-bonsai-2-4b",
+   "repo": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml: <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; tool definitions are a JSON dump inside a <tools> block in the system turn",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "TypeError: Can only get item pairs from a mapping. when a tool call's arguments arrive as a JSON string (llama.cpp passes a JSON string unless chat_template_caps.supports_object_arguments is set; this template sets it by piping each argument value through tojson, so the b11960 server parses arguments into an object first)",
+    "RuntimeError: Unexpected message role. for a developer role message (llama.cpp maps developer to system before rendering when the template has no <|channel|>, so the HTTP API still works)"
+   ],
+   "notes": "Qwen3.5-style ChatML. All six reasoning_effort values, plus an unknown value, render byte-identically to thinking_on: the template never reads reasoning_effort, so effort is silently ignored (caps.supports_reasoning_effort is false). Thinking is toggled only by enable_thinking: true emits '<|im_start|>assistant\\n thinking\\n', false emits the empty ' thinking\\n\\n</think>\\n\\n' block. The toggle only appears when add_generation_prompt is true. Developer role is not supported by the template itself. Tool calls need object arguments, so any caller that applies the template without llama.cpp's caps pass gets a TypeError."
+  },
+  {
+   "id": "ternary-bonsai-2-9b",
+   "repo": "prism-ml/Ternary-Bonsai-2-9B-gguf",
+   "template_source": "tokenizer.chat_template",
+   "tool_call_format": "xml <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call> blocks; tool definitions as JSON lines in a <tools> block in the system message",
+   "tools_supported": true,
+   "thinking_toggle": "enable_thinking",
+   "effort_levels_accepted": [],
+   "effort_levels_rejected": [],
+   "system_role": true,
+   "developer_role": false,
+   "known_template_errors": [
+    "Unexpected message role. (developer role, or any role other than system/user/assistant/tool)",
+    "System message must be at the beginning. (a system message that is not messages[0])",
+    "No user query found in messages. (no user role anywhere in messages)"
+   ],
+   "notes": "reasoning_effort is never referenced by the template, so all six levels render byte-identical to a plain call: silently ignored, not accepted and not rejected. enable_thinking=false renders an empty ' thinking\\n\\n</think>\\n\\n' block after the assistant header; true or absent renders ' thinking\\n'. A developer role raises, but llama.cpp b11960 maps developer to system before rendering (chat.cpp:1517), so the server path works. With tools, the tool block replaces the system turn and any leading system content is appended after </IMPORTANT>. llama.cpp caps will report supports_reasoning_effort=false for this template (caps.cpp:569-593)."
+  }
+ ]
+}

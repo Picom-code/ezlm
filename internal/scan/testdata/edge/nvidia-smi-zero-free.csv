@@ -1,0 +1,5 @@
+# nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version
+# --format=csv,noheader,nounits, with a game holding the whole card: 24 GB
+# total, 0 bytes free. The scan must keep the card (it still has a size) and
+# report nothing usable, not drop it.
+NVIDIA GeForce RTX 4090, 24564, 0, 550.54.14

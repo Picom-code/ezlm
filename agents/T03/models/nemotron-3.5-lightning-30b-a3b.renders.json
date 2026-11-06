@@ -1,0 +1,115 @@
+{
+ "id": "nemotron-3.5-lightning-30b-a3b",
+ "repo": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+ "file": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-IQ3_XXS.gguf",
+ "quant": "UD-IQ3_XXS",
+ "template_source": "tokenizer.chat_template",
+ "jinja2_version": "3.1.6",
+ "llamacpp_conventions": {
+  "raise_exception": "stub raises RuntimeError(message)",
+  "tojson": "plain JSON dump, no HTML escaping (llama.cpp/minja style)",
+  "items": "mapping -> (key, value), string -> parsed JSON object items, list -> (index, value)",
+  "arguments": "tool_call arguments are objects (llama.cpp func_args_not_string)",
+  "context": "messages, tools, add_generation_prompt, enable_thinking, reasoning_effort/reasoning_strength, truncate_history_thinking, bos_token/eos_token"
+ },
+ "cases": [
+  {
+   "case": "plain",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "system_user",
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a terse assistant.<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": false,
+   "same_as_thinking_on": false
+  },
+  {
+   "case": "tool_call",
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n<function>\n<name>get_weather</name>\n<description>Get the current weather for a city.</description>\n<parameters>\n<parameter>\n<name>city</name>\n<type>string</type>\n<description>City name, for example Paris.</description>\n\n</parameter>\n<parameter>\n<name>units</name>\n<type>string</type>\n<enum>[\"c\", \"f\"]</enum>\n\n</parameter>\n        \n\n<required>[\"city\"]</required>\n</parameters>\n\n</function>\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=units>\nc\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18, \"conditions\": \"cloudy\"}\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": false,
+   "same_as_thinking_on": false
+  },
+  {
+   "case": "parallel_tools",
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n<function>\n<name>get_weather</name>\n<description>Get the current weather for a city.</description>\n<parameters>\n<parameter>\n<name>city</name>\n<type>string</type>\n<description>City name, for example Paris.</description>\n\n</parameter>\n<parameter>\n<name>units</name>\n<type>string</type>\n<enum>[\"c\", \"f\"]</enum>\n\n</parameter>\n        \n\n<required>[\"city\"]</required>\n</parameters>\n\n</function>\n<function>\n<name>get_time</name>\n<description>Get the current time in a city.</description>\n<parameters>\n<parameter>\n<name>city</name>\n<type>string</type>\n\n</parameter>\n        \n\n<required>[\"city\"]</required>\n</parameters>\n\n</function>\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather and the time in Paris?<|im_end|>\n<|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=units>\nc\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_time>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18}\n</tool_response>\n<tool_response>\n{\"local_time\": \"12:00\"}\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": false,
+   "same_as_thinking_on": false
+  },
+  {
+   "case": "thinking_on",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "thinking_off",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think></think>",
+   "same_as_plain": false,
+   "same_as_thinking_on": false
+  },
+  {
+   "case": "developer_role",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>developer\nYou are a terse assistant.<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": false,
+   "same_as_thinking_on": false
+  },
+  {
+   "case": "effort_none",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "effort_low",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "effort_medium",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "effort_high",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "effort_xhigh",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "effort_max",
+   "ok": true,
+   "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": true,
+   "same_as_thinking_on": true
+  },
+  {
+   "case": "extra_preserve_reasoning",
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n<function>\n<name>get_weather</name>\n<description>Get the current weather for a city.</description>\n<parameters>\n<parameter>\n<name>city</name>\n<type>string</type>\n<description>City name, for example Paris.</description>\n\n</parameter>\n<parameter>\n<name>units</name>\n<type>string</type>\n<enum>[\"c\", \"f\"]</enum>\n\n</parameter>\n        \n\n<required>[\"city\"]</required>\n</parameters>\n\n</function>\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n<parameter=units>\nc\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 18, \"conditions\": \"cloudy\"}\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "same_as_plain": false,
+   "same_as_thinking_on": false
+  }
+ ]
+}

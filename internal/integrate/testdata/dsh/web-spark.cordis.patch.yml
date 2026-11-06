@@ -1,0 +1,41 @@
+# Spark route: key comes from SPARK_API_KEY, set by ~/.local/bin/dsh-spark from ~/.hermes/auth.json
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+- id: llm-pi-ai
+  config:
+    providers:
+      spark:
+        displayName: Spark (DeepSeek V4.1 Flash)
+        apiKeyEnv: SPARK_API_KEY
+        api: openai-completions
+        baseURL: https://spark.tailnet.example/v1
+        compat:
+          thinkingFormat: deepseek # sends thinking:{type:enabled} (ignored by SGLang)
+          supportsReasoningEffort: true # sends reasoning_effort, which SGLang honors
+        models:
+          - id: deepseek-v4.1-flash
+            name: DeepSeek V4.1 Flash (Spark)
+            contextWindow: 262144   # engine runs --max-ctx 262144 (its /v1/models wrongly reports 1048576)
+            reasoningEfforts:
+              # picker levels; off = server default (no thinking)
+              off:
+              low: low
+              medium: medium
+              high: high
+- id: subagent
+  config:
+    maxActiveSubagents: 10 # raised from default 8 to fan out 10 parallel research agents
+- id: agent-default-model
+  config:
+    provider: spark
+    model: deepseek-v4.1-flash
+    reasoningEffort: high
+- id: ui-settings-general
+  name: "@deepseek-ai/dsh-client-ui-settings-general"
+  config:
+    welcomeNoticeVersion: 2026-09-28.1
+- id: ui-theme
+  name: "@deepseek-ai/dsh-client-ui-theme"
+  config:
+    preference: dark

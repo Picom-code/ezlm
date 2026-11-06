@@ -1,0 +1,4 @@
+# A Windows desktop with an Arc B580 and its processor's built-in graphics.
+# adapters
+Intel(R) Arc(TM) B580 Graphics	Intel Corporation	12884901888
+Intel(R) UHD Graphics 770	Intel Corporation	1073741824

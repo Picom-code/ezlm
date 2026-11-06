@@ -1,0 +1,3 @@
+# An AMD laptop iGPU: rocm-smi sees the small carve-out, not the shared pool.
+# rocm-smi
+{"card0": {"Card Series": "AMD Radeon 780M Graphics", "VRAM Total Memory (B)": "536870912", "VRAM Total Used Memory (B)": "134217728"}}

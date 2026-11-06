@@ -1,0 +1,8 @@
+# Windows on Arm: Snapdragon X Elite laptop, 16 GB of shared LPDDR5X.
+# Display-class driver entries as readAdapter builds them from the registry:
+#   DriverDesc | ProviderName | HardwareInformation.qwMemorySize (bytes)
+# The Adreno GPU has no VRAM of its own: the driver reports the aperture it
+# shares with the CPU (half of the 16 GB here). The basic adapter is what
+# Windows leaves behind when the Qualcomm driver is not installed.
+Qualcomm(R) Adreno(TM) X1-85 GPU | Qualcomm Incorporated | 8589934592
+Microsoft Basic Display Adapter | Microsoft | 0

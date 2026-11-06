@@ -1,0 +1,15 @@
+{
+  "card0": {
+    "VRAM Total Memory (B)": "21458059264",
+    "VRAM Total Used Memory (B)": "27856896",
+    "Card Series": "Radeon RX 7900 XT",
+    "Card Model": "0x744c",
+    "Card Vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+    "Card SKU": "D70401XT",
+    "Subsystem ID": "0x471e",
+    "Device Rev": "0xcc",
+    "Node ID": "1",
+    "GUID": "26967",
+    "GFX Version": "gfx1100"
+  }
+}

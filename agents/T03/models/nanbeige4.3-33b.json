@@ -1,0 +1,17 @@
+{
+ "id": "nanbeige4.3-33b",
+ "repo": "Nanbeige/Nanbeige4.3-33B",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "xml: <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>, preceded by a <tools> block of JSON tool definitions inside the system turn; a JSON form {\"name\": ..., \"arguments\": {...}} is available by setting the tool_call_format template variable to json",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [
+  "system message not first: Jinja Exception: System message must be at the beginning.",
+  "tool_calls whose function.arguments is a JSON string: TypeError while iterating arguments|items (llama-server sends object arguments because caps reports supports_object_arguments)"
+ ],
+ "notes": "ChatML template with a Chinese default system prompt (你是南北阁...) injected when the first message is not a system turn, so a client that sends no system message still gets one. reasoning_effort is never referenced: none, low, medium, high, xhigh, max and a nested reasoning.effort all render byte-identical, so they are silently ignored rather than rejected (supports_reasoning_effort=false in llama-server caps). enable_thinking is the only thinking switch; preserve_thinking controls whether reasoning_content is kept in history. A developer role renders as a <|im_start|>developer turn without raising, though the default system prompt is still injected first; llama-server maps developer to system before rendering anyway. Tool format defaults to xml; passing tool_call_format=json through chat_template_kwargs switches both the instructions and the emitted <tool_call> blocks to JSON. No user query is tolerated (unlike the Bonsai template), and a system image item is replaced with a plain-text reminder instead of raising."
+}

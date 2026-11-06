@@ -1,0 +1,17 @@
+{
+ "id": "ternary-bonsai-2-27b",
+ "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "tools advertised as JSON lines inside a <tools> block in the system prompt; calls emitted as XML <tool_call><function=NAME><parameter=KEY>value</parameter></function></tool_call>",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": ["low", "medium", "xhigh"],
+ "effort_levels_rejected": ["none", "high", "max", "minimal"],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low. (effort_none; the same text appears for high, max and minimal)",
+  "Unexpected message role. (developer_role)"
+ ],
+ "notes": "Template is byte-identical to Qwen/Qwen3.8-27B chat_template.jinja (sha256 c3cf9e34...). Thinking is on by default (enable_thinking undefined or true) and the default reasoning_effort is xhigh, so a plain user message gets an injected system turn 'Reasoning effort is set to xhigh...'. medium is accepted but emits no instruction, so it is silently ignored. Effort is only validated while thinking is on: effort high with enable_thinking=false renders fine. Nested shapes reasoning.effort and thinking.effort are ignored; the template reads only the top-level reasoning_effort. reasoning_effort=none never reaches the template on b11960: the server maps it to enable_thinking=false. No named templates in the GGUF header."
+}

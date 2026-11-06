@@ -1,0 +1,24 @@
+bonsai-8b-1bit       prism-ml/Bonsai-8B-gguf/Bonsai-8B-Q1_0.gguf
+   size=1158654496 etag="967420a031e0346ed57119221c6a89a7f2b2d22c297e9a6f32e89b9e3f75735e" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ2_XXS.gguf
+   size=9922480608 etag="ea841c2e515b75c7133087cc9e796cfb34f6d5859cc1a0655f56887d74c71dd8" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ3_XXS.gguf
+   size=11416548832 etag="57b5b29923e69e77283364f4d8d9b3ae3e6bb8656493d90075e9bbaaf26bf0bc" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-Q3_K_XL.gguf
+   size=12907280096 etag="7dc14cc0fa3b8c504c281cb6e17ca41ce3bff39e928c6c1dbd2eaa96d4ea2e98" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_XS.gguf
+   size=13597177568 etag="f1fdbc990dcb478744efe49340bebcb2869d139c04ffb834c29fdcba8cc39dbe" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-MXFP4_MOE.gguf
+   size=16551048928 etag="ad934d587678bd8733cb6cb26b357f7586d8e0ae23944c30015a9bbe62c867e8" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-Q4_K_XL.gguf
+   size=17010980576 etag="ce3c4872d3a6fa0f94e11108a552e5f480cc927c962fcebce3d98646b76d91c1" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-Q6_K.gguf
+   size=23172478688 etag="d137e3502c4ee58d8d2019b8c8354c9b8aeae8e586d40746ccfc0a729c55f329" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-Q8_0.gguf
+   size=26859861728 etag="f6a2d2bd71967428ccd590036046f456e7bd3a3a7d522640e36b55bb39679e2c" last-modified=None
+gemma-4-26b-a4b      google/gemma-4-26B-A4B-it-qat-q4_0-gguf/gemma-4-26B_q4_0-it.gguf
+   size=14439363584 etag="331179083d47424a7db368920b6857a7aceef74cef8cc36411405596c8bbdb2e" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-qat-GGUF/gemma-4-26B-A4B-it-qat-UD-Q4_K_XL.gguf
+   size=14249047104 etag="9b007fb274d0ccbd6c91e603176b25d6e7ab3b4a9c07cd4022af1c4b2df10701" last-modified=None
+gemma-4-26b-a4b      unsloth/gemma-4-26B-A4B-it-GGUF/MTP/mtp-gemma-4-26B-A4B-it-Q8_0.gguf
+   size=461766816 etag="fb7a81da9da6f2287b5c8b357e9e854d0dfaca4d24eac7d69ab564ad5514e525" last-modified=None
