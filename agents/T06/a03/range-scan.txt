@@ -1,0 +1,25 @@
+Scan of every llama.cpp release from the pinned tag to the newest build.
+Source: GET /repos/ggml-org/llama.cpp/releases?per_page=100 (pages 1-2), 2026-11-06.
+Window: b11960 (2026-10-28T12:45:39Z) .. b12167 (2026-11-06T09:45:44Z), 119 releases.
+
+Distinct Windows CUDA asset-name sets: 2
+  117 releases, b11960 .. b12167:
+    cudart-llama-bin-win-cuda-12.4-x64.zip
+    cudart-llama-bin-win-cuda-13.4-arm64.zip
+    cudart-llama-bin-win-cuda-13.4-x64.zip
+    llama-<TAG>-bin-win-cuda-12.4-x64.zip
+    llama-<TAG>-bin-win-cuda-13.4-arm64.zip
+    llama-<TAG>-bin-win-cuda-13.4-x64.zip
+  2 releases, v0.8.0 .. v0.9.0:
+
+Stable releases (no binaries, only nightly-tag.txt):
+  v0.8.0 (2026-10-28T12:47:51Z) assets=['nightly-tag.txt']
+  v0.9.0 (2026-11-04T13:08:06Z) assets=['nightly-tag.txt']
+
+cudart archives are tag-less and byte-identical everywhere they appear:
+  cudart-llama-bin-win-cuda-12.4-x64.zip: 1 distinct (size,digest) across all fetched releases, size=391443627
+  cudart-llama-bin-win-cuda-13.4-arm64.zip: 1 distinct (size,digest) across all fetched releases, size=153262407
+  cudart-llama-bin-win-cuda-13.4-x64.zip: 1 distinct (size,digest) across all fetched releases, size=423535356
+
+No Windows arm64 CUDA 12 asset exists anywhere in the window (any tag):
+  matches: none

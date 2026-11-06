@@ -1,0 +1,5 @@
+# Windows on Arm, the same machine after a clean driver install: the Adreno
+# driver reports only the 2 GB aperture it reserves by default, so the shared
+# GPU is not worth a Vulkan build and the processor should keep the model.
+Qualcomm(R) Adreno(TM) X1-85 GPU | Qualcomm Incorporated | 2147483648
+Microsoft Basic Display Adapter | Microsoft | 0

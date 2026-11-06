@@ -1,0 +1,334 @@
+# Copy of the desktop config.yaml in %LOCALAPPDATA%/hermes (Hermes 0.21.4, _config_version 46), keys redacted.
+model:
+  default: sonnet
+  provider: claude-subscription-directsdk-experimental
+database:
+  journal_mode: wal
+runtime:
+  nofile_soft_limit: 4096
+agent:
+  max_turns: '9999'
+  api_max_retries: 10
+  service_tier: normal
+  verbose: false
+  reasoning_effort: medium
+  personalities: {}
+  system_prompt: 'Delegate aggressively: default to spawning subagents via delegate_task
+    for any multi-step, research, build, or verification work rather than doing it
+    solo. Fan out parallel children generously (up to the max), batch independent
+    work into one call, and keep your own context lean. Only do single-tool-call work
+    inline.'
+terminal:
+  backend: local
+  cwd: .
+  font_family: JetBrainsMono Nerd Font
+  timeout: 900
+  home_mode: auto
+  container_cpu: 1
+  container_memory: 5120
+  container_disk: 51200
+  container_persistent: true
+  docker_mount_cwd_to_workspace: false
+  lifetime_seconds: 300
+browser:
+  inactivity_timeout: 120
+  use_real_profile: true
+checkpoints:
+  max_snapshots: 999999
+tool_loop_guardrails:
+  warnings_enabled: true
+  hard_stop_enabled: false
+  warn_after:
+    exact_failure: 2
+    same_tool_failure: 3
+    idempotent_no_progress: 2
+  hard_stop_after:
+    exact_failure: 5
+    same_tool_failure: 8
+    idempotent_no_progress: 5
+compression:
+  enabled: true
+  progress_notices: false
+  threshold: 0.9
+  target_ratio: 0.5
+  protect_last_n: 30
+  min_tail_user_messages: 1
+  max_attempts: 3
+  proactive_prune_tokens: 120000
+  proactive_prune_min_result_chars: 8000
+  proactive_prune_min_reclaim_tokens: 20000
+  protect_first_n: 3
+  codex_gpt55_autoraise: true
+  codex_app_server_auto: native
+  codex_responses_native: false
+  codex_responses_compact_threshold: 200000
+  idle_compact_after_seconds: 0
+prompt_caching:
+  cache_ttl: 5m
+display:
+  compact: false
+  personality: concise
+  busy_input_mode: interrupt
+  bell_on_complete: false
+  show_reasoning: true
+  background_process_notifications: concise
+  streaming: true
+  skin: default
+  interim_assistant_messages: true
+  pet:
+    enabled: true
+    slug: noir-webling
+    scale: 0.4
+  tool_progress: all
+  cleanup_progress: false
+  long_running_notifications: true
+  busy_ack_detail: true
+  message_reactions: true
+  reasoning_full: true
+tts:
+  provider: edge
+  edge:
+    voice: en-US-AriaNeural
+stt:
+  enabled: true
+  language: en
+  local:
+    model: base
+  openai:
+    model: whisper-1
+    language: ''
+voice:
+  auto_tts: false
+  voice_chat_mode: chained
+wake_word:
+  enabled: false
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 5000
+  user_char_limit: 3000
+  nudge_interval: 10
+  flush_min_turns: 6
+delegation:
+  model: glm53-exl3-tp3-candidate
+  provider: spark.example.ts.net
+  max_iterations: 9999
+  reasoning_effort: max
+  max_concurrent_children: 31
+goals:
+  max_turns: 100000
+loops:
+  min_interval_seconds: 5
+  max_ticks: 0
+skills:
+  creation_nudge_interval: 15
+approvals:
+  mode: "off"
+  destructive_slash_confirm: false
+command_allowlist:
+  - access to Hermes secrets (Windows path)
+  - cua:click:background
+  - execute_code
+  - force kill processes (Stop-Process -Force)
+  - force kill processes (taskkill /F)
+  - recursive delete
+  - script execution via -e/-c flag
+  - script execution via heredoc
+kanban:
+  review_dispatch: true
+code_execution:
+  timeout: 300
+  max_tool_calls: 50
+gateway:
+  multiplex_profiles: true
+streaming:
+  enabled: false
+onboarding:
+  seen:
+    busy_input_prompt: true
+    tool_progress_prompt: true
+telemetry:
+  shared_metrics:
+    enabled: false
+updates:
+  pre_update_backup: false
+  backup_keep: 5
+  non_interactive_local_changes: stash
+_config_version: 46
+session_reset:
+  mode: none
+  idle_minutes: 1440
+  at_hour: 4
+group_sessions_per_user: true
+platform_toolsets:
+  cli:
+    - hermes-cli
+  telegram:
+    - hermes-telegram
+  discord:
+    - connections
+    - kanban
+    - web
+  whatsapp:
+    - hermes-whatsapp
+  slack:
+    - hermes-slack
+  signal:
+    - hermes-signal
+  homeassistant:
+    - hermes-homeassistant
+  qqbot:
+    - hermes-qqbot
+  yuanbao:
+    - hermes-yuanbao
+  teams:
+    - hermes-teams
+  google_chat:
+    - hermes-google_chat
+custom_providers:
+  - name: spark.example.ts.net
+    base_url: https://spark.example.ts.net/v1
+    api_key: REDACTED-KEY
+    model: Pico3.8-27b
+    models:
+      deepseek-v4.1-flash: {}
+    models_discovered: true
+  - name: Local Saluki
+    base_url: http://127.0.0.1:8899/v1
+    api_key: REDACTED-KEY
+    model: saluki-27b
+    models:
+      saluki-27b: {}
+  - name: ezlm
+    default_model: qwen3.6-35b-a3b
+    base_url: http://127.0.0.1:8080/v1
+    api_key: REDACTED-KEY
+    context_length: 65536
+    models:
+      qwen3.6-35b-a3b:
+        context_length: 65536
+        name: Qwen3.6 35B A3B (EZLM)
+platforms:
+  discord:
+    enabled: false
+    home_channel:
+      platform: discord
+      chat_id: '1515788435921698968'
+      name: 'PicoBot / #gen'
+      user_id: '149002879762432001'
+known_plugin_toolsets:
+  discord:
+    - a2a
+    - spotify
+known_builtin_toolsets:
+  discord:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - connections
+    - context_engine
+    - cronjob
+    - delegation
+    - discord
+    - discord_admin
+    - file
+    - homeassistant
+    - image_gen
+    - memory
+    - session_search
+    - skills
+    - spotify
+    - stt
+    - terminal
+    - todo
+    - tts
+    - video
+    - video_gen
+    - vision
+    - web
+    - x_search
+    - yuanbao
+# ── Security ──────────────────────────────────────────────────────────
+
+# Secret redaction is ON by default — strings that look like API keys,
+
+# tokens, and passwords are masked in tool output, logs, and chat
+
+# responses before the model or user ever sees them. Set redact_secrets
+
+# to false to disable (e.g. when developing the redactor itself).
+
+# tirith pre-exec scanning is enabled by default when the tirith binary
+
+# is available. Configure via security.tirith_* keys or env vars
+
+# (TIRITH_ENABLED, TIRITH_BIN, TIRITH_TIMEOUT, TIRITH_FAIL_OPEN).
+
+#
+
+# security:
+
+#   redact_secrets: true
+
+#   tirith_enabled: true
+
+#   tirith_path: "tirith"
+
+#   tirith_timeout: 5
+
+#   tirith_fail_open: true
+
+# ── Fallback Model ────────────────────────────────────────────────────
+
+# Automatic provider failover when primary is unavailable.
+
+# Uncomment and configure to enable. Triggers on rate limits (429),
+
+# overload (529), service errors (503), or connection failures.
+
+#
+
+# Supported providers:
+
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+
+#   nous         (OAuth — hermes auth) — Nous Portal
+
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+
+#
+
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+
+#
+
+# fallback_model:
+
+#   provider: openrouter
+
+#   model: anthropic/claude-sonnet-4
+plugins:
+  enabled:
+    - claude-subscription-directsdk-experimental
+    - laptop-klein
+  disabled: []
+image_gen:
+  provider: laptop-klein
+  laptop-klein:
+    base_url: http://192.168.1.80:8188
+    lora: 'laptop.safetensors'
+    lora_strength: 1.0
+

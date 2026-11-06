@@ -1,0 +1,10 @@
+# Apple M1 (MacBook Air, 2020): 8-core CPU, 4 performance + 4 efficiency, 16 GB.
+# Synthetic case built from the documented `sysctl -a` format and Apple's specs.
+hw.memsize: 17179869184
+hw.physicalcpu: 8
+hw.logicalcpu: 8
+hw.perflevel0.physicalcpu: 4
+hw.perflevel1.physicalcpu: 4
+hw.optional.arm64: 1
+machdep.cpu.brand_string: Apple M1
+sysctl.proc_translated: 0

@@ -1,0 +1,4218 @@
+{
+ "source": "https://api.github.com/repos/ggml-org/llama.cpp/releases?per_page=100 (pages 1-2), fetched 2026-11-06",
+ "slice": "linux cuda 12 x64 and cuda 13 (x64, arm64)",
+ "tags": [
+  {
+   "tag": "b11960",
+   "published_at": "2026-10-28T12:45:39Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11960-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371478,
+     "digest": "sha256:7c4d5974bd39649df649649e5d71950688a70e37aaae00bf11afbb656ea2cc56"
+    },
+    {
+     "name": "cudart-llama-b11960-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521522,
+     "digest": "sha256:4b20f8c8dab2eb49c9f46ab93e11858877f1c031696f665ed5584b045187d0a0"
+    },
+    {
+     "name": "cudart-llama-b11960-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232534,
+     "digest": "sha256:756e14988abb5daa60d25f27a9766a9a78f04c88647c4b92a88fb749488d72f7"
+    },
+    {
+     "name": "llama-b11960-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182524002,
+     "digest": "sha256:64d57beb9abb637c177c6afb313760a0c0782224cac71e74869eed5b8f9a1ea4"
+    },
+    {
+     "name": "llama-b11960-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159059972,
+     "digest": "sha256:a66743e250e2975d7181b9f51048bfbea7903106035b711bea5c552360323452"
+    },
+    {
+     "name": "llama-b11960-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163957335,
+     "digest": "sha256:0cf758b28483593a5a15e0d2c9b686c40840d1f8be9b5bb2417f04a053113907"
+    }
+   ]
+  },
+  {
+   "tag": "b11962",
+   "published_at": "2026-10-28T13:42:20Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11962-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371888,
+     "digest": "sha256:887891567a962026e8eb4430e2e95b169bc8f00cf883ae2f68ce6250005236f9"
+    },
+    {
+     "name": "cudart-llama-b11962-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521502,
+     "digest": "sha256:75ee444f6bf95c62a9c6112fbf83d960d66ecaedb9a7fd17d5392359fd8eacfe"
+    },
+    {
+     "name": "cudart-llama-b11962-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440236665,
+     "digest": "sha256:bdf516c8d14c91be407634052c3d5cd8572b440388c76185753ce8e4f35c8bca"
+    },
+    {
+     "name": "llama-b11962-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182526663,
+     "digest": "sha256:a958bb048daedae1afcf3d671dbd9fd8880bdbab01c05a89d1991dcb26e7220d"
+    },
+    {
+     "name": "llama-b11962-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159063123,
+     "digest": "sha256:cd905f9d0dd5768a3bbc1a1cf7173286900284ef527ae4405bd1e9fcb7d334b3"
+    },
+    {
+     "name": "llama-b11962-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163952605,
+     "digest": "sha256:a65ffb53da8954ae24bc73119a0b2080b2835f5c3e935abf010c2b36f1f3da2b"
+    }
+   ]
+  },
+  {
+   "tag": "b11963",
+   "published_at": "2026-10-28T15:05:22Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11963-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371567,
+     "digest": "sha256:67bf1b64ad39a1a0e534183e25fac562419a9b3129a57ff855ed85d9d7d240a6"
+    },
+    {
+     "name": "cudart-llama-b11963-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:4a6fdabf9507678c3affe2b10d62518c09b0351349bd425c7293fb69856370cc"
+    },
+    {
+     "name": "cudart-llama-b11963-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232648,
+     "digest": "sha256:e521f2f4fdea903827ebb1c7f37301744a2bc6e2bf5f3b393faf9dd36c4bb1e6"
+    },
+    {
+     "name": "llama-b11963-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182526908,
+     "digest": "sha256:bce8d3252ce7042d2b52ae81e7674f960bde74791bb12fc8e55a29d02ef4bdfc"
+    },
+    {
+     "name": "llama-b11963-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159059513,
+     "digest": "sha256:a74d172d20ce7e1e2aa9c787e914504ce2adc0a73da73782d71961be4c36ddb4"
+    },
+    {
+     "name": "llama-b11963-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163957149,
+     "digest": "sha256:8fc12b5b0529f6de1e7b2e4cc2b5c48a7579cd33564699c658770a774c57c74d"
+    }
+   ]
+  },
+  {
+   "tag": "b11966",
+   "published_at": "2026-10-28T16:47:02Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11966-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370434,
+     "digest": "sha256:58008566c0d872b8cb6d3de173f113347ae1c944e7be7efe5e5c152bd92a6823"
+    },
+    {
+     "name": "cudart-llama-b11966-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521394,
+     "digest": "sha256:60312f507459edb1e335ab67633d28401ebcca4b449a7ab909ca3108eae783df"
+    },
+    {
+     "name": "cudart-llama-b11966-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232311,
+     "digest": "sha256:882ab3da4c3dd73449ded8a4a50f6066b02e4107bca95e6c2827991511beab04"
+    },
+    {
+     "name": "llama-b11966-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182523494,
+     "digest": "sha256:c8aec575938f4251234f033dda297591044099d3290bbcbfba7a0fae8513f3a1"
+    },
+    {
+     "name": "llama-b11966-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159059672,
+     "digest": "sha256:75126b2b5e67df6b000602d777fdd4321fa31dd62490685e11639448ff5d3f1e"
+    },
+    {
+     "name": "llama-b11966-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163954547,
+     "digest": "sha256:80113a2a95f6adc02924c6b53724287a07ddb117b7ed948fbc5459c32f758394"
+    }
+   ]
+  },
+  {
+   "tag": "b11968",
+   "published_at": "2026-10-28T17:29:45Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11968-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371876,
+     "digest": "sha256:6bcec205a4dcc1e9b88b70ccad62d6c3a42f5bdaefd3d84ba02da0d2d1f62bec"
+    },
+    {
+     "name": "cudart-llama-b11968-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521396,
+     "digest": "sha256:e86ea9656537321fb30aeaeed11af6b01ba2d14acd25fd86e1b856966faa8e04"
+    },
+    {
+     "name": "cudart-llama-b11968-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232382,
+     "digest": "sha256:0698226ca64d97fea028c76b918c267db7f845e7d98948bd51f27efe413179ef"
+    },
+    {
+     "name": "llama-b11968-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182523698,
+     "digest": "sha256:d7184d295ccf59b0ecc5291d4c0ff63c66f285349797c2e3467913813e4caf6f"
+    },
+    {
+     "name": "llama-b11968-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159073920,
+     "digest": "sha256:63f83e936d026ea599429bbc103d79a3c989c84ca1830c2d8376f8f8a3016954"
+    },
+    {
+     "name": "llama-b11968-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163954323,
+     "digest": "sha256:66a8f81421eccdde162428fb25041a39c7f0d6aa15947f74d398df1f83e65cbf"
+    }
+   ]
+  },
+  {
+   "tag": "b11969",
+   "published_at": "2026-10-28T19:07:25Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11969-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371877,
+     "digest": "sha256:c2d91ef64814cbb7e709f7a15f649355f95ccd23ac6327f95206238f95ef4aa1"
+    },
+    {
+     "name": "cudart-llama-b11969-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521498,
+     "digest": "sha256:cc80be8ef825957aa1b3a271d0c0bf19d51bb191939b3aaa08a0fa0eabc0a89a"
+    },
+    {
+     "name": "cudart-llama-b11969-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232650,
+     "digest": "sha256:603e3bfd30d277bda13d54539574435837dc61cffd65af31f0a04005e4c3c8f8"
+    },
+    {
+     "name": "llama-b11969-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182530765,
+     "digest": "sha256:6ddc8d628f8023562b40a80ec411ff08ad94e42aaf78004e72d76b9efdd39e68"
+    },
+    {
+     "name": "llama-b11969-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159077671,
+     "digest": "sha256:22b634cebe88f37f4781587a2112607483fc2d3bf6212581d4ae2e14e3dfeacf"
+    },
+    {
+     "name": "llama-b11969-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163959161,
+     "digest": "sha256:3a51bf132df0ecfc64b08f59dfd04c9ef8ca8dcfc310872474024eb1d5f5c6e3"
+    }
+   ]
+  },
+  {
+   "tag": "b11970",
+   "published_at": "2026-10-28T21:28:55Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11970-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372380,
+     "digest": "sha256:b32550c47479c5e9f953b08e5e0ba2c2c4dad57fca94e61616bbe493eb53fea1"
+    },
+    {
+     "name": "cudart-llama-b11970-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521501,
+     "digest": "sha256:2be4783cc9663f8b41431c2258d200c7902bc7996223ed5667c1720dfdbad5e2"
+    },
+    {
+     "name": "cudart-llama-b11970-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232326,
+     "digest": "sha256:50da0c6d3292d38e5bf1615ede791a22c9f809211ae81a45d31e9a445b08a77e"
+    },
+    {
+     "name": "llama-b11970-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182530836,
+     "digest": "sha256:34ed16f00c48974b972657bcefb63da3b0681a1ed2668b151962caa16e771610"
+    },
+    {
+     "name": "llama-b11970-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159078714,
+     "digest": "sha256:fad122e42a1d4eb5f7e0f0095a931bd27ee5dd71f1f977f18718bcbcfabe3894"
+    },
+    {
+     "name": "llama-b11970-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163959297,
+     "digest": "sha256:030af55592f7adc300a52b4540efb97d70d065c36bf1745aa44dd0af56d861e4"
+    }
+   ]
+  },
+  {
+   "tag": "b11971",
+   "published_at": "2026-10-28T22:25:16Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11971-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371844,
+     "digest": "sha256:e90aa2118f1c26fcdb8135b9d9fd7a32687ac0e9b42617388303632ee88981e3"
+    },
+    {
+     "name": "cudart-llama-b11971-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:c73b669afaa33a3bb0736c7924cdc04c3ce81277e0d85d8ed6c3dc5f4d7cbe81"
+    },
+    {
+     "name": "cudart-llama-b11971-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232654,
+     "digest": "sha256:749435beb9cb3009a379f5439096cd622a429d0b4947a6e2df4308b3e1e8ceb8"
+    },
+    {
+     "name": "llama-b11971-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182530136,
+     "digest": "sha256:51a916851c738cb4bd173f97603d0ec3dc5b80255fca9e2c3da61efde6aa6a41"
+    },
+    {
+     "name": "llama-b11971-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159078127,
+     "digest": "sha256:57c0a89dbc5cbec9e5036fd7ea2d7388d0c92b7093c457b9fd2c2a6111c1fb68"
+    },
+    {
+     "name": "llama-b11971-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163958426,
+     "digest": "sha256:50b1cca971cfe24e6a03599578eda0e46057fd009b73c63e227630d3097d6895"
+    }
+   ]
+  },
+  {
+   "tag": "b11972",
+   "published_at": "2026-10-28T22:50:47Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11972-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371571,
+     "digest": "sha256:d372e519e8b058919c120a8b0f9ea5663138d75c10a8a9b0dd9391e2036edaa8"
+    },
+    {
+     "name": "cudart-llama-b11972-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521504,
+     "digest": "sha256:a0496938a03f236ce5441807d5a8b8347af639a1d3cd47ceb33220881de3b12e"
+    },
+    {
+     "name": "cudart-llama-b11972-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232651,
+     "digest": "sha256:c71b900a8b294852bea8110e584680beb848fe68ebf03b5d515269ef6a1a29a6"
+    },
+    {
+     "name": "llama-b11972-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182533298,
+     "digest": "sha256:00f2e479361ee47e152f4e887ae0553917321cc871ec5835ada09bea8819cb8d"
+    },
+    {
+     "name": "llama-b11972-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159079153,
+     "digest": "sha256:612355bceeadb279312cb39718a7fa6688adc7f22d683c2cf8ef78a707bc9592"
+    },
+    {
+     "name": "llama-b11972-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163960005,
+     "digest": "sha256:3ee9ec772bb7a4a30198b57647c7119e72b30fd8ad2c2a026fff1a9923bd9609"
+    }
+   ]
+  },
+  {
+   "tag": "b11976",
+   "published_at": "2026-10-29T02:28:08Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11976-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371877,
+     "digest": "sha256:d7927f3a164539d5f06e62c7d541f59070e2f76a85f46ddc37d82053a28c4a1d"
+    },
+    {
+     "name": "cudart-llama-b11976-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522169,
+     "digest": "sha256:add10eb55f6840d4bf787d54da65b29fa9a74555373afeec60ea7b9380249c56"
+    },
+    {
+     "name": "cudart-llama-b11976-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232354,
+     "digest": "sha256:9baf8dfbc89b03135708f1653eef40506d0b09ea1160cce2e9e16aa002fcd7d4"
+    },
+    {
+     "name": "llama-b11976-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182533810,
+     "digest": "sha256:aefed86bc77f3e2cf8e6e892fa8c56a65b8c449dd89078fc82a69552e3adc937"
+    },
+    {
+     "name": "llama-b11976-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081251,
+     "digest": "sha256:62ba618dc9e2711d49491ad77baae2d0e3cb6c108fbed7fc0f7f6dc525de0bdf"
+    },
+    {
+     "name": "llama-b11976-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163962101,
+     "digest": "sha256:6922d6ea7d0b2d4c0b6fbf22b1b122b92f3ff8d750db4b5967178ffad06cb880"
+    }
+   ]
+  },
+  {
+   "tag": "b11977",
+   "published_at": "2026-10-29T04:42:17Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11977-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372375,
+     "digest": "sha256:269d94f53cf888312df1ce2d8ea03adabe34175f16a9ec69db5c6f3ce98949f4"
+    },
+    {
+     "name": "cudart-llama-b11977-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522174,
+     "digest": "sha256:91ad718c47d3779648e498b83e2333ccc176031cf8dca207caa9c95801a7f89b"
+    },
+    {
+     "name": "cudart-llama-b11977-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232310,
+     "digest": "sha256:8d6cbe661d9b7ea7f69f921552636d5b1ed74ab53b9df870cdebd659725938f1"
+    },
+    {
+     "name": "llama-b11977-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182533421,
+     "digest": "sha256:8517f0de1800b59497906d70f2904b1bc6c086d483cb588c69b7117a1d0b2014"
+    },
+    {
+     "name": "llama-b11977-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081567,
+     "digest": "sha256:fb91f893f7af86e40f546a94c68c690ebee16bef639f57c4a8a8f80e76aa1776"
+    },
+    {
+     "name": "llama-b11977-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163962319,
+     "digest": "sha256:85a3d6b67a3c07ea38f59ae934d2112b05a97a625c59bb89c4556423a836c711"
+    }
+   ]
+  },
+  {
+   "tag": "b11978",
+   "published_at": "2026-10-29T05:39:55Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11978-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371573,
+     "digest": "sha256:ab31614c464fe89ca357e87f6954eaf74e9360cecc04dc51aa1df38b4d6bb569"
+    },
+    {
+     "name": "cudart-llama-b11978-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522231,
+     "digest": "sha256:ec27d54528ba3a3168be5a46507c07d7cd34e5e376aa595e08f507beda82fddb"
+    },
+    {
+     "name": "cudart-llama-b11978-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:a4eca0c31ffe5afbcaf8aae25528bb16005f81d0fd6b23e920d80c8a6d86baed"
+    },
+    {
+     "name": "llama-b11978-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182533264,
+     "digest": "sha256:869a1b001877e9d8e68a38d78dc408069abe2f6e2448f9b6f2cde064a74d9265"
+    },
+    {
+     "name": "llama-b11978-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081502,
+     "digest": "sha256:1b73a9f876118cb955f95af43bb43ca821978b7abe57350dd17bf9b59d90c134"
+    },
+    {
+     "name": "llama-b11978-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163960977,
+     "digest": "sha256:4318c1189ed937213b9f9aee3175b56cfe54af290d49e5d66b0af6b555e170f5"
+    }
+   ]
+  },
+  {
+   "tag": "b11979",
+   "published_at": "2026-10-29T06:45:13Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11979-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370822,
+     "digest": "sha256:c5df3ae0e136b01bb9f186a5db3591cc9f8686874bc2fc14f721821cd38ad0c6"
+    },
+    {
+     "name": "cudart-llama-b11979-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521502,
+     "digest": "sha256:5d01c9a98c98cca2c5b092eb7b23cde5c728292de79d2f224df228f4a6b97d00"
+    },
+    {
+     "name": "cudart-llama-b11979-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232353,
+     "digest": "sha256:4a6f1474b8103195d6dfbfece6013f2b471efa829ce1258f54b3671d73ca1ff3"
+    },
+    {
+     "name": "llama-b11979-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182528241,
+     "digest": "sha256:ee8147751262cbc7c98cffd9c18f813e715a33e04b0b4e960e0fb1e8cc6324b7"
+    },
+    {
+     "name": "llama-b11979-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081364,
+     "digest": "sha256:cf83dda1b49cd503b02e9a58877afb2566615e3a30ac7ee37fcad2798e24665e"
+    },
+    {
+     "name": "llama-b11979-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163958298,
+     "digest": "sha256:2ce370dd591003e4853e540f9ee6e079ada782a188e62b81a6a90184c56baf70"
+    }
+   ]
+  },
+  {
+   "tag": "b11980",
+   "published_at": "2026-10-29T07:10:47Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11980-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371474,
+     "digest": "sha256:e560a6efd043f7edac962c431423317f0e5a9cdb04bc44c2800ebb1565453f46"
+    },
+    {
+     "name": "cudart-llama-b11980-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522171,
+     "digest": "sha256:e3adc9498953b5bde9af9c91d8c1aca65c20de3cdfad4ec6b4b17c6cf9d9da50"
+    },
+    {
+     "name": "cudart-llama-b11980-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232388,
+     "digest": "sha256:569aea18b54b02cc991843b9a621a2745252343e746f5a88e00d482f5e5e1507"
+    },
+    {
+     "name": "llama-b11980-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182531793,
+     "digest": "sha256:b8a992b3f63fcb47fe33f92aa4f587b2103ee85545fba06f1c94423e29afdabc"
+    },
+    {
+     "name": "llama-b11980-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081481,
+     "digest": "sha256:5c5b9e42bf7a7d11fc8b5cd6d3d275088e9bd0753736760a911ee5320dc86c65"
+    },
+    {
+     "name": "llama-b11980-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163960471,
+     "digest": "sha256:6ab0a74e7f2fe967d1023594c5fff17e60b7065dadb01fc8cfd4ba2845d679df"
+    }
+   ]
+  },
+  {
+   "tag": "b11981",
+   "published_at": "2026-10-29T08:11:44Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11981-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371567,
+     "digest": "sha256:01dfe8b269a37cfda5aab7b5fe3d776c5521bbf277ec021738b991e17848a826"
+    },
+    {
+     "name": "cudart-llama-b11981-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522171,
+     "digest": "sha256:caa368c0d4a124291f59259c14204c3a354a8733a56a3ade408f47fc57c89f9f"
+    },
+    {
+     "name": "cudart-llama-b11981-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232350,
+     "digest": "sha256:47a1915be0ef79b15641fb0dabcca7e1c7e52ae79959afa7dd817234cde5a38d"
+    },
+    {
+     "name": "llama-b11981-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182533348,
+     "digest": "sha256:5346ceedee45bda5bbd93cfd530ce6a8e1a2fd7a76369c9b2f508c5ce6cd4e4b"
+    },
+    {
+     "name": "llama-b11981-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081513,
+     "digest": "sha256:536038f08eb0e535803b8c131428a57037b803e869a4d010d46bbc01847de148"
+    },
+    {
+     "name": "llama-b11981-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163962402,
+     "digest": "sha256:9da25b7161d639eb5fe140875cabe09417782e59e54d0da73e1d869673532503"
+    }
+   ]
+  },
+  {
+   "tag": "b11982",
+   "published_at": "2026-10-29T12:17:04Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11982-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371574,
+     "digest": "sha256:ca24c61ecf5ad7c0984850114130760e0aaa87accca14b41c242e25b59b18e84"
+    },
+    {
+     "name": "cudart-llama-b11982-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521392,
+     "digest": "sha256:eda8874841b55cee6ae71d0a59cbde7978a60ea9a5f9ec7df61190709bade34e"
+    },
+    {
+     "name": "cudart-llama-b11982-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232657,
+     "digest": "sha256:c7b0c1f07efda9f823149a92236a49171f0fd9137d1b930f3f8511af407b353a"
+    },
+    {
+     "name": "llama-b11982-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182530528,
+     "digest": "sha256:c1d210f1060afe186148b19a32c079aefc19c715cece56125df6354ab759810d"
+    },
+    {
+     "name": "llama-b11982-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081576,
+     "digest": "sha256:b3ef92239e70111f15bbb3931b145ba013c8e2aaa38179a2db81167f77284b43"
+    },
+    {
+     "name": "llama-b11982-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163961003,
+     "digest": "sha256:2753f291e98a7be32d9be50b5507db80492020c39a9241d9fa545674da9bb056"
+    }
+   ]
+  },
+  {
+   "tag": "b11985",
+   "published_at": "2026-10-29T17:10:01Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11985-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371845,
+     "digest": "sha256:0907379eaf0d19cab1d102562fe7b555be73536b3f88f92698ec75fa3a6308ca"
+    },
+    {
+     "name": "cudart-llama-b11985-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521396,
+     "digest": "sha256:eadf7d3c571aab7932b8082ff170f5ac4736a8381ed51ddd0138a0c88005c5b2"
+    },
+    {
+     "name": "cudart-llama-b11985-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232605,
+     "digest": "sha256:d7c4b2e75d695ebcda3149420c7f87bd7cc50efaa70d02b9db04e213636f06b8"
+    },
+    {
+     "name": "llama-b11985-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182531922,
+     "digest": "sha256:9e578d04ece71f133610f3e5cbe6673228140b9126c778427217aace155aebe6"
+    },
+    {
+     "name": "llama-b11985-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081585,
+     "digest": "sha256:1f70a821a1f8c19cdfe6e389eec7d4f6196b9aaa4fb3db3db10045d0f819c30f"
+    },
+    {
+     "name": "llama-b11985-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163960795,
+     "digest": "sha256:4b278a758622183f040b61661b54aa3a6e01200aa0707f78b9655a4cf1741a02"
+    }
+   ]
+  },
+  {
+   "tag": "b11986",
+   "published_at": "2026-10-29T20:16:04Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11986-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371889,
+     "digest": "sha256:0114027246306300e4d304bb37ea5b9a56fbe89b089316e517d9e3951f5d5403"
+    },
+    {
+     "name": "cudart-llama-b11986-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521412,
+     "digest": "sha256:1832ab74dc9793337b626a98ae4cd8575c6df9e6ccd4a355910dcfd80a528863"
+    },
+    {
+     "name": "cudart-llama-b11986-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232314,
+     "digest": "sha256:e112c66d2225e66f90ea075b8d0013fb8c9dcc040884ede94666ffea22f74dc6"
+    },
+    {
+     "name": "llama-b11986-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182528936,
+     "digest": "sha256:756e21fd50290bbcbcf5f6ba6d5208689c28dacbed8c667f89289e48bbf244fd"
+    },
+    {
+     "name": "llama-b11986-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159081694,
+     "digest": "sha256:95fa30f6ae8023858b42ec43348b8fc6e8b4821c1eab797c49e6c3b28f53a464"
+    },
+    {
+     "name": "llama-b11986-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163959593,
+     "digest": "sha256:3417a3cd5a2edf5c6758acbb184d48393c9ce566b146457980afe5452e161f3e"
+    }
+   ]
+  },
+  {
+   "tag": "b11988",
+   "published_at": "2026-10-29T20:53:51Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11988-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371572,
+     "digest": "sha256:9591436b3bad6bf6107ff4d12f99db1c9efe0f209568582de4ee96b454f38eeb"
+    },
+    {
+     "name": "cudart-llama-b11988-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521409,
+     "digest": "sha256:0b0352683acea3ee9fd18300233595ff0ccff234929828574ede19621c4532a5"
+    },
+    {
+     "name": "cudart-llama-b11988-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232654,
+     "digest": "sha256:097050c42c78225934b58d3d0cd08ca932c1a8e019eabd6aa3d822c295aaabdc"
+    },
+    {
+     "name": "llama-b11988-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182537141,
+     "digest": "sha256:4b87f48a54699c6c035183f70694e20d30d0ad113ccf9ac22e2bd064efaaad7f"
+    },
+    {
+     "name": "llama-b11988-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159085060,
+     "digest": "sha256:56f7f19e6872caae530643871f7b78be208ec81489d8c8f80740e1c690c0f25c"
+    },
+    {
+     "name": "llama-b11988-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163964134,
+     "digest": "sha256:3b5b4925154f25c05e124c44292cf2d7dc7fd6b1383ca9c4e223858d2de5f94f"
+    }
+   ]
+  },
+  {
+   "tag": "b11997",
+   "published_at": "2026-10-30T00:50:59Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11997-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371574,
+     "digest": "sha256:de0d8dbb684c518839706a31970f8b339f55fe31370a7bf1683d1fc0cbfdb8c5"
+    },
+    {
+     "name": "cudart-llama-b11997-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522185,
+     "digest": "sha256:44df7cbe84a2bd767cd16576780ca2a019c8459850f21fdb2665df8d665abb72"
+    },
+    {
+     "name": "cudart-llama-b11997-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:f33adc3369d326ea65f1e0442f3b84bcb9d9a6d06f284493c2f9fd3a67bf39d0"
+    },
+    {
+     "name": "llama-b11997-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182546207,
+     "digest": "sha256:6ed3531a56cb04b693f8e9c0d09da63625a3e2f5d46377df3a82b81bf56da59d"
+    },
+    {
+     "name": "llama-b11997-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159085081,
+     "digest": "sha256:ac00e9f19a7fb3df428334263f2dde8a12f4558ad84806fff92c51e62a6c7609"
+    },
+    {
+     "name": "llama-b11997-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163956587,
+     "digest": "sha256:d2b76736560f4c1b0ce985836d74710bd6d5ae2ea97668c483320dc5eb28d804"
+    }
+   ]
+  },
+  {
+   "tag": "b11998",
+   "published_at": "2026-10-30T01:11:38Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b11998-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371481,
+     "digest": "sha256:16b7732eea008ea105c9161e954f19fbbdaa5ed4b094cce53c0d32ce794f4b48"
+    },
+    {
+     "name": "cudart-llama-b11998-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521413,
+     "digest": "sha256:059d1f34cbcd7b6630f8977452dae676cd30da902c8570613c673de7fe07a00d"
+    },
+    {
+     "name": "cudart-llama-b11998-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232607,
+     "digest": "sha256:76399cdc44a60f312cd032dbbc5cd25c3546a59e8d79440fdfef7a4bff4e2f0c"
+    },
+    {
+     "name": "llama-b11998-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182566253,
+     "digest": "sha256:fc28e673da01dbf9671ea98ea1e71b60dd8c56409e6500d5b0d180e9f3510626"
+    },
+    {
+     "name": "llama-b11998-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159098096,
+     "digest": "sha256:5ac24d479d0fa3908de32a72c8b836e703000f3fad3e848a5c15daaa0c16ca03"
+    },
+    {
+     "name": "llama-b11998-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 163977046,
+     "digest": "sha256:32276647fea6f193075bb22bf53e93c95489d2b37b7a97de961b699126dc5941"
+    }
+   ]
+  },
+  {
+   "tag": "b12000",
+   "published_at": "2026-10-30T04:25:42Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12000-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371407,
+     "digest": "sha256:f72bbfeaf9e62f3ccbfbecd7565b082f68db8b31215d0fd0d83ef7e8c2d7584a"
+    },
+    {
+     "name": "cudart-llama-b12000-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521392,
+     "digest": "sha256:7f140f619b25ee72785c948b182824f5568eb3c0780c00fbf28fffaa1c55276e"
+    },
+    {
+     "name": "cudart-llama-b12000-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232656,
+     "digest": "sha256:3603fceab0063ab46ce6f70bcc1851552bc24f4c6a2a46b0b28dad4cd1c27739"
+    },
+    {
+     "name": "llama-b12000-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182695024,
+     "digest": "sha256:8178178546e1a6613849bb949c7f6d7d5fb151f59943cc2b200c69842cc6b5ae"
+    },
+    {
+     "name": "llama-b12000-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159171727,
+     "digest": "sha256:45ea4588dcca4b752e7df5def73e54ea48781072747146b3b4d905cdd3ff84fa"
+    },
+    {
+     "name": "llama-b12000-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164114350,
+     "digest": "sha256:3e17edc43757f1fb19bad4180fd2432768d9ddec1044e538a50320eccb54d601"
+    }
+   ]
+  },
+  {
+   "tag": "b12001",
+   "published_at": "2026-10-30T07:41:34Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12001-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371405,
+     "digest": "sha256:3b52603aa90a55d1d2978d62860bf8d4f63866e762821634b0a0f6185bc8f7cf"
+    },
+    {
+     "name": "cudart-llama-b12001-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521502,
+     "digest": "sha256:f504fe6024e6ae079bed214fdc6de4dc58863e8c43fed9c89c63d855ed927753"
+    },
+    {
+     "name": "cudart-llama-b12001-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232601,
+     "digest": "sha256:9d1410baa1a9dd0978eaec7aedd0e9b6356d2482d01963380ea6c2e60139144e"
+    },
+    {
+     "name": "llama-b12001-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182765121,
+     "digest": "sha256:8f948f2af5979c6da96b47c1a03ebde64719420b22df703658f272dfd3e7ae54"
+    },
+    {
+     "name": "llama-b12001-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159213559,
+     "digest": "sha256:a6675f055b83dcc9dcf253fa96b80dde7c380ea573d5dd9f63378b1ba2dddb65"
+    },
+    {
+     "name": "llama-b12001-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164179600,
+     "digest": "sha256:8f2f34d4d29d0880a829b72df3ab241dac20e3ada5f0a787cd015286f928cd74"
+    }
+   ]
+  },
+  {
+   "tag": "b12002",
+   "published_at": "2026-10-30T11:00:32Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12002-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371403,
+     "digest": "sha256:8b82cbf77f65bf188f8712ce9b0d28f1cb6d7eab2bf3b07965ba33d65b440d43"
+    },
+    {
+     "name": "cudart-llama-b12002-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:7b5fa5ba3e9662d1ae96d529c08e7df2a5e1ed3bf2129ca4e82c7a851b9cc546"
+    },
+    {
+     "name": "cudart-llama-b12002-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232646,
+     "digest": "sha256:868180fc47ef81f1794b644fdb29bf5a2a46d1e1cb1ace6347a0363690100b3c"
+    },
+    {
+     "name": "llama-b12002-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182767074,
+     "digest": "sha256:e6dabaccd30b08e3878d245343b09c464b293b2ead51a065245abcf113b8b6eb"
+    },
+    {
+     "name": "llama-b12002-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159163090,
+     "digest": "sha256:7136b109a1d3e2ae6f527284ec60a44e30a97f7e6b93a347e58e5f222859d56b"
+    },
+    {
+     "name": "llama-b12002-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164180402,
+     "digest": "sha256:37d92e3e63cde7d5d8e0ec470e68995d5a62729d3b12268f61461942ec008d08"
+    }
+   ]
+  },
+  {
+   "tag": "b12003",
+   "published_at": "2026-10-30T11:46:38Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12003-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373631,
+     "digest": "sha256:90a7c44683d7f2dc3a6b0bb48191cd6d18e5d66c45fe5fc0b10de01eb40896bd"
+    },
+    {
+     "name": "cudart-llama-b12003-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521395,
+     "digest": "sha256:35846469a28e5a3ac4421ccb3bb1178918052870e70b9fb3fa4cee31f5653400"
+    },
+    {
+     "name": "cudart-llama-b12003-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232310,
+     "digest": "sha256:68a1bc325066dabc15add69fd980b2ae795d0e437e5326ba68f1967d28839165"
+    },
+    {
+     "name": "llama-b12003-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182768421,
+     "digest": "sha256:df11681df7321ee747a4f22f87087141804f62da5abdfde5eb2fa4d707246cf6"
+    },
+    {
+     "name": "llama-b12003-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159161498,
+     "digest": "sha256:07aa01ab192d24b0b15331d05d0e9fcda0d9666a5b916ce9ceeed13551377dbc"
+    },
+    {
+     "name": "llama-b12003-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164180289,
+     "digest": "sha256:7ce76b7b1296a997264c8a1aa259b9459607f1cf0e374a939a215d846ad5477a"
+    }
+   ]
+  },
+  {
+   "tag": "b12004",
+   "published_at": "2026-10-30T12:16:05Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12004-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371477,
+     "digest": "sha256:6a39ca47b6999e57fffa31f22a798e851fecd18653b97203de6273442b3125ed"
+    },
+    {
+     "name": "cudart-llama-b12004-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521412,
+     "digest": "sha256:4e9ced0df84047ddb6a4ec12a31ca0a2aa38de34afa7c52464e5bcd1898034b8"
+    },
+    {
+     "name": "cudart-llama-b12004-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232650,
+     "digest": "sha256:9273c4d0185f554b8626e60483ebe7d1c1b1df70e11bad6a6535ea764da49c4e"
+    },
+    {
+     "name": "llama-b12004-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182767818,
+     "digest": "sha256:5a6a1d3a1aed8718016ffddc075af39197d0163f107cccb509ed227850cc1811"
+    },
+    {
+     "name": "llama-b12004-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159161033,
+     "digest": "sha256:d5dc256d32cc602031da0e3308d1182eb1e5ce61940e7f3206acbfbbe298c943"
+    },
+    {
+     "name": "llama-b12004-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164180231,
+     "digest": "sha256:f53324450f1c6259b531ef14cae1a50fed0d6edc43abf5989123b66654f62a06"
+    }
+   ]
+  },
+  {
+   "tag": "b12005",
+   "published_at": "2026-10-30T12:45:08Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12005-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370377,
+     "digest": "sha256:9993b3357bb4ddb09d3f44e67c0ac6d6692beede19b29e29462fa08ba1f39ea8"
+    },
+    {
+     "name": "cudart-llama-b12005-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521410,
+     "digest": "sha256:850004e4bee9b5f1cbc2c8428b600925bfed24af4008beb503999535719aee4e"
+    },
+    {
+     "name": "cudart-llama-b12005-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232312,
+     "digest": "sha256:852836420c4c7bcd97104ad4ceb9cb2cd65ff8be367b9c98eb34c808532cda43"
+    },
+    {
+     "name": "llama-b12005-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182769225,
+     "digest": "sha256:68c9ac541994c94ea86cd3c11d07edc5decbbeff84401105611c19ef2058b53b"
+    },
+    {
+     "name": "llama-b12005-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159161463,
+     "digest": "sha256:e184c3d81d67409c2fb95138b4808052f13c142de53a1c0b6c41082cb169a9c5"
+    },
+    {
+     "name": "llama-b12005-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164181115,
+     "digest": "sha256:f5f0867a5a5212bfb783201bd867c65be2bdd19343dae6aa28c92e4ccb932ecb"
+    }
+   ]
+  },
+  {
+   "tag": "b12007",
+   "published_at": "2026-10-30T13:50:33Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12007-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372372,
+     "digest": "sha256:b86548a3bc89210c8f52c9a0a8aa47a5160e2d07d2f6138405dce606528b0f53"
+    },
+    {
+     "name": "cudart-llama-b12007-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522076,
+     "digest": "sha256:c3527fe36cb62f5539eab126b53210f99c95889ee9a726c257ba8019bb6d1d28"
+    },
+    {
+     "name": "cudart-llama-b12007-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232650,
+     "digest": "sha256:25c51d6eb018c341f500bf0b236954d112dc8df77234fd036369a2e2acdf7933"
+    },
+    {
+     "name": "llama-b12007-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182771592,
+     "digest": "sha256:bbd8c5903b3b2ec5da5ab59e45289389831682f52a8dcc1e785bab1810b0415c"
+    },
+    {
+     "name": "llama-b12007-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159173820,
+     "digest": "sha256:9dee4bc59a839203ead4e98446c45304b5c92dd229196e7abc0bd32985be889a"
+    },
+    {
+     "name": "llama-b12007-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164187804,
+     "digest": "sha256:cf732395e2cbe76002469d0807021314aecbed0ba3e883af142832ae511eb165"
+    }
+   ]
+  },
+  {
+   "tag": "b12008",
+   "published_at": "2026-10-30T14:06:57Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12008-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373548,
+     "digest": "sha256:8aa347fdd3fc1ba9ba4c1e9e7ea854911f6e0eede8ef6d1e32e68d49fb0342d1"
+    },
+    {
+     "name": "cudart-llama-b12008-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522234,
+     "digest": "sha256:cbddd3e92c4800e4dcb0619400ea930351c8adfa0f3ad9381a9ca0a628604738"
+    },
+    {
+     "name": "cudart-llama-b12008-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232565,
+     "digest": "sha256:0f4b60a24e1833a21b2d396f9361a0fc4d1ef6c0b1e41fee525f337bfebeb0ad"
+    },
+    {
+     "name": "llama-b12008-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182772504,
+     "digest": "sha256:2b7e643dde718c6aaa4aa08deaaba70d0e4deb9a0c3d6183b74f252ce548720a"
+    },
+    {
+     "name": "llama-b12008-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159172777,
+     "digest": "sha256:9a44d0b89226aeaa9b3bfcb9f0677d8d567c1d41b936c50667a9f6211148657d"
+    },
+    {
+     "name": "llama-b12008-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164186877,
+     "digest": "sha256:b01419015f869d6b5632eb20543cc49d6569b69366e5054e3c5bec1bc860e1aa"
+    }
+   ]
+  },
+  {
+   "tag": "b12012",
+   "published_at": "2026-10-30T14:51:55Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12012-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594374003,
+     "digest": "sha256:c13b94a5942584c1ce63e9f265dbb78d4638d32ce44291d80c8592071adfacf1"
+    },
+    {
+     "name": "cudart-llama-b12012-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522173,
+     "digest": "sha256:b810c731859d5561947bd4f7314c17ec72ad3ffb828f4c4cbbe3b03f792a3139"
+    },
+    {
+     "name": "cudart-llama-b12012-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232648,
+     "digest": "sha256:01e16c460a2b9bd142ca040ced8b34e0ae74d5c0220c306e8a7ac2c25565b492"
+    },
+    {
+     "name": "llama-b12012-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182779181,
+     "digest": "sha256:b8b349229d6675deb89f72592b2fb98bafdaae9b7d9ee457a7425cbd71624dbb"
+    },
+    {
+     "name": "llama-b12012-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182302,
+     "digest": "sha256:4c212240c1b5ba703ecd5c166ad7795b0b38efe1a0609813bf74aa3e2c8f2b7f"
+    },
+    {
+     "name": "llama-b12012-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164195238,
+     "digest": "sha256:324ee513196aa1fa72627ed978276e3fa117cc6f7cf6cf5ff7c5218ef70a0345"
+    }
+   ]
+  },
+  {
+   "tag": "b12014",
+   "published_at": "2026-10-30T15:29:26Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12014-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370434,
+     "digest": "sha256:b8a469b60dbf9e39621b56f66af6ddd4618f110ab1eac9ff1c055eec52f5d864"
+    },
+    {
+     "name": "cudart-llama-b12014-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522174,
+     "digest": "sha256:86764b2a9f8fcd31d8f2a46087cbbfb76be6d8ad3e8b724a934ba1c6d3bce4d6"
+    },
+    {
+     "name": "cudart-llama-b12014-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232309,
+     "digest": "sha256:a59dae4e4fe4b4009232efea30345a8d7c21b16e7e76ea8aed689f4f77ecf4e7"
+    },
+    {
+     "name": "llama-b12014-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182778424,
+     "digest": "sha256:d1c5fd043805c78ed6a4a43ae4d54584ff144dbdaa106acf0c278c150b8d640b"
+    },
+    {
+     "name": "llama-b12014-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182241,
+     "digest": "sha256:33e6f0633b96849aacc62091a2faefac48bd2bcbc536de6c8c90a5cbe1d6ec84"
+    },
+    {
+     "name": "llama-b12014-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164195422,
+     "digest": "sha256:9fc3f52446684a4c1a9bb14fc32f935e0a82f94815fd5605eb04b492c72b6c62"
+    }
+   ]
+  },
+  {
+   "tag": "b12015",
+   "published_at": "2026-10-30T16:06:05Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12015-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373610,
+     "digest": "sha256:d480d4deb067e1cdffee81d56466fbc92e534c1e48475b5ec6dc7f69b4b295cd"
+    },
+    {
+     "name": "cudart-llama-b12015-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521393,
+     "digest": "sha256:1212e76f33b1dadf5bfa93c8daab3dbd0581167526f9c56aef1a15f55db33dd8"
+    },
+    {
+     "name": "cudart-llama-b12015-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232652,
+     "digest": "sha256:5561dc75390c37414e1e668d0346bd70208863a3ea4ef6623ef7c9098960f3f7"
+    },
+    {
+     "name": "llama-b12015-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182779634,
+     "digest": "sha256:f1e14bad3854ddd154e5fa6e95200bed0ad51beac2222933ad6dcb776b9202b1"
+    },
+    {
+     "name": "llama-b12015-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182326,
+     "digest": "sha256:b1eb0062e3ac924f55781ebe371e3b8454473f0027676a7b22f8badba1ba5ae3"
+    },
+    {
+     "name": "llama-b12015-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164195342,
+     "digest": "sha256:289b29556496aa565ebb208c8fa45cd565cc273ff4a5239c8ff7d9994ff0d114"
+    }
+   ]
+  },
+  {
+   "tag": "b12017",
+   "published_at": "2026-10-30T20:19:54Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12017-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372371,
+     "digest": "sha256:1fd1ce40b8992758f5819f3f0dfa6d970208a3c43c2c521e30b26daf5060fa53"
+    },
+    {
+     "name": "cudart-llama-b12017-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521408,
+     "digest": "sha256:5e89366692fc97d87470b9fa4854a9962ae7005c2f163bb97bcb6065714dfb44"
+    },
+    {
+     "name": "cudart-llama-b12017-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232563,
+     "digest": "sha256:4912c070610ab6984bc78c5e6858f907f31a4269d9b2cc60488a5e5a641c4a26"
+    },
+    {
+     "name": "llama-b12017-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182779856,
+     "digest": "sha256:642fcc4d8682de2aa3790f9294a6236a2792e5701c27a3129d36c78c30219299"
+    },
+    {
+     "name": "llama-b12017-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159181814,
+     "digest": "sha256:6492253340f85874dee68b37ca407141582ad113a65aaf04448a30a2ad9d83b3"
+    },
+    {
+     "name": "llama-b12017-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164195433,
+     "digest": "sha256:06c15dae439cd3a854ef767081dd31aabb4e97d64711d24d8c3df8db23d46403"
+    }
+   ]
+  },
+  {
+   "tag": "b12018",
+   "published_at": "2026-10-31T02:21:58Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12018-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371573,
+     "digest": "sha256:c2d4c595ce61dd19779bf7110687a1fab922fbd9f32a937a2997d2a6a0d03818"
+    },
+    {
+     "name": "cudart-llama-b12018-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521412,
+     "digest": "sha256:3ced3ce564b20cfd2cf619f4c26c65c0bba88f20b83a4b1cfacb26a39f612ad1"
+    },
+    {
+     "name": "cudart-llama-b12018-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232657,
+     "digest": "sha256:4e0c0f1aac43e9514c74174b517435f57ef4c9fa0a3980a5e93629c8cc0e8011"
+    },
+    {
+     "name": "llama-b12018-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182779504,
+     "digest": "sha256:d82f36150dec6037857c8c6c9a8aac293d613cb7704d93e78cdb5e8f923fbbe5"
+    },
+    {
+     "name": "llama-b12018-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159181745,
+     "digest": "sha256:3020ac84499abfedb9b4669fe5f22ab71f7eacc167496aa8517dde46b6ee4ac4"
+    },
+    {
+     "name": "llama-b12018-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164195855,
+     "digest": "sha256:8a1b001f31a38df6493363ec5e690086e641913cc4cac108a0c9425499563fb4"
+    }
+   ]
+  },
+  {
+   "tag": "b12019",
+   "published_at": "2026-10-31T05:19:26Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12019-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370124,
+     "digest": "sha256:842484ddbe6a6b29d9587b2295d0310ecf4e9825f28f129e019c4624168ec82e"
+    },
+    {
+     "name": "cudart-llama-b12019-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521409,
+     "digest": "sha256:e2ac7535fe833ebf8eb6f7993fdde568dfc5ea639d92de134c153a81d1ed8051"
+    },
+    {
+     "name": "cudart-llama-b12019-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232643,
+     "digest": "sha256:e17b35d768812119b80827b30839bd064e2f9b0b260b6b96aa3684dc10eeaff7"
+    },
+    {
+     "name": "llama-b12019-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182780961,
+     "digest": "sha256:0295172839d1ff69c4e83d69b5cd3cad81442c463004495710de694968b7fab8"
+    },
+    {
+     "name": "llama-b12019-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182309,
+     "digest": "sha256:29d3b5f12bd68d65cf92737de19805bb3aa5f279d783e78316859ec7624880f2"
+    },
+    {
+     "name": "llama-b12019-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164196490,
+     "digest": "sha256:083ec8481202268f752f7ce30c6bfd549ae2e78bff9461af013d8d5e578e3d93"
+    }
+   ]
+  },
+  {
+   "tag": "b12020",
+   "published_at": "2026-10-31T08:07:49Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12020-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372521,
+     "digest": "sha256:a17d59ed20873a82cbf2ff6c651d5bb432689d8569b4af0b6b1c7e35aeb001ba"
+    },
+    {
+     "name": "cudart-llama-b12020-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521522,
+     "digest": "sha256:1a409aaa503fdaf286451b34a9166b0eb75ffe35e2f741d3344259461acbd6f3"
+    },
+    {
+     "name": "cudart-llama-b12020-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232630,
+     "digest": "sha256:22ebd98c96c5156f00731d1327f1fe40f0d1cce4ff6d51ac4c82845b1424b0e1"
+    },
+    {
+     "name": "llama-b12020-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182781376,
+     "digest": "sha256:0170c61c0ddf6208215a68b36f78f45b1641631317736c093f3faa40f05f8e85"
+    },
+    {
+     "name": "llama-b12020-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182527,
+     "digest": "sha256:fbcbbeaf85da61972422dbb0cd9eb60193e962e930ce2485438b19461e630cf8"
+    },
+    {
+     "name": "llama-b12020-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164195754,
+     "digest": "sha256:a9323978129be5948665e8cff614548b602d3c05cc2ea0ad2c7b905eb065ce77"
+    }
+   ]
+  },
+  {
+   "tag": "b12021",
+   "published_at": "2026-10-31T18:42:29Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12021-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370057,
+     "digest": "sha256:86fd906728abe6e8958c8261783a9e56096d243658d505fb5abae2e91d003ac9"
+    },
+    {
+     "name": "cudart-llama-b12021-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521411,
+     "digest": "sha256:392963983cbe8f8d7401f419da6179846e004c4173d2a5283a98d5b50add764e"
+    },
+    {
+     "name": "cudart-llama-b12021-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232325,
+     "digest": "sha256:f139a95905a61640073e6b332c1b4722cf6e535b6ef5558872df9a9e5e907383"
+    },
+    {
+     "name": "llama-b12021-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182781243,
+     "digest": "sha256:354358c04c3d91136187dd9ebb988e555586dc4c35b493cd4591144b4cd8b9db"
+    },
+    {
+     "name": "llama-b12021-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182500,
+     "digest": "sha256:7b23bea2e1fd11130dd65ed6e6fcc252c57d47f6b6b8b9a6bab3fb16916c0b8e"
+    },
+    {
+     "name": "llama-b12021-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164196050,
+     "digest": "sha256:57fd6510be0e3f1e12b4693ee40c9163bd2e6896f32cf15c80f347defe4b44ec"
+    }
+   ]
+  },
+  {
+   "tag": "b12022",
+   "published_at": "2026-10-31T18:59:44Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12022-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373597,
+     "digest": "sha256:686dbc79c70ba627b51be325e7b4ce11b336fb89d3dcd43685ab1a7a81365f5e"
+    },
+    {
+     "name": "cudart-llama-b12022-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521498,
+     "digest": "sha256:6a89696767731d4ff54dae64af4999c71f0aeccb27308b5ad8919701fcff6635"
+    },
+    {
+     "name": "cudart-llama-b12022-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232611,
+     "digest": "sha256:cb3b0a2601dfc96eee5805f2d7a96dfa3945d4249540170ab6e4dda2dd449319"
+    },
+    {
+     "name": "llama-b12022-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182782229,
+     "digest": "sha256:8ac8473b146533f6da83fbb481ae5c9fd02bde3a58736b92cf45382b3625fbc5"
+    },
+    {
+     "name": "llama-b12022-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182752,
+     "digest": "sha256:c61b39e8164a4d14e92042f001be0205b3b798a3afb1593363ef94d2d2b0c69a"
+    },
+    {
+     "name": "llama-b12022-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164196448,
+     "digest": "sha256:e2d37252cd5bb839f4e1bc3eed3f8fd00ea68a127cf0f5dd9e48523ccf16d779"
+    }
+   ]
+  },
+  {
+   "tag": "b12023",
+   "published_at": "2026-10-31T19:18:38Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12023-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372374,
+     "digest": "sha256:d2906e433c6482204123acdd75c3e6d2087105dd2c912115bdcffaf7e97f03d9"
+    },
+    {
+     "name": "cudart-llama-b12023-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521409,
+     "digest": "sha256:31ad7a77a215c47650056ee6eacae1e5be2f1eaed57d1419328787aae3941182"
+    },
+    {
+     "name": "cudart-llama-b12023-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232345,
+     "digest": "sha256:c7438898573711a1a6907a45c4ef797c70585cda94588d992c20c98c1eecafb3"
+    },
+    {
+     "name": "llama-b12023-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182782503,
+     "digest": "sha256:740493a0fc8eaf9c6ffb4e678bc7afb384b1ad18b1e7afbc9d0e5b6339e03d9e"
+    },
+    {
+     "name": "llama-b12023-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182503,
+     "digest": "sha256:782b9037b6ac030aafa9ca19a0ed4674c4f30ed497979cc65d4fe0bf55e2db0b"
+    },
+    {
+     "name": "llama-b12023-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164200985,
+     "digest": "sha256:c3df061e1ba0a09ea04470e3a0484b88058f9c5b67fc9eafc6eb4936af61b3b0"
+    }
+   ]
+  },
+  {
+   "tag": "b12024",
+   "published_at": "2026-10-31T21:35:54Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12024-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373607,
+     "digest": "sha256:2bf29bb45a323a3633ddb323a906457f03041d93ed30ad8cee67150f2dac54cb"
+    },
+    {
+     "name": "cudart-llama-b12024-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521408,
+     "digest": "sha256:3bf6b46852559cc8087de46c19abd3560204f5e8b47290499b6eb5e7a13aa458"
+    },
+    {
+     "name": "cudart-llama-b12024-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232342,
+     "digest": "sha256:573db56b0fb4b92318b196e6f013b1d5191ed893a2be74cff10988ade46aebd6"
+    },
+    {
+     "name": "llama-b12024-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182782502,
+     "digest": "sha256:2214b85fa76676e395c4928bc5cbcb3536e2a33f83783fffdaca3ce0c11c8acc"
+    },
+    {
+     "name": "llama-b12024-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159182712,
+     "digest": "sha256:7f603080390c7997e1703fe1c867c40d372ddeb84a875ca63b32088bbf5c747d"
+    },
+    {
+     "name": "llama-b12024-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164201342,
+     "digest": "sha256:5eac386580d4e034e929c0da3f006a0edfd4778818a8242090228e0849ac6d8a"
+    }
+   ]
+  },
+  {
+   "tag": "b12027",
+   "published_at": "2026-11-01T06:19:25Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12027-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373611,
+     "digest": "sha256:240de1c81b1777f3f1955226d8d4d7379cf2f30d7f95314295a5ed7e63314ea8"
+    },
+    {
+     "name": "cudart-llama-b12027-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522171,
+     "digest": "sha256:dfec2c823a8252a5db44a69af3b4d7e45b14caa1eb46e628193b8e8eb477741a"
+    },
+    {
+     "name": "cudart-llama-b12027-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232343,
+     "digest": "sha256:4c990ef875b8dce053d7a896410e77e04483896dc2481ee20eda00c633a56876"
+    },
+    {
+     "name": "llama-b12027-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182792279,
+     "digest": "sha256:7b381319ace21539f491e902be2f8a4774905f39173090b755f6611cbca1c5aa"
+    },
+    {
+     "name": "llama-b12027-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203258,
+     "digest": "sha256:fa7961a6aaa1a6473ad3af5f3979736b981992018ccf92f9b94e896818ef32f8"
+    },
+    {
+     "name": "llama-b12027-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164202999,
+     "digest": "sha256:a21f25348caa29f60937eb922fc4c666f84e3447844bbbe9956d127cfb810620"
+    }
+   ]
+  },
+  {
+   "tag": "b12028",
+   "published_at": "2026-11-01T06:40:53Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12028-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371484,
+     "digest": "sha256:eba0ae446eff535adb81bef7ac7cc9951ca975d3be4b88fd867e7e38a1447023"
+    },
+    {
+     "name": "cudart-llama-b12028-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521393,
+     "digest": "sha256:6f48ce3aed5a60f613919938e6690becaf91e673b640932647d741e4c6667a82"
+    },
+    {
+     "name": "cudart-llama-b12028-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232656,
+     "digest": "sha256:dfa93709a6629e2462f100142c69118ccfa38dabcdde3eae58fa02663f762a1b"
+    },
+    {
+     "name": "llama-b12028-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182791290,
+     "digest": "sha256:c22773a91efee429abe48a3e9c6a226ec2d77477399c99371e76d5197162d994"
+    },
+    {
+     "name": "llama-b12028-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203185,
+     "digest": "sha256:e1f5f898cff87384f258c4220aa95f8fc0d0ff740d98bf7e6f0c7b29dbb68249"
+    },
+    {
+     "name": "llama-b12028-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164204706,
+     "digest": "sha256:ccf07f3cf02ac35243c3050bc55b982910be9e498ea6053944cc49af48097e0b"
+    }
+   ]
+  },
+  {
+   "tag": "b12029",
+   "published_at": "2026-11-01T06:57:39Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12029-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371534,
+     "digest": "sha256:829283011f6cb029d3797f9aeeede767965717dee09f583f47487cb6af3d95bb"
+    },
+    {
+     "name": "cudart-llama-b12029-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522173,
+     "digest": "sha256:ddac89173065d0d95dbb20f3e39b72de870316c37d59112e217eb116b980d7d4"
+    },
+    {
+     "name": "cudart-llama-b12029-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232657,
+     "digest": "sha256:c43dc611c0f75c0965b19782f71ef4a94a03412b530f7951b4e7851711f52690"
+    },
+    {
+     "name": "llama-b12029-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182791263,
+     "digest": "sha256:729ec3cec80577880ac4ab9fddf165b9a4a6b78d5dc083e9cc7df746be366680"
+    },
+    {
+     "name": "llama-b12029-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159204404,
+     "digest": "sha256:c57df6db715c32ad81ce28841cc1e138436d05213fb3481ad2410ca1218ff79f"
+    },
+    {
+     "name": "llama-b12029-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164204532,
+     "digest": "sha256:d0b2d0f9a20100f6cb6ff17ecf82c436ec51d2fed4c80b0b9de0745a974bf9e8"
+    }
+   ]
+  },
+  {
+   "tag": "b12030",
+   "published_at": "2026-11-01T07:16:14Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12030-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371477,
+     "digest": "sha256:67e837dff1cee1cc217fb623bceb5081e03f05dd15ca5f3914190347eafe6c08"
+    },
+    {
+     "name": "cudart-llama-b12030-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522174,
+     "digest": "sha256:1ae89e0f8e8c8fb6fba2517ab73151a52ea541f3bae3484aa53567feac1234c4"
+    },
+    {
+     "name": "cudart-llama-b12030-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:43c47e40c1a4f5c19f9e03164f1d0d997e25d31c722c9c102f06e84d37033f40"
+    },
+    {
+     "name": "llama-b12030-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182791688,
+     "digest": "sha256:48b80c7383630312b3fcf2a993e6348abee7161fbcb9e8418557ef35d1042a23"
+    },
+    {
+     "name": "llama-b12030-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203689,
+     "digest": "sha256:e0911cf44841a030088c0bf3692fbab27f6983f58e21f63b99b2ad46e9910520"
+    },
+    {
+     "name": "llama-b12030-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164203313,
+     "digest": "sha256:77cc3626f8fb392c378db5ff1e971251209de3802ae55edc634a3cb323f7bf40"
+    }
+   ]
+  },
+  {
+   "tag": "b12031",
+   "published_at": "2026-11-01T07:41:33Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12031-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371412,
+     "digest": "sha256:dc8fb78db92185a1b4c2612800a67d23184098ae7ea34139a45c0a222dc0eaf5"
+    },
+    {
+     "name": "cudart-llama-b12031-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521394,
+     "digest": "sha256:1db8aa01433d50c644d9c5877acf4c2e8731121127777d3df822a28df089699f"
+    },
+    {
+     "name": "cudart-llama-b12031-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232323,
+     "digest": "sha256:93ed7296dbec71c8f32fa03668ea5db7f1010f0cd084485fe6553f5539451aca"
+    },
+    {
+     "name": "llama-b12031-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182792880,
+     "digest": "sha256:1c1a56553c8dd931bc99b8e664c92a521b6083e78ef4e75aaa009ed0bce12045"
+    },
+    {
+     "name": "llama-b12031-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203630,
+     "digest": "sha256:382dfd53ae0fe13c5f632ec584b30623e3bb0883054817856708e14fcdd60610"
+    },
+    {
+     "name": "llama-b12031-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164203317,
+     "digest": "sha256:9ec0c76451b8c383ed08a1b8f41d56b5513c232fcdd323dab0254335a939808d"
+    }
+   ]
+  },
+  {
+   "tag": "b12032",
+   "published_at": "2026-11-01T09:00:59Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12032-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371407,
+     "digest": "sha256:098668ca024aaa39b397b368f9daed7eb1cda74b7750a7a08776ecb59765b4e1"
+    },
+    {
+     "name": "cudart-llama-b12032-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521393,
+     "digest": "sha256:9627cad729ccc8c0fa0407ae0a453a0d6589873663127fde5323de78ad6f8afe"
+    },
+    {
+     "name": "cudart-llama-b12032-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232351,
+     "digest": "sha256:7c29655a9a90b53f43270f9bfbe16f1cf46149882abacdc3f32ded6622029c0f"
+    },
+    {
+     "name": "llama-b12032-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182792658,
+     "digest": "sha256:3a30a35b6425289224efa2be2674dd73eabaed89f609b4d2497e2a564f4e82d9"
+    },
+    {
+     "name": "llama-b12032-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203576,
+     "digest": "sha256:4eeacb63caa9df1f5cb1e20e460d142dd6826d8f279d8dfed7ac092536b5abde"
+    },
+    {
+     "name": "llama-b12032-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164202976,
+     "digest": "sha256:d40243af271794b65e8b86c9f0c806a82895c60a36d2d7ada1ce1735b621c455"
+    }
+   ]
+  },
+  {
+   "tag": "b12034",
+   "published_at": "2026-11-02T08:02:51Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12034-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371572,
+     "digest": "sha256:4cdd72a0052d6796e070c80c23537477ed5b2d1554273945df63533e4c004468"
+    },
+    {
+     "name": "cudart-llama-b12034-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521359,
+     "digest": "sha256:4223d8e0981c2641eee1bd7fc84056a8173b3e688e1da87c1ada095f99f89e21"
+    },
+    {
+     "name": "cudart-llama-b12034-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232305,
+     "digest": "sha256:b9b4f5454a3389370b01a22a1f6a7a4913d92b38d2ac0720f95977b240120e8c"
+    },
+    {
+     "name": "llama-b12034-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182791532,
+     "digest": "sha256:aadc322fdf95b50e5c5442fee71b8f757ea31f88ef53cf3dddea877da59d2052"
+    },
+    {
+     "name": "llama-b12034-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203712,
+     "digest": "sha256:0f4448bd17f6a3b94db3e59c6056303d2494e108e43bc150a064a8800cdcb9f0"
+    },
+    {
+     "name": "llama-b12034-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164203339,
+     "digest": "sha256:295a9fd89c7e79fd217a968c3b387c385cd0563200437024dfdee5726afcf8a2"
+    }
+   ]
+  },
+  {
+   "tag": "b12038",
+   "published_at": "2026-11-02T11:31:50Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12038-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371406,
+     "digest": "sha256:356095c07c09b619e8f7a3f4bc495470d04bd3951a700949592794b34d8d3b9d"
+    },
+    {
+     "name": "cudart-llama-b12038-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522172,
+     "digest": "sha256:fa35615d3afaafdd7e22a6a93b4ddf7cf7167b37371db43a4e4dbe4bc6790dcf"
+    },
+    {
+     "name": "cudart-llama-b12038-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:a9106abaf4fd417222e6d5049f3a87faae15c669eac0db483cbe152843a5ff98"
+    },
+    {
+     "name": "llama-b12038-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182791894,
+     "digest": "sha256:1651249f7b7408007977d1766e38da4faf9a376be6714c4dd299453a19f780be"
+    },
+    {
+     "name": "llama-b12038-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159203677,
+     "digest": "sha256:50fc0c4b275983886972e42b538082dcd0ae3c60103c46c71dce7a6973cf3dc1"
+    },
+    {
+     "name": "llama-b12038-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164203285,
+     "digest": "sha256:71a2d2e5e013676a8d6c6d63055e0cabc388cd8f40c27573e94dcc71cec56aac"
+    }
+   ]
+  },
+  {
+   "tag": "b12040",
+   "published_at": "2026-11-02T14:05:41Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12040-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371092,
+     "digest": "sha256:428f4e33ec32dbef43d16221a5c8a1d59cc5ea9dc100cc6bbbaf541a48f650eb"
+    },
+    {
+     "name": "cudart-llama-b12040-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521412,
+     "digest": "sha256:0c83a8eaed6ec77b93e2ca1a41156e727a9d759b06c1fc8adae92e6b4ce39860"
+    },
+    {
+     "name": "cudart-llama-b12040-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232311,
+     "digest": "sha256:3cdfd707003aacf40604771e8e90e4885a355cd90feb8f7987687f2090501522"
+    },
+    {
+     "name": "llama-b12040-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182793135,
+     "digest": "sha256:31bcab87793e683394d2e164126d3e015fb93f3780f132fb977204b91536034a"
+    },
+    {
+     "name": "llama-b12040-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159207487,
+     "digest": "sha256:caedf26f2ae1209534daa1765c3c86d7eb0d40caf8c5f904829f0fb02f9b8f66"
+    },
+    {
+     "name": "llama-b12040-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164208688,
+     "digest": "sha256:ed7997f949f98fff4b3ea9a342cc945307c595512fb18a01c5846852d82cf681"
+    }
+   ]
+  },
+  {
+   "tag": "b12047",
+   "published_at": "2026-11-02T15:46:35Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12047-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373638,
+     "digest": "sha256:8f06693f16954dc73a6608ff50a0ed0ad1982223dc59485fdccf54ff6dc45319"
+    },
+    {
+     "name": "cudart-llama-b12047-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521496,
+     "digest": "sha256:f218f2ec2afc670d0e09810295a2471845edbe5c467bf7a148cd0f6c08137994"
+    },
+    {
+     "name": "cudart-llama-b12047-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232326,
+     "digest": "sha256:dbf587663c6c91289608f83b9fdd6d0b67b45f699ee55ebdc50591e0e6b9087a"
+    },
+    {
+     "name": "llama-b12047-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182797041,
+     "digest": "sha256:1cfd9a041380c5c07c184b584b7011cf0d1f1386d729e605f263c6635d73ccf0"
+    },
+    {
+     "name": "llama-b12047-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208515,
+     "digest": "sha256:5f8c91ea6e8ed34cb52b8445ab62b36701abe48adf5a303abf41d45eabb57e6d"
+    },
+    {
+     "name": "llama-b12047-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164209408,
+     "digest": "sha256:d476db2c12974c3e5c27357b525bd1988ecbe2233dbb1937c773397f5416d7cb"
+    }
+   ]
+  },
+  {
+   "tag": "b12048",
+   "published_at": "2026-11-02T16:10:39Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12048-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373570,
+     "digest": "sha256:b451bb249a7c6aa682d091911a1ed41a9cdf907998f38633825b7829c3e47dc3"
+    },
+    {
+     "name": "cudart-llama-b12048-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521580,
+     "digest": "sha256:dd0a815a10c232b234af7a404c0d512d4e988b3742f7db09b860c4b657ecab19"
+    },
+    {
+     "name": "cudart-llama-b12048-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232381,
+     "digest": "sha256:d2924b3403e8ff5a406014a2c6ed8c416c36ee85d53085bbb666b4b30a28e799"
+    },
+    {
+     "name": "llama-b12048-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182796983,
+     "digest": "sha256:ea6980943fe6880c38ef7a15e080628b89f493150a5fe7a8e8bd6a258822abc9"
+    },
+    {
+     "name": "llama-b12048-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208987,
+     "digest": "sha256:96e0c4b3f2083cf1aa1689e617d29f2bbfe6e70024ceee50166334a267b27a8c"
+    },
+    {
+     "name": "llama-b12048-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164209684,
+     "digest": "sha256:212ea232fd911db27ccb2ad6d5926229bcaff5ef29b3fe9717b3fb304f35ba6a"
+    }
+   ]
+  },
+  {
+   "tag": "b12050",
+   "published_at": "2026-11-02T16:54:25Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12050-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371407,
+     "digest": "sha256:f9a47667dd91e5cf8d5fcf36a3134c05b4e66d3687f2ffbc3676e687c202dd73"
+    },
+    {
+     "name": "cudart-llama-b12050-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521496,
+     "digest": "sha256:61ee372a83e668aafcb99429c5995fffc264dff69cdcab4f1fe9855e5d62d70b"
+    },
+    {
+     "name": "cudart-llama-b12050-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232353,
+     "digest": "sha256:34b91e215d427d4cbaae5fbc77c28a1536a5fb1234359f8e0263fc5d90fc8f88"
+    },
+    {
+     "name": "llama-b12050-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182796747,
+     "digest": "sha256:51d2633ee0bf56c3b2f14f3e43d1081c63d677a134859a7f9dce9cc5f47f494a"
+    },
+    {
+     "name": "llama-b12050-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208273,
+     "digest": "sha256:787a2484bae9de9017f078a3497adabbd5948803258836d147914fd8b6a26160"
+    },
+    {
+     "name": "llama-b12050-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164211036,
+     "digest": "sha256:64e5abcb0abbf68f96505af459b5f973ea78c952330310058fe764007df28178"
+    }
+   ]
+  },
+  {
+   "tag": "b12052",
+   "published_at": "2026-11-02T17:37:44Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12052-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371482,
+     "digest": "sha256:d4543947e43983eed3006ace6dd82591af2d0bfbe8c6ec38279087e8159587a2"
+    },
+    {
+     "name": "cudart-llama-b12052-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521413,
+     "digest": "sha256:1d7de2634812c7c721386c938b1b9c868c80b3ac6ff9bb051369deea8b7227df"
+    },
+    {
+     "name": "cudart-llama-b12052-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232563,
+     "digest": "sha256:d67b01141a6384967f7077c365c5f9603468ce8d1e574987ecfeaf9772cdf48c"
+    },
+    {
+     "name": "llama-b12052-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182797113,
+     "digest": "sha256:76ce5e7913b4676aa46c66cf49f369274511920340b8ab45d6f50a55fd102183"
+    },
+    {
+     "name": "llama-b12052-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208373,
+     "digest": "sha256:deeea2d9e9805b4accea3e3650995c3b2467d1f51edc61fea160945b6b1f61ed"
+    },
+    {
+     "name": "llama-b12052-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164210406,
+     "digest": "sha256:c2f6ff5e944eea808902fa05b46421d3b9abde576835d9bd3dc5d78dcfe6c0a0"
+    }
+   ]
+  },
+  {
+   "tag": "b12053",
+   "published_at": "2026-11-02T18:23:26Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12053-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594374002,
+     "digest": "sha256:d8e0f4b2819c21332140a09ee5376cc7a3b0fe517fff3a2470c7721cace8bb56"
+    },
+    {
+     "name": "cudart-llama-b12053-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521414,
+     "digest": "sha256:0eea4bc4a3fd0f2dba348d38e3ae7ca22601a9432cc0029b3c3de0b8c2b24cad"
+    },
+    {
+     "name": "cudart-llama-b12053-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232312,
+     "digest": "sha256:d7e11943069b5d744ccc474501b27d04774e68bcbcfffb68e94c4c0dfc1cc5d6"
+    },
+    {
+     "name": "llama-b12053-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182796517,
+     "digest": "sha256:64bbd97d893137effa950f34283f467f7cf23bed19fae86a9824f447b1625eba"
+    },
+    {
+     "name": "llama-b12053-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208401,
+     "digest": "sha256:039c584a98459b6402067753f420491263724188656abbd0ee04d304ee150f43"
+    },
+    {
+     "name": "llama-b12053-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164209285,
+     "digest": "sha256:d22f93576132f6d21bf584ccd1517cec953a54ee17cd5d77cc60b3780716d96a"
+    }
+   ]
+  },
+  {
+   "tag": "b12054",
+   "published_at": "2026-11-02T18:44:38Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12054-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371406,
+     "digest": "sha256:7d1064cf6d4d959d99190fda309e2fff267b5f069d31e8d0404ad5088139f42f"
+    },
+    {
+     "name": "cudart-llama-b12054-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521413,
+     "digest": "sha256:5c68b847a9bdaacf7fb1697da77917885649bda5325193b5ba6466a0e785d3c7"
+    },
+    {
+     "name": "cudart-llama-b12054-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232651,
+     "digest": "sha256:b7732d51ccf33123f28edc7923a4ffb42cdec1d5bf6dcc7ba0dc2c1d97c285bb"
+    },
+    {
+     "name": "llama-b12054-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182796440,
+     "digest": "sha256:36eccd53a3cf77b1af858e82b30c79d1cfeda32a8417fe03d22c37fd120ad634"
+    },
+    {
+     "name": "llama-b12054-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208230,
+     "digest": "sha256:44ed5d2c6985e26f9105e8b9cc0d52dc302b543eb306057b23dba0ae5af8b080"
+    },
+    {
+     "name": "llama-b12054-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164208792,
+     "digest": "sha256:021d5cae3393e9e4793a48c5d0d2aa225749ad17d7283cf88f02a81d3f982705"
+    }
+   ]
+  },
+  {
+   "tag": "b12057",
+   "published_at": "2026-11-02T19:06:10Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12057-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371409,
+     "digest": "sha256:60a35591aa28da52531656537a77da0e3d65fc9350ab3d1f0e8a30db1771904c"
+    },
+    {
+     "name": "cudart-llama-b12057-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:9dff9265f119439f0b285469d39a52f6bb44f8fef5d3628f42bfe1ab6aacd319"
+    },
+    {
+     "name": "cudart-llama-b12057-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232305,
+     "digest": "sha256:529dc2300ca264ccec81094ac290989e186f498bca17fba3c382ce1cb575394c"
+    },
+    {
+     "name": "llama-b12057-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182796234,
+     "digest": "sha256:43620c9a72fa8b7eec1daa36a944f99637999e13097f7c12517f21791c6abf8b"
+    },
+    {
+     "name": "llama-b12057-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159207876,
+     "digest": "sha256:dc7c9553bef3488cf2c0c6a1d8c53df5f14fde35940e2be6a56a0a414c8c0f16"
+    },
+    {
+     "name": "llama-b12057-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164209489,
+     "digest": "sha256:78987fb9666495af6de8c83c27df2daef61cd600fb955c08b83403b80f244cc5"
+    }
+   ]
+  },
+  {
+   "tag": "b12058",
+   "published_at": "2026-11-02T19:30:07Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12058-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594374006,
+     "digest": "sha256:39717f1cbf350ce10724587f21b003bc3dab5d4fc56baf7e0ca7f5933472f65f"
+    },
+    {
+     "name": "cudart-llama-b12058-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521502,
+     "digest": "sha256:38e3dd3f84b1097fd24ed198ce6f99a0647b225c1e6997a1ad389099acb864cb"
+    },
+    {
+     "name": "cudart-llama-b12058-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:5e4852d42a587965d91e6e71d0dd529efeba80e2c200073c6e724a773e161143"
+    },
+    {
+     "name": "llama-b12058-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 182797061,
+     "digest": "sha256:b3586547070868eca4e83c467b2710c7a1342bb2c4ca49a6b842aee84f61fcb0"
+    },
+    {
+     "name": "llama-b12058-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 159208752,
+     "digest": "sha256:c476667b0f2b40578bc92945521d2869ffd1ed72d2b4e2975167175791ca20cc"
+    },
+    {
+     "name": "llama-b12058-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 164210425,
+     "digest": "sha256:b89b0ff646beb5d302c2db6b68495b492a65fc92943b00b9071b0569a478e6d9"
+    }
+   ]
+  },
+  {
+   "tag": "b12059",
+   "published_at": "2026-11-02T22:41:01Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12059-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371449,
+     "digest": "sha256:d6d0801fd59923ecb1e7aed398fcdee3e7fcf07d2d074e885809170e49978d6f"
+    },
+    {
+     "name": "cudart-llama-b12059-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522184,
+     "digest": "sha256:6191976663abbfb474017ef4b854d9daba35e323d300325e4dc78eb635464d5d"
+    },
+    {
+     "name": "cudart-llama-b12059-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232323,
+     "digest": "sha256:9d72de6d65637c5c21d5b66f6d9047ea3c65cc20d3c1c12d7f69a0c901271a08"
+    },
+    {
+     "name": "llama-b12059-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187068380,
+     "digest": "sha256:4b877b6df8fb44a8885280ed7defb625489154c6e71c679bb19e715afd4b1b52"
+    },
+    {
+     "name": "llama-b12059-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163096999,
+     "digest": "sha256:72eae27d146ac04ac64c24193140512592c92831df292324fd040ba000c052b3"
+    },
+    {
+     "name": "llama-b12059-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168000361,
+     "digest": "sha256:450df1b86abba802de6d1be2651400571f6638a0b14ac9e78b4189bffb1788bc"
+    }
+   ]
+  },
+  {
+   "tag": "b12060",
+   "published_at": "2026-11-02T23:00:34Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12060-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373628,
+     "digest": "sha256:8f617713153ee7322efc7ad84c6c722044ad9a3220c30d47c9758f0ecb830f44"
+    },
+    {
+     "name": "cudart-llama-b12060-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521498,
+     "digest": "sha256:96fe8eea3e9893a538b051ee4c5c4c28b2d344ae97acb02051289cd6db29bdfa"
+    },
+    {
+     "name": "cudart-llama-b12060-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232648,
+     "digest": "sha256:d99439f5015e0a99f4fb8eeefbf57ed36293a766c16edd93128bfe73069d265a"
+    },
+    {
+     "name": "llama-b12060-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187077346,
+     "digest": "sha256:5fde240c2a16b747598a2b00ecda6422dc7a4dd16db06aab78e1b1830f7a863e"
+    },
+    {
+     "name": "llama-b12060-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163107295,
+     "digest": "sha256:1ca5fe775632fbd9d0940aa3c56ded54f7dc3aca76fd53515aa359268a2bc71c"
+    },
+    {
+     "name": "llama-b12060-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168008079,
+     "digest": "sha256:175cfe32753fda11b765cc65ad7bdfe5b71c9ec95926c27a944222730c4f52de"
+    }
+   ]
+  },
+  {
+   "tag": "b12061",
+   "published_at": "2026-11-02T23:17:24Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12061-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371091,
+     "digest": "sha256:674f7c1b580b6d7a8c1e6a04dd48f4d881452a2377e8423bc20e3382327fa5f3"
+    },
+    {
+     "name": "cudart-llama-b12061-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:be13d150f8b2e8ca79c828ec9c13aa994de73d4156ef3eb77e2460eb326efad0"
+    },
+    {
+     "name": "cudart-llama-b12061-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232615,
+     "digest": "sha256:0050d695879384b5f352aec6d2ffdf9933b81ef293259ed2a888b5f85b4b2d68"
+    },
+    {
+     "name": "llama-b12061-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187085878,
+     "digest": "sha256:62169c124f7d7911b7117845c8d01f254bed243b74ec2e06372189ad13173efd"
+    },
+    {
+     "name": "llama-b12061-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163113177,
+     "digest": "sha256:a2f09e7a9286d374366d43738b41394bd016470ee6cb9eee93dcbf215747c3bf"
+    },
+    {
+     "name": "llama-b12061-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168011378,
+     "digest": "sha256:14b24bbb9cdec6ecd9e29fb2e5d331bccdddbfab59709db75ce8646daf8dd1db"
+    }
+   ]
+  },
+  {
+   "tag": "b12063",
+   "published_at": "2026-11-03T01:39:05Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12063-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370106,
+     "digest": "sha256:2d6e5c5c2e9f20ebd030e1d1b7dd7deace25a849b4b601d3d5cf5fdfe19d11c1"
+    },
+    {
+     "name": "cudart-llama-b12063-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521523,
+     "digest": "sha256:c29ef4375e56bb9655b13675bace870cdf2ce6a4393a53e9715c0ec04ec4438a"
+    },
+    {
+     "name": "cudart-llama-b12063-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232648,
+     "digest": "sha256:6b86cc3156c7047bf034bb5d65e9de79095b263970ccf634749cdc1a7269c78b"
+    },
+    {
+     "name": "llama-b12063-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187091879,
+     "digest": "sha256:ae079baa6b9707fca197641080d365d6b5022218c8ea84b3edf726dcf89bff57"
+    },
+    {
+     "name": "llama-b12063-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163115402,
+     "digest": "sha256:c410f781794a3ad6e431b488ab4b16393dd214464b350c4e7af7419525297177"
+    },
+    {
+     "name": "llama-b12063-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168020148,
+     "digest": "sha256:173c4fa90edbfabe89162d441783c2bbeb50427b30234886f88999efee6d6a2b"
+    }
+   ]
+  },
+  {
+   "tag": "b12064",
+   "published_at": "2026-11-03T05:42:35Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12064-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594374001,
+     "digest": "sha256:8c1d266a37de0415f1fc8df0c28690156aaf5b428fedf7a425832d8cbeef6f94"
+    },
+    {
+     "name": "cudart-llama-b12064-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521410,
+     "digest": "sha256:6a5f61987ffe794256840e0371737976530bc2bf6acc0cc0b12de85df97ad89b"
+    },
+    {
+     "name": "cudart-llama-b12064-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:ddbfc4eea51dfb45666cc31dbcf3f5f44cf47ef0e023f1931de5ec2f0e6999d4"
+    },
+    {
+     "name": "llama-b12064-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187091781,
+     "digest": "sha256:4e4660d37312bdc802a3ffa335b36387c0950f283ec780723b9226ff47c33d04"
+    },
+    {
+     "name": "llama-b12064-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163115329,
+     "digest": "sha256:c5136decb689f8b235bfea95f4f45f2546f1cc2111a3d0fde1bada9c68834363"
+    },
+    {
+     "name": "llama-b12064-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168020265,
+     "digest": "sha256:c9b92a142cc8f82a106f36bf9893534f77de1931cc407bf98b366472ad473981"
+    }
+   ]
+  },
+  {
+   "tag": "b12065",
+   "published_at": "2026-11-03T08:09:39Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12065-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371573,
+     "digest": "sha256:25d1b658e6461901c6d72ee253be59761fbd18d22352ceecd67fb6f9a4a90163"
+    },
+    {
+     "name": "cudart-llama-b12065-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521504,
+     "digest": "sha256:3f70b6cddcbccbfcd7fdbc86cc8b5a52fbd3b75fe4d091fae93ce77fc1b3d458"
+    },
+    {
+     "name": "cudart-llama-b12065-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232353,
+     "digest": "sha256:783e15eae95ee7f965aaffc5f28f1865ee857021da4086b22362ca191aa6c660"
+    },
+    {
+     "name": "llama-b12065-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187091343,
+     "digest": "sha256:df6ec217cbfd607a3ab740e1b2093e90f3e3dc3f5af82bf90f77ba4230133e42"
+    },
+    {
+     "name": "llama-b12065-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163114096,
+     "digest": "sha256:60213f2a0d0e9acca58d1fccba5af481cd303466f1949b0879b989f34588245f"
+    },
+    {
+     "name": "llama-b12065-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168018835,
+     "digest": "sha256:07f8371879e224de5449749352afd81406874820027859730a4145ae504543a1"
+    }
+   ]
+  },
+  {
+   "tag": "b12066",
+   "published_at": "2026-11-03T10:00:57Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12066-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371406,
+     "digest": "sha256:a8eb18775a9650a26c6f014805a98dd8bcb23b29c2363950982f45ea0faec7be"
+    },
+    {
+     "name": "cudart-llama-b12066-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521521,
+     "digest": "sha256:61ca03cac711234eb86a458bd65489d24930f5c921e26f5154c6f8528d946aee"
+    },
+    {
+     "name": "cudart-llama-b12066-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232649,
+     "digest": "sha256:0c9e39817f791350dedac66a3498f7b19871037b099c7a7e732e9e91749f1755"
+    },
+    {
+     "name": "llama-b12066-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187091416,
+     "digest": "sha256:2e5dd9f55202d1d940bdcb1fce4a0fb969a06642ea9f56c96c62a21c37cec52b"
+    },
+    {
+     "name": "llama-b12066-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163114049,
+     "digest": "sha256:de32d09b1d8e694f5693ca162529a905b6f28b60cec02868dd1e8f9109e87d07"
+    },
+    {
+     "name": "llama-b12066-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168019832,
+     "digest": "sha256:7b58a5f9e4f85b5e91a63be8401fd7677f2d8a9bd8c38b9a1c0303c0ef83b99a"
+    }
+   ]
+  },
+  {
+   "tag": "b12068",
+   "published_at": "2026-11-03T10:44:26Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12068-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371572,
+     "digest": "sha256:808320b0964811e4da0e3e43d60edbf1ef7fe50853bdde9508cc17c3deb4438d"
+    },
+    {
+     "name": "cudart-llama-b12068-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522172,
+     "digest": "sha256:7af7e96cbb702e4ce9b3f91cc00ecc00e4c053dfc52d78ba636cd2f460e1838a"
+    },
+    {
+     "name": "cudart-llama-b12068-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232651,
+     "digest": "sha256:fd1184648a5f68ab287f54ff186987ac2317fc2fc98c02d73d41b4b710d03197"
+    },
+    {
+     "name": "llama-b12068-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187091970,
+     "digest": "sha256:3838417309d60df3dcd950712d14f43e3465f1552c606dfc269b041c606643da"
+    },
+    {
+     "name": "llama-b12068-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163120490,
+     "digest": "sha256:c8520ecab64121f0dc20d51aa522e7fd6f99620eb9722b4dd4ef0cb8d967fe13"
+    },
+    {
+     "name": "llama-b12068-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168020631,
+     "digest": "sha256:a4a0479bc5b4229b56f0136b70169a958bc09da48f621ac54a3c286ce1bbc834"
+    }
+   ]
+  },
+  {
+   "tag": "b12069",
+   "published_at": "2026-11-03T11:19:51Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12069-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372523,
+     "digest": "sha256:f6511f4d3234779ead8295bd1ef1e7cb6471849582ddc24530d4914c6de73b59"
+    },
+    {
+     "name": "cudart-llama-b12069-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521413,
+     "digest": "sha256:baab9658879cda06f7107b5be1efa293f4a7833b5de21d9c5af9739ee31f8e0a"
+    },
+    {
+     "name": "cudart-llama-b12069-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232649,
+     "digest": "sha256:fb515b4d76845c733b1efb63e8829557b40d88f4af91ccf2f0f2764a75fa6c64"
+    },
+    {
+     "name": "llama-b12069-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187091726,
+     "digest": "sha256:2a129ff517c0c632321cc22d5ec6f1602416059ebd5c3fa10bfcba385190dfb4"
+    },
+    {
+     "name": "llama-b12069-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163120389,
+     "digest": "sha256:3ab776183d4beb5a157b7c4442f58fa4b220c2910c50cab22d06e12390f118e1"
+    },
+    {
+     "name": "llama-b12069-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168020758,
+     "digest": "sha256:9fb3148cdb35ad9e29f90bc173ce3e579629840bd897e343166440cd6f6cfab3"
+    }
+   ]
+  },
+  {
+   "tag": "b12072",
+   "published_at": "2026-11-03T14:58:12Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12072-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594379217,
+     "digest": "sha256:44383d9f9da841206241284bb1e5c0d025c69a9100971bee76c870fea69cdf3d"
+    },
+    {
+     "name": "cudart-llama-b12072-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522390,
+     "digest": "sha256:db96b23e3b6f16dd9cd1bac6ac357bd77ac5562c746371bfed2e1d3d7fec700b"
+    },
+    {
+     "name": "cudart-llama-b12072-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:f4d6e4da21139d44dec44fe7376575fb0389a81675db4e4fd6796f582746d8cf"
+    },
+    {
+     "name": "llama-b12072-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187148090,
+     "digest": "sha256:df68edd44a5e860ef1733885c7966b3b346b7d1aacf0904bccc3da178ba966bd"
+    },
+    {
+     "name": "llama-b12072-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163207940,
+     "digest": "sha256:1cb861568abe30c6fbd1892dfdd139ca6400d5f5f476e4d4cf2c7668f85f5929"
+    },
+    {
+     "name": "llama-b12072-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168031930,
+     "digest": "sha256:f489b4dc43192828f3afba786a4c8c3b29d8aa3b639758b404c1fd4b4fe9adcd"
+    }
+   ]
+  },
+  {
+   "tag": "b12073",
+   "published_at": "2026-11-03T15:17:00Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12073-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373561,
+     "digest": "sha256:30d58291e9cd06b7c88c7289e845859ae8bdad2f336ad131c1350620f2c2bef5"
+    },
+    {
+     "name": "cudart-llama-b12073-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522172,
+     "digest": "sha256:04d208f9d7f218eff179bcc47f0089ab8ea729ba32dde3cfc7c3e8463ef6807d"
+    },
+    {
+     "name": "cudart-llama-b12073-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:7149bc179a65fa1e006ac1e10eb8a4f7e0dad7ea4167596aba7f21acadf24c54"
+    },
+    {
+     "name": "llama-b12073-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187152262,
+     "digest": "sha256:6aa2c019bbebe90c1e43ad1b0d389e9d3c9cb3afb4e33418dfb147b4de114059"
+    },
+    {
+     "name": "llama-b12073-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163207660,
+     "digest": "sha256:d567e6310fa180bd6ce4f50cf50a078868cfe117f2c9b8ab9a431d35529fe92e"
+    },
+    {
+     "name": "llama-b12073-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168032139,
+     "digest": "sha256:16b9b91c80894ffe8f4f789e5ecaed1feb7e29d4def21daac0e39f996c18f1a6"
+    }
+   ]
+  },
+  {
+   "tag": "b12074",
+   "published_at": "2026-11-03T15:40:05Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12074-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371565,
+     "digest": "sha256:28ff7285e319ce38dd957205e9f5c0d681c7791e1bb0119e114b69f75928fe09"
+    },
+    {
+     "name": "cudart-llama-b12074-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521501,
+     "digest": "sha256:6bcf6306ec80e21db8d4b729988986774b041cc6fc4a1f166501b8d69da8cf07"
+    },
+    {
+     "name": "cudart-llama-b12074-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232654,
+     "digest": "sha256:a6ccea463a21e5c6f3142768f921f8aa11aede597818dac075c7c5f5172ef0ae"
+    },
+    {
+     "name": "llama-b12074-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187151433,
+     "digest": "sha256:396a19079afd23c64b1bddfd34e1fa095741a1188ea9a83262b10db825d34429"
+    },
+    {
+     "name": "llama-b12074-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163207592,
+     "digest": "sha256:361514996a36fb0e9334e5b760bf131e267736bc1b022e9dea695c3513589f1a"
+    },
+    {
+     "name": "llama-b12074-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168031186,
+     "digest": "sha256:ba099c4517ec35779633b51eec2bbcf32bff3d790e7372825768c5d5598c2376"
+    }
+   ]
+  },
+  {
+   "tag": "b12076",
+   "published_at": "2026-11-03T17:22:45Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12076-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371479,
+     "digest": "sha256:6313782c53b279c308004a8edaa94bd88e809ca0f7dca32fb8fbaa8f53b6f553"
+    },
+    {
+     "name": "cudart-llama-b12076-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521396,
+     "digest": "sha256:239fb8c0252bd8d20b6d23440dc236a8230be56c08b428f01808a6341c10a3e0"
+    },
+    {
+     "name": "cudart-llama-b12076-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232311,
+     "digest": "sha256:ac2039b0723bf20eb0b76bff058ec950603a1de9c0daddba4f5f6901979862e8"
+    },
+    {
+     "name": "llama-b12076-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187151833,
+     "digest": "sha256:71b280070ffaf8ed1bc2666e08d6e4be16c29a5905a18c08b86abfa62bd380bd"
+    },
+    {
+     "name": "llama-b12076-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163207570,
+     "digest": "sha256:f776fdcdd0d6e2a16713ebd6cc8aac594b1c3b1596f171454d45d6dd6f36d3eb"
+    },
+    {
+     "name": "llama-b12076-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168030999,
+     "digest": "sha256:61e9dfac255300d44c2fc3cc1ec5769ddf71ad5155372df947045751817c0457"
+    }
+   ]
+  },
+  {
+   "tag": "b12077",
+   "published_at": "2026-11-03T17:50:42Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12077-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371574,
+     "digest": "sha256:4282286fc53318c05179567872e530557d3180adbed125eae7ba456c275d8834"
+    },
+    {
+     "name": "cudart-llama-b12077-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521558,
+     "digest": "sha256:7c06a94f951f568380f66283c5c1429c59abb92cbcbc84576b26e84bb2a88043"
+    },
+    {
+     "name": "cudart-llama-b12077-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232314,
+     "digest": "sha256:0fad414222efd0293e0c6cc70dfe810e376f64a8cebe307424b010f7336e9c77"
+    },
+    {
+     "name": "llama-b12077-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187157114,
+     "digest": "sha256:0713a47683cb5e4ed2c4875c2a0a84486babe27686884157402ef05c5403aeb1"
+    },
+    {
+     "name": "llama-b12077-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163212204,
+     "digest": "sha256:3df873593b63e954e9bed156a2aa8252acda6d55066a9a96fcecf0e1b95dfc97"
+    },
+    {
+     "name": "llama-b12077-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168036528,
+     "digest": "sha256:86879e6b6a7af32670511ed2fa89edfa2257792a9e9df1499911eb425f0e1ef7"
+    }
+   ]
+  },
+  {
+   "tag": "b12078",
+   "published_at": "2026-11-03T18:23:30Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12078-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373987,
+     "digest": "sha256:167efa4dac9c85b4335c2207f7209bb191d8294dbde832ad4c8a9dd54898453d"
+    },
+    {
+     "name": "cudart-llama-b12078-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522168,
+     "digest": "sha256:5bcf431ac0e5081d10929bf1a2e6504f7da6b39daf1a85c7731a6acddafb6fbe"
+    },
+    {
+     "name": "cudart-llama-b12078-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232378,
+     "digest": "sha256:6ca912e5a1f5f58e26c1293fd825fb1fa04932678e45fa12c71342e96f1d45a8"
+    },
+    {
+     "name": "llama-b12078-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187157233,
+     "digest": "sha256:1b5dcedb42dac924293c551ee507a06967d29594589e38b65b8875c871091e19"
+    },
+    {
+     "name": "llama-b12078-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163212197,
+     "digest": "sha256:e80970b19e4fd71543a1778158774a5bc03393f8a4794cd02681e54c2da30726"
+    },
+    {
+     "name": "llama-b12078-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168036713,
+     "digest": "sha256:cbe71e63dd311aa3f74d9c34e65d2fbc3071759ae78eb42c0ff10d694606fb2d"
+    }
+   ]
+  },
+  {
+   "tag": "b12079",
+   "published_at": "2026-11-03T21:58:54Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12079-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373634,
+     "digest": "sha256:d810d53bbe90cddaf6de3bfb350c9071f76cd1cf97ec5ee9062318adb599f413"
+    },
+    {
+     "name": "cudart-llama-b12079-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521415,
+     "digest": "sha256:fec07cb2712391ca33b62a2eb09f9ce4aefc1473f84d781ca1f0095c6c95b143"
+    },
+    {
+     "name": "cudart-llama-b12079-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232645,
+     "digest": "sha256:b3d8f7833a9876333db2a71cde9baa9602896830fc8fb9c5948f8970728ff2b8"
+    },
+    {
+     "name": "llama-b12079-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187109484,
+     "digest": "sha256:7965e1f2e8c097c08383af781808e671d875306b60112e2f2e5eb6bbbc3f668f"
+    },
+    {
+     "name": "llama-b12079-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163138727,
+     "digest": "sha256:75256cc4d521f817435f4ea266b1d6641a00035719569a29f7ad522dd350b369"
+    },
+    {
+     "name": "llama-b12079-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168084291,
+     "digest": "sha256:f59712c8715b78e093c3c363930ea9052666019efaac25e0542e51f063e6d42f"
+    }
+   ]
+  },
+  {
+   "tag": "b12080",
+   "published_at": "2026-11-03T22:21:55Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12080-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371479,
+     "digest": "sha256:5c0eea468382133365e4b7fc041200b0aae90749e722ca017aa4a23990522ba5"
+    },
+    {
+     "name": "cudart-llama-b12080-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522170,
+     "digest": "sha256:91658a8326ef201c491811512d908e392fc1fce57af0424e1ebde93f6fe68266"
+    },
+    {
+     "name": "cudart-llama-b12080-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232308,
+     "digest": "sha256:a5f012942fc9c7904e3073c8de109179c0a5ad14402253e87707c236ec906ca1"
+    },
+    {
+     "name": "llama-b12080-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187206786,
+     "digest": "sha256:b940c129b09512bb68185ee685b2b09f3340d510b494901af50e04f0ed39b8ee"
+    },
+    {
+     "name": "llama-b12080-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163216302,
+     "digest": "sha256:a1bc983b6e4c6bc82668d34629b0423a20e08b6a89cc92260a535c0e7edd0a88"
+    },
+    {
+     "name": "llama-b12080-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168164348,
+     "digest": "sha256:3d18c0bffa73677b7e45f52d421f1c443ac98765eba175b0bf8ff94f79e26b4a"
+    }
+   ]
+  },
+  {
+   "tag": "b12081",
+   "published_at": "2026-11-03T22:47:34Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12081-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371479,
+     "digest": "sha256:4d865790d0627831c06d4e54943b66790561bbf0e32823cec25a3f448a68662e"
+    },
+    {
+     "name": "cudart-llama-b12081-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521495,
+     "digest": "sha256:23292adb512241a0070868ca1b158310e645061295617a519be0c052ca5aac58"
+    },
+    {
+     "name": "cudart-llama-b12081-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232610,
+     "digest": "sha256:6ec7153b082505c3cfc1d41a3f64c4db02b042010b9e65c7aa492dcc8b809baf"
+    },
+    {
+     "name": "llama-b12081-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187200684,
+     "digest": "sha256:b5ad170743fcc9fbefeb3724db3818f36a18d8b36489c14efa54da7ec65921ea"
+    },
+    {
+     "name": "llama-b12081-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163216361,
+     "digest": "sha256:fc5f17826f52c77e7e41c5fd76d571db3addbc06d87f279b3e4916df682068d5"
+    },
+    {
+     "name": "llama-b12081-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168164211,
+     "digest": "sha256:4b5c8e7fa89e6acd0747c4bb029a501bbf65ed0fc989d8724f060510679f6906"
+    }
+   ]
+  },
+  {
+   "tag": "b12083",
+   "published_at": "2026-11-03T23:32:12Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12083-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370123,
+     "digest": "sha256:1cc7012fd0d812542f01ab06b66f014ddb240e38fd53c097fd2647bcb81e0d28"
+    },
+    {
+     "name": "cudart-llama-b12083-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521415,
+     "digest": "sha256:87b17ecfbcb1d3a5e47439cc7e48054d323eef73d3c7a36e5f29d6773c476cb4"
+    },
+    {
+     "name": "cudart-llama-b12083-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:02487c505b0b366263ab071886742fb7b879962685626ce6e544eb5082ab6dfd"
+    },
+    {
+     "name": "llama-b12083-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187202530,
+     "digest": "sha256:46e2e97b7121d81b5db14d9fb66ce48331975752d244b7b9f374fbf88d60a799"
+    },
+    {
+     "name": "llama-b12083-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163215679,
+     "digest": "sha256:1d9a5d712ad65fa1a374702920626f7091451669c297a332f0c81b9e77a581ce"
+    },
+    {
+     "name": "llama-b12083-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168164251,
+     "digest": "sha256:840a00efed5ae0a5badd4f195b03402213afebd3765feecfa5b463eed1815a05"
+    }
+   ]
+  },
+  {
+   "tag": "b12084",
+   "published_at": "2026-11-03T23:53:21Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12084-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371476,
+     "digest": "sha256:1ece09e835d093044ca249ad55360b325c897874b077df8972663c43de334209"
+    },
+    {
+     "name": "cudart-llama-b12084-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521396,
+     "digest": "sha256:7d78b5defa75f10ade8ec2543b148635c05b3528db8f308e6f64419ce15ccf51"
+    },
+    {
+     "name": "cudart-llama-b12084-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232328,
+     "digest": "sha256:9f8ef01df84ce628e82a244220799c0978a5651bbfb2a5385277b410281eb53b"
+    },
+    {
+     "name": "llama-b12084-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187201963,
+     "digest": "sha256:eb442037954eebc666377eeb9b96fe1e033bbfefe9302864e36690dd188d5982"
+    },
+    {
+     "name": "llama-b12084-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163216463,
+     "digest": "sha256:58280bdfedc2aaa72c8763afd2ff6e7d061f7067822ff3f2d3f71f83fef0d98a"
+    },
+    {
+     "name": "llama-b12084-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168164406,
+     "digest": "sha256:b4127c659ce788d02bf0f068f509e86051563197e18a0454770f9c74bd9e4076"
+    }
+   ]
+  },
+  {
+   "tag": "b12086",
+   "published_at": "2026-11-04T00:12:57Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12086-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371573,
+     "digest": "sha256:1b87f9cb43700a834149096aeb0dc1f4d9d6600755a12f80b141be932511d151"
+    },
+    {
+     "name": "cudart-llama-b12086-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522172,
+     "digest": "sha256:ade169ea7a778275790ffa2828682d90d77b0684a5236e1254565dfb6577b51f"
+    },
+    {
+     "name": "cudart-llama-b12086-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232551,
+     "digest": "sha256:33021fbeb3a68ce948a8a55e85a3241b603cc85cf7badff32e1620f4eb688e2c"
+    },
+    {
+     "name": "llama-b12086-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187201766,
+     "digest": "sha256:250cb09e0aa284c41b8c8c38fc9b81c251d88b39cffd81d66b8149e4effb6926"
+    },
+    {
+     "name": "llama-b12086-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163215471,
+     "digest": "sha256:ab801ec8e6b14fd3a6d7d87a4e144c0973b5fbd949f2d185257f09cbddad27e2"
+    },
+    {
+     "name": "llama-b12086-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168164067,
+     "digest": "sha256:d2c6fe15f37be2c0e5931831b44007d12d30d85111bbe9fd925da667a2cf0d5b"
+    }
+   ]
+  },
+  {
+   "tag": "b12087",
+   "published_at": "2026-11-04T00:31:20Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12087-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371479,
+     "digest": "sha256:ec4eee424f8bbcc0df7c43e863cf2592d8b2d64f80182b78cffcd949be163ac1"
+    },
+    {
+     "name": "cudart-llama-b12087-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522164,
+     "digest": "sha256:fab3de7db880dc63e55223b5dc3cc713228e2e2c2435c2755cc09d83c89b500c"
+    },
+    {
+     "name": "cudart-llama-b12087-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:6d4db5f29916217a684ee9082a112f22308fff155154561d2e2ad127ccfcd8ea"
+    },
+    {
+     "name": "llama-b12087-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187221160,
+     "digest": "sha256:266f3444fbf97fa6d6978c72a8b40a7f9d0916dc32e38afca9bed8793dfee041"
+    },
+    {
+     "name": "llama-b12087-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163230417,
+     "digest": "sha256:b9bbbe67397864bd6fb2fff4e8db8bfc9633539b1af8122e4835c161dc093fbd"
+    },
+    {
+     "name": "llama-b12087-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168183141,
+     "digest": "sha256:bf76c16cfa5f19c5808e96ced95965fb61bd826dca9da291e4ef66799996970d"
+    }
+   ]
+  },
+  {
+   "tag": "b12088",
+   "published_at": "2026-11-04T00:54:14Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12088-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371475,
+     "digest": "sha256:cc97cee4d1e588dbc0aad2f4bb4d608de924c6d6ea09baf9cc5cbf5fd61ec70d"
+    },
+    {
+     "name": "cudart-llama-b12088-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521500,
+     "digest": "sha256:8dca3e414d355055db70b74559bb888f62f61eded75ed42d627b62384cc224c3"
+    },
+    {
+     "name": "cudart-llama-b12088-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232649,
+     "digest": "sha256:c0bad18d5ff631f73451dc906e4ac3fd6f403d60b7671a92bab171d7d6af51b3"
+    },
+    {
+     "name": "llama-b12088-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187221983,
+     "digest": "sha256:36ac9e91c2a54fd85e599590a655c9d7f78e68dc525bf7f46e48ea781aa196f5"
+    },
+    {
+     "name": "llama-b12088-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163230651,
+     "digest": "sha256:8952298b3d07506bc78ffe7f3211fee83c4eaf0189136042ae820ddd3718611e"
+    },
+    {
+     "name": "llama-b12088-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168184232,
+     "digest": "sha256:494e100c7c3d2d3991d51dd41464d3c9cd19178dfecd6e87acf7b71d4d004d6e"
+    }
+   ]
+  },
+  {
+   "tag": "b12089",
+   "published_at": "2026-11-04T01:15:58Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12089-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372500,
+     "digest": "sha256:4c8c6c78b1e868d1fb2150a65cd64e11b77da127fae82b6b26a96d94a8d65e8a"
+    },
+    {
+     "name": "cudart-llama-b12089-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522194,
+     "digest": "sha256:f13bfb5248d0459042d0aa7d090d469bdcd89cbf18929b1dfdca880716192784"
+    },
+    {
+     "name": "cudart-llama-b12089-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232604,
+     "digest": "sha256:9b13b7432ef461fd2fe333c62ba11be4b2ec85146a4ad9b11e5722ed975e561a"
+    },
+    {
+     "name": "llama-b12089-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187230795,
+     "digest": "sha256:b6b707a2e654f2f777f8348d19096b6944f0a549b514b31b8c40e98edbae1233"
+    },
+    {
+     "name": "llama-b12089-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163237573,
+     "digest": "sha256:9fe8a7c562ef4fd50b5064c253a31ff26ba190e80e402c439ad0a0083960f6a0"
+    },
+    {
+     "name": "llama-b12089-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168196030,
+     "digest": "sha256:9ff576e386e968999f585217ff7de526c257d33cc5bcf730f20802eb2b10361b"
+    }
+   ]
+  },
+  {
+   "tag": "b12090",
+   "published_at": "2026-11-04T01:37:57Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12090-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372370,
+     "digest": "sha256:c7034bfc50a65b8e249d0e267a06ba6d2e196d4573eff63ed76d2540096f4a89"
+    },
+    {
+     "name": "cudart-llama-b12090-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521415,
+     "digest": "sha256:a7e9caa40fb32da429d03c4f4dbe73db2c92c9d47ea27f36a7fa0ae36d851e6f"
+    },
+    {
+     "name": "cudart-llama-b12090-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232326,
+     "digest": "sha256:aec14bd95f3229ab7d38c75b58fcc731d8d1f23cd0c51873ccfd50f81b7948bc"
+    },
+    {
+     "name": "llama-b12090-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187231691,
+     "digest": "sha256:6027ff15d9c359ad300f67ca374c7c3a8f3c54e928b147c9e13ab7ec5cb4c14c"
+    },
+    {
+     "name": "llama-b12090-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163237750,
+     "digest": "sha256:ef846b7b535f8171477c97e02b884b47755ef53f0bfb99138af50605c22eb969"
+    },
+    {
+     "name": "llama-b12090-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168196217,
+     "digest": "sha256:1ec752a048ee4859f62361c360243aac95e934f46e3aa4834cdbabc3a38a1c89"
+    }
+   ]
+  },
+  {
+   "tag": "b12091",
+   "published_at": "2026-11-04T01:55:34Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12091-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371574,
+     "digest": "sha256:d8da0f89b84b045eed31580b721206a5c6194fbf0f93272fa08f7c64054a8593"
+    },
+    {
+     "name": "cudart-llama-b12091-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:86a540fc92b7ce2d3c30111a9195a2dd0b5b6e76342edd907af556f8e30e3ed7"
+    },
+    {
+     "name": "cudart-llama-b12091-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232351,
+     "digest": "sha256:8ad1385a57ad7196e95d6a8129711cdccac363ec7c705f67e41276aa40144365"
+    },
+    {
+     "name": "llama-b12091-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187232843,
+     "digest": "sha256:e35ff86b1696b7e2b61a11839f0f33420951f2bc6e7b53840cf7b621175d0fde"
+    },
+    {
+     "name": "llama-b12091-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163231827,
+     "digest": "sha256:06af6409497c6f1531eee7eec1f185d2b30c4d1e30439bf8b0e15ff800c0bdc4"
+    },
+    {
+     "name": "llama-b12091-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168195209,
+     "digest": "sha256:5e0de245f14bf41db64b09c5df5b87180efd8264e6bba7455a8d065ff2542793"
+    }
+   ]
+  },
+  {
+   "tag": "b12094",
+   "published_at": "2026-11-04T02:40:08Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12094-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373586,
+     "digest": "sha256:316645cae86f59e430e7a795119bccd0770bd45b351840af5682756dfc504353"
+    },
+    {
+     "name": "cudart-llama-b12094-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522240,
+     "digest": "sha256:55d044a83934441da9051cfffeb955fdeb83aace6555be23a4251a3abeebdde9"
+    },
+    {
+     "name": "cudart-llama-b12094-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232342,
+     "digest": "sha256:571ef915de13ed3ae8bba042d829347962a3514659336119577c17fb45374286"
+    },
+    {
+     "name": "llama-b12094-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187232494,
+     "digest": "sha256:dd655bd26012267bfab4bdb465a7935c397afa60865c10240e71330f1f72f604"
+    },
+    {
+     "name": "llama-b12094-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163231784,
+     "digest": "sha256:2b16803b71e66693953e73da908e71a86607453a999a8921dd94c2cbec9d8a44"
+    },
+    {
+     "name": "llama-b12094-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168195562,
+     "digest": "sha256:05ce0dba7d79206ebe82071c848f68e4d0bcbf529ed4b16bca1c6b10c0fe5b87"
+    }
+   ]
+  },
+  {
+   "tag": "b12096",
+   "published_at": "2026-11-04T03:12:28Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12096-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371479,
+     "digest": "sha256:5860e55aea8e1a4c193a8848c12f78c3204d1187467a3bc8b6a540a431dd9aa7"
+    },
+    {
+     "name": "cudart-llama-b12096-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521409,
+     "digest": "sha256:7b5ab06e0956f2218a24453733b2190e84f65b06d6a92e4e8d67e8a804fe2f41"
+    },
+    {
+     "name": "cudart-llama-b12096-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232649,
+     "digest": "sha256:f8dde8d9a850b929b7266705727e8513a78d0e8dff66f81fcf2827ac4da29b03"
+    },
+    {
+     "name": "llama-b12096-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187237239,
+     "digest": "sha256:1a8e4d30b8580874821870a50689ed5e49f0dbef8bf56d56e97353c7ba55e52e"
+    },
+    {
+     "name": "llama-b12096-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163238401,
+     "digest": "sha256:9a8b2dd4ad0b467ca476fca3a9964129f51a2f2f001669579e8904790315e8f1"
+    },
+    {
+     "name": "llama-b12096-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168196576,
+     "digest": "sha256:09855ca37f71a2a2248d520edec72ee5db14e53a473ffd217fedc5fb1c7956bc"
+    }
+   ]
+  },
+  {
+   "tag": "b12097",
+   "published_at": "2026-11-04T03:28:25Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12097-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373631,
+     "digest": "sha256:6ca312a45f7a877730a3f849896b47d5b8c854a5a65851d3865b7f4a86046812"
+    },
+    {
+     "name": "cudart-llama-b12097-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:7583c444b263ebabe6df2b5bac69c25da9b8440441d7e3ff412a29cc18ef0123"
+    },
+    {
+     "name": "cudart-llama-b12097-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232306,
+     "digest": "sha256:592d293869d0a5543d1c7fc4423a24aab4f94ffeec5a88d60057599606a81e15"
+    },
+    {
+     "name": "llama-b12097-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187308714,
+     "digest": "sha256:1127172fbaa456bb9a1853f03a71b7c1d8a22e07689f99fd93cebfe8f567f469"
+    },
+    {
+     "name": "llama-b12097-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163308830,
+     "digest": "sha256:bc3ffe7501de9498223f921eb8c371723eb5789cd6da377109ada9b21d3ff430"
+    },
+    {
+     "name": "llama-b12097-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168274089,
+     "digest": "sha256:ddb5bbb33722740533a8d2b4421af15b5a5d8fe46f1d7d8c7feaf9d2300c60b1"
+    }
+   ]
+  },
+  {
+   "tag": "b12098",
+   "published_at": "2026-11-04T03:49:39Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12098-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371566,
+     "digest": "sha256:2e8dc09d01b4a0d84f5ac2b1df46d035a626a43ee49ad3819a2785dc30400223"
+    },
+    {
+     "name": "cudart-llama-b12098-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521412,
+     "digest": "sha256:e25f3742a6f0202d420afff49fb3ca85b2ca8b90316db48bdaaa22d014693b3d"
+    },
+    {
+     "name": "cudart-llama-b12098-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232324,
+     "digest": "sha256:c2ac382fdbb329b23c57f79cb8446083e135d8252d8c6580b30053cc6e6ad698"
+    },
+    {
+     "name": "llama-b12098-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187311965,
+     "digest": "sha256:00e1d8078f6184802ac03cae399fa66b5b07e263b3cdf176d1e55a217f1eab89"
+    },
+    {
+     "name": "llama-b12098-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163310494,
+     "digest": "sha256:e84e50282dedd88b9dd9771d03456c5d7c6cfc5c6e353fb32ac9ba539a832b05"
+    },
+    {
+     "name": "llama-b12098-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168274192,
+     "digest": "sha256:5d9362feb55f820a25717d95c012182c7b8803ad221e28fd81f93d9af87f8566"
+    }
+   ]
+  },
+  {
+   "tag": "b12099",
+   "published_at": "2026-11-04T05:47:21Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12099-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371583,
+     "digest": "sha256:d89e499f4aedae317558bf9d7fa5f9ac64e95564f5a09edc9654d4c79b141d94"
+    },
+    {
+     "name": "cudart-llama-b12099-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521412,
+     "digest": "sha256:46d5a05913067283e3a1ce3e13a4b0ec947389f018f2bb20b6356abd31292682"
+    },
+    {
+     "name": "cudart-llama-b12099-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232387,
+     "digest": "sha256:a906ba791106308cb070dbfc69da1a374825a9d5aa9110494f22a912e972a3d1"
+    },
+    {
+     "name": "llama-b12099-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187311726,
+     "digest": "sha256:31be4dd0cc8abb68201cba1ff0df35a0ed4d8be7999c72658860640900a734cd"
+    },
+    {
+     "name": "llama-b12099-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163309561,
+     "digest": "sha256:8b6958252daa35e764eca553e9025c2dda20aaca642b9832529232431c079dcc"
+    },
+    {
+     "name": "llama-b12099-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168274711,
+     "digest": "sha256:239f515950b8f5503afb43a517d306a79e672eabbe6ec24c44f2c725ed202380"
+    }
+   ]
+  },
+  {
+   "tag": "b12100",
+   "published_at": "2026-11-04T07:59:47Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12100-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371585,
+     "digest": "sha256:0bad438bba80b08f80db23fda10b849b18f171e57aa78d849c988bf6396ae80e"
+    },
+    {
+     "name": "cudart-llama-b12100-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522167,
+     "digest": "sha256:c2ffef6019a02510799fc06770a410c6b1bb70159eec3df8adbe8d193b67c736"
+    },
+    {
+     "name": "cudart-llama-b12100-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232557,
+     "digest": "sha256:c38d511e6410220a82384b250c70c4b35e1a50479abc9f9d9903196b4eeb07d1"
+    },
+    {
+     "name": "llama-b12100-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187309821,
+     "digest": "sha256:cb34912792915f4018e4b25418364644a68263c3d1b6f418c5c1c603f1a9a441"
+    },
+    {
+     "name": "llama-b12100-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163312487,
+     "digest": "sha256:5312bae86ae042e4daec28ddd24fe293683902f6994aa62e7092d66630bc756a"
+    },
+    {
+     "name": "llama-b12100-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168275271,
+     "digest": "sha256:1b29faf5954248ef7d3e8c96dcb5f688f76ea6236be703cab59b46ab6e1c3668"
+    }
+   ]
+  },
+  {
+   "tag": "b12101",
+   "published_at": "2026-11-04T08:32:58Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12101-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371533,
+     "digest": "sha256:2c9edfabd763875622a3e1a77b7d53e7c5e8006bff500e7ebcea7d4b2df88062"
+    },
+    {
+     "name": "cudart-llama-b12101-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521501,
+     "digest": "sha256:6b5cb8cd9b26860cfdada54bdd495ce87b634cf61441807843dcad70b3691ec5"
+    },
+    {
+     "name": "cudart-llama-b12101-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232598,
+     "digest": "sha256:e516cf872c7f23f6e09ff3506ede606f36c6a89ee60c0baf78adfe689f5ec2f6"
+    },
+    {
+     "name": "llama-b12101-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187311044,
+     "digest": "sha256:e3f7532cb572c2a89cbc47d1aebb8290393bf59b759d062f300d8a2615f8c1c2"
+    },
+    {
+     "name": "llama-b12101-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163313648,
+     "digest": "sha256:08d05a7a9b8d193d2ae9b8d7c9f313e93dfcfd993966598a581a11723606576f"
+    },
+    {
+     "name": "llama-b12101-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168274419,
+     "digest": "sha256:117d07590e76d1dcac64a2865389037982d3c7dc08ad9049c584108333a604c0"
+    }
+   ]
+  },
+  {
+   "tag": "b12102",
+   "published_at": "2026-11-04T09:12:53Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12102-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373637,
+     "digest": "sha256:ebafef7f311f921dd3db9c355305935a23649320ef06c297e7bf1cda5a6143fb"
+    },
+    {
+     "name": "cudart-llama-b12102-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521398,
+     "digest": "sha256:b943a73ed2ab7f8e3782859aaecd53c59795d76c2e6f3b48fcafe9f2d8364690"
+    },
+    {
+     "name": "cudart-llama-b12102-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232565,
+     "digest": "sha256:3ad63dc9fb84d27bd8407c9dd8d428e6120e2434dc35201a8aeeec6284c65312"
+    },
+    {
+     "name": "llama-b12102-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187310706,
+     "digest": "sha256:f46faf73dff72e6ee59f583c7b1f1783b63139827a89f15ddcbfdb8ecf017e50"
+    },
+    {
+     "name": "llama-b12102-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163311437,
+     "digest": "sha256:f442ce6c7d2137c22473f1d490d1514d742ded1473988ca80655a3a7100773db"
+    },
+    {
+     "name": "llama-b12102-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168273266,
+     "digest": "sha256:327a654c1ec7f51309db1ed0057351e7a0565c79179d174040d33b2cec8b89cd"
+    }
+   ]
+  },
+  {
+   "tag": "b12109",
+   "published_at": "2026-11-04T12:33:27Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12109-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373588,
+     "digest": "sha256:9f0fdcbfe4ff9b31bbc48288acfbeffaa5a411d4d1da9d99b0e9eb4f380214fa"
+    },
+    {
+     "name": "cudart-llama-b12109-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522170,
+     "digest": "sha256:3a0e4ccb6a9512471b086fc2fe7fa451fe3cc4cd02456281cf87d12b4e27ebfb"
+    },
+    {
+     "name": "cudart-llama-b12109-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232657,
+     "digest": "sha256:000008ec51338fc225a25d39d3aaa67a03c6fe8538af426ac8961f8e10c23376"
+    },
+    {
+     "name": "llama-b12109-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187314651,
+     "digest": "sha256:8b039677238631b8d93e0a23387d5cbd2202d67296167329891f442eae3d18df"
+    },
+    {
+     "name": "llama-b12109-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163316217,
+     "digest": "sha256:909d4f7733d5133d860c4886629615726f50334d0845481fb9025c3011757db2"
+    },
+    {
+     "name": "llama-b12109-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168276297,
+     "digest": "sha256:51818ffae5a5ef84806aadd204d0c2daafb60a44f43f0965117662238dced6ea"
+    }
+   ]
+  },
+  {
+   "tag": "b12110",
+   "published_at": "2026-11-04T12:52:04Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12110-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371477,
+     "digest": "sha256:6f1d562086d84ae85df880d3711079ec225602b51d530608e5001600625067dd"
+    },
+    {
+     "name": "cudart-llama-b12110-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521396,
+     "digest": "sha256:75aae17d1e44a7516ea1e593141acde379cdd287c58b93015b37d254df05c78a"
+    },
+    {
+     "name": "cudart-llama-b12110-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232657,
+     "digest": "sha256:9b1110161943882ec85c8e9ae641075ee8c962a50f8f1e36534ee65ea1e56ed9"
+    },
+    {
+     "name": "llama-b12110-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187314621,
+     "digest": "sha256:4af1e1da23661db4a5b84b29aae16ebc053df689c5b8b1427c4670f2c6406d8c"
+    },
+    {
+     "name": "llama-b12110-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163315223,
+     "digest": "sha256:77b300bfc55955e5b6ae82cdb44fe4af8306f82d06309364b1e4e4a5c33242d6"
+    },
+    {
+     "name": "llama-b12110-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168275993,
+     "digest": "sha256:2afd2ca540da119570b1dac36b5a2c862bb03a3b789c46661dfa55e600f5b19b"
+    }
+   ]
+  },
+  {
+   "tag": "b12114",
+   "published_at": "2026-11-04T21:33:46Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12114-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373632,
+     "digest": "sha256:15835a2ff9a906ba986e016af5e67fdd2e760149fd64d7b9979a71f2eb38a7ea"
+    },
+    {
+     "name": "cudart-llama-b12114-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522171,
+     "digest": "sha256:fbb3a7cb4d46892e0650e8b4546f1087727a8a189cfd31e0f45e58b9ea73f3de"
+    },
+    {
+     "name": "cudart-llama-b12114-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232655,
+     "digest": "sha256:9cc38c944d058b4dbd0014349208d0f26bdcea0f804b7512165d1ae66be05891"
+    },
+    {
+     "name": "llama-b12114-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187316085,
+     "digest": "sha256:30f7231a10dc51505f2d327dfa56b18f43347a130d7d98cf4a74ecea67e053ed"
+    },
+    {
+     "name": "llama-b12114-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163313152,
+     "digest": "sha256:6ffeb51bc642ea7b577dcc666aee06e5141609ad4aa815edf188d9a463e03d70"
+    },
+    {
+     "name": "llama-b12114-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168276753,
+     "digest": "sha256:c1b90723d19d8382cba309181afae4f3846e796651c6c0fee8dd6a9debb247af"
+    }
+   ]
+  },
+  {
+   "tag": "b12116",
+   "published_at": "2026-11-04T21:57:59Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12116-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373633,
+     "digest": "sha256:eee0d8d0fe1ea57a47a6ec6c7de6ef076d36e6dc545f824ef432f805c4b8fd4d"
+    },
+    {
+     "name": "cudart-llama-b12116-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521502,
+     "digest": "sha256:bb3a3d1714847ce0b1cbe6d086f01488383be9c8ea302ec917fb18dd604d3033"
+    },
+    {
+     "name": "cudart-llama-b12116-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232382,
+     "digest": "sha256:63357412feabea7be3af9e1c2712a27be6f25f7cabb8756d41453ac296052319"
+    },
+    {
+     "name": "llama-b12116-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187338448,
+     "digest": "sha256:26e4f364eac2ef8f8ed8ec4dbf1b53baa40b46ea01eba998da3b5e046e03b5cc"
+    },
+    {
+     "name": "llama-b12116-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163341314,
+     "digest": "sha256:9c6bc72a689d0e57eadc153babd876c0b4db5dd4be1067b0b3d184748de5c133"
+    },
+    {
+     "name": "llama-b12116-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168297632,
+     "digest": "sha256:8ce5f9b27260c09dbc5919f3b5fe6bb2e9035b2e28303f1be3cf80efe046bb86"
+    }
+   ]
+  },
+  {
+   "tag": "b12118",
+   "published_at": "2026-11-04T22:14:14Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12118-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373550,
+     "digest": "sha256:336c41e23049c334409fbe8fc7365afdd8344c8f9a6dfdc8d0d94e61359eee5b"
+    },
+    {
+     "name": "cudart-llama-b12118-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522183,
+     "digest": "sha256:97947444455589c5ba3e6561c4ff445aec4734bb0e0215356156c9916e68c250"
+    },
+    {
+     "name": "cudart-llama-b12118-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232656,
+     "digest": "sha256:c6a910959615510dd6ade4712abdce4ed616cc61829ce2855ea7b24b0160059b"
+    },
+    {
+     "name": "llama-b12118-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187342614,
+     "digest": "sha256:55abcaee6a632c2a0e4c31706565c73f8bff1e8ce8b44fa0cec9c1ac10fe1863"
+    },
+    {
+     "name": "llama-b12118-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163345052,
+     "digest": "sha256:c080ae36602cd8642db3cea27fe217936ad99725dc141aa65ff9ef797d26c101"
+    },
+    {
+     "name": "llama-b12118-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168302402,
+     "digest": "sha256:60262e66b04e601c8f47d62075657d051abad30bf5c2a0d3f21c9eda07c7eda1"
+    }
+   ]
+  },
+  {
+   "tag": "b12119",
+   "published_at": "2026-11-04T22:34:35Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12119-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594379772,
+     "digest": "sha256:40ddc5e887003a5ac19f1baf0681d9bedb52bf7cf57b9fa896dbaf6439e53b7c"
+    },
+    {
+     "name": "cudart-llama-b12119-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522168,
+     "digest": "sha256:9b8410a2bc5f10e1c8e27906fa6438bcb9b63b081f95075aed191d78342dbc2c"
+    },
+    {
+     "name": "cudart-llama-b12119-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:d097590ea5f39ca34703a17d058f845cd2be8ba4a4e4f6bb4400ea18f99fe2fb"
+    },
+    {
+     "name": "llama-b12119-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187345102,
+     "digest": "sha256:d61b6c35f56f3cf74ca8a0ec5bdd8c8dd1b5c304f9e001bf9ddb29f8d4d2a409"
+    },
+    {
+     "name": "llama-b12119-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163345919,
+     "digest": "sha256:1d31d13d8ac781385e7d5738a645c73a2ef5a375f8ac07e0ed4cd098f4ac97dd"
+    },
+    {
+     "name": "llama-b12119-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168301670,
+     "digest": "sha256:66f0d4c16212675e7662db4bcf995cd1665eee5f96974f16fc6e7a32f170991a"
+    }
+   ]
+  },
+  {
+   "tag": "b12121",
+   "published_at": "2026-11-05T03:00:07Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12121-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373635,
+     "digest": "sha256:bdcee8540810018ea22757d49a366edcc5dd18d1e7eaa0e09ff3a80d82058bf0"
+    },
+    {
+     "name": "cudart-llama-b12121-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522230,
+     "digest": "sha256:79327e638ff1769ffa78abc6a2eb56f99940ff120030645b0539be129d670d42"
+    },
+    {
+     "name": "cudart-llama-b12121-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232413,
+     "digest": "sha256:7eecd8a13eeeb2c78bc917788ab6f7dbb69353c8b5f54a66d237b33ca1ba5780"
+    },
+    {
+     "name": "llama-b12121-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 187343147,
+     "digest": "sha256:628ad6714bd6a0d5b61315e36023c3ab3f1f212d3af7f9f4889e5140d4e727d8"
+    },
+    {
+     "name": "llama-b12121-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 163345958,
+     "digest": "sha256:9c49046bd96ca5a49cd8919918c61a4907d9d67c784ddfa91fd1f304794af34c"
+    },
+    {
+     "name": "llama-b12121-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 168302378,
+     "digest": "sha256:a2dcfe6607712482ed06a3b7a76d244c1189d1462a2ba4d4d117e9b1c328acc5"
+    }
+   ]
+  },
+  {
+   "tag": "b12122",
+   "published_at": "2026-11-05T06:15:38Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12122-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371875,
+     "digest": "sha256:f61268e4d9582bbfecc007b8831636ca85b29b2e3d6f4c88590aafdb62c41d5a"
+    },
+    {
+     "name": "cudart-llama-b12122-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522233,
+     "digest": "sha256:62e26cb8dc28ac71720bd774e579ed17ee11618c6c4bcb6a1425dff3d681b398"
+    },
+    {
+     "name": "cudart-llama-b12122-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232649,
+     "digest": "sha256:1e73f68dbb7e5524f5a080ea1ccffc5d768412b6e19fc514f04489bebde674e9"
+    },
+    {
+     "name": "llama-b12122-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188604181,
+     "digest": "sha256:e5dfeae3a4ecea271b673548fd33a0549915233f8e9a6dabd9e3fc1fc4ef8b62"
+    },
+    {
+     "name": "llama-b12122-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164910552,
+     "digest": "sha256:4150f3f1a9e733eedcc3122aeaea49f1d4d033956f4823976978e085c37753d0"
+    },
+    {
+     "name": "llama-b12122-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169888102,
+     "digest": "sha256:227fdc334c1fa7abb8799203eb83ad5a08b73642d5b993a642cc811b444d2eb1"
+    }
+   ]
+  },
+  {
+   "tag": "b12123",
+   "published_at": "2026-11-05T06:43:57Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12123-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371089,
+     "digest": "sha256:412567d87e0a383e23c32b3900953d2047ea42070963b83a57857ab4a1ae2520"
+    },
+    {
+     "name": "cudart-llama-b12123-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521392,
+     "digest": "sha256:333bb6708c55ecfca8e559892058ad8bc37ea68a22b452cb09fb113f25b098c0"
+    },
+    {
+     "name": "cudart-llama-b12123-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232409,
+     "digest": "sha256:6b2d656ba0c52abb362e8a85805564217460f8c6b5ad7dcceee96d7793d5628a"
+    },
+    {
+     "name": "llama-b12123-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188603521,
+     "digest": "sha256:7548145dbdcccb0d1c0d23d61546e9e60458d7e48103e9e1ed342b47ea17c5d9"
+    },
+    {
+     "name": "llama-b12123-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164910455,
+     "digest": "sha256:dcc6a7cf091b7594c96364797f4aa18f7e5ed70e5d628af5dd8b0ba4d40173e6"
+    },
+    {
+     "name": "llama-b12123-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169886771,
+     "digest": "sha256:e796a580df1e602a30b203c5ad83ce52288af56d0a22d0dfa29b597df1d7cd42"
+    }
+   ]
+  },
+  {
+   "tag": "b12124",
+   "published_at": "2026-11-05T07:08:03Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12124-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371460,
+     "digest": "sha256:2d63b719feb01e3dff111e6b7f151e83e727d238c1639d3b6cd08f0c7677ba28"
+    },
+    {
+     "name": "cudart-llama-b12124-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521394,
+     "digest": "sha256:155f011b622a35baa641ff1147314cf5800110ef01d32c5c6705746a99824da3"
+    },
+    {
+     "name": "cudart-llama-b12124-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232576,
+     "digest": "sha256:a92c3ac4f48ad24ffcdc65e5387720c71e95b5f293413298eedc43f9889d6c0d"
+    },
+    {
+     "name": "llama-b12124-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188604046,
+     "digest": "sha256:5157b4406d8419ed558b8c368437bf813af14ce4249a3a7f916e1083b0f4992c"
+    },
+    {
+     "name": "llama-b12124-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164909636,
+     "digest": "sha256:b8b395bfd78cf7da34b948f37c2ea0937ad78af39ea0ac6f6a02a4b86a636783"
+    },
+    {
+     "name": "llama-b12124-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169888033,
+     "digest": "sha256:f0ace572a6806867522f0fc0881f96c9b85e6b59bbb8afe7422307b331a91e80"
+    }
+   ]
+  },
+  {
+   "tag": "b12125",
+   "published_at": "2026-11-05T07:29:28Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12125-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371475,
+     "digest": "sha256:75c830c6829f406e3f9219952d31c9698adfa716aa9e331220cb205369c8c074"
+    },
+    {
+     "name": "cudart-llama-b12125-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521394,
+     "digest": "sha256:fbde66e3a6a161b9f5419fd2ae59cd282b587e71d1b264d9633546987253fadd"
+    },
+    {
+     "name": "cudart-llama-b12125-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232312,
+     "digest": "sha256:5a137d1eacdf18adf4dbe09e92ef971b742952cd429dfddf30ec0c31d1150286"
+    },
+    {
+     "name": "llama-b12125-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188603888,
+     "digest": "sha256:3a65d23e69b6c02ac6856a0a7465444e8c7c929e225169a287f4b960a16efc43"
+    },
+    {
+     "name": "llama-b12125-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164909948,
+     "digest": "sha256:04b78a52ec7daa39c29b418512a5722f2a9ce0d880242a3f019662f374bdf678"
+    },
+    {
+     "name": "llama-b12125-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169888649,
+     "digest": "sha256:fcfe28f45f9ecab4ae99747355900074c8c20097d0c1942119abbc8cd124d343"
+    }
+   ]
+  },
+  {
+   "tag": "b12128",
+   "published_at": "2026-11-05T14:03:42Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12128-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371087,
+     "digest": "sha256:d4db45f2cb9895ceaeb1f0e4d7885b60d1ec407ea212bce6131e8b714fd49497"
+    },
+    {
+     "name": "cudart-llama-b12128-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:be43c47a7e3bad9cc33f6206703f6f8e3a3028d91f9fa84be3ba0aed032ce83f"
+    },
+    {
+     "name": "cudart-llama-b12128-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232651,
+     "digest": "sha256:fe4d7d4590f0a68e26137670fb5e6713eae6071ff5a4b0b33a8e417dab5f45eb"
+    },
+    {
+     "name": "llama-b12128-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188604632,
+     "digest": "sha256:dad00f56a9c5eeb0b99fc90350ae462da6985a986e0cbaab5d9cc333d4f41abc"
+    },
+    {
+     "name": "llama-b12128-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164910573,
+     "digest": "sha256:c49858423f89e46ced60be448eaa19b142ee954cd06d18711e0eb0f9547ef766"
+    },
+    {
+     "name": "llama-b12128-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169886464,
+     "digest": "sha256:087674dbfec6de1916ae943376f0f38cc1163e6f7201b17be3b3d6d3ccbf471d"
+    }
+   ]
+  },
+  {
+   "tag": "b12129",
+   "published_at": "2026-11-05T18:47:47Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12129-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371876,
+     "digest": "sha256:90976a150e8cc461c209d0390603218688438d0b36a303293267bc91a307cb04"
+    },
+    {
+     "name": "cudart-llama-b12129-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521416,
+     "digest": "sha256:033a5e5992710ed77594ff7330f0339bc55ffd2fa70ce9fdb39b8110228f3299"
+    },
+    {
+     "name": "cudart-llama-b12129-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232657,
+     "digest": "sha256:b7938499e1985181c1b2f1d7066cff391a8ffbf0fa289b6ce122a4fa8299b24f"
+    },
+    {
+     "name": "llama-b12129-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188603826,
+     "digest": "sha256:63384ee3beed33249f00d8cfd6742635ce934a15c3b357aca343523206d40de4"
+    },
+    {
+     "name": "llama-b12129-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164910168,
+     "digest": "sha256:f6638db86e661ea791f21f8c7ae0f13074f3f6776d3fcfa5268af436bee51599"
+    },
+    {
+     "name": "llama-b12129-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169886242,
+     "digest": "sha256:eeb8d96fb8b3f34faf701cb01dd81ee6c30f9fd01a48f6db3b298222d1403afa"
+    }
+   ]
+  },
+  {
+   "tag": "b12130",
+   "published_at": "2026-11-05T19:36:27Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12130-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371481,
+     "digest": "sha256:984043bc8dedcdf150fa6c6bc7670c0c95a7ca82acb0e15db3ebbee8fa9e3dab"
+    },
+    {
+     "name": "cudart-llama-b12130-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521502,
+     "digest": "sha256:b2677352a189c65f37d75de1a13e54eaef40e12f15659c2dd9932d0908a2d7f2"
+    },
+    {
+     "name": "cudart-llama-b12130-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232355,
+     "digest": "sha256:13ac3085e62e54b4a2c8c6ab6bbc2f44aecfe1a046ba2e0a0b23f6ccfe099848"
+    },
+    {
+     "name": "llama-b12130-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188603762,
+     "digest": "sha256:c09a4c3ed093464f8ed116d36ce6944fba8d94ecc52d7f4dadeb8c2a6b068d47"
+    },
+    {
+     "name": "llama-b12130-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164910656,
+     "digest": "sha256:8870a52c49f7caab89de9067a028d3c4542a63b224136492cd97b670c18e2657"
+    },
+    {
+     "name": "llama-b12130-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169887932,
+     "digest": "sha256:4eb55ca5082a3915c69d6fa31b87126bfd659775d5b2c490243be374918f04aa"
+    }
+   ]
+  },
+  {
+   "tag": "b12131",
+   "published_at": "2026-11-05T20:06:35Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12131-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371574,
+     "digest": "sha256:ca2a8c5314e81be624663ed506f7b474caebd8b1df042ee89b27e94925835915"
+    },
+    {
+     "name": "cudart-llama-b12131-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522173,
+     "digest": "sha256:74b602276b581c5d08099d9ba97eed7162a4c0e298f3914612f13b4da93999cb"
+    },
+    {
+     "name": "cudart-llama-b12131-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232382,
+     "digest": "sha256:976f557bda04a848eb77e85cdaa0d27783e7d60a4269739ca96fe08ead685634"
+    },
+    {
+     "name": "llama-b12131-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188603033,
+     "digest": "sha256:8e237ef7a27da98033a9309c919cb27fd01de3e8f8bc6ea4b6de6337d492cc8c"
+    },
+    {
+     "name": "llama-b12131-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164911438,
+     "digest": "sha256:40c6ac0444eb1d5d920842ad4f2057d9b0b7a5ed002b50f48bcc6c7d2baa7e68"
+    },
+    {
+     "name": "llama-b12131-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169884796,
+     "digest": "sha256:5a318cacc6af4bb607c901c49af525aaf97d09c5769d1174141fc9263ab12ad4"
+    }
+   ]
+  },
+  {
+   "tag": "b12132",
+   "published_at": "2026-11-05T20:33:13Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12132-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371405,
+     "digest": "sha256:ec2d837a747d65e6ad1d5c82733969560846956be350ea6c76de8d7f8f748243"
+    },
+    {
+     "name": "cudart-llama-b12132-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521393,
+     "digest": "sha256:31d974d8cd47dbcb320fadda2db2f96de4abb769169b6db6e3ce7963d52588c4"
+    },
+    {
+     "name": "cudart-llama-b12132-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232382,
+     "digest": "sha256:ac2a04a8260d9699fa855aa5ba6a8bf2a36a99ef35b5aecfbed0753c50809410"
+    },
+    {
+     "name": "llama-b12132-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188604292,
+     "digest": "sha256:29682584b707e900e3e710a32b1c81c6b1616073e24577a521306dffaf748ebc"
+    },
+    {
+     "name": "llama-b12132-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164911738,
+     "digest": "sha256:db45901a550eaf09130d7d3a59dc6f418f95e707477fe35f8c2b0b31ed9fd4f4"
+    },
+    {
+     "name": "llama-b12132-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169884092,
+     "digest": "sha256:662e8a919d7b943e40aac2d427a117161f164a4d802be48ecaa8033e9b589cd2"
+    }
+   ]
+  },
+  {
+   "tag": "b12135",
+   "published_at": "2026-11-05T21:13:05Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12135-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373630,
+     "digest": "sha256:ae8db39d503f5031e0d7ea48376f6a6c17788e7765e680ada1733433fcfdd9d4"
+    },
+    {
+     "name": "cudart-llama-b12135-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521503,
+     "digest": "sha256:a1b88189debcbae1d5124d23cdf19fcc7dc67efd537735323bb5886f87a1b955"
+    },
+    {
+     "name": "cudart-llama-b12135-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232410,
+     "digest": "sha256:44cee01b5ae64ae677c3c0e73b6d279fc0f952c3df198db54ff7387da32687d9"
+    },
+    {
+     "name": "llama-b12135-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188602096,
+     "digest": "sha256:7c53184d27ecfa9120853912296546080120462c391ee1f90e3264614383507a"
+    },
+    {
+     "name": "llama-b12135-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164912065,
+     "digest": "sha256:bb805b73d311c344e2fa9f619e2a5e30403cf2105e6d13de3ef4c99b2bf59308"
+    },
+    {
+     "name": "llama-b12135-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169880079,
+     "digest": "sha256:22414f414a992f13f9e3c21cda44016dfcdf357e748f70363b54b896b9d890c4"
+    }
+   ]
+  },
+  {
+   "tag": "b12136",
+   "published_at": "2026-11-05T21:32:43Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12136-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373556,
+     "digest": "sha256:51be623da3591451eb8b7dbcfbb495a9d6670e1eeffa09276c3458310edfd135"
+    },
+    {
+     "name": "cudart-llama-b12136-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522230,
+     "digest": "sha256:b404600ab05f6f923f3bb5eed86149469cf9dcb256f79377350c4aa2a257fee3"
+    },
+    {
+     "name": "cudart-llama-b12136-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232563,
+     "digest": "sha256:4ea99cd5090d573df45d5fd02f7d36bb29e7de33258512a9a5a2de1f981bda7f"
+    },
+    {
+     "name": "llama-b12136-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188602558,
+     "digest": "sha256:bfeb6db54e8c92457dee034e7b74b19d19705cc6c5b1817fda3bd2c76363c2b8"
+    },
+    {
+     "name": "llama-b12136-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164911913,
+     "digest": "sha256:6de1d865d0b70a0eb7701f3c0a5c9f99f388f7ca77f3cd8c98d55fe62f32dec4"
+    },
+    {
+     "name": "llama-b12136-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169880249,
+     "digest": "sha256:bbde3f0931f0e8919970553442a51fbae54779333968577c7d4967bcfa6c0cc6"
+    }
+   ]
+  },
+  {
+   "tag": "b12137",
+   "published_at": "2026-11-05T21:49:44Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12137-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373585,
+     "digest": "sha256:61871052e8fd1d94b8f54b543863b89b9b31f347e1a088ed77edf370c41d06d5"
+    },
+    {
+     "name": "cudart-llama-b12137-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521411,
+     "digest": "sha256:3281a8065175d1fa597ee5b206a0f0466070dec0b91dad49df9ba7c31d542214"
+    },
+    {
+     "name": "cudart-llama-b12137-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232394,
+     "digest": "sha256:18071ba764e5645d161ced6817c49f4c7f829f1c69a0fa97b2aebe14f8de24f9"
+    },
+    {
+     "name": "llama-b12137-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188602791,
+     "digest": "sha256:abca98b1556d86dfbefeed44ccf9b2e83a7acf1e991420eb3b362de8603c1a01"
+    },
+    {
+     "name": "llama-b12137-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164911350,
+     "digest": "sha256:4b0039b390a02fa794a4a07d8b376286f079c636d5c8bd1fff0fa0a1fd13dc5b"
+    },
+    {
+     "name": "llama-b12137-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169879352,
+     "digest": "sha256:da3ee24bb3e210a37626b8af155c19d2cae4283d0960befe675042cf3dd0d6d2"
+    }
+   ]
+  },
+  {
+   "tag": "b12138",
+   "published_at": "2026-11-05T22:07:28Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12138-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594373606,
+     "digest": "sha256:1402566babfd307f8e9d1e2933b270de79b8a0c15169ac21d6e772f3ec8d26a4"
+    },
+    {
+     "name": "cudart-llama-b12138-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:46ec7f33b419c4ef2253d6a428a016dd49c67c6305100e772e07c587041a489a"
+    },
+    {
+     "name": "cudart-llama-b12138-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232650,
+     "digest": "sha256:4a98772d1aebbb1ba060f139fd0a584214c8a14b733af937b98e3db023e22747"
+    },
+    {
+     "name": "llama-b12138-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188602698,
+     "digest": "sha256:8aa6fd55e99501a5865fda102f974f87464d1212b5b3bffa4efd3fb6affa9d9e"
+    },
+    {
+     "name": "llama-b12138-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164911079,
+     "digest": "sha256:a5e073fd437551775cb2fb176b5b5932d6086c0765b9615915e3655640bebdbf"
+    },
+    {
+     "name": "llama-b12138-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169879754,
+     "digest": "sha256:435a1812c0802dad722cb14b1f9b10d4dc4e6c45d1d8e5116a9c2818e01bdc0b"
+    }
+   ]
+  },
+  {
+   "tag": "b12140",
+   "published_at": "2026-11-06T01:11:25Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12140-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371070,
+     "digest": "sha256:6d83cabc1539bb24f175d221e77829f362ad536dad9cc1f107bd22436c3bc29b"
+    },
+    {
+     "name": "cudart-llama-b12140-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522173,
+     "digest": "sha256:ee7047bdef147fab68b2ca13184f73f3c5cdb78864f180fd5fab80671c53d69e"
+    },
+    {
+     "name": "cudart-llama-b12140-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232311,
+     "digest": "sha256:7e46a526fe05b358111636e69d4ca7701e5c766f35a4556107610df46dabea94"
+    },
+    {
+     "name": "llama-b12140-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188663940,
+     "digest": "sha256:558a5191b63322a08f94816de1edc6b6f956c9f4044255dbc6f1f4bf20255603"
+    },
+    {
+     "name": "llama-b12140-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164936994,
+     "digest": "sha256:d733dcab0e6e330b27ec7d2a46690ba384922295935de67067891c38126a7189"
+    },
+    {
+     "name": "llama-b12140-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169850874,
+     "digest": "sha256:7e3507fb2a61054cc9cc03478693ff640f12dd942840823ee557d334d60a8f0d"
+    }
+   ]
+  },
+  {
+   "tag": "b12141",
+   "published_at": "2026-11-06T01:49:08Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12141-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370126,
+     "digest": "sha256:788230c8df2fc8ec074f80a5c35d799ea6546b54ba78b5f40d74dca33b22937f"
+    },
+    {
+     "name": "cudart-llama-b12141-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521397,
+     "digest": "sha256:eae6ee7b5c02136e2fd8be9d3773778f08dc89b598f3150aa37ef6a670583d5d"
+    },
+    {
+     "name": "cudart-llama-b12141-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232606,
+     "digest": "sha256:526eee55555b854d9c8beb321f1267de03b7d84324df08e17ce2d297cd45ea36"
+    },
+    {
+     "name": "llama-b12141-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188668953,
+     "digest": "sha256:07db4df4e29a5746a8d7e75bf78d5b82c5cff64092f877c93bc540de169c2f25"
+    },
+    {
+     "name": "llama-b12141-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164936334,
+     "digest": "sha256:232ab86fe6b78cf8725b1552331941fc5defaf2ff90b449293a67faab475d6dd"
+    },
+    {
+     "name": "llama-b12141-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169855738,
+     "digest": "sha256:aa8db2a5e3c19b0c3141a93c70f7bb100001fa3018bce4585479101016c134bb"
+    }
+   ]
+  },
+  {
+   "tag": "b12142",
+   "published_at": "2026-11-06T02:22:29Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12142-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594369754,
+     "digest": "sha256:e644d2473e008c09852baf5635c52c2e92976068acb7d4b912b572c284e3f400"
+    },
+    {
+     "name": "cudart-llama-b12142-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522229,
+     "digest": "sha256:f407ae904d6b36607a60e836dd4e4cdf0a2d26f8f525aa866670cc512cb67d9c"
+    },
+    {
+     "name": "cudart-llama-b12142-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232313,
+     "digest": "sha256:ba08cbe30d0186e52e8da2e282ee22adf667c36edc4d15f664e08caa84319578"
+    },
+    {
+     "name": "llama-b12142-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188671463,
+     "digest": "sha256:72d8625c02bea71bcd904f257c0e14c6d6e8dd44c1cefd835367f289c6950e58"
+    },
+    {
+     "name": "llama-b12142-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164937172,
+     "digest": "sha256:bbccd44b4d18aff43d7e3907cc24b70e6ff9ea5399021cf3c409c2b79096cd77"
+    },
+    {
+     "name": "llama-b12142-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169855759,
+     "digest": "sha256:a981fa1de02f4c55603d2a6dbdbe28d2ac0daf39655e91b0b90024e0fb72e550"
+    }
+   ]
+  },
+  {
+   "tag": "b12143",
+   "published_at": "2026-11-06T02:48:02Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12143-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594370433,
+     "digest": "sha256:03ae8a1aee24140a2f988769026958e577fa099412484b7a72bd3e4f97fe3a35"
+    },
+    {
+     "name": "cudart-llama-b12143-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521498,
+     "digest": "sha256:c63796fb932d044d14afd7aed65d423955d37393f6592aacf2dd9b42d86909c1"
+    },
+    {
+     "name": "cudart-llama-b12143-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232321,
+     "digest": "sha256:f77b5bad6e85cae31b82f212c40549e980755bd2a0a58bd0d73c1f4dab8d2ebd"
+    },
+    {
+     "name": "llama-b12143-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188668827,
+     "digest": "sha256:996c99add5907b18c49de02a48a43dcacb32fb89a56e82d6d0fd7f375b8e9e8d"
+    },
+    {
+     "name": "llama-b12143-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164937056,
+     "digest": "sha256:d389963d5166995d74aba21181cf0720a21846678044a4d4939d7e95d0e38d50"
+    },
+    {
+     "name": "llama-b12143-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169856320,
+     "digest": "sha256:c9c2b475d3f7223d2a218586df431c51b6e7fd5e0e4203f23459e90a3a8a40c8"
+    }
+   ]
+  },
+  {
+   "tag": "b12144",
+   "published_at": "2026-11-06T03:45:50Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12144-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594372521,
+     "digest": "sha256:eb690223e72a69e5f80954f8b7f8eced57800561af7196d53095a7e4b5286d8c"
+    },
+    {
+     "name": "cudart-llama-b12144-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552521411,
+     "digest": "sha256:c885ddbcbd2ee44e4986ccbbf5fe1425ee409fbd207f7704431f4512468679f7"
+    },
+    {
+     "name": "cudart-llama-b12144-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232562,
+     "digest": "sha256:a2574a9fef58a34cd70b6c015b6f92d07bd783048157eed3da727c9d29779692"
+    },
+    {
+     "name": "llama-b12144-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188085326,
+     "digest": "sha256:6d0a5fc026233ab1fed162f6eeeb62ac0dffc4ac1ab2ee66a8c4ceb17ace5143"
+    },
+    {
+     "name": "llama-b12144-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164462277,
+     "digest": "sha256:6894870755b34274dc5cc787429c0f1cc7e56ae99e127bccbd71353b6c2f0830"
+    },
+    {
+     "name": "llama-b12144-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169379241,
+     "digest": "sha256:29a74e1294466481b17e518248dd26b9f9567937ac610fb15dbddcde7c5f21c7"
+    }
+   ]
+  },
+  {
+   "tag": "b12167",
+   "published_at": "2026-11-06T09:45:44Z",
+   "assets": [
+    {
+     "name": "cudart-llama-b12167-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 594371408,
+     "digest": "sha256:f6e956c305e9c2d963e3d26eb975af168acf2832fbf7696cf3ecaa0e183e243d"
+    },
+    {
+     "name": "cudart-llama-b12167-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 552522172,
+     "digest": "sha256:b99abb627f87050a83a3fc6015bc8d4af205a29f4e7b88959d42f16a0eaa2a3f"
+    },
+    {
+     "name": "cudart-llama-b12167-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 440232383,
+     "digest": "sha256:db0c22114db5751a12ff1c970ceed6e805fb0dbde12f57ca7ddc28414079b0f5"
+    },
+    {
+     "name": "llama-b12167-bin-ubuntu-cuda-12.8-x64.tar.gz",
+     "size": 188169294,
+     "digest": "sha256:d4283bf27a69919d196b67c7c147844d53820baab2bf5e8fef5b2aabe1a74c1f"
+    },
+    {
+     "name": "llama-b12167-bin-ubuntu-cuda-13.4-arm64.tar.gz",
+     "size": 164518837,
+     "digest": "sha256:9ed9e289bfff03b0177399075dc701e68ac7710b12a3354b632ff224f7219dbd"
+    },
+    {
+     "name": "llama-b12167-bin-ubuntu-cuda-13.4-x64.tar.gz",
+     "size": 169468279,
+     "digest": "sha256:adf9d677741afd3bcf1f8debea51926b0341cb94c2758afa727cb3a38f0b2ac4"
+    }
+   ]
+  }
+ ]
+}

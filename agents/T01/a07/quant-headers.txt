@@ -1,0 +1,21 @@
+per-quant GGUF metadata (all quants of each model):
+  gemma-4-e4b    UD-IQ2_M   arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    UD-IQ3_XXS arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    UD-Q3_K_XL arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    IQ4_XS     arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    Q4_K_M     arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    UD-Q4_K_XL arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    Q6_K       arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    Q8_0       arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e4b    QAT-Q4_0   arch=gemma4 blocks=42 kvh=2 klen=512 klenswa=256 ctx=131072 win=512 shared=18 global_layers=7/42 tmpl=yes
+  gemma-4-e2b    UD-IQ2_M   arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    UD-IQ3_XXS arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    UD-Q3_K_XL arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    IQ4_XS     arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    Q4_K_M     arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    UD-Q4_K_XL arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    Q6_K       arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    Q8_0       arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  gemma-4-e2b    QAT-Q4_0   arch=gemma4 blocks=35 kvh=1 klen=512 klenswa=256 ctx=131072 win=512 shared=20 global_layers=7/35 tmpl=yes
+  draft gemma-4-e4b: {'gemma4-assistant.block_count': '4', 'gemma4-assistant.nextn_predict_layers': '4', 'general.architecture': 'gemma4-assistant', 'general.file_type': '7', 'general.license': 'apache-2.0', 'general.license.link': 'https://ai.google.dev/gemma/docs/gemma_4_license', 'general.name': 'E4B', 'general.quantization_version': '2', 'general.sampling.temp': '1.0', 'general.sampling.top_k': '64', 'general.sampling.top_p': '0.949999988079071', 'general.size_label': '78M', 'general.tags': "['any-to-any']", 'general.type': 'model'}
+  draft gemma-4-e2b: {'gemma4-assistant.block_count': '4', 'gemma4-assistant.nextn_predict_layers': '4', 'general.architecture': 'gemma4-assistant', 'general.file_type': '7', 'general.license': 'apache-2.0', 'general.license.link': 'https://ai.google.dev/gemma/docs/gemma_4_license', 'general.name': 'E2B', 'general.quantization_version': '2', 'general.sampling.temp': '1.0', 'general.sampling.top_k': '64', 'general.sampling.top_p': '0.949999988079071', 'general.size_label': '77M', 'general.tags': "['any-to-any']", 'general.type': 'model'}

@@ -1,0 +1,2 @@
+# Golden launchers are compared byte for byte (the .cmd files end lines in CRLF).
+* -text

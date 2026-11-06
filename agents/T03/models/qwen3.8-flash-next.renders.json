@@ -1,0 +1,356 @@
+{
+ "id": "qwen3.8-flash-next",
+ "template_source": "tokenizer.chat_template",
+ "cases": {
+  "plain": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, what is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "system_user": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\nYou are a terse assistant.<|im_end|>\n<|im_start|>user\nWhat is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "tool_call": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name.\", \"type\": \"string\"}, \"unit\": {\"enum\": [\"celsius\", \"fahrenheit\"], \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT>\n\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\nWhat is the weather in Oslo?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nOslo\n</parameter>\n<parameter=unit>\ncelsius\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 4, \"sky\": \"cloudy\"}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "parallel_tools": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name.\", \"type\": \"string\"}, \"unit\": {\"enum\": [\"celsius\", \"fahrenheit\"], \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWeather in Oslo and Lima?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nOslo\n</parameter>\n<parameter=unit>\ncelsius\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nLima\n</parameter>\n<parameter=unit>\nfahrenheit\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 4}\n</tool_response>\n<tool_response>\n{\"temp_f\": 68}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_on": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nWhat is the weather in Oslo?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": true,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_off": {
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Oslo?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null,
+   "context": {
+    "enable_thinking": false,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_off_gen_prompt_off": {
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Oslo?<|im_end|>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": false,
+    "reasoning_effort": null,
+    "add_generation_prompt": false
+   }
+  },
+  "effort_none": {
+   "ok": false,
+   "output": null,
+   "error": "Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": "none",
+    "add_generation_prompt": true
+   }
+  },
+  "effort_low": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to low. Keep your thinking brief and focused, moving directly to the conclusion without unnecessary elaboration.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": "low",
+    "add_generation_prompt": true
+   }
+  },
+  "effort_medium": {
+   "ok": true,
+   "output": "<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": "medium",
+    "add_generation_prompt": true
+   }
+  },
+  "effort_high": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": "high",
+    "add_generation_prompt": true
+   }
+  },
+  "effort_xhigh": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": "xhigh",
+    "add_generation_prompt": true
+   }
+  },
+  "effort_max": {
+   "ok": false,
+   "output": null,
+   "error": "Unexpected reasoning effort max. Supported types are xhigh (default), medium, and low.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": "max",
+    "add_generation_prompt": true
+   }
+  },
+  "reasoning_effort_dotted_none": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_effort_none": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "reasoning_effort_dotted_low": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_effort_low": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "reasoning_effort_dotted_medium": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_effort_medium": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "reasoning_effort_dotted_high": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_effort_high": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "reasoning_effort_dotted_xhigh": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_effort_xhigh": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "reasoning_effort_dotted_max": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "thinking_effort_max": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nExplain why the sky is blue.<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "developer_role": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\nYou are a terse assistant.<|im_end|>\n<|im_start|>user\nWhat is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "developer_role_late": {
+   "ok": false,
+   "output": null,
+   "error": "System message must be at the beginning.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "system_role_late": {
+   "ok": false,
+   "output": null,
+   "error": "System message must be at the beginning.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "system_and_developer": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\nYou are a terse assistant.\nAnswer in one word.<|im_end|>\n<|im_start|>user\nWhat is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "tool_call_string_args": {
+   "ok": false,
+   "output": null,
+   "error": "Tool call arguments for function \"get_weather\" were passed as a JSON string. Parse them into an object before calling apply_chat_template.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "tool_call_no_name": {
+   "ok": false,
+   "output": null,
+   "error": "Tool call is missing a function name.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "no_messages": {
+   "ok": false,
+   "output": null,
+   "error": "No messages provided.",
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": true
+   }
+  },
+  "effort_high_thinking_off": {
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null,
+   "context": {
+    "enable_thinking": false,
+    "reasoning_effort": "high",
+    "add_generation_prompt": true
+   }
+  },
+  "effort_max_thinking_off": {
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is 2+2?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null,
+   "context": {
+    "enable_thinking": false,
+    "reasoning_effort": "max",
+    "add_generation_prompt": true
+   }
+  },
+  "plain_gen_prompt_off": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nWhat is 2+2?<|im_end|>\n",
+   "error": null,
+   "context": {
+    "enable_thinking": null,
+    "reasoning_effort": null,
+    "add_generation_prompt": false
+   }
+  }
+ }
+}

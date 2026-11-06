@@ -1,0 +1,281 @@
+{
+ "id": "qwen3.5-9b",
+ "repo": "unsloth/Qwen3.5-9B-GGUF",
+ "file": "Qwen3.5-9B-UD-IQ2_XXS.gguf",
+ "template_source": "tokenizer.chat_template",
+ "jinja2": "3.1.6",
+ "conventions": "llama.cpp b11960 scripts/jinja/jinja-tester.py: ImmutableSandboxedEnvironment(trim_blocks, lstrip_blocks, loopcontrols), raise_exception raises RuntimeError, tojson = json.dumps(ensure_ascii=False)",
+ "cases": [
+  {
+   "case": "plain",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "system_user",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true
+   },
+   "ok": true,
+   "output": "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\nWhat is 2 + 2?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "tool_call",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get the current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\", \"description\": \"City name.\"}}, \"required\": [\"city\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "parallel_tools",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get the current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\", \"description\": \"City name.\"}}, \"required\": [\"city\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris and in Rome?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nRome\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response>\n<tool_response>\n{\"temp_c\": 25}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "thinking_on",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n"
+  },
+  {
+   "case": "thinking_off",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "enable_thinking": false
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "thinking_on_alt_var",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "thinking": true
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "thinking_off_alt_var",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "thinking": false
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "no_generation_prompt",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": false
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n"
+  },
+  {
+   "case": "developer_role",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true
+   },
+   "ok": false,
+   "error_type": "RuntimeError",
+   "error": "Unexpected message role."
+  },
+  {
+   "case": "system_not_first",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true
+   },
+   "ok": false,
+   "error_type": "RuntimeError",
+   "error": "System message must be at the beginning."
+  },
+  {
+   "case": "empty_messages",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true
+   },
+   "ok": false,
+   "error_type": "RuntimeError",
+   "error": "No messages provided."
+  },
+  {
+   "case": "tool_call_string_args",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name."
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "ok": true,
+   "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get the current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\", \"description\": \"City name.\"}}, \"required\": [\"city\"]}}}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n{\"temp_c\": 21}\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_none",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning_effort": "none"
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_low",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning_effort": "low"
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_medium",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning_effort": "medium"
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_high",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning_effort": "high"
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_xhigh",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning_effort": "xhigh"
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_max",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning_effort": "max"
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_high_reasoning_nested",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "reasoning": {
+     "effort": "high"
+    }
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  {
+   "case": "effort_high_thinking_nested",
+   "template": "tokenizer.chat_template",
+   "context": {
+    "add_generation_prompt": true,
+    "thinking": {
+     "effort": "high"
+    }
+   },
+   "ok": true,
+   "output": "<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  }
+ ]
+}

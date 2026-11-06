@@ -1,0 +1,5 @@
+# nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version
+# --format=csv,noheader,nounits. Synthetic: a single accelerator with 1 TiB of
+# memory (memory figures are MiB, so 1048576 MiB is exactly 1 TiB). It checks
+# that the MiB-to-bytes shift stays in uint64 and does not wrap.
+NVIDIA Future 1TB Accelerator, 1048576, 1048576, 590.10.01

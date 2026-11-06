@@ -1,0 +1,117 @@
+####################################################################################################
+MODEL ternary-bonsai-2-4b catalog: {"license": "Apache-2.0", "params_b": 4.66, "active_params_b": 4.66, "moe": false, "layers": 32, "kv_heads": 4, "head_dim": 256, "kv_layers": 8, "ctx_max": 262144, "tool_calling": true, "vision": true, "native_1bit": true}
+------------------------------------------------------------------------------------------
+QUANT Q2_0 1212103520 arch qwen35 tensor types [0, 42]
+  attention.head_count: 16
+  attention.head_count_kv: 4
+  attention.key_length: 256
+  attention.layer_norm_rms_epsilon: 9.999999974752427e-07
+  attention.value_length: 256
+  block_count: 32
+  context_length: 262144
+  embedding_length: 2560
+  feed_forward_length: 9216
+  full_attention_interval: 4
+  rope.dimension_count: 64
+  rope.dimension_sections: [11, 11, 10, 0]
+  rope.freq_base: 10000000.0
+  ssm.conv_kernel: 4
+  ssm.group_count: 16
+  ssm.inner_size: 4096
+  ssm.state_size: 128
+  ssm.time_step_rank: 32
+------------------------------------------------------------------------------------------
+DRAFT draft-dflash 1575278208 arch dflash tensor types [0, 30]
+  attention.head_count: 32
+  attention.head_count_kv: 8
+  attention.key_length: 128
+  attention.layer_norm_rms_epsilon: 9.999999974752427e-07
+  attention.sliding_window: 4096
+  attention.sliding_window_pattern: [True, True, True, True, True, False]
+  attention.value_length: 128
+  block_count: 6
+  block_size: 16
+  context_length: 262144
+  conv_group_size: 16
+  conv_kernel_size: 2
+  embedding_length: 2560
+  feed_forward_length: 9216
+  rope.dimension_sections: [64, 0, 0, 0]
+  rope.freq_base: 10000000.0
+  selector_rank: 256
+  selector_top_k: 16
+  target_layers: [2, 6, 10, 14, 18, 22, 26, 30]
+####################################################################################################
+MODEL gemma-4-31b catalog: {"license": "Apache-2.0", "params_b": 31.27, "active_params_b": 31.27, "moe": false, "layers": 60, "kv_heads": 4, "head_dim": 512, "kv_layers": 10, "ctx_max": 262144, "tool_calling": true, "vision": true, "swa_layers": 50, "swa_kv_heads": 16, "swa_head_dim": 256, "swa_window": 1024}
+------------------------------------------------------------------------------------------
+QUANT UD-IQ2_XXS 8534295488 arch gemma4 tensor types [0, 10, 11, 16, 18, 21, 22]
+  attention.head_count: 32
+  attention.head_count_kv: [16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4, 16, 16, 16, 16, 16, 4]
+  attention.key_length: 512
+  attention.key_length_swa: 256
+  attention.layer_norm_rms_epsilon: 9.999999974752427e-07
+  attention.shared_kv_layers: 0
+  attention.sliding_window: 1024
+  attention.sliding_window_pattern: [True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False, True, True, True, True, True, False, True
+  attention.value_length: 512
+  attention.value_length_swa: 256
+  block_count: 60
+  context_length: 262144
+  embedding_length: 5376
+  embedding_length_per_layer_input: 0
+  feed_forward_length: 21504
+  final_logit_softcapping: 30.0
+  rope.dimension_count: 512
+  rope.dimension_count_swa: 256
+  rope.freq_base: 1000000.0
+  rope.freq_base_swa: 10000.0
+------------------------------------------------------------------------------------------
+QUANT UD-IQ3_XXS 11837782976 arch gemma4 tensor types [0, 11, 17, 18, 21, 22, 23]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT UD-Q3_K_XL 15380222912 arch gemma4 tensor types [0, 11, 12, 13, 14, 18, 21]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT IQ4_XS 16372460480 arch gemma4 tensor types [0, 12, 23]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT QAT-Q4_0 17651001568 arch gemma4 tensor types [0, 2, 14]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT QAT-UD-Q4_K_XL 17287670048 arch gemma4 tensor types [0, 2]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT UD-Q4_K_XL 18822970304 arch gemma4 tensor types [0, 12, 13, 14]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT UD-Q5_K_XL 21890429888 arch gemma4 tensor types [0, 8, 12, 13, 14]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT Q6_K 25201486784 arch gemma4 tensor types [0, 14]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+QUANT Q8_0 32635677632 arch gemma4 tensor types [0, 8]
+  (metadata identical to a previous quant)
+------------------------------------------------------------------------------------------
+DRAFT draft-mtp 514687104 arch gemma4-assistant tensor types [0, 8]
+  attention.head_count: 32
+  attention.head_count_kv: [16, 16, 16, 4]
+  attention.key_length: 512
+  attention.key_length_swa: 256
+  attention.layer_norm_rms_epsilon: 9.999999974752427e-07
+  attention.shared_kv_layers: 4
+  attention.sliding_window: 1024
+  attention.sliding_window_pattern: [True, True, True, False]
+  attention.value_length: 512
+  attention.value_length_swa: 256
+  block_count: 4
+  context_length: 262144
+  embedding_length: 1024
+  embedding_length_out: 5376
+  embedding_length_per_layer_input: 0
+  feed_forward_length: 8192
+  nextn_predict_layers: 4
+  rope.dimension_count: 512
+  rope.dimension_count_swa: 256
+  rope.freq_base: 1000000.0
+  rope.freq_base_swa: 10000.0

@@ -1,0 +1,5 @@
+== muse-glimmer-30b Q8_0: 731 tensors, total params 27,854,794,240 = 27.855B
+   weight                     27.855B
+== mistral-small-4-119b UD-Q4_K_XL: 579 tensors, total params 118,972,826,624 = 118.973B
+   weight                    118.973B
+   routed-expert params: 115.964B

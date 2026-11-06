@@ -1,0 +1,26 @@
+{
+  "id": "granite-4.2-8b",
+  "repo": "ibm-granite/granite-4.2-8b",
+  "gguf": "ibm-granite/granite-4.2-8b-GGUF granite-4.2-8b-Q3_K_M.gguf",
+  "template_source": "tokenizer.chat_template",
+  "tool_call_format": "<tools> JSON block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+  "tools_supported": true,
+  "thinking_toggle": "enable_thinking",
+  "effort_levels_accepted": [
+    "low"
+  ],
+  "effort_levels_rejected": [],
+  "effort_levels_ignored": [
+    "none",
+    "minimal",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+  ],
+  "effort_aliases": {},
+  "system_role": true,
+  "developer_role": true,
+  "known_template_errors": [],
+  "notes": "Only reasoning_effort == \"low\" changes the render: it appends \"{reasoning effort: low}\" to the last user turn. Every other value (including none, minimal, medium, high, xhigh, max) renders byte-identical to no reasoning_effort at all, so b11960 reports reasoning_effort_levels [\"low\"] and no effort value produces an error. b11960 has no \"Unexpected reasoning effort\" error: it passes any string to the template and the template silently ignores it. b11960 maps reasoning_effort \"none\" to enable_thinking=false and drops the kwarg before rendering, so none turns thinking off through the toggle, not through effort. enable_thinking=false emits \"<|im_start|>assistant\\n<think></think>\"; assistant history turns without think tags get \"<think></think>\" prepended. The template always emits a system turn, even with no system message (system_message is set to \"\" and then treated as defined), so a plain user chat starts with an empty <|im_start|>system turn. A developer message renders as <|im_start|>developer, but b11960 rewrites developer to system before rendering (common/chat.cpp:1517), so the server never reaches that branch. Tool arguments sent as a JSON string instead of an object raise \"Can only get item pairs from a mapping.\" from the arguments|items loop; b11960 converts object arguments to a mapping first when the caps allow it, so this is only reachable with a hand-rolled prompt. Rendering also leaks whitespace into the prompt: a leading newline before the first system turn, and \"\\n        \\n            \" before an assistant tool-call turn. The 30B template is byte-identical to this one."
+}

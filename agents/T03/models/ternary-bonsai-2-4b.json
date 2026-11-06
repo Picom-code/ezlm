@@ -1,0 +1,17 @@
+{
+  "id": "ternary-bonsai-2-4b",
+  "repo": "prism-ml/Ternary-Bonsai-2-4B-gguf",
+  "template_source": "tokenizer.chat_template",
+  "tool_call_format": "xml: <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; tool definitions are a JSON dump inside a <tools> block in the system turn",
+  "tools_supported": true,
+  "thinking_toggle": "enable_thinking",
+  "effort_levels_accepted": [],
+  "effort_levels_rejected": [],
+  "system_role": true,
+  "developer_role": false,
+  "known_template_errors": [
+    "TypeError: Can only get item pairs from a mapping. when a tool call's arguments arrive as a JSON string (llama.cpp passes a JSON string unless chat_template_caps.supports_object_arguments is set; this template sets it by piping each argument value through tojson, so the b11960 server parses arguments into an object first)",
+    "RuntimeError: Unexpected message role. for a developer role message (llama.cpp maps developer to system before rendering when the template has no <|channel|>, so the HTTP API still works)"
+  ],
+  "notes": "Qwen3.5-style ChatML. All six reasoning_effort values, plus an unknown value, render byte-identically to thinking_on: the template never reads reasoning_effort, so effort is silently ignored (caps.supports_reasoning_effort is false). Thinking is toggled only by enable_thinking: true emits '<|im_start|>assistant\\n thinking\\n', false emits the empty ' thinking\\n\\n</think>\\n\\n' block. The toggle only appears when add_generation_prompt is true. Developer role is not supported by the template itself. Tool calls need object arguments, so any caller that applies the template without llama.cpp's caps pass gets a TypeError."
+}

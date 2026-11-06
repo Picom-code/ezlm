@@ -1,0 +1,13 @@
+granite-4.2-30b  Q2_K    file_type=10 (Q2_K) ok
+granite-4.2-30b  Q3_K_M  file_type=12 (Q3_K_M) ok
+granite-4.2-30b  Q4_0    file_type=2 (Q4_0) ok
+granite-4.2-30b  Q4_K_M  file_type=15 (Q4_K_M) ok
+granite-4.2-30b  Q5_0    file_type=8 (Q5_0) ok
+granite-4.2-30b  Q6_K    file_type=18 (Q6_K) ok
+granite-4.2-30b  Q8_0    file_type=7 (Q8_0) ok
+granite-4.2-8b   Q3_K_M  file_type=12 (Q3_K_M) ok
+granite-4.2-8b   Q4_0    file_type=2 (Q4_0) ok
+granite-4.2-8b   Q4_K_M  file_type=15 (Q4_K_M) ok
+granite-4.2-8b   Q5_0    file_type=8 (Q5_0) ok
+granite-4.2-8b   Q6_K    file_type=18 (Q6_K) ok
+granite-4.2-8b   Q8_0    file_type=7 (Q8_0) ok

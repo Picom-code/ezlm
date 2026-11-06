@@ -1,0 +1,24 @@
+# Written by an earlier EZLM, on another port.
+- id: llm-pi-ai
+  config:
+    providers:
+      ezlm:
+        displayName: EZLM (local)
+        apiKeyEnv: EZLM_API_KEY
+        api: openai-completions
+        baseURL: http://127.0.0.1:8080/v1
+        models:
+          - id: qwen3.5-4b
+            contextWindow: 32768
+      spark:
+        apiKeyEnv: SPARK_API_KEY # stays put
+        api: openai-completions
+        baseURL: !!js process.env.SPARK_URL ?? 'https://spark.tailnet.example/v1'
+        models:
+        - id: deepseek-v4.1-flash
+          reasoningEfforts: {off: null, high: high}
+- id: agent-default-model
+  config:
+    provider: ezlm
+    model: qwen3.5-4b
+    reasoningEffort: high

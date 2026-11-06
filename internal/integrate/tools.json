@@ -1,0 +1,42 @@
+{
+  "_comment": "Pinned versions EZLM installs. Digests: OpenCode from the GitHub release asset digest field (v2.2.5), Node from nodejs.org/dist/v24.22.2/SHASUMS256.txt, dsh from the npm registry dist.integrity. A tools section in the remote catalog overrides these by tool name.",
+  "tools": [
+    {
+      "tool": "opencode",
+      "version": "2.2.5",
+      "assets": {
+        "windows-arm64": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-windows-arm64.zip", "sha256": "4e426a39d68516b036cd28b574c5ce5f3b50846ab460521f83f2458fe7f242d8", "size": 115405131},
+        "windows-x64": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-windows-x64.zip", "sha256": "2f3bfd6b3527c60c2a882557b20ddc9ba6bdff4b5a8fe61c853da8fcfb3076e8", "size": 121962397},
+        "windows-x64-baseline": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-windows-x64-baseline.zip", "sha256": "3acca208ad79add59aed13d07b7e08ddf24e0adbbb7f44a9131408d7b3ca67cd", "size": 121962395},
+        "darwin-arm64": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-darwin-arm64.zip", "sha256": "25ba9908979fa7d764792c82589b4b5768ab1511154e0317d98aa77d216ce767", "size": 105851917},
+        "darwin-x64": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-darwin-x64.zip", "sha256": "4d4419022e6ffbd48afc97c5101bdf001d38b0499f516169b9a80a87a340fd56", "size": 111093657},
+        "darwin-x64-baseline": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-darwin-x64-baseline.zip", "sha256": "b83ab73b3eb7b08f580f597eba8a7bcd886d2efa2ebf90405ad74ef54da02f71", "size": 111093665},
+        "linux-arm64": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-linux-arm64.tar.gz", "sha256": "5a528f42caf576c6cdece6a191eb273d3db54effa5518e0402684d8f8026aeb6", "size": 117861733},
+        "linux-arm64-musl": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-linux-arm64-musl.tar.gz", "sha256": "bbf927e3f7a92040f25fd78436c251f41deb25cefac1c906e79c01aa572bf73b", "size": 116087436},
+        "linux-x64": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-linux-x64.tar.gz", "sha256": "09f44302c10fd036912f59c81fd1aef5df45dd06f649197f9dfc9bbe2a79614e", "size": 119196162},
+        "linux-x64-baseline": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-linux-x64-baseline.tar.gz", "sha256": "09f44302c10fd036912f59c81fd1aef5df45dd06f649197f9dfc9bbe2a79614e", "size": 119196162},
+        "linux-x64-musl": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-linux-x64-musl.tar.gz", "sha256": "889389e99ffa39fa41d512b2c9c15316522d97398fb912503ef667f80e22a827", "size": 117818616},
+        "linux-x64-baseline-musl": {"url": "https://github.com/anomalyco/opencode/releases/download/v2.2.5/opencode-linux-x64-baseline-musl.tar.gz", "sha256": "889389e99ffa39fa41d512b2c9c15316522d97398fb912503ef667f80e22a827", "size": 117818616}
+      }
+    },
+    {
+      "tool": "node",
+      "version": "24.22.2",
+      "assets": {
+        "windows-x64": {"url": "https://nodejs.org/dist/v24.22.2/node-v24.22.2-win-x64.zip", "sha256": "ca1bff5d8ead13c9f2ea404a176db46bd430704d5b5113734049fa365e7799e2", "size": 37754834},
+        "windows-arm64": {"url": "https://nodejs.org/dist/v24.22.2/node-v24.22.2-win-arm64.zip", "sha256": "f47968c213105077f64c6510f007632c0ca2574802a0b5067c327c49abe1c468", "size": 33789289},
+        "darwin-arm64": {"url": "https://nodejs.org/dist/v24.22.2/node-v24.22.2-darwin-arm64.tar.gz", "sha256": "aa9549349e47dffaa42dcf95d6e06ade8c4bdafc980979883b88767670df385a", "size": 53068959},
+        "darwin-x64": {"url": "https://nodejs.org/dist/v24.22.2/node-v24.22.2-darwin-x64.tar.gz", "sha256": "d5e336d588c45be0c37dbd52cc29895593009ca4997a77a1fd02815131ed0e52", "size": 54383415},
+        "linux-x64": {"url": "https://nodejs.org/dist/v24.22.2/node-v24.22.2-linux-x64.tar.gz", "sha256": "361718c444e49af2ca5a110c83ba6a8901143f23ab285ebbef0341f391f482a9", "size": 58299872},
+        "linux-arm64": {"url": "https://nodejs.org/dist/v24.22.2/node-v24.22.2-linux-arm64.tar.gz", "sha256": "95c264150aceb7f3437a29fd6984924f5f8d1511ea3cbd6c508b83f6c555dae2", "size": 58030966}
+      }
+    },
+    {
+      "tool": "dsh",
+      "version": "0.2.1-rc.5",
+      "package": "@deepseek-ai/dsh",
+      "integrity": "sha512-WkyJZv4zl9sCAxSzRctGm58m0rilGqwR6pniBiLOz5CPDfHfDuAUicg0AAazXI7oj/Cph6/cjNTncA/rpLTXpw==",
+      "tested": ["0.2.1-rc.5"]
+    }
+  ]
+}

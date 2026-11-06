@@ -1,0 +1,5 @@
+# A 128 GB Apple Silicon Mac with the default wired limit.
+# sysctl
+hw.memsize: 137438953472
+machdep.cpu.brand_string: Apple M5 Max
+iogpu.wired_limit_mb: 0

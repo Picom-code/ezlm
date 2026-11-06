@@ -1,0 +1,110 @@
+{
+ "id": "gpt-oss-120b",
+ "renderer": "python jinja2 3.1.6 with llama.cpp conventions (raise_exception, strftime_now, minja-style plain-str tojson); assistant_channel_tags_b11960 applies chat.cpp's patch",
+ "cases": {
+  "plain": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hello.<|end|><|start|>assistant"
+  },
+  "system_user": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions\n\nYou are a terse assistant.\n\n<|end|><|start|>user<|message|>Hello.<|end|><|start|>assistant"
+  },
+  "tool_call": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.\nCalls to these tools must go to the commentary channel: 'functions'.<|end|><|start|>developer<|message|># Tools\n\n## functions\n\nnamespace functions {\n\n// Get the current weather for a city.\ntype get_weather = (_: {\n// City name.\ncity: string,\nunit?: \"c\" | \"f\",\n}) => any;\n\n} // namespace functions<|end|><|start|>user<|message|>What is the weather in Paris?<|end|><|start|>assistant to=functions.get_weather<|channel|>commentary json<|message|>{\"city\": \"Paris\", \"unit\": \"c\"}<|call|><|start|>functions.get_weather to=assistant<|channel|>commentary<|message|>\"18 C, clear\"<|end|><|start|>assistant"
+  },
+  "parallel_tools": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.\nCalls to these tools must go to the commentary channel: 'functions'.<|end|><|start|>developer<|message|># Tools\n\n## functions\n\nnamespace functions {\n\n// Get the current weather for a city.\ntype get_weather = (_: {\n// City name.\ncity: string,\nunit?: \"c\" | \"f\",\n}) => any;\n\n// Get the current time for a city.\ntype get_time = (_: {\ncity: string,\n}) => any;\n\n} // namespace functions<|end|><|start|>user<|message|>Weather and time in Paris?<|end|><|start|>assistant to=functions.get_weather<|channel|>commentary json<|message|>{\"city\": \"Paris\", \"unit\": \"c\"}<|call|><|start|>functions.get_weather to=assistant<|channel|>commentary<|message|>\"18 C, clear\"<|end|><|start|>functions.get_weather to=assistant<|channel|>commentary<|message|>\"12:00\"<|end|><|start|>assistant"
+  },
+  "thinking_on": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "thinking_off": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "thinking_kwarg_on": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "thinking_kwarg_off": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_none": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: none\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_minimal": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: minimal\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_low": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: low\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_medium": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_high": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: high\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_xhigh": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: xhigh\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_max": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: max\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_nested_low": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_thinking_low": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_nested_high": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "effort_thinking_high": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant"
+  },
+  "developer_role": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions\n\nAnswer in one sentence.\n\n<|end|><|start|>user<|message|>Hello.<|end|><|start|>assistant"
+  },
+  "developer_role_second": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>developer<|message|># Instructions\n\nYou are helpful.\n\n<|end|><|start|>user<|message|>Hello.<|end|><|start|>assistant"
+  },
+  "no_generation_prompt": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hello.<|end|>"
+  },
+  "tool_args_string": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.\nCalls to these tools must go to the commentary channel: 'functions'.<|end|><|start|>developer<|message|># Tools\n\n## functions\n\nnamespace functions {\n\n// Get the current weather for a city.\ntype get_weather = (_: {\n// City name.\ncity: string,\nunit?: \"c\" | \"f\",\n}) => any;\n\n} // namespace functions<|end|><|start|>user<|message|>What is the weather in Paris?<|end|><|start|>assistant to=functions.get_weather<|channel|>commentary json<|message|>\"{\\\"city\\\": \\\"Paris\\\"}\"<|call|><|start|>functions.get_weather to=assistant<|channel|>commentary<|message|>\"18 C, clear\"<|end|><|start|>assistant"
+  },
+  "tool_result_first": {
+   "status": "raised",
+   "error": "RaiseException: Message has tool role, but there was no previous assistant message with a tool call!"
+  },
+  "assistant_channel_tags": {
+   "status": "raised",
+   "error": "RaiseException: You have passed a message containing <|channel|> tags in the content field. Instead of doing this, you should pass analysis messages (the string between '<|message|>' and '<|end|>') in the 'thinking' field, and final messages (the string between '<|message|>' and '<|end|>') in the 'content' field."
+  },
+  "assistant_channel_tags_b11960": {
+   "status": "ok",
+   "output": "<|start|>system<|message|>You are ChatGPT, a large language model trained by OpenAI.\nKnowledge cutoff: 2024-06\nCurrent date: 2026-11-06\n\nReasoning: medium\n\n# Valid channels: analysis, commentary, final. Channel must be included for every message.<|end|><|start|>user<|message|>Hi.<|end|><|start|>assistant<|channel|>final<|message|><|channel|>final<|message|>Hello<|end|><|start|>assistant"
+  }
+ }
+}

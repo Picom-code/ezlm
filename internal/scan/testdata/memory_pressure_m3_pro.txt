@@ -1,0 +1,33 @@
+# `memory_pressure` on the author's Mac (Apple M3 Pro, 18 GB, macOS 26.3.1).
+The system has 19327352832 (1179648 pages with a page size of 16384).
+
+Stats:
+Pages free:                              214531
+Pages purgeable:                          18227
+Pages purged:                           1022334
+
+Swap I/O:
+Swapins:                                0
+Swapouts:                               0
+
+Page Q counts:
+Active:                                 301225
+Inactive:                               190004
+Speculative:                             24018
+Throttled:                                  0
+Wired down:                             120553
+Copy-on-write:                           5120
+Zero filled:                            402118
+Reactivated:                             1204
+
+Compressor Stats:
+Compressor Size:                         2048
+Compressions:                           30412
+Decompressions:                          9120
+Compressor Input:                       61204
+Decompressor Input:                     30211
+
+Swap:
+Total Swap Size:                            0
+
+System-wide memory free percentage: 66%

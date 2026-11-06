@@ -1,0 +1,40 @@
+Graphics/Displays:
+
+    Intel UHD Graphics 630:
+
+      Chipset Model: Intel UHD Graphics 630
+      Type: GPU
+      Bus: Built-In
+      VRAM (Dynamic, Max): 1536 MB
+      Vendor: Intel (0x8086)
+      Device ID: 0x3e9b
+      Revision ID: 0x0000
+      Metal Support: Metal 3
+
+    Radeon Pro 5500M:
+
+      Chipset Model: Radeon Pro 5500M
+      Type: GPU
+      Bus: PCIe
+      PCIe Lane Width: x8
+      VRAM (Total): 4 GB
+      Vendor: AMD (0x1002)
+      Device ID: 0x7340
+      Revision ID: 0x0000
+      ROM Revision: 113-D3220E-190
+      VBIOS Version: 113-D3220E-190
+      Option ROM Version: 113-D3220E-190
+      EFI Driver Version: 01.01.190
+      Metal Support: Metal 3
+
+    Radeon RX 580:
+
+      Chipset Model: Radeon RX 580
+      Type: GPU
+      Bus: PCIe
+      PCIe Lane Width: x16
+      VRAM (Total): 8 GB
+      Vendor: AMD (0x1002)
+      Device ID: 0x67df
+      Revision ID: 0x00e7
+      Metal Support: Metal 3

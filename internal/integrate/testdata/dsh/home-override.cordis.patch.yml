@@ -1,0 +1,10 @@
+# Home-level layer: outranks every profile.
+- id: llm-pi-ai
+  config:
+    providers:
+      spark:
+        apiKeyEnv: SPARK_API_KEY
+        api: openai-completions
+        baseURL: https://spark.tailnet.example/v1
+        models:
+          - id: deepseek-v4.1-flash

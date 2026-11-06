@@ -1,0 +1,14 @@
+llama.cpp b11960: 166 architectures, 44 tensor types; checking 11 files sets
+nanbeige4.3-33b                IQ2_XXS                  ok
+nanbeige4.3-33b                IQ2_XS                   ok
+ternary-bonsai-2-2b            Q2_0                     ok
+nanbeige4.3-33b                IQ2_S                    ok
+nanbeige4.3-33b                IQ3_XS                   ok
+nanbeige4.3-33b                IQ3_M                    ok
+nanbeige4.3-33b                IQ4_XS                   ok
+nanbeige4.3-33b                Q4_K_M                   ok
+nanbeige4.3-33b                Q6_K_S                   ok
+nanbeige4.3-33b                IQ3_XXS                  ok
+nanbeige4.3-33b                Q8_0                     ok
+
+0 file set(s) with errors

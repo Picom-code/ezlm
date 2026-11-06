@@ -1,0 +1,19 @@
+llama.cpp b11960: 166 architectures, 44 tensor types; checking 16 files sets
+qwen3.5-4b                     UD-IQ3_XXS               ok
+qwen3.5-4b                     UD-IQ2_XXS               ok
+qwen3.5-4b                     UD-Q3_K_XL               ok
+qwen3.5-4b                     IQ4_XS                   ok
+qwen3.5-4b                     Q4_K_M                   ok
+qwen3.5-4b                     UD-Q4_K_XL               ok
+qwen3.5-4b                     Q6_K                     ok
+qwen3.5-4b                     Q8_0                     ok
+qwen3.5-2b                     UD-IQ3_XXS               ok
+qwen3.5-2b                     UD-IQ2_XXS               ok
+qwen3.5-2b                     UD-Q3_K_XL               ok
+qwen3.5-2b                     IQ4_XS                   ok
+qwen3.5-2b                     Q4_K_M                   ok
+qwen3.5-2b                     UD-Q4_K_XL               ok
+qwen3.5-2b                     Q8_0                     ok
+qwen3.5-2b                     Q6_K                     ok
+
+0 file set(s) with errors

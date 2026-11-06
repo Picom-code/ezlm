@@ -1,0 +1,20 @@
+{
+ "id": "qwen3.6-27b",
+ "repo": "Qwen/Qwen3.6-27B",
+ "gguf": "unsloth/Qwen3.6-27B-MTP-GGUF Qwen3.6-27B-UD-IQ2_XXS.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "<tools> block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": ["none", "low", "medium", "high", "xhigh", "max"],
+ "effort_aliases": {},
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [
+  "No messages provided.",
+  "UndefinedError: 'dict object' has no attribute 'name' (tool call without a function name; raised by jinja2, not by the template)"
+ ],
+ "notes": "The template never reads reasoning_effort, reasoning_strength, reasoning.effort or thinking.effort: all six effort values render byte-identical output, so the variable is silently ignored rather than accepted. b11960 therefore reports no reasoning_effort_levels for this model and no effort value can produce the 500. Thinking is toggled only by enable_thinking, and only in the generation prompt: false emits a closed empty  thinking block. A developer message is accepted as the first message and merged with a following system/developer message, but any system or developer message later in the conversation is silently dropped (no error), unlike qwen3.8. Tool call arguments passed as a JSON string are silently dropped, producing an empty <function=NAME></function> block; there is no arguments check in this template. A tool call with no function name dies on an undefined name instead of a readable error."
+}

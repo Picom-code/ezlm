@@ -1,0 +1,18 @@
+{
+ "id": "lfm3-1.7b",
+ "repo": "LiquidAI/LFM3-1.7B-GGUF",
+ "file": "LFM3-1.7B-QAD-Q4_0.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "<tool_call>\\n<function=NAME>\\n<parameter=key>\\nvalue\\n</parameter>\\n</function>\\n</tool_call> (one block per call, blank line between parallel calls); tool definitions are JSON lines inside a <tools> block appended to the system prompt; results are <|im_start|>tool\\n<tool_response>...\\n</tool_response>",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": ["none", "low", "medium", "high", "xhigh", "max"],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [
+  "assistant tool call with arguments as a JSON string raises: Tool call arguments must be a mapping, got a JSON-encoded string: parse arguments with json.loads() before applying the chat template"
+ ],
+ "notes": "ChatML with <|im_start|>/<|im_end|>. enable_thinking defaults to true: true opens  thinking at the generation prompt, false closes an empty  thinking</think> to suppress reasoning. The template never reads reasoning_effort (or reasoning, or the thinking variable), so all six effort values render byte-identically to the plain prompt and b11960 reports supports_reasoning_effort=false. A developer message is not merged into the system prompt (only messages[0].role == system is); it renders as its own <|im_start|>developer turn, though the server rewrites developer to system before rendering. Tool arguments must be objects, not JSON strings. Contains {% generation %} blocks, which b11960's jinja parser ignores but plain jinja2 does not."
+}

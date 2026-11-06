@@ -1,0 +1,12 @@
+embedded version 8 models 32
+remote   version 8 models 32
+gemma-4-e4b: 4 field(s) differ
+    active_params_b embedded= 4.5 remote= 4.0
+    kv_layers embedded= 4 remote= 7
+    notes embedded= 'Effective 4.5B' (Per-Layer Embeddings make total 8.0B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Last 18 layers share KV caches. Phone/edge tier. remote= 'Effective 4B' (Per-Layer Embeddings make total 8.0B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Phone/edge tier.
+    swa_layers embedded= 20 remote= 35
+gemma-4-e2b: 4 field(s) differ
+    active_params_b embedded= 2.3 remote= 2.0
+    kv_layers embedded= 3 remote= 7
+    notes embedded= 'Effective 2.3B' (Per-Layer Embeddings make total 5.12B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Last 20 layers share KV caches. Phone/edge tier. remote= 'Effective 2B' (Per-Layer Embeddings make total 5.12B; PLE tables can live in CPU RAM). Audio+image input. Sliding window 512, global head_dim 512. Phone/edge tier.
+    swa_layers embedded= 12 remote= 28

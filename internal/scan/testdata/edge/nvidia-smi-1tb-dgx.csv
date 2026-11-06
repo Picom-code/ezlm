@@ -1,0 +1,13 @@
+# nvidia-smi --query-gpu=name,memory.total,memory.free,driver_version
+# --format=csv,noheader,nounits, on a DGX H200: eight 141 GB cards, 1.1 TB of
+# VRAM in one machine. One row is an NVIDIA NPU that reports [N/A] and must be
+# skipped, not counted as a card with no memory.
+NVIDIA H200, 143771, 143200, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA H200, 143771, 143100, 550.54.14
+NVIDIA NPU, [N/A], [N/A], 550.54.14

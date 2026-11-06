@@ -1,0 +1,15 @@
+llama.cpp b12144: 170 architectures, 45 tensor types; checking 12 files sets
+qwen3.8-flash-next             GSQ-RCO-IQ2_XS           ok
+qwen3.8-flash-next             GSQ-RCO-Q2_0             ok
+qwen3.8-flash-next             GSQ-RCO-IQ3_XXS          ok
+qwen3.8-flash-next             UD-IQ1_S                 ok
+qwen3.6-27b                    UD-IQ2_XXS               ok
+qwen3.8-flash-next             UD-IQ1_M                 ok
+qwen3.6-27b                    UD-IQ3_XXS               ok
+qwen3.6-27b                    UD-Q3_K_XL               ok
+qwen3.6-27b                    IQ4_XS                   ok
+qwen3.6-27b                    UD-Q4_K_XL               ok
+qwen3.6-27b                    Q6_K                     ok
+qwen3.6-27b                    Q8_0                     ok
+
+0 file set(s) with errors

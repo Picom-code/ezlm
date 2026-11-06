@@ -1,0 +1,16 @@
+{
+ "id": "gemma-4-12b",
+ "repo": "unsloth/gemma-4-12b-it-GGUF",
+ "file": "gemma-4-12b-it-UD-IQ2_M.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "<|tool_call>call:NAME{key:value,...}<tool_call|> with <|tool_response>response:NAME{value:...}<tool_response|>; strings are wrapped in <|\"|> markers, tool definitions go in a <|tool>...<tool|> block inside the first system turn",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": ["none", "low", "medium", "high", "xhigh", "max"],
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [],
+ "notes": "enable_thinking defaults to false. True adds <|think|> to the first system turn and leaves the model turn open; false (or absent) closes an empty <|channel>thought\\n<channel|> at the generation prompt. The template never reads reasoning_effort or thinking, so every effort value renders byte-identically to the plain prompt: llama.cpp's b11960 caps will report supports_reasoning_effort=false and reasoning_effort_levels=[]. A developer message in position 0 is rendered as the system turn, identical to role system. Parallel tool calls render as consecutive <|tool_call> blocks followed by consecutive <|tool_response> blocks."
+}

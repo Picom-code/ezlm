@@ -1,0 +1,53 @@
+# Your patch layer for this dsh profile, applied after every bundle layer.
+# Spark route: DeepSeek V4.1 Flash 1017 heretic on the 4 Sparks (dsgx10, 1M context).
+# Key is the SPARK_API_KEY credential ref in ~/.dsh/.credentials.yaml.
+- id: llm-pi-ai
+  config:
+    providers:
+      spark:
+        displayName: Spark (DeepSeek V4.1 Flash)
+        apiKeyEnv: SPARK_API_KEY
+        api: openai-completions
+        baseURL: https://spark.tailnet.example/v1
+        compat:
+          thinkingFormat: deepseek
+          supportsReasoningEffort: true
+        models:
+          - id: deepseek-v4.1-flash
+            name: DeepSeek V4.1 Flash (Spark)
+            contextWindow: 1048576
+            reasoningEfforts:
+              off:
+              low: low
+              medium: medium
+              high: high
+- id: agent-default-model
+  config:
+    provider: spark
+    model: deepseek-v4.1-flash
+    reasoningEffort: high
+- id: ui-chat
+  name: "@deepseek-ai/dsh-client-ui-chat"
+  config:
+    transcriptView: standard
+    performanceUsage: detailed
+- id: ui-settings
+  name: "@deepseek-ai/dsh-client-ui-settings"
+  config:
+    enabled: true
+- id: ui-settings-account
+  name: "@deepseek-ai/dsh-client-ui-settings-account"
+  config:
+    version: 1
+    step: done
+    usage: detailed
+    developerTools: true
+    purpose: null
+    process: standard
+    completion: api-key
+- id: ui-theme
+  name: "@deepseek-ai/dsh-client-ui-theme"
+  config:
+    fontSize: 16
+    codeFontSize: 13
+    terminalFontSize: 16

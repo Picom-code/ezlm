@@ -1,0 +1,14 @@
+llama.cpp b11960: 166 architectures, 44 tensor types; checking 11 files sets
+bonsai-8b-1bit                 Q1_0                     ok
+gemma-4-26b-a4b                UD-IQ2_XXS               ok
+gemma-4-26b-a4b                UD-IQ3_XXS               ok
+gemma-4-26b-a4b                UD-Q3_K_XL               ok
+gemma-4-26b-a4b                UD-IQ4_XS                ok
+gemma-4-26b-a4b                MXFP4_MOE                ok
+gemma-4-26b-a4b                UD-Q4_K_XL               ok
+gemma-4-26b-a4b                UD-Q6_K                  ok
+gemma-4-26b-a4b                Q8_0                     ok
+gemma-4-26b-a4b                QAT-Q4_0                 ok
+gemma-4-26b-a4b                QAT-UD-Q4_K_XL           ok
+
+0 file set(s) with errors

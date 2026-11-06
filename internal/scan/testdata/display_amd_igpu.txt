@@ -1,0 +1,5 @@
+# Source: https://github.com/odysseus-dev/odysseus/issues/6612 (Ryzen 7600 built-in graphics)
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001
+DriverDesc REG_SZ "AMD Radeon(TM) Graphics"
+ProviderName REG_SZ "Advanced Micro Devices, Inc."
+HardwareInformation.qwMemorySize REG_QWORD 0x20000000

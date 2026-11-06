@@ -1,0 +1,7 @@
+# A 1 TB RAM workstation (Threadripper PRO) with two 96 GB Blackwell cards
+# and a 48 GB Radeon PRO. The sizes come from 64-bit registry values and must
+# survive as uint64 without clamping.
+NVIDIA RTX PRO 6000 Blackwell | NVIDIA | 102005473280
+NVIDIA RTX PRO 6000 Blackwell | NVIDIA | 102005473280
+AMD Radeon PRO W7900 | Advanced Micro Devices, Inc. | 51539607552
+Microsoft Basic Display Adapter | Microsoft | 0

@@ -1,0 +1,8 @@
+wt.exe "-w" "new" "new-tab" "--title" "OpenCode (EZLM)" "-d" "C:\\Users\\Jörg\\.ezlm\\launch" "cmd.exe" "/k" ".\\opencode.cmd"
+start  cmd.exe /d /c start "OpenCode (EZLM)" /D "C:\Users\Jörg\.ezlm\launch" cmd.exe /k .\opencode.cmd
+wt.exe "-w" "new" "new-tab" "--title" "OpenCode (EZLM)" "-d" "C:\\Users\\Sam & Co (2)\\.ezlm\\launch" "cmd.exe" "/k" ".\\hermes.cmd"
+start  cmd.exe /d /c start "OpenCode (EZLM)" /D "C:\Users\Sam & Co (2)\.ezlm\launch" cmd.exe /k .\hermes.cmd
+wt.exe "-w" "new" "new-tab" "--title" "A\\; B (EZLM)" "-d" "C:\\x" "cmd.exe" "/k" ".\\a.cmd"
+start  cmd.exe /d /c start "A 'B' (EZLM)" /D "C:\x" cmd.exe /k .\a.cmd
+mac    "open" "-a" "Terminal" "/Users/o'brien/.ezlm/launch/opencode.command"
+linux  "/usr/bin/konsole" "-e" "/home/sam/.ezlm/launch/opencode.sh"

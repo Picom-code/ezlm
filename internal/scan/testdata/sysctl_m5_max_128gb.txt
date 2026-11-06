@@ -1,0 +1,11 @@
+# Apple M5 Max: 16-core CPU, 12 performance + 4 efficiency, 128 GB.
+# Synthetic: the shape the scan's bandwidth table expects for a top-tier M5.
+hw.memsize: 137438953472
+hw.physicalcpu: 16
+hw.logicalcpu: 16
+hw.perflevel0.physicalcpu: 12
+hw.perflevel1.physicalcpu: 4
+hw.optional.arm64: 1
+machdep.cpu.brand_string: Apple M5 Max
+sysctl.proc_translated: 0
+iogpu.wired_limit_mb: 0

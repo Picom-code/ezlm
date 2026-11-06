@@ -1,0 +1,6 @@
+# Source: https://github.com/oshi/oshi/pull/3086 (Arc A770 16 GB; MemorySize holds 0x7FFFF000)
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000
+# The 4-byte value saturates near 2 GiB, so the card reads as 2 GB. qwMemorySize is absent here.
+DriverDesc REG_SZ "Intel(R) Arc(TM) A770 Graphics"
+ProviderName REG_SZ "Intel Corporation"
+HardwareInformation.MemorySize REG_BINARY 00 f0 ff 7f

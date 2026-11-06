@@ -1,0 +1,17 @@
+{
+ "id": "gemma-4-26b-a4b",
+ "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+ "file": "gemma-4-26B-A4B-it-UD-IQ2_XXS.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "gemma DSL: <|tool_call>call:name{key:value,...}<tool_call|>; tool declarations in the system turn as <|tool>declaration:name{description:<|\"|>...<|\"|>,parameters:{...}}<tool|>; tool results as <|tool_response>response:name{...}<tool_response|>",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": ["none", "minimal", "low", "medium", "high", "xhigh", "max"],
+ "template_reads_reasoning_effort": false,
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [],
+ "notes": "Gemma 4 turn DSL with <|turn>/<turn|> and a dedicated thinking channel. Thinking is toggled by enable_thinking (default false in the template, but llama.cpp b11960 passes true by default): true emits '<|think|>' in the system turn and leaves the model turn open, false closes an empty '<|channel>thought\\n<channel|>'. The template reads reasoning_effort nowhere, so all six effort levels render byte-identical to plain; b11960 therefore reports supports_reasoning_effort=false. 'none' only changes anything because the server maps it to enable_thinking=false. preserve_thinking (default false) gates reasoning_content in history to turns after the last user message. developer role messages are mapped into the system turn. Tool-call arguments: the template reads arguments as a mapping when given one, so b11960 parses the OpenAI JSON string to an object (workaround::func_args_not_string); string arguments also render, as raw text with the outer braces stripped."
+}

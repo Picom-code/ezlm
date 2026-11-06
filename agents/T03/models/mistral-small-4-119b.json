@@ -1,0 +1,21 @@
+{
+ "id": "mistral-small-4-119b",
+ "repo": "mistralai/Mistral-Small-4-119B-2603",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "mistral: definitions in a `[AVAILABLE_TOOLS]` + JSON array + `[/AVAILABLE_TOOLS]` block; calls as `[TOOL_CALLS]<name>[ARGS]<json>` (one block per call, appended to the assistant turn before `</s>`); results as `[TOOL_RESULTS]<text>[/TOOL_RESULTS]`",
+ "tools_supported": true,
+ "thinking_toggle": "reasoning_effort",
+ "effort_levels_accepted": ["none", "high"],
+ "effort_levels_rejected": ["low", "medium", "xhigh", "max", "minimal"],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "reasoning_effort must be either \"none\" or \"high\"",
+  "Only user, assistant and tool roles are supported, got developer.",
+  "After the optional system message, conversation roles must alternate user and assistant roles except for tool calls and results.",
+  "Unsloth custom template does not support years > 2032. Error year = [<year>]",
+  "Only text chunks are supported in system message contents.",
+  "Assistant message must have a string or a list of chunks in content or a list of tool calls."
+ ],
+ "notes": "The template validates reasoning_effort itself and only accepts \"none\" and \"high\"; low, medium, xhigh, max and minimal raise, which surfaces as HTTP 500 with the template's own message (not \"Unexpected reasoning effort\"). \"none\" is also the default when the variable is absent, and b11960 drops a reasoning_effort of \"none\" from the kwargs (server-common.cpp:1497-1506), so it renders as none either way. The template always emits [MODEL_SETTINGS]{\"reasoning_effort\": \"...\"} after the tools block. enable_thinking is ignored. A system message is only accepted as the first message; a system message later in the history raises the alternating-roles error. Non-tool assistant turns must alternate with user turns. When no system message is given the template injects a ~3.4 kB default Le Chat system prompt. The date arithmetic raises after 2032."
+}

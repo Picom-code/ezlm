@@ -1,0 +1,503 @@
+{
+ "id": "gemma-4-26b-a4b",
+ "repo": "unsloth/gemma-4-26B-A4B-it-GGUF",
+ "file": "gemma-4-26B-A4B-it-UD-IQ2_XXS.gguf",
+ "template_source": "tokenizer.chat_template",
+ "jinja2": true,
+ "llamacpp_defaults": {
+  "enable_thinking": true,
+  "add_generation_prompt": true
+ },
+ "vars_referenced": [
+  "add_generation_prompt",
+  "bos_token",
+  "enable_thinking",
+  "messages",
+  "preserve_thinking",
+  "tools"
+ ],
+ "renders": {
+  "plain": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "system_user": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "system",
+      "content": "You are a terse weather bot."
+     },
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\nYou are a terse weather bot.<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "tool_call": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "type": "function",
+        "id": "call_1",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Paris\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 21}",
+      "tool_call_id": "call_1"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{\"city\": \"Paris\"}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 21}<|\"|>}<tool_response|><|channel>thought\n",
+   "error": null
+  },
+  "parallel_tools": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "Weather in Paris and Berlin?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "type": "function",
+        "id": "call_1",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Paris\"}"
+        }
+       },
+       {
+        "type": "function",
+        "id": "call_2",
+        "function": {
+         "name": "get_weather",
+         "arguments": "{\"city\": \"Berlin\"}"
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 21}",
+      "tool_call_id": "call_1"
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 19}",
+      "tool_call_id": "call_2"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWeather in Paris and Berlin?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{\"city\": \"Paris\"}<tool_call|><|tool_call>call:get_weather{\"city\": \"Berlin\"}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 21}<|\"|>}<tool_response|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 19}<|\"|>}<tool_response|><|channel>thought\n",
+   "error": null
+  },
+  "thinking_on": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "thinking_off": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": false
+   },
+   "prompt": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+   "error": null
+  },
+  "developer_role": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "developer",
+      "content": "Answer in Celsius."
+     },
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\nAnswer in Celsius.<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "add_generation_prompt_off": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": false,
+    "enable_thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n",
+   "error": null
+  },
+  "assistant_reasoning_history": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "It is mild.",
+      "reasoning_content": "Check the forecast first."
+     },
+     {
+      "role": "user",
+      "content": "And in Berlin?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\nIt is mild.<turn|>\n<|turn>user\nAnd in Berlin?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_none": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "none"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_minimal": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "minimal"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_low": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "low"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_medium": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "medium"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_high": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "high"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_xhigh": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "xhigh"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_max": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning_effort": "max"
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_nested_reasoning": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "reasoning": {
+     "effort": "high"
+    }
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "effort_nested_thinking": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "thinking": {
+     "effort": "high"
+    }
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "thinking_var_on": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "thinking": true
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "thinking_var_off": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "thinking": false
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n",
+   "error": null
+  },
+  "tool_call_object_args": {
+   "ok": true,
+   "context": {
+    "messages": [
+     {
+      "role": "user",
+      "content": "What is the weather in Paris?"
+     },
+     {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+       {
+        "type": "function",
+        "id": "call_1",
+        "function": {
+         "name": "get_weather",
+         "arguments": {
+          "city": "Paris"
+         }
+        }
+       }
+      ]
+     },
+     {
+      "role": "tool",
+      "content": "{\"temp_c\": 21}",
+      "tool_call_id": "call_1"
+     }
+    ],
+    "add_generation_prompt": true,
+    "enable_thinking": true,
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   },
+   "prompt": "<bos><|turn>system\n<|think|>\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 21}<|\"|>}<tool_response|><|channel>thought\n",
+   "error": null
+  }
+ }
+}

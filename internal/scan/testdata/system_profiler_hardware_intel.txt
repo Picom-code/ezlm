@@ -1,0 +1,18 @@
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: MacBook Pro
+      Model Identifier: MacBookPro15,1
+      Processor Name: 6-Core Intel Core i7
+      Processor Speed: 2.6 GHz
+      Number of Processors: 1
+      Total Number of Cores: 6
+      L2 Cache: 256 KB
+      L3 Cache: 9 MB
+      Hyper-Threading Technology: Enabled
+      Memory: 16 GB
+      Boot ROM Version: 1037.147.4.0.0
+      SMC Version (system): 2.45f1
+      Serial Number (system): C02REDACTED
+      Hardware UUID: 00000000-0000-0000-0000-000000000000

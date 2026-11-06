@@ -1,0 +1,16 @@
+llama.cpp b11960: 166 architectures, 44 tensor types; checking 13 files sets
+devstral-small-2-24b           UD-IQ3_XXS               ok
+devstral-small-2-24b           IQ4_XS                   ok
+devstral-small-2-24b           UD-Q3_K_XL               ok
+devstral-small-2-24b           UD-Q4_K_XL               ok
+devstral-small-2-24b           UD-Q5_K_XL               ok
+devstral-small-2-24b           Q8_0                     ok
+nemotron-3.5-super-vl-120b-a12b UD-IQ1_M                 ok
+nemotron-3.5-super-vl-120b-a12b UD-IQ2_XXS               ok
+nemotron-3.5-super-vl-120b-a12b UD-Q2_K_XL               ok
+nemotron-3.5-super-vl-120b-a12b UD-IQ3_XXS               ok
+nemotron-3.5-super-vl-120b-a12b Q4_0                     ok
+nemotron-3.5-super-vl-120b-a12b UD-Q3_K_XL               ok
+nemotron-3.5-super-vl-120b-a12b NVFP4                    ok
+
+0 file set(s) with errors

@@ -1,0 +1,552 @@
+{
+  "tier": "128plus",
+  "models": [
+    {
+      "id": "glm-5.3-flash",
+      "name": "GLM-5.3 Flash",
+      "family": "GLM-5.3",
+      "vendor": "Z AI",
+      "country": "CN",
+      "license": "MIT",
+      "params_b": 321.32,
+      "moe": true,
+      "score": 27.8,
+      "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 27.8, thinking at the default max effort.",
+      "layers": 45,
+      "kv_heads": 1,
+      "head_dim": 512,
+      "ctx_max": 1048576,
+      "tool_calling": true,
+      "repo": "zai-org/GLM-5.3-Flash",
+      "active_params_b": 18.0,
+      "kv_layers": 12,
+      "vision": true,
+      "native_1bit": false,
+      "notes": "Released 2026-08-25. 320B total, 18B active (card). First GLM with hybrid sparse and linear attention: only every fourth layer keeps a KV cache (12 of 45), so the cache is about 24 KB/token f16 and long context is cheap. Natively multimodal, mmproj is in the GGUF repo. 1M context, MIT. llama.cpp arch glm5-next (b11960). At 128 GB the IQ2_XXS (101.8 GB) and Q2_K_XL (108.7 GB) files fit with room for 64K context (112.0 GB planned). IQ3_XXS (120.4 GB, 123.8 GB planned) needs a 160 GB machine, and Q3_K_XL (147.5 GB) a 192 GB one.",
+      "quants": [
+        {
+          "name": "UD-IQ1_S",
+          "files": [
+            "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00001-of-00003.gguf",
+            "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00002-of-00003.gguf",
+            "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00003-of-00003.gguf"
+          ],
+          "bytes": 93087245088,
+          "repo": "unsloth/GLM-5.3-Flash-GGUF"
+        },
+        {
+          "name": "UD-IQ1_M",
+          "files": [
+            "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00001-of-00003.gguf",
+            "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00002-of-00003.gguf",
+            "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00003-of-00003.gguf"
+          ],
+          "bytes": 97579344672,
+          "repo": "unsloth/GLM-5.3-Flash-GGUF"
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "files": [
+            "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00001-of-00004.gguf",
+            "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00002-of-00004.gguf",
+            "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00003-of-00004.gguf",
+            "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00004-of-00004.gguf"
+          ],
+          "bytes": 101844951904,
+          "repo": "unsloth/GLM-5.3-Flash-GGUF"
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "files": [
+            "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00001-of-00004.gguf",
+            "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00002-of-00004.gguf",
+            "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00003-of-00004.gguf",
+            "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00004-of-00004.gguf"
+          ],
+          "bytes": 108720071552,
+          "repo": "unsloth/GLM-5.3-Flash-GGUF"
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+            "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+            "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+            "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf"
+          ],
+          "bytes": 120367571840,
+          "repo": "unsloth/GLM-5.3-Flash-GGUF"
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "files": [
+            "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00001-of-00004.gguf",
+            "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00002-of-00004.gguf",
+            "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00003-of-00004.gguf",
+            "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00004-of-00004.gguf"
+          ],
+          "bytes": 147535922080,
+          "repo": "unsloth/GLM-5.3-Flash-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "ornith-1.5-122b",
+      "name": "Ornith 1.5 122B",
+      "family": "Ornith 1.5",
+      "vendor": "Ornith AI",
+      "country": "US",
+      "license": "MIT",
+      "params_b": 125.09,
+      "moe": true,
+      "score": 26.0,
+      "score_source": "ESTIMATE: not on the Artificial Analysis leaderboard on 2026-11-06. Placed from developer-reported evals on the model card (2026-10-16) against models that are on it: SWE-bench Pro 76.9 vs 43.9 for Qwen3.8-Flash-Next, SWE-bench Verified 84.5 vs 82.8, HLE with tools 48.0 vs 38.0, Terminal-Bench 2.1 81.2 vs 83.4. Qwen3.8-Flash-Next carries an ESTIMATE of 27.0 in the current catalog, so 26.0 is a conservative placement. Treat as UNVERIFIED.",
+      "layers": 48,
+      "kv_heads": 2,
+      "head_dim": 256,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "ornith-ai/Ornith-1.5-122B",
+      "active_params_b": 6.0,
+      "kv_layers": 12,
+      "vision": true,
+      "native_1bit": false,
+      "notes": "Released 2026-10-16. 125B total, about 6B active (8 of 256 experts; estimated from the config). Built on Qwen3.5 and Gemma4 bases with a self-improvement RL loop. Hybrid attention, full attention every fourth layer (12 of 48), so the cache is about 24 KB/token f16. The card's benchmark numbers are developer-run with harness notes (Claude Code 2.1.126, OpenHands, 256K context), not independent. The card's MIT licence link is a 404, so the licence is UNVERIFIED. Vendor country is not stated on the card. GGUF repo includes mmproj. llama.cpp arch qwen35moe.",
+      "quants": [
+        {
+          "name": "UD-IQ1_M",
+          "files": [
+            "Ornith-1.5-122B-UD-IQ1_M.gguf"
+          ],
+          "bytes": 40356745472,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "files": [
+            "Ornith-1.5-122B-UD-IQ2_XXS.gguf"
+          ],
+          "bytes": 41967395072,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "files": [
+            "Ornith-1.5-122B-UD-Q2_K_XL.gguf"
+          ],
+          "bytes": 44533952768,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "Ornith-1.5-122B-UD-IQ3_XXS.gguf"
+          ],
+          "bytes": 49515667712,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "files": [
+            "UD-Q3_K_XL/Ornith-1.5-122B-UD-Q3_K_XL-00001-of-00003.gguf",
+            "UD-Q3_K_XL/Ornith-1.5-122B-UD-Q3_K_XL-00002-of-00003.gguf",
+            "UD-Q3_K_XL/Ornith-1.5-122B-UD-Q3_K_XL-00003-of-00003.gguf"
+          ],
+          "bytes": 59761254545,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-Q4_K_XL",
+          "files": [
+            "UD-Q4_K_XL/Ornith-1.5-122B-UD-Q4_K_XL-00001-of-00003.gguf",
+            "UD-Q4_K_XL/Ornith-1.5-122B-UD-Q4_K_XL-00002-of-00003.gguf",
+            "UD-Q4_K_XL/Ornith-1.5-122B-UD-Q4_K_XL-00003-of-00003.gguf"
+          ],
+          "bytes": 79713771665,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-Q5_K_XL",
+          "files": [
+            "UD-Q5_K_XL/Ornith-1.5-122B-UD-Q5_K_XL-00001-of-00003.gguf",
+            "UD-Q5_K_XL/Ornith-1.5-122B-UD-Q5_K_XL-00002-of-00003.gguf",
+            "UD-Q5_K_XL/Ornith-1.5-122B-UD-Q5_K_XL-00003-of-00003.gguf"
+          ],
+          "bytes": 94611939505,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        },
+        {
+          "name": "UD-Q6_K_XL",
+          "files": [
+            "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00001-of-00004.gguf",
+            "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00002-of-00004.gguf",
+            "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00003-of-00004.gguf",
+            "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00004-of-00004.gguf"
+          ],
+          "bytes": 114222407953,
+          "repo": "unsloth/Ornith-1.5-122B-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "minimax-m3.1-flash",
+      "name": "MiniMax-M3.1-Flash",
+      "family": "MiniMax M3.1",
+      "vendor": "MiniMax",
+      "country": "CN",
+      "license": "minimax-community",
+      "params_b": 428.0,
+      "moe": true,
+      "score": 29.06,
+      "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 29.06.",
+      "layers": 60,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "ctx_max": 1048576,
+      "tool_calling": true,
+      "repo": "MiniMaxAI/MiniMax-M3.1-Flash",
+      "active_params_b": 23.0,
+      "kv_layers": 60,
+      "vision": true,
+      "native_1bit": false,
+      "notes": "Released 2026-10-17. 428B total, 23B active (card). Native multimodal (text, image, video), 1M context, minimax-community licence. Card claims (developer-run): DeepSWE v1.1 73.7, OSWorld V2 61.7, CyberGym 82.2. Full attention on all 60 layers, 4 KV heads of 128, so the cache is about 123 KB/token f16 and 7.9 GB at 64K. The smallest file is UD-IQ1_M at 129.4 GB (139.3 GB planned), but the 0.85 quant floor skips it, so the first usable quant is IQ2_XXS at 144.9 GB planned: a 160 GB machine at 32K context, a 192 GB machine for IQ3_XXS (170.3 GB planned). llama.cpp arch minimax-m3. mmproj included; a DSpark draft file is published separately.",
+      "quants": [
+        {
+          "name": "UD-IQ1_M",
+          "files": [
+            "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00001-of-00004.gguf",
+            "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00002-of-00004.gguf",
+            "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00003-of-00004.gguf",
+            "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00004-of-00004.gguf"
+          ],
+          "bytes": 129361076548,
+          "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "files": [
+            "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00001-of-00004.gguf",
+            "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00002-of-00004.gguf",
+            "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00003-of-00004.gguf",
+            "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00004-of-00004.gguf"
+          ],
+          "bytes": 134947889444,
+          "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "files": [
+            "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00001-of-00004.gguf",
+            "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00002-of-00004.gguf",
+            "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00003-of-00004.gguf",
+            "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00004-of-00004.gguf"
+          ],
+          "bytes": 143910068580,
+          "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00001-of-00005.gguf",
+            "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00002-of-00005.gguf",
+            "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00003-of-00005.gguf",
+            "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00004-of-00005.gguf",
+            "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00005-of-00005.gguf"
+          ],
+          "bytes": 160048968132,
+          "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+        },
+        {
+          "name": "UD-Q3_K_XL",
+          "files": [
+            "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00001-of-00005.gguf",
+            "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00002-of-00005.gguf",
+            "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00003-of-00005.gguf",
+            "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00004-of-00005.gguf",
+            "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00005-of-00005.gguf"
+          ],
+          "bytes": 193951346788,
+          "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+        },
+        {
+          "name": "UD-Q4_K_XL",
+          "files": [
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00001-of-00007.gguf",
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00002-of-00007.gguf",
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00003-of-00007.gguf",
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00004-of-00007.gguf",
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00005-of-00007.gguf",
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00006-of-00007.gguf",
+            "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00007-of-00007.gguf"
+          ],
+          "bytes": 249402105310,
+          "repo": "unsloth/MiniMax-M3.1-Flash-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "glm-5.3",
+      "name": "GLM-5.3",
+      "family": "GLM-5.3",
+      "vendor": "Z AI",
+      "country": "CN",
+      "license": "glm-5.3 (custom)",
+      "params_b": 753.33,
+      "moe": true,
+      "score": 31.65,
+      "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 31.65 at max effort.",
+      "layers": 78,
+      "kv_heads": 1,
+      "head_dim": 576,
+      "ctx_max": 1048576,
+      "tool_calling": true,
+      "repo": "zai-org/GLM-5.3",
+      "active_params_b": 32.0,
+      "kv_layers": 78,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-08-25. 753B total, top-8 of 256 experts, about 32B active (estimated from the config; the card does not state it). MLA attention with a 576-wide compressed KV (512 latent plus 64 rope), so the cache is about 180 KB/token f16 and 11.5 GB at 64K. Card benchmarks (developer-run): Terminal-Bench 2.1 88.2, Terminal-Bench 3.0 28.3, DeepSWE 66.9, NL2Repo 58.0, Toolathlon Verified 73.0. Custom glm-5.3 licence. Needs 320 GB or more: the smallest usable file is UD-IQ2_M at 238.6 GB (253.3 GB with a 64K cache); IQ1_S and IQ1_M are below the 0.85 quant floor internal/fit applies to 150B+ models. llama.cpp arch glm-dsa. Text only.",
+      "quants": [
+        {
+          "name": "UD-IQ1_S",
+          "files": [
+            "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00001-of-00006.gguf",
+            "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00002-of-00006.gguf",
+            "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00003-of-00006.gguf",
+            "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00004-of-00006.gguf",
+            "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00005-of-00006.gguf",
+            "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00006-of-00006.gguf"
+          ],
+          "bytes": 216715365893,
+          "repo": "unsloth/GLM-5.3-GGUF"
+        },
+        {
+          "name": "UD-IQ1_M",
+          "files": [
+            "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00001-of-00006.gguf",
+            "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00002-of-00006.gguf",
+            "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00003-of-00006.gguf",
+            "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00004-of-00006.gguf",
+            "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00005-of-00006.gguf",
+            "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00006-of-00006.gguf"
+          ],
+          "bytes": 228492971557,
+          "repo": "unsloth/GLM-5.3-GGUF"
+        },
+        {
+          "name": "UD-IQ2_M",
+          "files": [
+            "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00001-of-00006.gguf",
+            "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00002-of-00006.gguf",
+            "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00003-of-00006.gguf",
+            "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00004-of-00006.gguf",
+            "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00005-of-00006.gguf",
+            "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00006-of-00006.gguf"
+          ],
+          "bytes": 238577585701,
+          "repo": "unsloth/GLM-5.3-GGUF"
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "files": [
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00001-of-00007.gguf",
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00002-of-00007.gguf",
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00003-of-00007.gguf",
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00004-of-00007.gguf",
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00005-of-00007.gguf",
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00006-of-00007.gguf",
+            "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00007-of-00007.gguf"
+          ],
+          "bytes": 253878406789,
+          "repo": "unsloth/GLM-5.3-GGUF"
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00001-of-00007.gguf",
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00002-of-00007.gguf",
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00003-of-00007.gguf",
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00004-of-00007.gguf",
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00005-of-00007.gguf",
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00006-of-00007.gguf",
+            "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00007-of-00007.gguf"
+          ],
+          "bytes": 281688436357,
+          "repo": "unsloth/GLM-5.3-GGUF"
+        },
+        {
+          "name": "UD-IQ4_XS",
+          "files": [
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00001-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00002-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00003-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00004-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00005-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00006-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00007-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00008-of-00009.gguf",
+            "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00009-of-00009.gguf"
+          ],
+          "bytes": 365313228709,
+          "repo": "unsloth/GLM-5.3-GGUF"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-v4.1-flash-1017",
+      "name": "DeepSeek V4.1 Flash 1017",
+      "family": "DeepSeek V4.1",
+      "vendor": "DeepSeek",
+      "country": "CN",
+      "license": "MIT",
+      "params_b": 763.21,
+      "moe": true,
+      "score": 32.59,
+      "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 32.59 at max effort.",
+      "layers": 40,
+      "kv_heads": 1,
+      "head_dim": 512,
+      "ctx_max": 1048576,
+      "tool_calling": true,
+      "repo": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "active_params_b": 13.0,
+      "kv_layers": 40,
+      "vision": true,
+      "native_1bit": false,
+      "notes": "Released 2026-10-17. 763B total, of which 196.6B is a per-layer token lookup table (768M x 256, an engram) that can stay on disk with --lazy-mode: the resident body is about 122 GB at IQ1_S and 165 GB at IQ2_XXS. 40 layers, top-6 of 384 experts, about 13B active (estimated). 1M context, MIT, multimodal with mmproj in the GGUF repo. Card: HLE without tools 42.6, Chartography with tools 83.0. llama.cpp arch deepseek41. The first quant above the 0.85 floor is IQ2_XXS: 165.3 GB resident and 172.9 GB planned with a 64K cache, so 192 GB is the smallest machine, and IQ3_XXS (241.7 GB planned) needs 320 GB. Without lazy loading the smallest file is 233 GB.",
+      "quants": [
+        {
+          "name": "UD-IQ1_S",
+          "files": [
+            "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00001-of-00005.gguf",
+            "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00002-of-00005.gguf",
+            "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00003-of-00005.gguf",
+            "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00004-of-00005.gguf",
+            "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00005-of-00005.gguf"
+          ],
+          "bytes": 232979608420,
+          "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+          "lazy_bytes": 110595290400
+        },
+        {
+          "name": "UD-IQ1_M",
+          "files": [
+            "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00001-of-00005.gguf",
+            "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00002-of-00005.gguf",
+            "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00003-of-00005.gguf",
+            "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00004-of-00005.gguf",
+            "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00005-of-00005.gguf"
+          ],
+          "bytes": 250404346724,
+          "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+          "lazy_bytes": 110595290400
+        },
+        {
+          "name": "UD-IQ2_XXS",
+          "files": [
+            "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00001-of-00006.gguf",
+            "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00002-of-00006.gguf",
+            "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00003-of-00006.gguf",
+            "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00004-of-00006.gguf",
+            "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00005-of-00006.gguf",
+            "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00006-of-00006.gguf"
+          ],
+          "bytes": 300475464795,
+          "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+          "lazy_bytes": 135172021600
+        },
+        {
+          "name": "UD-Q2_K_XL",
+          "files": [
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00001-of-00007.gguf",
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00002-of-00007.gguf",
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00003-of-00007.gguf",
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00004-of-00007.gguf",
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00005-of-00007.gguf",
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00006-of-00007.gguf",
+            "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00007-of-00007.gguf"
+          ],
+          "bytes": 334793544836,
+          "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+          "lazy_bytes": 135172021600
+        },
+        {
+          "name": "UD-IQ3_XXS",
+          "files": [
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00001-of-00007.gguf",
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00002-of-00007.gguf",
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00003-of-00007.gguf",
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00004-of-00007.gguf",
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00005-of-00007.gguf",
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00006-of-00007.gguf",
+            "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00007-of-00007.gguf"
+          ],
+          "bytes": 394736596867,
+          "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+          "lazy_bytes": 161284798500
+        }
+      ]
+    },
+    {
+      "id": "flint",
+      "name": "Flint",
+      "family": "Flint",
+      "vendor": "Recursive",
+      "country": "US",
+      "license": "Apache-2.0",
+      "params_b": 39.79,
+      "moe": true,
+      "score": 19.0,
+      "score_source": "ESTIMATE: no Artificial Analysis entry on 2026-11-06. Placed at 19.0 from its 40B size and developer-reported coding evals on the model card (2026-10-21): Terminal-Bench 2.1 54.9, SWE-bench Pro v2 89.7, SWE-bench Verified 74.2. A general-intelligence index would likely be lower than its coding rank; treat as UNVERIFIED and do not compare with the general picks.",
+      "layers": 49,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "RecursiveSI/flint",
+      "active_params_b": 2.5,
+      "kv_layers": 14,
+      "swa_layers": 35,
+      "swa_kv_heads": 4,
+      "swa_head_dim": 128,
+      "swa_window": 513,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-10-21. 39.8B total, about 2.5B active (card), built for coding agents. 35 sliding-window layers (window 513) and 14 full-attention layers, so the growing cache is about 29 KB/token f16 plus a fixed window cache; the small active set makes it fast with a long context. Coding specialist: the general score above is an ESTIMATE, the coding numbers are developer-run (Terminus 2 for Terminal-Bench, mini-swe-agent for SWE-bench). Apache-2.0. llama.cpp arch flint. Fits comfortably from 48 GB up, so this is the fast coding option for a 128 GB machine rather than a use of the tier's capacity.",
+      "quants": [
+        {
+          "name": "UD-Q4_K_XL",
+          "files": [
+            "flint-UD-Q4_K_XL.gguf"
+          ],
+          "bytes": 25054688704,
+          "repo": "unsloth/flint-GGUF"
+        },
+        {
+          "name": "UD-Q5_K_XL",
+          "files": [
+            "flint-UD-Q5_K_XL.gguf"
+          ],
+          "bytes": 29919491520,
+          "repo": "unsloth/flint-GGUF"
+        },
+        {
+          "name": "UD-Q6_K_XL",
+          "files": [
+            "flint-UD-Q6_K_XL.gguf"
+          ],
+          "bytes": 36319999424,
+          "repo": "unsloth/flint-GGUF"
+        },
+        {
+          "name": "Q8_0",
+          "files": [
+            "flint-Q8_0.gguf"
+          ],
+          "bytes": 42301076928,
+          "repo": "unsloth/flint-GGUF"
+        }
+      ]
+    }
+  ]
+}

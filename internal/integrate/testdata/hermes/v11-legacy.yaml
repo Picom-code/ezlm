@@ -1,0 +1,16 @@
+# Hand-written pre-v12 Hermes config: providers live only in the custom_providers list.
+model:
+  default: llama3.3
+  provider: custom:homelab
+  base_url: http://192.168.1.20:11434/v1
+custom_providers:
+  # the user's own box
+  - name: homelab
+    base_url: http://192.168.1.20:11434/v1
+    api_key: REDACTED-KEY
+  - name: ezlm-old
+    base_url: http://127.0.0.1:9000/v1
+    default_model: old-model
+agent:
+  reasoning_effort: high
+_config_version: 11

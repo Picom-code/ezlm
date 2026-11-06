@@ -1,0 +1,12 @@
+Graphics/Displays:
+
+    Intel Iris Plus Graphics:
+
+      Chipset Model: Intel Iris Plus Graphics
+      Type: GPU
+      Bus: Built-In
+      VRAM (Dynamic, Max): 1536 MB
+      Vendor: Intel (0x8086)
+      Device ID: 0x8a53
+      Revision ID: 0x0007
+      Metal Support: Metal 3

@@ -1,0 +1,295 @@
+{
+  "id": "nemotron-3.5-super-vl-120b-a12b",
+  "source": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF/resolve/main/UD-IQ1_M/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-IQ1_M-00001-of-00002.gguf",
+  "template": "tokenizer.chat_template",
+  "renderer": "jinja2 (llama.cpp b11960 conventions; see agents/T03/a12/render.py)",
+  "notes": [
+    "strftime_now pinned to 2026-11-06T12:00:00; llama.cpp uses the wall clock",
+    "bos_token/eos_token passed as <s>/</s>",
+    "raise_exception text prefixed with 'Jinja Exception: ' like minja",
+    "tojson matches minja (no HTML escaping, default separators)"
+  ],
+  "cases": [
+    {
+      "case": "plain",
+      "vars": {
+        "name": "plain"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "system_user",
+      "vars": {
+        "name": "system_user"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "tool_call",
+      "vars": {
+        "name": "tool_call"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 1,
+      "ok": true,
+      "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n<function>\n<name>get_weather</name>\n<description>Get the current weather for a city</description>\n<parameters>\n<parameter>\n<name>city</name>\n<type>string</type>\n<description>City name</description>\n\n</parameter>\n        \n\n<required>[\"city\"]</required>\n</parameters>\n\n</function>\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n18C and sunny\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "parallel_tools",
+      "vars": {
+        "name": "parallel_tools"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 1,
+      "ok": true,
+      "output": "<|im_start|>system\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n<function>\n<name>get_weather</name>\n<description>Get the current weather for a city</description>\n<parameters>\n<parameter>\n<name>city</name>\n<type>string</type>\n<description>City name</description>\n\n</parameter>\n        \n\n<required>[\"city\"]</required>\n</parameters>\n\n</function>\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think></think>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_weather>\n<parameter=city>\nOslo\n</parameter>\n</function>\n</tool_call>\n<|im_end|>\n<|im_start|>user\n<tool_response>\n18C and sunny\n</tool_response>\n<tool_response>\n4C and rain\n</tool_response>\n<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "thinking_on",
+      "vars": {
+        "enable_thinking": true,
+        "name": "thinking_on"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "thinking_off",
+      "vars": {
+        "enable_thinking": false,
+        "name": "thinking_off"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think></think>\n",
+      "exception": null
+    },
+    {
+      "case": "developer_role",
+      "vars": {
+        "name": "developer_role"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>developer\nBe concise.<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "consecutive_user_turns",
+      "vars": {
+        "name": "consecutive_user_turns"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "assistant_string_args",
+      "vars": {
+        "name": "assistant_string_args"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 1,
+      "ok": false,
+      "output": null,
+      "exception": "TypeError: Can only get item pairs from a mapping."
+    },
+    {
+      "case": "medium_effort_true",
+      "vars": {
+        "enable_thinking": true,
+        "medium_effort": true,
+        "name": "medium_effort_true"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello\n\n{reasoning effort: efficient}<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "medium_effort_false",
+      "vars": {
+        "enable_thinking": true,
+        "medium_effort": false,
+        "name": "medium_effort_false"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "no_generation_prompt",
+      "vars": {
+        "name": "no_generation_prompt"
+      },
+      "add_generation_prompt": false,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n\n",
+      "exception": null
+    },
+    {
+      "case": "assistant_reasoning_content",
+      "vars": {
+        "name": "assistant_reasoning_content"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think></think>Hi<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "assistant_typed_thinking",
+      "vars": {
+        "name": "assistant_typed_thinking"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think></think>Hi<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "assistant_reasoning_preserved",
+      "vars": {
+        "enable_thinking": true,
+        "truncate_history_thinking": false,
+        "name": "assistant_reasoning_preserved"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\nLet me think</think>Hi<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_none",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning_effort": "none",
+        "name": "effort_none"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_low",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning_effort": "low",
+        "name": "effort_low"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_medium",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning_effort": "medium",
+        "name": "effort_medium"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_high",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning_effort": "high",
+        "name": "effort_high"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_xhigh",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning_effort": "xhigh",
+        "name": "effort_xhigh"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_max",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning_effort": "max",
+        "name": "effort_max"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_high_reasoning_ns",
+      "vars": {
+        "enable_thinking": true,
+        "reasoning": {
+          "effort": "high"
+        },
+        "name": "effort_high_reasoning_ns"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    },
+    {
+      "case": "effort_high_thinking_ns",
+      "vars": {
+        "enable_thinking": true,
+        "thinking": {
+          "effort": "high"
+        },
+        "name": "effort_high_thinking_ns"
+      },
+      "add_generation_prompt": true,
+      "tool_count": 0,
+      "ok": true,
+      "output": "<|im_start|>system\n<|im_end|>\n<|im_start|>user\nHello<|im_end|>\n<|im_start|>assistant\n<think>\n\n",
+      "exception": null
+    }
+  ]
+}

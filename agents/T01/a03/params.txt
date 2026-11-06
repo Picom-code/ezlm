@@ -1,0 +1,47 @@
+==========================================================================================
+https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf/resolve/main/Ternary-Bonsai-2-4B-Q2_0.gguf
+tensors 426 total elements 4205751296 = 4.2058B
+  blk                  3.5700B
+  token_embd           0.6357B
+  output_norm          0.0000B
+==========================================================================================
+https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf/resolve/main/Ternary-Bonsai-2-4B-mmproj-Q8_0.gguf
+tensors 298 total elements 333514240 = 0.3335B
+  v                    0.3062B
+  mm                   0.0273B
+==========================================================================================
+https://huggingface.co/unsloth/gemma-4-31B-it-GGUF/resolve/main/gemma-4-31B-it-UD-Q4_K_XL.gguf
+tensors 833 total elements 30697345596 = 30.6973B
+  blk                  29.2881B
+  token_embd           1.4093B
+  output_norm          0.0000B
+  rope_freqs           0.0000B
+==========================================================================================
+https://huggingface.co/unsloth/gemma-4-31B-it-GGUF/resolve/main/mmproj-F16.gguf
+tensors 356 total elements 575743536 = 0.5757B
+  v                    0.5696B
+  mm                   0.0062B
+==========================================================================================
+https://huggingface.co/prism-ml/Ternary-Bonsai-2-9B-gguf/resolve/main/Ternary-Bonsai-2-9B-Q2_0.gguf
+tensors 427 total elements 8953803264 = 8.9538B
+  blk                  6.9196B
+  output               1.0171B
+  token_embd           1.0171B
+  output_norm          0.0000B
+==========================================================================================
+https://huggingface.co/prism-ml/Ternary-Bonsai-2-9B-gguf/resolve/main/Ternary-Bonsai-2-9B-mmproj-Q8_0.gguf
+tensors 334 total elements 456010480 = 0.4560B
+  v                    0.4159B
+  mm                   0.0401B
+==========================================================================================
+https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf/resolve/main/Ternary-Bonsai-2-27B-Q2_0.gguf
+tensors 851 total elements 26895998464 = 26.8960B
+  blk                  24.3532B
+  output               1.2714B
+  token_embd           1.2714B
+  output_norm          0.0000B
+==========================================================================================
+https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf/resolve/main/Ternary-Bonsai-2-27B-mmproj-Q8_0.gguf
+tensors 334 total elements 460730096 = 0.4607B
+  v                    0.4159B
+  mm                   0.0448B

@@ -1,0 +1,249 @@
+{
+ "id": "ternary-bonsai-2-27b",
+ "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+ "file": "Ternary-Bonsai-2-27B-Q2_0.gguf",
+ "template_source": "tokenizer.chat_template",
+ "named_templates": [],
+ "jinja2_version": "3.1.6",
+ "llamacpp_conventions": {
+  "raise_exception": "stub raises RuntimeError(message)",
+  "tojson": "jinja2 built-in (separators ', ' and ': ', ensure_ascii=True; minja uses the same separators but ensure_ascii=False)",
+  "add_generation_prompt": true,
+  "arguments": "tool_call arguments are objects (llama.cpp func_args_not_string)",
+  "content_trim": "llama.cpp trims message content before rendering; the cases use already-trimmed content"
+ },
+ "cases": {
+  "plain": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "plain",
+   "vars": {}
+  },
+  "system_user": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "system_user",
+   "vars": {}
+  },
+  "tool_call": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWhat is the weather in Paris?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n22 degrees and sunny\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "tool_call",
+   "vars": {
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   }
+  },
+  "parallel_tools": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\n# Tools\n\nYou have access to the following functions:\n\n<tools>\n{\"function\": {\"description\": \"Get the current weather for a city.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"city\": {\"description\": \"City name\", \"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n{\"function\": {\"description\": \"Get the current time in a city.\", \"name\": \"get_time\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}, \"type\": \"function\"}\n</tools>\n\nIf you choose to call a function ONLY reply in the following format with NO suffix:\n\n<tool_call>\n<function=example_function_name>\n<parameter=example_parameter_1>\nvalue_1\n</parameter>\n<parameter=example_parameter_2>\nThis is the value for the second parameter\nthat can span\nmultiple lines\n</parameter>\n</function>\n</tool_call>\n\n<IMPORTANT>\nReminder:\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\n- Required parameters MUST be specified\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\n</IMPORTANT><|im_end|>\n<|im_start|>user\nWeather in Paris and the time in Tokyo?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n<tool_call>\n<function=get_weather>\n<parameter=city>\nParis\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=get_time>\n<parameter=city>\nTokyo\n</parameter>\n</function>\n</tool_call><|im_end|>\n<|im_start|>user\n<tool_response>\n22 degrees and sunny\n</tool_response>\n<tool_response>\n09:30\n</tool_response><|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "parallel_tools",
+   "vars": {
+    "tools": [
+     {
+      "type": "function",
+      "function": {
+       "name": "get_weather",
+       "description": "Get the current weather for a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string",
+          "description": "City name"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     },
+     {
+      "type": "function",
+      "function": {
+       "name": "get_time",
+       "description": "Get the current time in a city.",
+       "parameters": {
+        "type": "object",
+        "properties": {
+         "city": {
+          "type": "string"
+         }
+        },
+        "required": [
+         "city"
+        ]
+       }
+      }
+     }
+    ]
+   }
+  },
+  "thinking_on": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "thinking_on",
+   "vars": {
+    "enable_thinking": true
+   }
+  },
+  "thinking_off": {
+   "ok": true,
+   "output": "<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null,
+   "case": "thinking_off",
+   "vars": {
+    "enable_thinking": false
+   }
+  },
+  "effort_none": {
+   "ok": false,
+   "output": null,
+   "error": "RuntimeError: Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low.",
+   "case": "effort_none",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "none"
+   }
+  },
+  "effort_low": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to low. Keep your thinking brief and focused, moving directly to the conclusion without unnecessary elaboration.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "effort_low",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "low"
+   }
+  },
+  "effort_medium": {
+   "ok": true,
+   "output": "<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "effort_medium",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "medium"
+   }
+  },
+  "effort_high": {
+   "ok": false,
+   "output": null,
+   "error": "RuntimeError: Unexpected reasoning effort high. Supported types are xhigh (default), medium, and low.",
+   "case": "effort_high",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "high"
+   }
+  },
+  "effort_xhigh": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "effort_xhigh",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "xhigh"
+   }
+  },
+  "effort_max": {
+   "ok": false,
+   "output": null,
+   "error": "RuntimeError: Unexpected reasoning effort max. Supported types are xhigh (default), medium, and low.",
+   "case": "effort_max",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "max"
+   }
+  },
+  "effort_minimal": {
+   "ok": false,
+   "output": null,
+   "error": "RuntimeError: Unexpected reasoning effort minimal. Supported types are xhigh (default), medium, and low.",
+   "case": "effort_minimal",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning_effort": "minimal"
+   }
+  },
+  "developer_role": {
+   "ok": false,
+   "output": null,
+   "error": "RuntimeError: Unexpected message role.",
+   "case": "developer_role",
+   "vars": {}
+  },
+  "effort_high_thinking_off": {
+   "ok": true,
+   "output": "<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+   "error": null,
+   "case": "effort_high_thinking_off",
+   "vars": {
+    "enable_thinking": false,
+    "reasoning_effort": "high"
+   }
+  },
+  "effort_nested_reasoning": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "effort_nested_reasoning",
+   "vars": {
+    "enable_thinking": true,
+    "reasoning": {
+     "effort": "high"
+    }
+   }
+  },
+  "effort_nested_thinking": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "effort_nested_thinking",
+   "vars": {
+    "enable_thinking": true,
+    "thinking": {
+     "effort": "high"
+    }
+   }
+  },
+  "effort_unset": {
+   "ok": true,
+   "output": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.<|im_end|>\n<|im_start|>user\nHello, world!<|im_end|>\n<|im_start|>assistant\n<think>\n",
+   "error": null,
+   "case": "effort_unset",
+   "vars": {
+    "enable_thinking": true
+   }
+  }
+ },
+ "summary": {
+  "ok": 13,
+  "raised": 5
+ }
+}

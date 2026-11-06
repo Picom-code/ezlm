@@ -1,0 +1,20 @@
+== gemma-4-e4b: tokenizer.chat_template length 18808
+   lines mentioning tool/function: 67
+    {%- macro format_function_declaration(tool_data) -%}
+    declaration:{{- tool_data['function']['name'] -}}{description:<|"|>{{- tool_data['function']['description'] -}}<|"|>
+    {%- set params = tool_data['function']['parameters'] -%}
+    {%- if 'response' in tool_data['function'] -%}
+    {%- set response_declaration = tool_data['function']['response'] -%}
+    {%- macro format_tool_response_block(tool_name, response) -%}
+    {{- '<|tool_response>' -}}
+    {{- 'response:' + tool_name + '{' -}}
+== gemma-4-e2b: tokenizer.chat_template length 18808
+   lines mentioning tool/function: 67
+    {%- macro format_function_declaration(tool_data) -%}
+    declaration:{{- tool_data['function']['name'] -}}{description:<|"|>{{- tool_data['function']['description'] -}}<|"|>
+    {%- set params = tool_data['function']['parameters'] -%}
+    {%- if 'response' in tool_data['function'] -%}
+    {%- set response_declaration = tool_data['function']['response'] -%}
+    {%- macro format_tool_response_block(tool_name, response) -%}
+    {{- '<|tool_response>' -}}
+    {{- 'response:' + tool_name + '{' -}}

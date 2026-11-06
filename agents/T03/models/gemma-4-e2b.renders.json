@@ -1,0 +1,95 @@
+{
+ "cases": {
+  "developer_role": {
+   "ok": true,
+   "output": "<bos><|turn>system\nYou are a helpful assistant.<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_high": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_low": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_max": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_medium": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_nested_reasoning": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_nested_thinking": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_none": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "effort_xhigh": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "parallel_tools": {
+   "ok": true,
+   "output": "<bos><|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWeather in Paris and Berlin?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>}<tool_call|><|tool_call>call:get_weather{city:<|\"|>Berlin<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 18}<|\"|>}<tool_response|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 12}<|\"|>}<tool_response|>"
+  },
+  "plain": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "plain_no_generation_prompt": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n"
+  },
+  "reasoning_effort_high_add_generation_prompt": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "system_user": {
+   "ok": true,
+   "output": "<bos><|turn>system\nYou are a helpful assistant.<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "thinking_off": {
+   "ok": true,
+   "output": "<bos><|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "thinking_on": {
+   "ok": true,
+   "output": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "thinking_on_add_generation_prompt": {
+   "ok": true,
+   "output": "<bos><|turn>system\n<|think|>\n<turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n"
+  },
+  "thinking_on_system_tool": {
+   "ok": true,
+   "output": "<bos><|turn>system\n<|think|>\nYou are a helpful assistant.<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>,unit:<|\"|>celsius<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 18, \"sky\": \"clear\"}<|\"|>}<tool_response|><|channel>thought\n"
+  },
+  "thinking_on_with_reasoning_content": {
+   "ok": true,
+   "output": "<bos><|turn>system\n<|think|>\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|channel>thought\nI should call the weather tool.\n<channel|><|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>,unit:<|\"|>celsius<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 18, \"sky\": \"clear\"}<|\"|>}<tool_response|><|channel>thought\n"
+  },
+  "tool_call": {
+   "ok": true,
+   "output": "<bos><|turn>system\n<|tool>declaration:get_weather{description:<|\"|>Get the current weather for a city.<|\"|>,parameters:{properties:{city:{description:<|\"|>City name<|\"|>,type:<|\"|>STRING<|\"|>},unit:{enum:[<|\"|>celsius<|\"|>,<|\"|>fahrenheit<|\"|>],type:<|\"|>STRING<|\"|>}},required:[<|\"|>city<|\"|>],type:<|\"|>OBJECT<|\"|>}}<tool|><turn|>\n<|turn>user\nWhat is the weather in Paris?<turn|>\n<|turn>model\n<|tool_call>call:get_weather{city:<|\"|>Paris<|\"|>,unit:<|\"|>celsius<|\"|>}<tool_call|><|tool_response>response:get_weather{value:<|\"|>{\"temp_c\": 18, \"sky\": \"clear\"}<|\"|>}<tool_response|>"
+  }
+ },
+ "id": "gemma-4-e2b",
+ "template_vars": [
+  "add_generation_prompt",
+  "bos_token",
+  "enable_thinking",
+  "eos_token",
+  "messages",
+  "preserve_thinking",
+  "raise_exception",
+  "tools"
+ ]
+}

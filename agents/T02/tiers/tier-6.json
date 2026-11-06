@@ -1,0 +1,193 @@
+{
+  "tier": "6",
+  "models": [
+    {
+      "id": "k2-horizon-7b",
+      "name": "K2 Horizon 7B",
+      "family": "K2 Horizon",
+      "vendor": "Institute of Foundation Models",
+      "country": "AE",
+      "license": "Apache-2.0",
+      "params_b": 7.0,
+      "moe": false,
+      "score": 8.5,
+      "score_source": "ESTIMATE (Artificial Analysis has no v5 Intelligence Index for this model): mapped from AA's own per-benchmark run of 2026-11-06 (GPQA Diamond 75.3, HLE 18.2, Terminal-Bench 2.1 44.2, tau3-Banking 27.6, SciCode 27.5, AA-LCR 69.7), which sits between Nemotron 3.5 Lightning (catalog 5.5) and Qwen3.6-35B-A3B (catalog 9.5); set 8.5. Vendor card also claims SWE-bench Verified 72.4 and BFCL v4 67.0. Composite is UNVERIFIED.",
+      "layers": 36,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 524288,
+      "tool_calling": true,
+      "repo": "IFM/K2-Horizon-7B",
+      "active_params_b": 7.0,
+      "kv_layers": 36,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-09-03 (AA model page). Dense 7B, 36 layers, 8 KV heads x 128, native 512K context, Apache-2.0. AA Terminal-Bench 2.1 44.2 and vendor BFCL v4 67.0 make it the strongest agentic model that fits 6 GB. Fit with q4_0 KV (resident GiB): IQ3_XXS at 16K ~4.8, at 32K ~5.5; Q3_K_M at 16K ~5.2. Official IFM Q4_K_M (5.59 GB) leaves too little room for KV. Text only.",
+      "quants": [
+        {
+          "name": "IQ3_XXS",
+          "repo": "bartowski/K2-Horizon-7B-GGUF",
+          "files": [
+            "K2-Horizon-7B-IQ3_XXS.gguf"
+          ],
+          "bytes": 4066819360
+        },
+        {
+          "name": "Q3_K_S",
+          "repo": "bartowski/K2-Horizon-7B-GGUF",
+          "files": [
+            "K2-Horizon-7B-Q3_K_S.gguf"
+          ],
+          "bytes": 4253334816
+        },
+        {
+          "name": "Q3_K_M",
+          "repo": "bartowski/K2-Horizon-7B-GGUF",
+          "files": [
+            "K2-Horizon-7B-Q3_K_M.gguf"
+          ],
+          "bytes": 4421860640
+        }
+      ]
+    },
+    {
+      "id": "k2-horizon-3.7b",
+      "name": "K2 Horizon 3.7B",
+      "family": "K2 Horizon",
+      "vendor": "Institute of Foundation Models",
+      "country": "AE",
+      "license": "Apache-2.0",
+      "params_b": 3.7,
+      "moe": false,
+      "score": 5.5,
+      "score_source": "ESTIMATE (Artificial Analysis has no v5 Intelligence Index for this model): mapped from AA's own per-benchmark run of 2026-11-06 (GPQA Diamond 69.2, HLE 13.9, Terminal-Bench 2.1 28.1, tau3-Banking 19.6, SciCode 22.0, AA-LCR 62.3), which is close to Nemotron 3.5 Lightning (catalog 5.5) and above Granite 4.2 8B (5.1); set 5.5. Vendor card claims AIME25 89.2, SWE-bench 65.6, BFCL v4 64.6. Composite is UNVERIFIED.",
+      "layers": 36,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 524288,
+      "tool_calling": true,
+      "repo": "IFM/K2-Horizon-3.7B",
+      "active_params_b": 3.7,
+      "kv_layers": 36,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-09-03. GGUF files are named K2-Horizon-4B-*; the model is 3.7B. Dense, 36 layers, same 8 x 128 KV shape as the 7B, so KV is not cheaper, but the smaller weights leave room for context: Q4_K_M at 32K with q4_0 KV is ~4.7 GiB (64K ~6.1), Q6_K at 16K is ~4.9 GiB. Anti-doom-loop post-training (FTPO) targets runaway generations on agentic tasks. Best capability per byte in this tier; text only.",
+      "quants": [
+        {
+          "name": "Q4_K_M",
+          "repo": "IFM/K2-Horizon-3.7B-GGUF",
+          "files": [
+            "K2-Horizon-4B-Q4_K_M.gguf"
+          ],
+          "bytes": 3156598144
+        },
+        {
+          "name": "Q5_0",
+          "repo": "IFM/K2-Horizon-3.7B-GGUF",
+          "files": [
+            "K2-Horizon-4B-Q5_0.gguf"
+          ],
+          "bytes": 3574840704
+        },
+        {
+          "name": "Q5_K_M",
+          "repo": "IFM/K2-Horizon-3.7B-GGUF",
+          "files": [
+            "K2-Horizon-4B-Q5_K_M.gguf"
+          ],
+          "bytes": 3643776384
+        },
+        {
+          "name": "Q6_K",
+          "repo": "IFM/K2-Horizon-3.7B-GGUF",
+          "files": [
+            "K2-Horizon-4B-Q6_K.gguf"
+          ],
+          "bytes": 4161403264
+        }
+      ]
+    },
+    {
+      "id": "ministral-3-8b-reasoning",
+      "name": "Ministral 3 8B Reasoning",
+      "family": "Ministral 3",
+      "vendor": "Mistral AI",
+      "country": "FR",
+      "license": "Apache-2.0",
+      "params_b": 8.4,
+      "moe": false,
+      "score": 5.0,
+      "score_source": "ESTIMATE: vendor reasoning-card numbers of 2025-12-02 (AIME25 78.7, GPQA Diamond 66.8, LiveCodeBench 61.6) are near Qwen3.5 9B (catalog 5.0); AA's 2026-11-06 run of the same family is lower (GPQA 47.1, HLE 4.3, LCB 30.3) because it does not enable the thinking mode, so the card numbers are used for the thinking-mode score. Set 5.0, midpoint of the two. Composite is UNVERIFIED.",
+      "layers": 34,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "mistralai/Ministral-3-8B-Reasoning-2512",
+      "active_params_b": 8.4,
+      "kv_layers": 34,
+      "vision": true,
+      "native_1bit": false,
+      "notes": "Released 2025-12-02 (AA model page). 8.4B language model plus a 0.4B vision encoder, 34 layers, 8 KV heads x 128, 256K context, Apache-2.0. The reasoning post-trained variant; keep reasoning traces in context and use the vendor system prompt. Native function calling and JSON output. Vision needs the 858 MB F16 mmproj, which EZLM does not load today. UD-Q3_K_XL at 16K with q4_0 KV is ~5.1 GiB; IQ4_XS at 8K is ~5.1 GiB.",
+      "quants": [
+        {
+          "name": "UD-Q3_K_XL",
+          "repo": "unsloth/Ministral-3-8B-Reasoning-2512-GGUF",
+          "files": [
+            "Ministral-3-8B-Reasoning-2512-UD-Q3_K_XL.gguf"
+          ],
+          "bytes": 4425322528
+        },
+        {
+          "name": "IQ4_XS",
+          "repo": "unsloth/Ministral-3-8B-Reasoning-2512-GGUF",
+          "files": [
+            "Ministral-3-8B-Reasoning-2512-IQ4_XS.gguf"
+          ],
+          "bytes": 4713189408
+        }
+      ]
+    },
+    {
+      "id": "lfm2.5-8b-a1b",
+      "name": "LFM2.5 8B A1B",
+      "family": "LFM2.5",
+      "vendor": "Liquid AI",
+      "country": "US",
+      "license": "LFM Open License v1.0 (free below a revenue threshold; UNVERIFIED amount)",
+      "params_b": 8.3,
+      "moe": true,
+      "score": 3.0,
+      "score_source": "ESTIMATE: AA per-benchmark run of 2026-11-06 (GPQA Diamond 51.3, HLE 6.9, IFBench 55.6, tau2 16.1) is below Gemma 4 12B (catalog 3.5) and above Qwen3.5 4B (2.0); set 3.0. AA has no v5 Intelligence Index for it. Composite is UNVERIFIED.",
+      "layers": 24,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 128000,
+      "tool_calling": true,
+      "repo": "LiquidAI/LFM2.5-8B-A1B",
+      "active_params_b": 1.5,
+      "kv_layers": 6,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-05-28 (AA model page). Hybrid MoE: 8.3B total, 1.5B active (32 experts, 4 used), 24 blocks of which 18 are double-gated convolutions and only 6 are GQA attention, so the KV cache is small. 128K context, 128K vocab, 10 languages. Q4_0 at 32K with q4_0 KV is ~5.2 GiB (64K ~5.5), Q4_K_M at 32K is ~5.5 GiB. Edge/CPU friendly and fast; weaker knowledge and heavy coding than the K2 models. LFM Open License v1.0.",
+      "quants": [
+        {
+          "name": "Q4_0",
+          "repo": "LiquidAI/LFM2.5-8B-A1B-GGUF",
+          "files": [
+            "LFM2.5-8B-A1B-Q4_0.gguf"
+          ],
+          "bytes": 4844678368
+        },
+        {
+          "name": "Q4_K_M",
+          "repo": "LiquidAI/LFM2.5-8B-A1B-GGUF",
+          "files": [
+            "LFM2.5-8B-A1B-Q4_K_M.gguf"
+          ],
+          "bytes": 5155564768
+        }
+      ]
+    }
+  ]
+}

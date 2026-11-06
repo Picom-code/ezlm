@@ -1,0 +1,15 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/194 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 194/194 completed, now fuzzing with 11 workers
+fuzz: elapsed: 3s, execs: 19142 (6380/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 6s, execs: 39582 (6807/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 9s, execs: 59784 (6741/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 12s, execs: 80403 (6873/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 15s, execs: 96300 (5299/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 18s, execs: 112947 (5549/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 21s, execs: 134882 (7311/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 24s, execs: 157308 (7469/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 27s, execs: 179688 (7467/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 30s, execs: 201566 (7292/sec), new interesting: 51 (total: 245)
+fuzz: elapsed: 30s, execs: 201566 (0/sec), new interesting: 51 (total: 245)
+PASS
+ok  	github.com/picom-code/ezlm/internal/fit	30.376s

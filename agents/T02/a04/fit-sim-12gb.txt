@@ -1,0 +1,26 @@
+catalog: file:/Users/patrickmoorhead/ezlm-agents/work/subs/T02/a04/agents/T02/tiers/tier-12.json
+
+=== RTX 4070 12GB / Linux / 32GB DDR5  (GPU budget 11.52 GB, RAM budget 27.00 GB, CPU bandwidth 60 GB/s)
+qwen3.8-27b            UD-IQ2_XXS       ctx=65536  kv=f16   mode=gpu     ncpumoe=0   eff=17.69 tok/s= 44.7 gpu=11.40GB ram=0.00GB spec=
+ternary-bonsai-2-27b   Q2_0             ctx=32768  kv=f16   mode=gpu     ncpumoe=0   eff=16.92 tok/s= 42.6 gpu=9.61GB ram=0.00GB spec=
+nanbeige4.3-33b        IQ2_XXS          ctx=8192   kv=f16   mode=gpu     ncpumoe=0   eff=10.77 tok/s= 32.2 gpu=11.44GB ram=0.00GB spec=
+k2-horizon-7b          Q5_K_M           ctx=65536  kv=q8_0  mode=gpu     ncpumoe=0   eff= 8.82 tok/s= 50.2 gpu=11.43GB ram=0.00GB spec=
+qwen3.6-35b-a3b        UD-IQ2_XXS       ctx=65536  kv=f16   mode=hybrid  ncpumoe=9   eff= 8.36 tok/s=286.5 gpu=11.42GB ram=2.16GB spec=
+gemma-4-12b            UD-Q4_K_XL       ctx=65536  kv=f16   mode=gpu     ncpumoe=0   eff= 3.45 tok/s= 62.2 gpu=10.37GB ram=0.00GB spec=draft-mtp
+gemma-4-31b            UD-IQ2_XXS       ctx=16384  kv=f16   mode=split   ncpumoe=0   eff= 3.29 tok/s=  8.0 gpu=11.39GB ram=2.67GB spec=
+
+=== RTX 3060 12GB / Windows / 32GB DDR4  (GPU budget 11.00 GB, RAM budget 27.00 GB, CPU bandwidth 50 GB/s)
+qwen3.8-27b            GSQ-RCO-IQ2_XS   ctx=32768  kv=f16   mode=gpu     ncpumoe=0   eff=17.76 tok/s= 27.5 gpu=10.36GB ram=0.00GB spec=
+ternary-bonsai-2-27b   Q2_0             ctx=32768  kv=f16   mode=gpu     ncpumoe=0   eff=16.92 tok/s= 30.4 gpu=9.61GB ram=0.00GB spec=
+nanbeige4.3-33b        IQ2_XXS          ctx=8192   kv=f16   mode=split   ncpumoe=0   eff=10.77 tok/s=  8.3 gpu=10.99GB ram=1.62GB spec=
+k2-horizon-7b          Q4_K_M           ctx=65536  kv=q8_0  mode=gpu     ncpumoe=0   eff= 8.75 tok/s= 41.5 gpu=10.60GB ram=0.00GB spec=
+qwen3.6-35b-a3b        UD-IQ2_XXS       ctx=65536  kv=f16   mode=hybrid  ncpumoe=11  eff= 8.36 tok/s=202.2 gpu=10.94GB ram=2.64GB spec=
+gemma-4-12b            UD-Q4_K_XL       ctx=65536  kv=f16   mode=gpu     ncpumoe=0   eff= 3.45 tok/s= 44.4 gpu=10.37GB ram=0.00GB spec=draft-mtp
+gemma-4-31b            UD-IQ2_XXS       ctx=65536  kv=q8_0  mode=split   ncpumoe=0   eff= 3.86 tok/s=  5.2 gpu=11.00GB ram=3.65GB spec=
+
+=== Mac 16GB unified, 12GB usable  (GPU budget 10.00 GB, RAM budget 10.00 GB, CPU bandwidth 100 GB/s)
+ternary-bonsai-2-27b   Q2_0             ctx=65536  kv=q8_0  mode=gpu     ncpumoe=0   eff=17.96 tok/s=  8.4 gpu=9.86GB ram=0.00GB spec=
+qwen3.8-27b            UD-IQ2_XXS       ctx=65536  kv=q8_0  mode=gpu     ncpumoe=0   eff=17.65 tok/s=  8.9 gpu=9.52GB ram=0.00GB spec=
+k2-horizon-7b          Q4_K_M           ctx=65536  kv=q4_0  mode=gpu     ncpumoe=0   eff= 8.64 tok/s= 11.5 gpu=8.35GB ram=0.00GB spec=
+gemma-4-12b            UD-Q4_K_XL       ctx=65536  kv=f16   mode=gpu     ncpumoe=0   eff= 3.45 tok/s=  8.7 gpu=9.43GB ram=0.00GB spec=
+gemma-4-31b            UD-IQ2_XXS       ctx=32768  kv=q4_0  mode=gpu     ncpumoe=0   eff= 3.59 tok/s=  7.5 gpu=9.83GB ram=0.00GB spec=

@@ -1,0 +1,7 @@
+# A Linux desktop: RTX 4070 SUPER, one game holding some VRAM.
+# query-gpu
+NVIDIA GeForce RTX 4070 SUPER, 12288, 11000, 570.124.06
+# compute-apps
+4242, /usr/lib/xorg/Xorg, 512
+# header
+| NVIDIA-SMI 570.124.06   Driver Version: 570.124.06   CUDA Version: 12.8     |

@@ -1,0 +1,92 @@
+# GGUF metadata (first quant of each model), read by range request on 2026-11-06
+# qwen3.5-4b: unsloth/Qwen3.5-4B-GGUF/Qwen3.5-4B-UD-IQ2_XXS.gguf
+=== qwen3.5-4b  Qwen3.5-4B-UD-IQ2_XXS.gguf  gguf v3
+  general.architecture = qwen35
+  general.base_model.0.name = Qwen3.5 4B
+  general.base_model.0.organization = Qwen
+  general.base_model.0.repo_url = https://huggingface.co/Qwen/Qwen3.5-4B
+  general.base_model.count = 1
+  general.basename = Qwen3.5-4B
+  general.file_type = 19
+  general.license = apache-2.0
+  general.license.link = https://huggingface.co/Qwen/Qwen3.5-4B/blob/main/LICENSE
+  general.name = Qwen3.5-4B
+  general.quantization_version = 2
+  general.quantized_by = Unsloth
+  general.repo_url = https://huggingface.co/unsloth
+  general.size_label = 4B
+  general.tags = ['unsloth', 'image-text-to-text']
+  general.type = model
+  quantize.imatrix.chunks_count = 80
+  quantize.imatrix.dataset = unsloth_calibration_Qwen3.5-4B.txt
+  quantize.imatrix.entries_count = 248
+  quantize.imatrix.file = Qwen3.5-4B-GGUF/imatrix_unsloth.gguf
+  qwen35.attention.head_count = 16
+  qwen35.attention.head_count_kv = 4
+  qwen35.attention.key_length = 256
+  qwen35.attention.layer_norm_rms_epsilon = 9.999999974752427e-07
+  qwen35.attention.value_length = 256
+  qwen35.block_count = 32
+  qwen35.context_length = 262144
+  qwen35.embedding_length = 2560
+  qwen35.feed_forward_length = 9216
+  qwen35.full_attention_interval = 4
+  qwen35.rope.dimension_count = 64
+  qwen35.rope.dimension_sections = [11, 11, 10, 0]
+  qwen35.rope.freq_base = 10000000.0
+  qwen35.ssm.conv_kernel = 4
+  qwen35.ssm.group_count = 16
+  qwen35.ssm.inner_size = 4096
+  qwen35.ssm.state_size = 128
+  qwen35.ssm.time_step_rank = 32
+  tokenizer.chat_template = <7816 chars>
+  tokenizer.ggml.merges = <247587 strings>
+  tokenizer.ggml.token_type = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  tokenizer.ggml.tokens = <248320 strings>
+  tensor types: [0, 8, 10, 12, 13, 16, 18, 21, 22]
+
+# qwen3.5-2b: unsloth/Qwen3.5-2B-GGUF/Qwen3.5-2B-UD-IQ2_XXS.gguf
+=== qwen3.5-2b  Qwen3.5-2B-UD-IQ2_XXS.gguf  gguf v3
+  general.architecture = qwen35
+  general.base_model.0.name = Qwen3.5 2B
+  general.base_model.0.organization = Qwen
+  general.base_model.0.repo_url = https://huggingface.co/Qwen/Qwen3.5-2B
+  general.base_model.count = 1
+  general.basename = Qwen3.5-2B
+  general.file_type = 19
+  general.license = apache-2.0
+  general.license.link = https://huggingface.co/Qwen/Qwen3.5-2B/blob/main/LICENSE
+  general.name = Qwen3.5-2B
+  general.quantization_version = 2
+  general.quantized_by = Unsloth
+  general.repo_url = https://huggingface.co/unsloth
+  general.size_label = 2B
+  general.tags = ['unsloth', 'image-text-to-text']
+  general.type = model
+  quantize.imatrix.chunks_count = 80
+  quantize.imatrix.dataset = unsloth_calibration_Qwen3.5-2B.txt
+  quantize.imatrix.entries_count = 186
+  quantize.imatrix.file = Qwen3.5-2B-GGUF/imatrix_unsloth.gguf
+  qwen35.attention.head_count = 8
+  qwen35.attention.head_count_kv = 2
+  qwen35.attention.key_length = 256
+  qwen35.attention.layer_norm_rms_epsilon = 9.999999974752427e-07
+  qwen35.attention.value_length = 256
+  qwen35.block_count = 24
+  qwen35.context_length = 262144
+  qwen35.embedding_length = 2048
+  qwen35.feed_forward_length = 6144
+  qwen35.full_attention_interval = 4
+  qwen35.rope.dimension_count = 64
+  qwen35.rope.dimension_sections = [11, 11, 10, 0]
+  qwen35.rope.freq_base = 10000000.0
+  qwen35.ssm.conv_kernel = 4
+  qwen35.ssm.group_count = 16
+  qwen35.ssm.inner_size = 2048
+  qwen35.ssm.state_size = 128
+  qwen35.ssm.time_step_rank = 16
+  tokenizer.chat_template = <7816 chars>
+  tokenizer.ggml.merges = <247587 strings>
+  tokenizer.ggml.token_type = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  tokenizer.ggml.tokens = <248320 strings>
+  tensor types: [0, 8, 10, 12, 13, 16, 18, 21, 22]

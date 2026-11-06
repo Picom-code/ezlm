@@ -1,0 +1,12 @@
+== gemma-4-e4b: block_count=42 shared_kv_layers=18 n_layer_kv_from_start=24
+  blk.0: ['blk.0.attn_k.weight', 'blk.0.attn_k_norm.weight', 'blk.0.attn_q.weight', 'blk.0.attn_q_norm.weight', 'blk.0.attn_v.weight']
+  blk.23: ['blk.23.attn_k.weight', 'blk.23.attn_k_norm.weight', 'blk.23.attn_q.weight', 'blk.23.attn_q_norm.weight', 'blk.23.attn_v.weight']
+  blk.24: ['blk.24.attn_k.weight', 'blk.24.attn_k_norm.weight', 'blk.24.attn_q.weight', 'blk.24.attn_q_norm.weight', 'blk.24.attn_v.weight']
+  blk.41: ['blk.41.attn_k.weight', 'blk.41.attn_k_norm.weight', 'blk.41.attn_q.weight', 'blk.41.attn_q_norm.weight', 'blk.41.attn_v.weight']
+  layers with attn_k tensor: 42 max: 41 => layers 0 .. 41
+== gemma-4-e2b: block_count=35 shared_kv_layers=20 n_layer_kv_from_start=15
+  blk.0: ['blk.0.attn_k.weight', 'blk.0.attn_k_norm.weight', 'blk.0.attn_q.weight', 'blk.0.attn_q_norm.weight', 'blk.0.attn_v.weight']
+  blk.14: ['blk.14.attn_k.weight', 'blk.14.attn_k_norm.weight', 'blk.14.attn_q.weight', 'blk.14.attn_q_norm.weight', 'blk.14.attn_v.weight']
+  blk.15: ['blk.15.attn_k.weight', 'blk.15.attn_k_norm.weight', 'blk.15.attn_q.weight', 'blk.15.attn_q_norm.weight', 'blk.15.attn_v.weight']
+  blk.34: ['blk.34.attn_k.weight', 'blk.34.attn_k_norm.weight', 'blk.34.attn_q.weight', 'blk.34.attn_q_norm.weight', 'blk.34.attn_v.weight']
+  layers with attn_k tensor: 35 max: 34 => layers 0 .. 34

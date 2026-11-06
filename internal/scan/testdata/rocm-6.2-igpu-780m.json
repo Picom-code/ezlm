@@ -1,0 +1,10 @@
+{
+  "card0": {
+    "Card Series": "Radeon 780M Graphics",
+    "Card Model": "0x15bf",
+    "Card Vendor": "Advanced Micro Devices, Inc. [AMD/ATI]",
+    "Card SKU": "PHX",
+    "VRAM Total Memory (B)": "536870912",
+    "VRAM Total Used Memory (B)": "104857600"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "gemma-4-e4b",
+  "repo": "google/gemma-4-E4B-it",
+  "template_source": "tokenizer.chat_template",
+  "tool_call_format": "gemma4-dsl",
+  "tools_supported": true,
+  "thinking_toggle": "enable_thinking",
+  "effort_levels_accepted": [],
+  "effort_levels_rejected": [],
+  "system_role": true,
+  "developer_role": true,
+  "known_template_errors": [],
+  "notes": "Template has no reasoning_effort or reasoning_strength branch. All six effort values, plus reasoning.effort and thinking.effort, render byte-identically to the no-effort baseline, so effort is silently ignored and llama.cpp b11960 caps reports no effort levels. Thinking is toggled by enable_thinking; reasoning_effort \"none\" works only because the server maps it to enable_thinking=false. developer is accepted and rendered as a system turn. Tools use the Gemma 4 DSL. Header read from unsloth/gemma-4-E4B-it-GGUF/gemma-4-E4B-it-UD-IQ2_M.gguf."
+}

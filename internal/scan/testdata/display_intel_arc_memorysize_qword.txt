@@ -1,0 +1,7 @@
+# Synthetic, built from the documented REG_BINARY form of HardwareInformation.MemorySize
+# (https://learn.microsoft.com/windows-hardware/drivers/display/). Some driver builds write
+# the size as an 8-byte little-endian value instead of the older 4-byte one.
+# HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000
+DriverDesc REG_SZ "Intel(R) Arc(TM) A770 Graphics"
+ProviderName REG_SZ "Intel Corporation"
+HardwareInformation.MemorySize REG_BINARY 00 00 00 c0 03 00 00 00

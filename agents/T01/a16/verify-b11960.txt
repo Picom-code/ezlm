@@ -1,0 +1,16 @@
+llama.cpp b11960: 166 architectures, 44 tensor types; checking 13 files sets
+qwen3.5-122b-a10b              UD-IQ2_XXS (MTP)         ok
+qwen3.5-122b-a10b              UD-Q2_K_XL (MTP)         ok
+qwen3.5-122b-a10b              UD-IQ3_XXS (MTP)         ok
+qwen3.5-122b-a10b              UD-IQ4_XS (MTP)          ok
+granite-4.2-3b                 Q2_K                     ok
+qwen3.5-122b-a10b              MXFP4_MOE (MTP)          ok
+granite-4.2-3b                 Q3_K_M                   ok
+granite-4.2-3b                 IQ4_XS                   ok
+granite-4.2-3b                 Q4_0                     ok
+granite-4.2-3b                 Q4_K_M                   ok
+granite-4.2-3b                 Q5_0                     ok
+granite-4.2-3b                 Q6_K                     ok
+granite-4.2-3b                 Q8_0                     ok
+
+0 file set(s) with errors

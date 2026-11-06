@@ -1,0 +1,73 @@
+{
+  "display": [
+    {
+      "os": "de-DE",
+      "note": "German display-class registry values: localized Intel DriverDesc, English provider names, a discrete AMD card beside an everyday Intel iGPU and an NVIDIA card nvidia-smi owns.",
+      "adapters": [
+        {"name": "AMD Radeon(TM) RX 7800 XT", "provider": "Advanced Micro Devices, Inc.", "vram": 17179869184},
+        {"name": "Intel(R) UHD-Grafik 770", "provider": "Intel Corporation", "vram": 2147483648},
+        {"name": "NVIDIA GeForce RTX 4070", "provider": "NVIDIA", "vram": 12884901888}
+      ],
+      "want": [
+        {"name": "AMD Radeon(TM) RX 7800 XT", "vendor": "amd", "mem_total": 17179869184, "bandwidth": 624}
+      ]
+    },
+    {
+      "os": "ja-JP",
+      "note": "Japanese Intel Arc DriverDesc is entirely katakana apart from the model name; the vendor comes from ProviderName.",
+      "adapters": [
+        {"name": "インテル(R) Arc(TM) B580 グラフィックス", "provider": "Intel Corporation", "vram": 12884901888},
+        {"name": "AMD Radeon(TM) グラフィックス", "provider": "Advanced Micro Devices, Inc.", "vram": 17179869184}
+      ],
+      "want": [
+        {"name": "インテル(R) Arc(TM) B580 グラフィックス", "vendor": "intel", "mem_total": 12884901888, "bandwidth": 456}
+      ]
+    },
+    {
+      "os": "zh-CN",
+      "note": "Chinese Intel Arc DriverDesc, two discrete cards, and a built-in Intel adapter that must not displace them.",
+      "adapters": [
+        {"name": "英特尔(R) Arc(TM) A770 显卡", "provider": "Intel Corporation", "vram": 17179869184},
+        {"name": "AMD Radeon(TM) RX 7900 XTX", "provider": "Advanced Micro Devices, Inc.", "vram": 25769803776},
+        {"name": "英特尔(R) UHD 显卡 770", "provider": "Intel Corporation", "vram": 8589934592}
+      ],
+      "want": [
+        {"name": "AMD Radeon(TM) RX 7900 XTX", "vendor": "amd", "mem_total": 25769803776, "bandwidth": 960},
+        {"name": "英特尔(R) Arc(TM) A770 显卡", "vendor": "intel", "mem_total": 17179869184, "bandwidth": 560}
+      ]
+    },
+    {
+      "os": "ja-JP built-in only",
+      "note": "Japanese machine with only built-in graphics: the biggest share wins and no bandwidth is claimed for it.",
+      "adapters": [
+        {"name": "AMD Radeon(TM) グラフィックス", "provider": "Advanced Micro Devices, Inc.", "vram": 17179869184},
+        {"name": "インテル(R) Iris(R) Xe グラフィックス", "provider": "Intel Corporation", "vram": 8589934592}
+      ],
+      "want": [
+        {"name": "AMD Radeon(TM) グラフィックス", "vendor": "amd", "mem_total": 17179869184, "bandwidth": 0}
+      ]
+    }
+  ],
+  "usage": [
+    {
+      "os": "de-DE",
+      "file": "gpu_usage_de.txt",
+      "want": {"4321": 2147483648, "8765": 536870912}
+    },
+    {
+      "os": "ja-JP",
+      "file": "gpu_usage_ja.txt",
+      "want": {"1234": 1342177280, "5678": 134217728}
+    },
+    {
+      "os": "zh-CN",
+      "file": "gpu_usage_zh.txt",
+      "want": {"2468": 3221225472}
+    }
+  ],
+  "nvidia": [
+    {"os": "de-DE", "file": "nvidia_smi_de.csv", "want": 1},
+    {"os": "ja-JP", "file": "nvidia_smi_ja.csv", "want": 1},
+    {"os": "zh-CN", "file": "nvidia_smi_zh.csv", "want": 1}
+  ]
+}

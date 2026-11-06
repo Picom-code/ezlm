@@ -1,0 +1,4 @@
+# nvidia-smi --query-compute-apps=pid,process_name,used_memory
+# --format=csv,noheader,nounits, for the machine above: one process holds the
+# card's whole 24 GB.
+12345, python.exe, 24000

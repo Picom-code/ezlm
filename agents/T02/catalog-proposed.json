@@ -1,0 +1,2079 @@
+{
+ "version": 1,
+ "models": [
+  {
+   "id": "deepseek-v4.1-flash-1017",
+   "name": "DeepSeek V4.1 Flash 1017",
+   "family": "DeepSeek V4.1",
+   "vendor": "DeepSeek",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 763.21,
+   "moe": true,
+   "score": 32.59,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 32.59 at max effort.",
+   "layers": 40,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+   "active_params_b": 13.0,
+   "kv_layers": 40,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-17. 763B total, of which 196.6B is a per-layer token lookup table (768M x 256, an engram) that can stay on disk with --lazy-mode: the resident body is about 122 GB at IQ1_S and 165 GB at IQ2_XXS. 40 layers, top-6 of 384 experts, about 13B active (estimated). 1M context, MIT, multimodal with mmproj in the GGUF repo. Card: HLE without tools 42.6, Chartography with tools 83.0. llama.cpp arch deepseek41. The first quant above the 0.85 floor is IQ2_XXS: 165.3 GB resident and 172.9 GB planned with a 64K cache, so 192 GB is the smallest machine, and IQ3_XXS (241.7 GB planned) needs 320 GB. Without lazy loading the smallest file is 233 GB.",
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+     "files": [
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00001-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00002-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00003-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00004-of-00005.gguf",
+      "UD-IQ1_S/DeepSeek-V4.1-Flash-1017-UD-IQ1_S-00005-of-00005.gguf"
+     ],
+     "bytes": 232979608420,
+     "lazy_bytes": 110595290400
+    },
+    {
+     "name": "UD-IQ1_M",
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+     "files": [
+      "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00001-of-00005.gguf",
+      "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00002-of-00005.gguf",
+      "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00003-of-00005.gguf",
+      "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00004-of-00005.gguf",
+      "UD-IQ1_M/DeepSeek-V4.1-Flash-1017-UD-IQ1_M-00005-of-00005.gguf"
+     ],
+     "bytes": 250404346724,
+     "lazy_bytes": 110595290400
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+     "files": [
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00001-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00002-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00003-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00004-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00005-of-00006.gguf",
+      "UD-IQ2_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ2_XXS-00006-of-00006.gguf"
+     ],
+     "bytes": 300475464795,
+     "lazy_bytes": 135172021600
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+     "files": [
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00001-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00002-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00003-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00004-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00005-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00006-of-00007.gguf",
+      "UD-Q2_K_XL/DeepSeek-V4.1-Flash-1017-UD-Q2_K_XL-00007-of-00007.gguf"
+     ],
+     "bytes": 334793544836,
+     "lazy_bytes": 135172021600
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/DeepSeek-V4.1-Flash-1017-GGUF",
+     "files": [
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00001-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00002-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00003-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00004-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00005-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00006-of-00007.gguf",
+      "UD-IQ3_XXS/DeepSeek-V4.1-Flash-1017-UD-IQ3_XXS-00007-of-00007.gguf"
+     ],
+     "bytes": 394736596867,
+     "lazy_bytes": 161284798500
+    }
+   ]
+  },
+  {
+   "id": "glm-5.3",
+   "name": "GLM-5.3",
+   "family": "GLM-5.3",
+   "vendor": "Z AI",
+   "country": "CN",
+   "license": "glm-5.3 (custom)",
+   "params_b": 753.33,
+   "moe": true,
+   "score": 31.65,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 31.65 at max effort.",
+   "layers": 78,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "zai-org/GLM-5.3",
+   "active_params_b": 32.0,
+   "kv_layers": 78,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-08-25. 753B total, top-8 of 256 experts, about 32B active (estimated from the config; the card does not state it). MLA attention with a 576-wide compressed KV (512 latent plus 64 rope), so the cache is about 180 KB/token f16 and 11.5 GB at 64K. Card benchmarks (developer-run): Terminal-Bench 2.1 88.2, Terminal-Bench 3.0 28.3, DeepSWE 66.9, NL2Repo 58.0, Toolathlon Verified 73.0. Custom glm-5.3 licence. Needs 320 GB or more: the smallest usable file is UD-IQ2_M at 238.6 GB (253.3 GB with a 64K cache); IQ1_S and IQ1_M are below the 0.85 quant floor internal/fit applies to 150B+ models. llama.cpp arch glm-dsa. Text only.",
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "repo": "unsloth/GLM-5.3-GGUF",
+     "files": [
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00001-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00002-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00003-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00004-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00005-of-00006.gguf",
+      "UD-IQ1_S/GLM-5.3-UD-IQ1_S-00006-of-00006.gguf"
+     ],
+     "bytes": 216715365893
+    },
+    {
+     "name": "UD-IQ1_M",
+     "repo": "unsloth/GLM-5.3-GGUF",
+     "files": [
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00001-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00002-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00003-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00004-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00005-of-00006.gguf",
+      "UD-IQ1_M/GLM-5.3-UD-IQ1_M-00006-of-00006.gguf"
+     ],
+     "bytes": 228492971557
+    },
+    {
+     "name": "UD-IQ2_M",
+     "repo": "unsloth/GLM-5.3-GGUF",
+     "files": [
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00001-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00002-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00003-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00004-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00005-of-00006.gguf",
+      "UD-IQ2_M/GLM-5.3-UD-IQ2_M-00006-of-00006.gguf"
+     ],
+     "bytes": 238577585701
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/GLM-5.3-GGUF",
+     "files": [
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00001-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00002-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00003-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00004-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00005-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00006-of-00007.gguf",
+      "UD-Q2_K_XL/GLM-5.3-UD-Q2_K_XL-00007-of-00007.gguf"
+     ],
+     "bytes": 253878406789
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/GLM-5.3-GGUF",
+     "files": [
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00001-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00002-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00003-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00004-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00005-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00006-of-00007.gguf",
+      "UD-IQ3_XXS/GLM-5.3-UD-IQ3_XXS-00007-of-00007.gguf"
+     ],
+     "bytes": 281688436357
+    },
+    {
+     "name": "UD-IQ4_XS",
+     "repo": "unsloth/GLM-5.3-GGUF",
+     "files": [
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00001-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00002-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00003-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00004-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00005-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00006-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00007-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00008-of-00009.gguf",
+      "UD-IQ4_XS/GLM-5.3-UD-IQ4_XS-00009-of-00009.gguf"
+     ],
+     "bytes": 365313228709
+    }
+   ]
+  },
+  {
+   "id": "minimax-m3.1-flash",
+   "name": "MiniMax-M3.1-Flash",
+   "family": "MiniMax M3.1",
+   "vendor": "MiniMax",
+   "country": "CN",
+   "license": "minimax-community",
+   "params_b": 428.0,
+   "moe": true,
+   "score": 29.06,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 29.06.",
+   "layers": 60,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "MiniMaxAI/MiniMax-M3.1-Flash",
+   "active_params_b": 23.0,
+   "kv_layers": 60,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-17. 428B total, 23B active (card). Native multimodal (text, image, video), 1M context, minimax-community licence. Card claims (developer-run): DeepSWE v1.1 73.7, OSWorld V2 61.7, CyberGym 82.2. Full attention on all 60 layers, 4 KV heads of 128, so the cache is about 123 KB/token f16 and 7.9 GB at 64K. The smallest file is UD-IQ1_M at 129.4 GB (139.3 GB planned), but the 0.85 quant floor skips it, so the first usable quant is IQ2_XXS at 144.9 GB planned: a 160 GB machine at 32K context, a 192 GB machine for IQ3_XXS (170.3 GB planned). llama.cpp arch minimax-m3. mmproj included; a DSpark draft file is published separately.",
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+     "files": [
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00001-of-00004.gguf",
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00002-of-00004.gguf",
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00003-of-00004.gguf",
+      "UD-IQ1_M/MiniMax-M3.1-Flash-UD-IQ1_M-00004-of-00004.gguf"
+     ],
+     "bytes": 129361076548
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+     "files": [
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00001-of-00004.gguf",
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00002-of-00004.gguf",
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00003-of-00004.gguf",
+      "UD-IQ2_XXS/MiniMax-M3.1-Flash-UD-IQ2_XXS-00004-of-00004.gguf"
+     ],
+     "bytes": 134947889444
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+     "files": [
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00001-of-00004.gguf",
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00002-of-00004.gguf",
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00003-of-00004.gguf",
+      "UD-Q2_K_XL/MiniMax-M3.1-Flash-UD-Q2_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 143910068580
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+     "files": [
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00001-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00002-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00003-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00004-of-00005.gguf",
+      "UD-IQ3_XXS/MiniMax-M3.1-Flash-UD-IQ3_XXS-00005-of-00005.gguf"
+     ],
+     "bytes": 160048968132
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+     "files": [
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00001-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00002-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00003-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00004-of-00005.gguf",
+      "UD-Q3_K_XL/MiniMax-M3.1-Flash-UD-Q3_K_XL-00005-of-00005.gguf"
+     ],
+     "bytes": 193951346788
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/MiniMax-M3.1-Flash-GGUF",
+     "files": [
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00001-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00002-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00003-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00004-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00005-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00006-of-00007.gguf",
+      "UD-Q4_K_XL/MiniMax-M3.1-Flash-UD-Q4_K_XL-00007-of-00007.gguf"
+     ],
+     "bytes": 249402105310
+    }
+   ]
+  },
+  {
+   "id": "glm-5.3-flash",
+   "name": "GLM-5.3 Flash",
+   "family": "GLM-5.3",
+   "vendor": "Z AI",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 321.32,
+   "moe": true,
+   "score": 27.8,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06): 27.8, thinking at the default max effort.",
+   "layers": 45,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "zai-org/GLM-5.3-Flash",
+   "active_params_b": 18.0,
+   "kv_layers": 12,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-25. 320B total, 18B active (card). First GLM with hybrid sparse and linear attention: only every fourth layer keeps a KV cache (12 of 45), so the cache is about 24 KB/token f16 and long context is cheap. Natively multimodal, mmproj is in the GGUF repo. 1M context, MIT. llama.cpp arch glm5-next (b11960). At 128 GB the IQ2_XXS (101.8 GB) and Q2_K_XL (108.7 GB) files fit with room for 64K context (112.0 GB planned). IQ3_XXS (120.4 GB, 123.8 GB planned) needs a 160 GB machine, and Q3_K_XL (147.5 GB) a 192 GB one.",
+   "quants": [
+    {
+     "name": "UD-IQ1_S",
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "files": [
+      "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00001-of-00003.gguf",
+      "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00002-of-00003.gguf",
+      "UD-IQ1_S/GLM-5.3-Flash-UD-IQ1_S-00003-of-00003.gguf"
+     ],
+     "bytes": 93087245088
+    },
+    {
+     "name": "UD-IQ1_M",
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "files": [
+      "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00001-of-00003.gguf",
+      "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00002-of-00003.gguf",
+      "UD-IQ1_M/GLM-5.3-Flash-UD-IQ1_M-00003-of-00003.gguf"
+     ],
+     "bytes": 97579344672
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "files": [
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00001-of-00004.gguf",
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00002-of-00004.gguf",
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00003-of-00004.gguf",
+      "UD-IQ2_XXS/GLM-5.3-Flash-UD-IQ2_XXS-00004-of-00004.gguf"
+     ],
+     "bytes": 101844951904
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "files": [
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00001-of-00004.gguf",
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00002-of-00004.gguf",
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00003-of-00004.gguf",
+      "UD-Q2_K_XL/GLM-5.3-Flash-UD-Q2_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 108720071552
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "files": [
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00001-of-00004.gguf",
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00002-of-00004.gguf",
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00003-of-00004.gguf",
+      "UD-IQ3_XXS/GLM-5.3-Flash-UD-IQ3_XXS-00004-of-00004.gguf"
+     ],
+     "bytes": 120367571840
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/GLM-5.3-Flash-GGUF",
+     "files": [
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00001-of-00004.gguf",
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00002-of-00004.gguf",
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00003-of-00004.gguf",
+      "UD-Q3_K_XL/GLM-5.3-Flash-UD-Q3_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 147535922080
+    }
+   ]
+  },
+  {
+   "id": "qwen3.8-flash-next",
+   "name": "Qwen3.8 Flash Next",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "qwen-community-1.0 (UNVERIFIED terms)",
+   "params_b": 180.0,
+   "moe": true,
+   "score": 27.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with an official v5 index (RMSE 1.7 pts); predicted 27.7 (legacy-component fit 26.8). AA lists the components but no official v5 index for this model (v4.3 score 40). Treat as about equal to GLM-5.3-Flash (27.8) and below DeepSeek V4.1 Flash (32.5 max / 28.5 high).",
+   "layers": 48,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-Flash-Next",
+   "active_params_b": 6.0,
+   "kv_layers": 12,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-24. 125B backbone (512 experts, top-10, 6B active) + 51B n-gram embedding table (one row read per token, can stay mmapped on SSD/RAM and never needs VRAM) + 4B MTP. Hybrid Gated DeltaNet + Qwen Sparse Attention: only 12 of 48 layers keep a KV cache, so 256K context costs about 6.3GB at F16 KV and 3.2GB at q8_0. The GSQ-RCO IQ3_S file (83.6GB) is the best quality that leaves room for full context on a 96GB box; IQ3_XXS (75.8GB) leaves more headroom. llama.cpp qwen4exp arch merged 2026-08-27. Vision needs the repo's mmproj file.",
+   "quants": [
+    {
+     "name": "GSQ-RCO-IQ3_XXS",
+     "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+     "files": [
+      "IQ3_XXS/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00001-of-00002.gguf",
+      "IQ3_XXS/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_XXS-00002-of-00002.gguf"
+     ],
+     "bytes": 75839998528
+    },
+    {
+     "name": "GSQ-RCO-IQ3_S",
+     "repo": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+     "files": [
+      "IQ3_S/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf",
+      "IQ3_S/Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf"
+     ],
+     "bytes": 83617662656
+    }
+   ]
+  },
+  {
+   "id": "ornith-1.5-122b",
+   "name": "Ornith 1.5 122B",
+   "family": "Ornith 1.5",
+   "vendor": "Ornith AI",
+   "country": "US",
+   "license": "MIT",
+   "params_b": 125.09,
+   "moe": true,
+   "score": 26.0,
+   "score_source": "ESTIMATE: not on the Artificial Analysis leaderboard on 2026-11-06. Placed from developer-reported evals on the model card (2026-10-16) against models that are on it: SWE-bench Pro 76.9 vs 43.9 for Qwen3.8-Flash-Next, SWE-bench Verified 84.5 vs 82.8, HLE with tools 48.0 vs 38.0, Terminal-Bench 2.1 81.2 vs 83.4. Qwen3.8-Flash-Next carries an ESTIMATE of 27.0 in the current catalog, so 26.0 is a conservative placement. Treat as UNVERIFIED.",
+   "layers": 48,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "ornith-ai/Ornith-1.5-122B",
+   "active_params_b": 6.0,
+   "kv_layers": 12,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-16. 125B total, about 6B active (8 of 256 experts; estimated from the config). Built on Qwen3.5 and Gemma4 bases with a self-improvement RL loop. Hybrid attention, full attention every fourth layer (12 of 48), so the cache is about 24 KB/token f16. The card's benchmark numbers are developer-run with harness notes (Claude Code 2.1.126, OpenHands, 256K context), not independent. The card's MIT licence link is a 404, so the licence is UNVERIFIED. Vendor country is not stated on the card. GGUF repo includes mmproj. llama.cpp arch qwen35moe.",
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "Ornith-1.5-122B-UD-IQ1_M.gguf"
+     ],
+     "bytes": 40356745472
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "Ornith-1.5-122B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 41967395072
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "Ornith-1.5-122B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 44533952768
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "Ornith-1.5-122B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 49515667712
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "UD-Q3_K_XL/Ornith-1.5-122B-UD-Q3_K_XL-00001-of-00003.gguf",
+      "UD-Q3_K_XL/Ornith-1.5-122B-UD-Q3_K_XL-00002-of-00003.gguf",
+      "UD-Q3_K_XL/Ornith-1.5-122B-UD-Q3_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 59761254545
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "UD-Q4_K_XL/Ornith-1.5-122B-UD-Q4_K_XL-00001-of-00003.gguf",
+      "UD-Q4_K_XL/Ornith-1.5-122B-UD-Q4_K_XL-00002-of-00003.gguf",
+      "UD-Q4_K_XL/Ornith-1.5-122B-UD-Q4_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 79713771665
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "UD-Q5_K_XL/Ornith-1.5-122B-UD-Q5_K_XL-00001-of-00003.gguf",
+      "UD-Q5_K_XL/Ornith-1.5-122B-UD-Q5_K_XL-00002-of-00003.gguf",
+      "UD-Q5_K_XL/Ornith-1.5-122B-UD-Q5_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 94611939505
+    },
+    {
+     "name": "UD-Q6_K_XL",
+     "repo": "unsloth/Ornith-1.5-122B-GGUF",
+     "files": [
+      "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00001-of-00004.gguf",
+      "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00002-of-00004.gguf",
+      "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00003-of-00004.gguf",
+      "UD-Q6_K_XL/Ornith-1.5-122B-UD-Q6_K_XL-00004-of-00004.gguf"
+     ],
+     "bytes": 114222407953
+    }
+   ]
+  },
+  {
+   "id": "nanbeige4.3-33b",
+   "name": "Nanbeige4.3 33B",
+   "family": "Nanbeige4.3",
+   "vendor": "Nanbeige (Kanzhun / BOSS Zhipin)",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 33.12,
+   "moe": false,
+   "score": 20.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06) (highest dense model on v5; brand-new, 2026-10-24 - verify with own evals)",
+   "layers": 52,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "Nanbeige/Nanbeige4.3-33B",
+   "active_params_b": 33.12,
+   "kv_layers": 52,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10-24. Llama-architecture dense 33B with full attention on all 52 layers: KV is ~208 KB/token at F16, so 12 GB needs q8_0 KV and at most 8K context. Highest dense AA v5 score in this tier (AutomationBench 53%, TB4 30%), but HLE-D 6.9% and Omniscience much lower than Qwen3.8-27B. Tool calling UNVERIFIED.",
+   "quants": [
+    {
+     "name": "IQ2_XXS",
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_XXS.gguf"
+     ],
+     "bytes": 10071403648
+    },
+    {
+     "name": "IQ2_XS",
+     "repo": "bartowski/Nanbeige_Nanbeige4.3-33B-GGUF",
+     "files": [
+      "Nanbeige_Nanbeige4.3-33B-IQ2_XS.gguf"
+     ],
+     "bytes": 10634407040
+    }
+   ]
+  },
+  {
+   "id": "qwen3.8-27b",
+   "name": "Qwen3.8 27B",
+   "family": "Qwen3.8",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 27.78,
+   "moe": false,
+   "score": 20.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06) - Xhigh effort. Medium 17.5, Low 15.7, Non-reasoning 10.0.",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.8-27B",
+   "active_params_b": 27.78,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-05. 48 Gated DeltaNet + 16 full-attention layers give a tiny KV cache. AA v5: GPQA-Diamond 90.5%, Terminal-Bench 2.1 79.8%, tau3-Banking 48.0%, HLE 33.9%. GSQ-RCO quants are measured at 0.94-0.985 of FP16 quality. No MTP draft in this tier entry: the catalog's 3.16 GB Q8_0 draft pushes the model into split mode on a 12 GB card, and the 1.68 GB Q4_0 draft only fits by dropping from 64K to 32K context, so the planner gets a better plan without a draft.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/Qwen3.8-27B-GGUF",
+     "files": [
+      "Qwen3.8-27B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 7266070528
+    },
+    {
+     "name": "GSQ-RCO-IQ2_XS",
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_XS.gguf"
+     ],
+     "bytes": 8422841472,
+     "quality": 0.94
+    },
+    {
+     "name": "GSQ-RCO-IQ2_S",
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ2_S.gguf"
+     ],
+     "bytes": 9259510912,
+     "quality": 0.95
+    },
+    {
+     "name": "GSQ-RCO-IQ3_XXS",
+     "repo": "ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+     "files": [
+      "Qwen3.8-27B-GSQ-RCO-IQ3_XXS.gguf"
+     ],
+     "bytes": 10094357632,
+     "quality": 0.985
+    }
+   ]
+  },
+  {
+   "id": "flint",
+   "name": "Flint",
+   "family": "Flint",
+   "vendor": "Recursive",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 39.79,
+   "moe": true,
+   "score": 19.0,
+   "score_source": "ESTIMATE: no Artificial Analysis entry on 2026-11-06. Placed at 19.0 from its 40B size and developer-reported coding evals on the model card (2026-10-21): Terminal-Bench 2.1 54.9, SWE-bench Pro v2 89.7, SWE-bench Verified 74.2. A general-intelligence index would likely be lower than its coding rank; treat as UNVERIFIED and do not compare with the general picks.",
+   "layers": 49,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "RecursiveSI/flint",
+   "active_params_b": 2.5,
+   "kv_layers": 14,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10-21. 39.8B total, about 2.5B active (card), built for coding agents. 35 sliding-window layers (window 513) and 14 full-attention layers, so the growing cache is about 29 KB/token f16 plus a fixed window cache; the small active set makes it fast with a long context. Coding specialist: the general score above is an ESTIMATE, the coding numbers are developer-run (Terminus 2 for Terminal-Bench, mini-swe-agent for SWE-bench). Apache-2.0. llama.cpp arch flint. Fits comfortably from 48 GB up, so this is the fast coding option for a 128 GB machine rather than a use of the tier's capacity.",
+   "quants": [
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 25054688704
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 29919491520
+    },
+    {
+     "name": "UD-Q6_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q6_K_XL.gguf"
+     ],
+     "bytes": 36319999424
+    },
+    {
+     "name": "Q8_0",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-Q8_0.gguf"
+     ],
+     "bytes": 42301076928
+    }
+   ],
+   "swa_layers": 35,
+   "swa_kv_heads": 4,
+   "swa_head_dim": 128,
+   "swa_window": 513
+  },
+  {
+   "id": "ternary-bonsai-2-27b",
+   "name": "Ternary Bonsai 2 27B",
+   "family": "Bonsai 2",
+   "vendor": "PrismML",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 27.36,
+   "moe": false,
+   "score": 18.0,
+   "score_source": "ESTIMATE (no AA data): mapped by hand from base model + vendor retention numbers; treat as UNVERIFIED. Basis: PrismML reports 98.2% of Qwen3.8-27B FP16 on a 14-20 benchmark suite (84.78 vs 86.32), but knowledge -5.7 pts and agentic -1.8 pts, which v5 weights heavily -> ~90% of Qwen3.8-27B Xhigh (20.1)",
+   "layers": 64,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "prism-ml/Ternary-Bonsai-2-27B-gguf",
+   "active_params_b": 27.36,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": true,
+   "notes": "Released 2026-09-17. Native ternary {-1,0,+1} QAT compression of Qwen3.8-27B; the 7.63 GB Q2_0 is the real format, not a 2-bit copy, so it keeps near-FP16 quality (vendor: 98.2% of Qwen3.8-27B FP16). Same 16-full-attention-layer KV as Qwen3.8-27B, so 32K context fits 12 GB. Vendor category deltas vs FP16: coding 89.4 vs 89.1, agentic 74.9 vs 76.7, knowledge 79.9 vs 85.6.",
+   "quants": [
+    {
+     "name": "Q2_0",
+     "files": [
+      "Ternary-Bonsai-2-27B-Q2_0.gguf"
+     ],
+     "bytes": 7626008928
+    }
+   ]
+  },
+  {
+   "id": "nemotron-3.5-super-vl-120b-a12b",
+   "name": "Nemotron 3.5 Super VL 120B A12B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 124.45,
+   "moe": true,
+   "score": 13.6,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02); AA model page shows 14 when rounded (accessed 2026-11-06).",
+   "layers": 88,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+   "active_params_b": 12.0,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-12. Hybrid Mamba2/MoE: 40 Mamba + 40 MoE (512 experts, top-22) + 8 attention blocks, so the KV cache is tiny and the full 1M context is practical at 96GB. Best US-origin open model in this tier; vision input; MTP draft published by ggml-org. Q4_K_XL (86.9GB) is the quality pick and Q3_K_XL (65.8GB) leaves 30GB for long context and batch.",
+   "quants": [
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "files": [
+      "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00001-of-00003.gguf",
+      "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00002-of-00003.gguf",
+      "UD-Q3_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q3_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 65761541032
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-GGUF",
+     "files": [
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q4_K_XL-00001-of-00003.gguf",
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q4_K_XL-00002-of-00003.gguf",
+      "UD-Q4_K_XL/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-UD-Q4_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 86907243432
+    }
+   ]
+  },
+  {
+   "id": "k2-horizon-mova-36b-a4b",
+   "name": "K2 Horizon MoVA 36B A4B",
+   "family": "K2 Horizon",
+   "vendor": "IFM (Institute of Foundation Models)",
+   "country": "AE",
+   "license": "Apache-2.0",
+   "params_b": 37.44,
+   "moe": true,
+   "score": 13.0,
+   "score_source": "ESTIMATE: v5-equivalent from AA's published v5 components (AA-Briefcase 1164.8, GDPval-AA 1196.7, AutomationBench 26.1%, GDP.pdf 4.2%, HLE-Diamond 23.4%, AA-LCR 71.7%, TB2.1 56.6%, SciCode 40.0%, GPQA 82.2%, tau3-Banking 32.0%) via linear fit on 38 models with an official v5 index (RMSE 2.9) -> 14.1; legacy fit (HLE, AA-LCR, GDPval, CritPt) on 87 models -> 12.7; use 13.0. Fetched 2026-11-06.",
+   "layers": 48,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "IFM/K2-Horizon-MoVA-36B-A4B",
+   "active_params_b": 4.0,
+   "kv_layers": 48,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-01. Mixture-of-Experts with Mixture-of-Values attention: 100 experts, top-8 plus one shared, 4B active out of 37.4B counted (36B nominal). Native 524K context, fully open (training data, recipe and code published). AA components fetched 2026-11-06: AA-Briefcase 1164.8, GDPval-AA 1196.7, AutomationBench 26.1%, HLE-Diamond 23.4%, AA-LCR 71.7%, TB2.1 56.6%, SciCode 40.0%, GPQA 82.2%, tau3-Banking 32.0%. Vendor card: tau3-Banking 26.8, TB2.1 58.6, HLE 25.2, GPQA 80.8. All 48 layers are full attention, so KV costs 12.9 GB at 64K f16; that is what caps context at this tier. Reasoning effort and tool calling are in the chat template. 32 GB tier: Q4_K_M (22.37 GB) reaches about 70K context on Linux, 58K on Windows and 46K on Vulkan; Q5_K_M (26.44 GB) only reaches about 32K on Linux. All 48 layers are full attention, so KV costs 12.9 GB at 64K f16, which is what caps context here.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF",
+     "files": [
+      "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf"
+     ],
+     "bytes": 22368011616
+    }
+   ]
+  },
+  {
+   "id": "ornith-1.5-35b-a3b",
+   "name": "Ornith 1.5 35B A3B",
+   "family": "Ornith",
+   "vendor": "Ornith AI",
+   "country": "US",
+   "license": "MIT",
+   "params_b": 35.0,
+   "moe": true,
+   "score": 13.0,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor Terminal-Bench 2.1 is 67.8 (Terminus-2) vs 52.5 for Qwen3.6-35B-A3B on the same harness; scaling through AA's measured 44.9 for Qwen3.6-35B-A3B (catalog 9.5) and the Qwen3.6-27B (60.7, 12.0) and Qwen3.8-27B (79.8, 20.1) points gives 12 to 14. Vendor GPQA Diamond 89.2 and HLE 25.6 support it. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "ornith-ai/Ornith-1.5-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-18 by Ornith AI. 35B total, about 3B active, Qwen3.5-MoE backbone with linear attention in 30 of 40 layers, so only 10 layers carry a growing KV cache. Vendor numbers, five-run averages: Terminal-Bench 2.1 67.8 (Terminus-2) and 68.5 (Claude Code), SWE-bench Verified 79.0, SWE-bench Pro 59.6, GPQA Diamond 89.2, HLE 25.6, NL2Repo 46.2. Q3_K_XL (17.8 GB) fits 24 GB with 64K context and q8 KV; 256K context still fits a Linux budget. The image projector is a separate mmproj file. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "IQ3_XS",
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF",
+     "files": [
+      "Ornith-1.5-35B-A3B-IQ3_XS.gguf"
+     ],
+     "bytes": 16689088160
+    },
+    {
+     "name": "Q3_K_XL",
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF",
+     "files": [
+      "Ornith-1.5-35B-A3B-Q3_K_XL.gguf"
+     ],
+     "bytes": 17801889440
+    },
+    {
+     "name": "IQ4_XS",
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF",
+     "files": [
+      "Ornith-1.5-35B-A3B-IQ4_XS.gguf"
+     ],
+     "bytes": 19278554784
+    },
+    {
+     "name": "Q4_K_M",
+     "repo": "bartowski/Ornith-1.5-35B-A3B-GGUF",
+     "files": [
+      "Ornith-1.5-35B-A3B-Q4_K_M.gguf"
+     ],
+     "bytes": 21864081056
+    }
+   ]
+  },
+  {
+   "id": "flint-40b-a2b",
+   "name": "Flint 40B A2.5B",
+   "family": "Flint",
+   "vendor": "Recursive",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 39.79,
+   "moe": true,
+   "score": 12.0,
+   "score_source": "ESTIMATE (no AA v5 index as of 2026-11-06): vendor-reported Terminal-Bench 2.1 54.9% and SWE-bench Verified 74.2% (RecursiveSI/flint model card, fetched 2026-11-06); TB2.1 is level with K2-Horizon-MoVA-36B-A4B (56.6% on AA), which fits to 13.0, so estimate 12.0. Not independently verified.",
+   "layers": 49,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "RecursiveSI/flint",
+   "active_params_b": 2.5,
+   "kv_layers": 14,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10-21. 39.8B total, about 2.5B active (2.2B body), 49 layers (2 dense + 47 MoE), 256 routed experts top-6 plus a shared expert. 35 sliding-window layers (window 513) and 14 full-attention layers, so KV is only 1.9GB at 64K f16. 262K context. Built for coding agents: vendor-reported Terminal-Bench 2.1 54.9%, SWE-bench Pro v2 89.7%, SWE-bench Verified 74.2% (model card, 2026-11-06); no Artificial Analysis row yet. Multi-turn tool use and reasoning are in the chat template. Apache-2.0.",
+   "quants": [
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 25054688704
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 29919491520
+    },
+    {
+     "name": "UD-Q6_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q6_K_XL.gguf"
+     ],
+     "bytes": 36319999424
+    },
+    {
+     "name": "Q8_0",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-Q8_0.gguf"
+     ],
+     "bytes": 42301076928
+    }
+   ],
+   "swa_layers": 35,
+   "swa_kv_heads": 4,
+   "swa_head_dim": 128,
+   "swa_window": 513
+  },
+  {
+   "id": "nemotron-3.5-bolt-74b-a9b",
+   "name": "Nemotron 3.5 Bolt 74B A9B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 74.89,
+   "moe": true,
+   "score": 11.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 13.1; partial v5 components (AutomationBench 15%, Briefcase 912) imply ~11",
+   "layers": 88,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16",
+   "active_params_b": 9.0,
+   "kv_layers": 8,
+   "vision": true,
+   "notes": "Released 2026-10-09. Star-Elastic compression of Super VL (heterogeneous expert counts, top-k 22->9). Same 8 attention layers. NVIDIA recipes: 28GB (32GB GPU, 65K ctx) / 32GB (48GB GPU, 262K ctx). 32 GB tier: UD-IQ2_M (24.61 GB) is the largest model that fits comfortably here, at the full 256K context on Linux (27.4 GB), 488K of headroom on Windows and 338K on Vulkan; UD-Q2_K_XL (28.75 GB) is a Linux-only option at about 150K. Only 8 of 88 layers carry a KV cache, so context is nearly free.",
+   "draft": {
+    "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF",
+    "file": "dflash-NVIDIA-Nemotron-3.5-Bolt-74B-A9B-NVFP4.gguf",
+    "bytes": 998242560,
+    "type": "draft-dflash"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-IQ2_M.gguf"
+     ],
+     "bytes": 24607493120
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-GGUF",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-74B-A9B-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 28753128448
+    }
+   ]
+  },
+  {
+   "id": "step-3.7-flash",
+   "name": "Step 3.7 Flash",
+   "family": "Step 3.7",
+   "vendor": "StepFun",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 201.37,
+   "moe": true,
+   "score": 11.4,
+   "score_source": "ESTIMATE: no official AA v5 index. Predicted from AA's published legacy components (SciCode 43.9%, CritPt 2.3%) via linear fit on 98 models with an official v5 index (RMSE 5.5 pts) -> 11.4; its other AA components point the same way (Terminal-Bench Hard 35.6%, tau2 98.5%, IFBench 67.3%, GPQA 80.9%). Treat as 11 +/- 5 until AA publishes an index.",
+   "layers": 45,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "unsloth/Step-3.7-Flash-GGUF",
+   "active_params_b": 11.0,
+   "kv_layers": 12,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-05-29. 198B language backbone + 1.8B vision encoder, 288 experts, top-8, ~11B active; 1 full-attention layer in every 4 (12 of 45), the rest use a 512-token sliding window, so KV is small for a 200B model. Official stepfun-ai GGUF repo starts at IQ3_XXS (75.8GB) and does not fit 64GB; these quants are unsloth's. Vision adds the repo's mmproj-F16.gguf (4.0GB): 56.8GB weights + 4.0GB vision + ~2.0GB KV at 32k = 62.7GB, so vision fits only on a clean 64GB machine.",
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/Step-3.7-Flash-UD-IQ1_M-00001-of-00003.gguf",
+      "UD-IQ1_M/Step-3.7-Flash-UD-IQ1_M-00002-of-00003.gguf",
+      "UD-IQ1_M/Step-3.7-Flash-UD-IQ1_M-00003-of-00003.gguf"
+     ],
+     "bytes": 56750287328
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/Step-3.7-Flash-UD-IQ2_XXS-00001-of-00003.gguf",
+      "UD-IQ2_XXS/Step-3.7-Flash-UD-IQ2_XXS-00002-of-00003.gguf",
+      "UD-IQ2_XXS/Step-3.7-Flash-UD-IQ2_XXS-00003-of-00003.gguf"
+     ],
+     "bytes": 61704808928
+    }
+   ],
+   "swa_layers": 33,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 128,
+   "swa_window": 512
+  },
+  {
+   "id": "flint-40b-a2.5b",
+   "name": "Flint 40B A2.5B",
+   "family": "Flint",
+   "vendor": "Recursive",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 39.8,
+   "moe": true,
+   "score": 10.5,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): coding-agent specialist; vendor Terminal-Bench 2.1 is 54.9 (Terminus 2), SWE-bench Verified 74.2 and SWE-bench Pro v2 89.7. Qwen3.6-35B-A3B measures 44.9 on AA's Terminal-Bench 2.1 and scores 9.5 here, so 54.9 maps near 10.5; general knowledge is untested. Treat as UNVERIFIED.",
+   "layers": 49,
+   "kv_heads": 4,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "RecursiveSI/flint",
+   "active_params_b": 2.5,
+   "kv_layers": 14,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10 by Recursive Superintelligence for coding agents. 39.8B total, about 2.5B active, 49 layers: 14 full-attention plus 35 sliding-window layers (window 513), so long context is cheap. Vendor numbers, with web-retrieved solutions counted as failures: Terminal-Bench 2.1 54.9, SWE-bench Pro v2 89.7, SWE-bench Verified 74.2. UD-Q3_K_XL (18.5 GB) fits 24 GB with 64K context; UD-Q4_K_XL (25.1 GB) does not. Coding-focused, so general chat and knowledge are unproven. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 11855541696
+    },
+    {
+     "name": "UD-Q2_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q2_K_XL.gguf"
+     ],
+     "bytes": 13562207680
+    },
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 14535427520
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/flint-GGUF",
+     "files": [
+      "flint-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 18494977472
+    }
+   ],
+   "swa_layers": 35,
+   "swa_kv_heads": 4,
+   "swa_head_dim": 128,
+   "swa_window": 513
+  },
+  {
+   "id": "groot-19b-a3b",
+   "name": "Groot 19B A3B",
+   "family": "Groot",
+   "vendor": "Groot Team",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 19.0,
+   "moe": true,
+   "score": 10.0,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor 16-benchmark average is 41.44 vs 38.08 for Qwen3.6-35B-A3B and 30.05 for Gemma-4-26B-A4B; Terminal-Bench 2.1 is 52.10 vs 43.82 and LongBench v2 is 62.03 vs 48.12. That is 8.8% above the catalog's 9.5 for Qwen3.6-35B-A3B; 19B total limits knowledge capacity, so 10.0. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "GrootTeam/Groot-19B-A3B-261023",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-23 by the Groot Team, post-trained from Qwen3.6-35B-A3B on under 0.1B tokens. 19B total, about 3B active, 10 full-attention layers with linear attention elsewhere. Vendor numbers: 16-benchmark average 41.44, Terminal-Bench 2.1 52.10, NL2Repo 35.65, LongBench v2 62.03. Q8_0 (20.2 GB) fits 24 GB with 64K context, so this tier can run a near-lossless quant; the vendor claims 256K on a 24 GB RTX 4090. The image projector is a separate mmproj file. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q4_K_M.gguf"
+     ],
+     "bytes": 12484339584
+    },
+    {
+     "name": "Q5_K_M",
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q5_K_M.gguf"
+     ],
+     "bytes": 14719903616
+    },
+    {
+     "name": "Q6_K",
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q6_K.gguf"
+     ],
+     "bytes": 16791324544
+    },
+    {
+     "name": "Q8_0",
+     "repo": "bartowski/GrootTeam_Groot-19B-A3B-261023-GGUF",
+     "files": [
+      "GrootTeam_Groot-19B-A3B-261023-Q8_0.gguf"
+     ],
+     "bytes": 20230129536
+    }
+   ]
+  },
+  {
+   "id": "qwen3.6-35b-a3b",
+   "name": "Qwen3.6 35B A3B",
+   "family": "Qwen3.6",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 35.95,
+   "moe": true,
+   "score": 9.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: predicted 9.5 (legacy fit 7.9). AA-Briefcase 713 vs Qwen3.8-27B 1393, AutomationBench 5% vs 48%. Was 43 on v4.0 (vs Qwen3.6-27B 46, Gemma 4 31B 39)",
+   "layers": 40,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.6-35B-A3B",
+   "active_params_b": 3.0,
+   "kv_layers": 10,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-04-15. 35.9B MoE with 3B active: the 10.76 GB UD-IQ2_XXS is the only file that fits 12 GB fully, but the 10-layer KV cache is tiny, so 8K context fits on a 12 GB Linux CUDA card. AA v5 components: GPQA 84.1%, TB2.1 44.9%, tau2 95.3%, HLE 22.2%. Use UD-Q4_K_XL (22.4 GB) with expert offload when the machine has 32 GB RAM.",
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+     "files": [
+      "Qwen3.6-35B-A3B-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 10756586464
+    }
+   ]
+  },
+  {
+   "id": "ornith-1.5-9b",
+   "name": "Ornith 1.5 9B",
+   "family": "Ornith 1.5",
+   "vendor": "Ornith AI",
+   "country": "US",
+   "license": "MIT",
+   "params_b": 9.65,
+   "moe": false,
+   "score": 9.0,
+   "score_source": "ESTIMATE (vendor benchmarks; no AA v5 index yet): Ornith model card 2026-08-19 reports Terminal-Bench 2.1 46.2 (Terminus-2) / 47.0 (Claude Code), SWE-bench Verified 70.6, SWE-bench Pro 47.5, SWE-bench Multilingual 54.4, GPQA-Diamond 86.4, HLE 20.2 (30.5 with tools), MCP-Atlas 54.2, Toolathlon 41.2, WideSearch 59.5, BrowseComp 56.4, ClawEval 66.5, mean of 5 runs. Anchored to catalog v5 anchors: clearly above Gemma-4-31B (8.0) on TB2.1, SWE-V, GPQA and ClawEval, just below Qwen3.6-35B-A3B (9.5) on agentic suites -> 9.0. Vendor-reported, not independently reproduced.",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "ornith-ai/Ornith-1.5-9B",
+   "active_params_b": 9.65,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-08-19. Dense 9.65B on the Qwen3.5-9B architecture (qwen35, hybrid DeltaNet with full attention every 4th layer, 32 layers + 1 MTP/NextN head in the GGUF). Self-improvement loop over tasks, scaffolds and rollouts (Ornith 1.5). Coding is its strength: within 4-7 pts of Qwen3.6-35B-A3B on Terminal-Bench and SWE-bench at a quarter of the weights. Native 262K context; mmproj is separate (0.92GB). MIT, so the most permissive strong pick here. Chat template supports tool calls. At 8 GB: Q5_K_M (6.19GiB) leaves ~0.8GiB for a 16K KV cache and compute buffers; Q4_K_M (5.38GiB) is the safe pick on an 8GB unified machine (7.0GiB budget).",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "repo": "ornith-ai/Ornith-1.5-9B-GGUF",
+     "files": [
+      "Ornith-1.5-9B-Q4_K_M.gguf"
+     ],
+     "bytes": 5780090816
+    },
+    {
+     "name": "Q5_K_M",
+     "repo": "ornith-ai/Ornith-1.5-9B-GGUF",
+     "files": [
+      "Ornith-1.5-9B-Q5_K_M.gguf"
+     ],
+     "bytes": 6642544576
+    }
+   ]
+  },
+  {
+   "id": "k2-horizon-7b",
+   "name": "K2 Horizon 7B",
+   "family": "K2 Horizon",
+   "vendor": "Institute of Foundation Models",
+   "country": "AE",
+   "license": "Apache-2.0",
+   "params_b": 7.0,
+   "moe": false,
+   "score": 8.5,
+   "score_source": "ESTIMATE (Artificial Analysis has no v5 Intelligence Index for this model): mapped from AA's own per-benchmark run of 2026-11-06 (GPQA Diamond 75.3, HLE 18.2, Terminal-Bench 2.1 44.2, tau3-Banking 27.6, SciCode 27.5, AA-LCR 69.7), which sits between Nemotron 3.5 Lightning (catalog 5.5) and Qwen3.6-35B-A3B (catalog 9.5); set 8.5. Vendor card also claims SWE-bench Verified 72.4 and BFCL v4 67.0. Composite is UNVERIFIED.",
+   "layers": 36,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "IFM/K2-Horizon-7B",
+   "active_params_b": 7.0,
+   "kv_layers": 36,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-03 (AA model page). Dense 7B, 36 layers, 8 KV heads x 128, native 512K context, Apache-2.0. AA Terminal-Bench 2.1 44.2 and vendor BFCL v4 67.0 make it the strongest agentic model that fits 6 GB. Fit with q4_0 KV (resident GiB): IQ3_XXS at 16K ~4.8, at 32K ~5.5; Q3_K_M at 16K ~5.2. Official IFM Q4_K_M (5.59 GB) leaves too little room for KV. Text only.",
+   "quants": [
+    {
+     "name": "IQ3_XXS",
+     "repo": "bartowski/K2-Horizon-7B-GGUF",
+     "files": [
+      "K2-Horizon-7B-IQ3_XXS.gguf"
+     ],
+     "bytes": 4066819360
+    },
+    {
+     "name": "Q3_K_S",
+     "repo": "bartowski/K2-Horizon-7B-GGUF",
+     "files": [
+      "K2-Horizon-7B-Q3_K_S.gguf"
+     ],
+     "bytes": 4253334816
+    },
+    {
+     "name": "Q3_K_M",
+     "repo": "bartowski/K2-Horizon-7B-GGUF",
+     "files": [
+      "K2-Horizon-7B-Q3_K_M.gguf"
+     ],
+     "bytes": 4421860640
+    }
+   ]
+  },
+  {
+   "id": "nanbeige4.2-3b",
+   "name": "Nanbeige4.2 3B",
+   "family": "Nanbeige 4.2",
+   "vendor": "Nanbeige",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 4.0,
+   "moe": false,
+   "score": 7.8,
+   "score_source": "ESTIMATE (no Artificial Analysis index as of 2026-11-06; model is absent from artificialanalysis.ai): mapped from the vendor benchmark table (Nanbeige model card, 2026-07-21) against AA v5.0.1-scored peers. The vendor table puts it above Qwen3.5-9B (catalog score 5.0) and Gemma 4 12B (catalog 3.5) on every row: GPQA-Diamond 87.4, HLE 17.8, LiveCodeBench-V6 72.5, SWE-bench Verified 63.6, Terminal-Bench 2.0 44.1, IF-Bench 54.6. AA has only partial components for the older sibling Nanbeige4.1-3B (HLE 10.9, GPQA 84.9), so the small-model AA floor-compression is applied by hand. Treat as UNVERIFIED; plausible range 6.5-9.5.",
+   "layers": 22,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "bartowski/Nanbeige_Nanbeige4.2-3B-GGUF",
+   "active_params_b": 4.0,
+   "kv_layers": 22,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-07-21. 4B total / 3B non-embedding dense decoder, 256K native context, thinking mode controlled through the chat template. Vendor card (2026-07-21, evaluations in thinking mode with preserve_thinking=true) also reports SWE-bench Pro 46.9, GDPval 74.3, AA-LCR 58.7 and Recruit-Bench 63.3; all are vendor-run, no independent re-run yet. 22 layers x 8 KV heads x 128 means 88 KiB/token at f16, so a 4 GB plan uses q4_0 KV and 8-16K context. GGUF metadata and chat template verified from the bartowski files.",
+   "quants": [
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "Nanbeige_Nanbeige4.2-3B-Q3_K_M.gguf"
+     ],
+     "bytes": 2242313376
+    },
+    {
+     "name": "IQ4_XS",
+     "files": [
+      "Nanbeige_Nanbeige4.2-3B-IQ4_XS.gguf"
+     ],
+     "bytes": 2441753760
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Nanbeige_Nanbeige4.2-3B-Q4_K_M.gguf"
+     ],
+     "bytes": 2684023968
+    }
+   ]
+  },
+  {
+   "id": "lfm2.5-24b-a2b",
+   "name": "LFM2.5 24B A2B",
+   "family": "LFM2.5",
+   "vendor": "Liquid AI",
+   "country": "US",
+   "license": "LFM Open License 1.0",
+   "params_b": 24.0,
+   "moe": true,
+   "score": 7.5,
+   "score_source": "ESTIMATE (no AA data as of 2026-11-06): vendor LiveClaw is 48.09 vs 38.19 for Qwen3.6-35B-A3B, so agentic tasks sit slightly above the catalog's 9.5 for Qwen3.6-35B-A3B, but 2B active parameters limit knowledge and reasoning, hence 7.5. Treat as UNVERIFIED.",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "LiquidAI/LFM2.5-24B-A2B",
+   "active_params_b": 2.0,
+   "kv_layers": 10,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-10-09 by Liquid AI. 24B total, about 2B active, 40 layers: 10 full-attention and 30 short-convolution layers, so the KV cache is small and speed is high. Vendor: LiveClaw 48.09 vs 38.19 for Qwen3.6-35B-A3B; Liquid claims 184 tok/s on an Apple M5 Max. UD-Q5_K_XL (17.9 GB) fits 24 GB with 64K context; UD-Q6_K_XL (21.9 GB) is tight on Windows. Licence is the LFM Open License 1.0, not an OSI licence. Text only. Not on Artificial Analysis on 2026-11-06.",
+   "quants": [
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 10947100928
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 14876901632
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 17918820608
+    },
+    {
+     "name": "UD-Q6_K_XL",
+     "repo": "unsloth/LFM2.5-24B-A2B-GGUF",
+     "files": [
+      "LFM2.5-24B-A2B-UD-Q6_K_XL.gguf"
+     ],
+     "bytes": 21861204224
+    }
+   ]
+  },
+  {
+   "id": "hypernova-60b-2605",
+   "name": "HyperNova 60B 2605",
+   "family": "HyperNova",
+   "vendor": "Multiverse Computing",
+   "country": "ES",
+   "license": "Apache-2.0",
+   "params_b": 58.66,
+   "moe": true,
+   "score": 7.0,
+   "score_source": "ESTIMATE: legacy fit (HLE 16.6%, AA-LCR 36.3%, GDPval-AA 448.6, CritPt 0.9%) on 87 models with an official v5 index (RMSE 4.9) -> 8.5; v5-component fit -> 5.6; use 7.0. Low AA-Briefcase 232 and GDP.pdf 0.1% pull it down. AA components fetched 2026-11-06.",
+   "layers": 32,
+   "kv_heads": 8,
+   "head_dim": 64,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "MultiverseComputingCAI/Hypernova-60B-2605",
+   "active_params_b": 4.8,
+   "kv_layers": 16,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-04-30. CompactifAI compression of gpt-oss-120b to 58.7B total and 4.8B active (80 experts, top-4). Native OpenAI-style tool calling, configurable reasoning effort, 131K context. Half the layers are sliding-window (128), so KV is only 2.2GB at 64K f16. AA components fetched 2026-11-06: HLE 16.6%, AA-LCR 36.3%, GDPval-AA 448.6, IFBench 66.5%, tau2 63.2%, GPQA 73.3%, AA-Briefcase 232, GDP.pdf 0.1%. Apache-2.0.",
+   "quants": [
+    {
+     "name": "IQ3_M",
+     "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF",
+     "files": [
+      "Hypernova-60B-2605.i1-IQ3_M.gguf"
+     ],
+     "bytes": 31208056768
+    },
+    {
+     "name": "Q3_K_L",
+     "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF",
+     "files": [
+      "Hypernova-60B-2605.i1-Q3_K_L.gguf"
+     ],
+     "bytes": 35810895808
+    },
+    {
+     "name": "Q4_K_M",
+     "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF",
+     "files": [
+      "Hypernova-60B-2605.i1-Q4_K_M.gguf"
+     ],
+     "bytes": 40687403968
+    },
+    {
+     "name": "Q5_K_M",
+     "repo": "mradermacher/Hypernova-60B-2605-i1-GGUF",
+     "files": [
+      "Hypernova-60B-2605.i1-Q5_K_M.gguf"
+     ],
+     "bytes": 44337746368
+    }
+   ],
+   "swa_layers": 16,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 64,
+   "swa_window": 128
+  },
+  {
+   "id": "k2-horizon-3.7b",
+   "name": "K2 Horizon 3.7B",
+   "family": "K2 Horizon",
+   "vendor": "Institute of Foundation Models",
+   "country": "AE",
+   "license": "Apache-2.0",
+   "params_b": 3.7,
+   "moe": false,
+   "score": 7.0,
+   "score_source": "ESTIMATE (Artificial Analysis has published v5.0.1 component scores but no index yet; fetched 2026-11-06): HLE 13.9, GPQA-Diamond 69.2, SciCode 22.0, AA-LCR 62.3, Terminal-Bench 2.1 28.1, tau2-Banking 19.6, GDPval 888.8, FrontierCode 2.0 0.9, AutomationBench 14.7. A kNN fit over the 44 AA-scored models that share those components gives 6.4; rounded to 7.0 for the strong terminal and tool-use rows. The vendor table (IFM model card, 2026-09-03) reports SWE-bench Verified 65.6, Terminal-Bench 2.1 39.7 and BFCL v4 64.6. Treat as UNVERIFIED; plausible range 5.5-8.5.",
+   "layers": 36,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "bartowski/K2-Horizon-3.7B-GGUF",
+   "active_params_b": 3.7,
+   "kv_layers": 36,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-03. Dense 3.7B-core decoder with a native 524,288-token context and an anti-doom-loop post-training stage (FTPO) aimed at long agent runs. Vendor card (2026-09-03) reports SWE-bench Verified 65.6 (mini-swe-agent), Terminal-Bench 2.1 39.7, BFCL v4 64.6, tau3-Banking 17.7, GPQA-Diamond 68.9, HLE 14.0, AIME 2026 90.8. AA's independent run reproduces the HLE/GPQA numbers almost exactly. The 36x8 KV layout is expensive (144 KiB/token at f16): on 4 GB use q4_0 KV at 8-16K, where IQ3_XXS (2.16 GiB) leaves room for the plan. Q4_K_M (3.03 GiB) does not fit a 4 GB budget.",
+   "quants": [
+    {
+     "name": "IQ3_XXS",
+     "files": [
+      "K2-Horizon-3.7B-IQ3_XXS.gguf"
+     ],
+     "bytes": 2316707104
+    },
+    {
+     "name": "Q3_K_M",
+     "files": [
+      "K2-Horizon-3.7B-Q3_K_M.gguf"
+     ],
+     "bytes": 2507130144
+    },
+    {
+     "name": "IQ3_M",
+     "files": [
+      "K2-Horizon-3.7B-IQ3_M.gguf"
+     ],
+     "bytes": 2738820384
+    }
+   ]
+  },
+  {
+   "id": "minicpm5-2b",
+   "name": "MiniCPM5 2B",
+   "family": "MiniCPM5",
+   "vendor": "OpenBMB",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 2.52,
+   "moe": false,
+   "score": 5.8,
+   "score_source": "ESTIMATE (Artificial Analysis has published v5.0.1 component scores but no index yet; fetched 2026-11-06): HLE 8.9, GPQA-Diamond 70.2, SciCode 26.3, AA-LCR 59.3, Terminal-Bench 2.1 8.6, tau2-Banking 20.8, GDPval 714.9, HLE-Diamond 3.8, CritPT v2 Hard 0.3, AutomationBench 1.8. A kNN fit over the 44 AA-scored models sharing those components gives 5.9, rounded down to 5.8 for the weak Terminal-Bench row. The vendor card (OpenBMB, 2026-09-07) calls it 2B-class SOTA. Treat as UNVERIFIED; plausible range 4.8-6.8.",
+   "layers": 42,
+   "kv_heads": 2,
+   "head_dim": 128,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "openbmb/MiniCPM5-2B-GGUF",
+   "active_params_b": 2.52,
+   "kv_layers": 42,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-07. 2,516,756,480 total / 1,981,982,720 non-embedding parameters, 42 layers, 131,072-token context, built for on-device assistants and coding/tool workflows. Only 2 KV heads keep the cache small (42 KiB/token at f16), so Q4_K_M plus 64K context with q4_0 KV still fits a 4 GB budget (2.77 GiB total). Emits XML-style tool calls; llama.cpp needs --jinja, SGLang has a native minicpm5 parser. Q4_K_M is the official file; IQ4_XS and Q5_K_M are bartowski files in the same quant list.",
+   "quants": [
+    {
+     "name": "IQ4_XS",
+     "repo": "bartowski/MiniCPM5-2B-GGUF",
+     "files": [
+      "MiniCPM5-2B-IQ4_XS.gguf"
+     ],
+     "bytes": 1463942368
+    },
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "MiniCPM5-2B-Q4_K_M.gguf"
+     ],
+     "bytes": 1561318368
+    },
+    {
+     "name": "Q5_K_M",
+     "repo": "bartowski/MiniCPM5-2B-GGUF",
+     "files": [
+      "MiniCPM5-2B-Q5_K_M.gguf"
+     ],
+     "bytes": 1920175328
+    }
+   ]
+  },
+  {
+   "id": "qwen3-coder-next",
+   "name": "Qwen3 Coder Next",
+   "family": "Qwen3",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 79.67,
+   "moe": true,
+   "score": 5.3,
+   "score_source": "ESTIMATE: no official AA v5 index. Predicted from AA's published v5 components (AutomationBench 1%, Terminal-Bench 4.0 0%, GDP.pdf 2.6%, AA-Briefcase 404 Elo) via linear fit on 107 models with an official v5 index (RMSE 3.0 pts) -> 5.3. The low AA-Briefcase score drags the general index down; for coding agents the model is stronger than that. Legacy-component fit gives 6.9.",
+   "layers": 48,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3-Coder-Next-GGUF",
+   "active_params_b": 3.0,
+   "kv_layers": 12,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-02-03. Coding-agent specialist: 512 experts, top-10, 3B active, hybrid Gated DeltaNet with 12 full-attention layers out of 48. Non-thinking only (no  thinking blocks). 256k native context. At Q5_K_M it is 56.7GB, so it is the model to run when the 64GB box is a coding box.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00001-of-00004.gguf",
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00002-of-00004.gguf",
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00003-of-00004.gguf",
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00004-of-00004.gguf"
+     ],
+     "bytes": 48410992032
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00001-of-00004.gguf",
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00002-of-00004.gguf",
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00003-of-00004.gguf",
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00004-of-00004.gguf"
+     ],
+     "bytes": 56710372768
+    }
+   ]
+  },
+  {
+   "id": "granite-4.2-8b",
+   "name": "Granite 4.2 8B",
+   "family": "Granite 4.2",
+   "vendor": "IBM",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 8.79,
+   "moe": false,
+   "score": 5.1,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai leaderboard JSON, fetched 2026-11-02)",
+   "layers": 40,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 131072,
+   "tool_calling": true,
+   "repo": "ibm-granite/granite-4.2-8b",
+   "active_params_b": 8.79,
+   "kv_layers": 40,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-08-25. Already in the catalog; kept here because it is the best-scoring model at this tier with an official AA v5 number. Dense GQA transformer (not the 4.0 hybrid Mamba), 128K native, reasoning-augmented tool calling. Its KV cache is the expensive part: 40 layers x 8 KV heads x 128 = 160KiB/token at f16, so 8K context needs ~1.2GiB; use q8_0 KV (0.61GiB) and Q5_0 to stay under 7GiB. Enterprise/Apache alternative to Qwen/Ornith.",
+   "quants": [
+    {
+     "name": "Q4_0",
+     "repo": "ibm-granite/granite-4.2-8b-GGUF",
+     "files": [
+      "granite-4.2-8b-Q4_0.gguf"
+     ],
+     "bytes": 5055955072
+    },
+    {
+     "name": "Q4_K_M",
+     "repo": "ibm-granite/granite-4.2-8b-GGUF",
+     "files": [
+      "granite-4.2-8b-Q4_K_M.gguf"
+     ],
+     "bytes": 5347917952
+    },
+    {
+     "name": "Q5_0",
+     "repo": "ibm-granite/granite-4.2-8b-GGUF",
+     "files": [
+      "granite-4.2-8b-Q5_0.gguf"
+     ],
+     "bytes": 6103482496
+    }
+   ]
+  },
+  {
+   "id": "ministral-3-8b-reasoning",
+   "name": "Ministral 3 8B Reasoning",
+   "family": "Ministral 3",
+   "vendor": "Mistral AI",
+   "country": "FR",
+   "license": "Apache-2.0",
+   "params_b": 8.4,
+   "moe": false,
+   "score": 5.0,
+   "score_source": "ESTIMATE: vendor reasoning-card numbers of 2025-12-02 (AIME25 78.7, GPQA Diamond 66.8, LiveCodeBench 61.6) are near Qwen3.5 9B (catalog 5.0); AA's 2026-11-06 run of the same family is lower (GPQA 47.1, HLE 4.3, LCB 30.3) because it does not enable the thinking mode, so the card numbers are used for the thinking-mode score. Set 5.0, midpoint of the two. Composite is UNVERIFIED.",
+   "layers": 34,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "mistralai/Ministral-3-8B-Reasoning-2512",
+   "active_params_b": 8.4,
+   "kv_layers": 34,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2025-12-02 (AA model page). 8.4B language model plus a 0.4B vision encoder, 34 layers, 8 KV heads x 128, 256K context, Apache-2.0. The reasoning post-trained variant; keep reasoning traces in context and use the vendor system prompt. Native function calling and JSON output. Vision needs the 858 MB F16 mmproj, which EZLM does not load today. UD-Q3_K_XL at 16K with q4_0 KV is ~5.1 GiB; IQ4_XS at 8K is ~5.1 GiB.",
+   "quants": [
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/Ministral-3-8B-Reasoning-2512-GGUF",
+     "files": [
+      "Ministral-3-8B-Reasoning-2512-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 4425322528
+    },
+    {
+     "name": "IQ4_XS",
+     "repo": "unsloth/Ministral-3-8B-Reasoning-2512-GGUF",
+     "files": [
+      "Ministral-3-8B-Reasoning-2512-IQ4_XS.gguf"
+     ],
+     "bytes": 4713189408
+    }
+   ]
+  },
+  {
+   "id": "qwen3.5-9b",
+   "name": "Qwen3.5 9B",
+   "family": "Qwen3.5",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 9.65,
+   "moe": false,
+   "score": 5.0,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's own published v5 component scores (AutomationBench, Terminal-Bench 4.0, HLE-Diamond, GDP.pdf, AA-Briefcase) via linear fit on 90 models with official v5 index (RMSE 1.7 pts); model not yet given an official v5 index: 9B predicted 6.3 (legacy fit 2.3) -> 5 (catalog value, unchanged)",
+   "layers": 32,
+   "kv_heads": 4,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3.5-9B",
+   "active_params_b": 9.65,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-02/03. Still the current small Qwen (no Qwen3.6/3.8 at this size) and now clearly outclassed by Ornith-1.5-9B, which uses the same architecture: Ornith card puts Qwen3.5-9B at Terminal-Bench 2.1 21.3 vs 46.2, SWE-bench Verified 53.2 vs 70.6. Kept for its 32KiB/token KV cache (8x cheaper than Granite 4.2 8B at long context), native 262K context, vision mmproj and mature llama.cpp support. Catalog quants trimmed to those that fit 8GB; Q6_K (6.95GiB) is too tight once KV and buffers are counted.",
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "files": [
+      "Qwen3.5-9B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 4016235744
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "files": [
+      "Qwen3.5-9B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 5053834464
+    },
+    {
+     "name": "IQ4_XS",
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "files": [
+      "Qwen3.5-9B-IQ4_XS.gguf"
+     ],
+     "bytes": 5168653536
+    },
+    {
+     "name": "Q4_K_M",
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "files": [
+      "Qwen3.5-9B-Q4_K_M.gguf"
+     ],
+     "bytes": 5680522464
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "files": [
+      "Qwen3.5-9B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5966095584
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "repo": "unsloth/Qwen3.5-9B-GGUF",
+     "files": [
+      "Qwen3.5-9B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 6743680224
+    }
+   ]
+  },
+  {
+   "id": "mistral-medium-3.5-128b",
+   "name": "Mistral Medium 3.5 128B",
+   "family": "Mistral Medium",
+   "vendor": "Mistral AI",
+   "country": "FR",
+   "license": "Modified MIT (revenue cap USD 20M/month)",
+   "params_b": 127.7,
+   "moe": false,
+   "score": 4.6,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai, fetched 2026-11-06): 4.65",
+   "layers": 88,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "unsloth/Mistral-Medium-3.5-128B-GGUF",
+   "active_params_b": 127.7,
+   "kv_layers": 88,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-04-29. Dense 128B, unified instruct/reasoning/coding with per-request reasoning effort, multimodal input, 256k context. Lowest score in this tier but the only dense 128B that fits, and dense decode is steadier than MoE on unified memory. The KV cache is the constraint (352KiB/token): IQ2_M (44.1GB) leaves room for a 32k context, Q3_K_S (54.4GB) only about 16k. GGUFs built before the 2026-07 config fix have degraded long-context behaviour, so pin to a recent file. Vision adds mmproj-F16.gguf (5.4GB), which pushes Q3_K_S over 64GB even at 16k; pair vision with IQ2_M.",
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "Mistral-Medium-3.5-128B-UD-IQ2_M.gguf"
+     ],
+     "bytes": 44109112416
+    },
+    {
+     "name": "Q3_K_S",
+     "files": [
+      "Q3_K_S/Mistral-Medium-3.5-128B-Q3_K_S-00001-of-00003.gguf",
+      "Q3_K_S/Mistral-Medium-3.5-128B-Q3_K_S-00002-of-00003.gguf",
+      "Q3_K_S/Mistral-Medium-3.5-128B-Q3_K_S-00003-of-00003.gguf"
+     ],
+     "bytes": 54366938528
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/Mistral-Medium-3.5-128B-UD-Q3_K_XL-00001-of-00003.gguf",
+      "UD-Q3_K_XL/Mistral-Medium-3.5-128B-UD-Q3_K_XL-00002-of-00003.gguf",
+      "UD-Q3_K_XL/Mistral-Medium-3.5-128B-UD-Q3_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 62499038624
+    }
+   ]
+  },
+  {
+   "id": "gemma-4-31b",
+   "name": "Gemma 4 31B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 31.27,
+   "moe": false,
+   "score": 4.4,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai/leaderboards/models, fetched 2026-11-06), official index. The catalog's 8.0 estimate (2026-11-02, legacy-component fit) is superseded by this published number.",
+   "layers": 60,
+   "kv_heads": 4,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-31B-it",
+   "active_params_b": 31.27,
+   "kv_layers": 10,
+   "vision": true,
+   "notes": "Released 2026-02. 60 layers: 50 sliding (16 KV x 256, window 1024) + 10 global (4 KV x 512). The SWA cache is ~2.3 GB at 8K and does not grow with context, so the 8.53 GB IQ2_XXS fits a 12 GB card only in split mode at 16K (~8 tok/s), and not a 10 GB unified budget. AA components: GPQA 85.7%, TB2.1 43.4%, tau2 59.9%, IFBench 75.6%. Use it when image quality matters more than speed; Gemma 4 12B is the fast 6-bit alternative.",
+   "draft": {
+    "repo": "unsloth/gemma-4-31B-it-GGUF",
+    "file": "MTP/mtp-gemma-4-31B-it-Q8_0.gguf",
+    "bytes": 514687104,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ2_XXS",
+     "repo": "unsloth/gemma-4-31B-it-GGUF",
+     "files": [
+      "gemma-4-31B-it-UD-IQ2_XXS.gguf"
+     ],
+     "bytes": 8534295488
+    }
+   ],
+   "swa_layers": 50,
+   "swa_kv_heads": 16,
+   "swa_head_dim": 256,
+   "swa_window": 1024
+  },
+  {
+   "id": "exaone-4.5-33b",
+   "name": "EXAONE 4.5 33B",
+   "family": "EXAONE 4.5",
+   "vendor": "LG AI Research",
+   "country": "KR",
+   "license": "EXAONE 1.2-NC (non-commercial)",
+   "params_b": 34.35,
+   "moe": false,
+   "score": 4.2,
+   "score_source": "ESTIMATE: legacy fit (HLE 12.9%, AA-LCR 54.7%, GDPval-AA 474.5, CritPt 0.3%) on 87 models with an official v5 index (RMSE 4.9) -> 4.2. AA has no v5 components for it yet (tau2 78.1%, GPQA 79.4%, TB-hard 20.5% are v4-era). Fetched 2026-11-06.",
+   "layers": 65,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "LGAI-EXAONE/EXAONE-4.5-33B",
+   "active_params_b": 34.35,
+   "kv_layers": 16,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-04-04. 33B dense model plus a 1.2B vision encoder (34.35B counted), 262K context, 3:1 sliding-window (4096) to full attention over 65 blocks, one of which is an MTP layer. Multilingual (en, ko, es, de, ja, vi) with strong document understanding. AA components fetched 2026-11-06: tau2 78.1%, GPQA 79.4%, HLE 12.9%, AA-LCR 54.7%, IFBench 58.0%, TB-hard 20.5%. License is EXAONE 1.2-NC: research and non-commercial use only, which blocks a paid deployment. Tool calling is in the chat template; vision needs the separate mmproj file.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+     "files": [
+      "EXAONE-4.5-33B-Q4_K_M.gguf"
+     ],
+     "bytes": 20047839424
+    },
+    {
+     "name": "Q5_K_M",
+     "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+     "files": [
+      "EXAONE-4.5-33B-Q5_K_M.gguf"
+     ],
+     "bytes": 23482253504
+    },
+    {
+     "name": "Q6_K",
+     "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+     "files": [
+      "EXAONE-4.5-33B-Q6_K.gguf"
+     ],
+     "bytes": 27131318464
+    },
+    {
+     "name": "Q8_0",
+     "repo": "LGAI-EXAONE/EXAONE-4.5-33B-GGUF",
+     "files": [
+      "EXAONE-4.5-33B-Q8_0.gguf"
+     ],
+     "bytes": 35138742464
+    }
+   ],
+   "swa_layers": 49,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 128,
+   "swa_window": 4096
+  },
+  {
+   "id": "gemma-4-12b",
+   "name": "Gemma 4 12B",
+   "family": "Gemma 4",
+   "vendor": "Google",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 11.96,
+   "moe": false,
+   "score": 3.5,
+   "score_source": "ESTIMATE: v5-equivalent predicted from AA's legacy v4-era components (HLE, AA-LCR, GDPval-AA, CritPt) via linear fit on 83 models with official v5 index (RMSE 4.9 pts), cross-checked against partial v5 components: legacy fit 3.3 (catalog value, unchanged)",
+   "layers": 48,
+   "kv_heads": 1,
+   "head_dim": 512,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "google/gemma-4-12B-it",
+   "active_params_b": 11.96,
+   "kv_layers": 8,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-05-23 ('unified' any-to-any: text, image, audio in; text out). 40 sliding-window layers (8 KV x 256, window 1024) plus 8 global layers (1 KV x 512). The sliding-window cache is a fixed ~0.94GiB at 8K context and does not grow, so the KV cost is dominated by it, not by context length. That is why only Q3-class quants fit 8GB: IQ4_XS (5.94GiB) plus cache and buffers is ~7.4GiB, too much for a 7.0GiB unified budget. Best reason to pick it is the any-to-any input and Google tooling; it is the weakest general model of the six.",
+   "draft": {
+    "repo": "unsloth/gemma-4-12b-it-GGUF",
+    "file": "MTP/mtp-gemma-4-12b-it-Q8_0.gguf",
+    "bytes": 465109248,
+    "type": "draft-mtp"
+   },
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/gemma-4-12b-it-GGUF",
+     "files": [
+      "gemma-4-12b-it-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 4639716160
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/gemma-4-12b-it-GGUF",
+     "files": [
+      "gemma-4-12b-it-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 6022684480
+    }
+   ],
+   "swa_layers": 40,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 256,
+   "swa_window": 1024
+  },
+  {
+   "id": "nemotron-3.5-bolt-e4b",
+   "name": "Nemotron 3.5 Bolt E4B",
+   "family": "Nemotron 3.5",
+   "vendor": "NVIDIA",
+   "country": "US",
+   "license": "OpenMDW-1.1",
+   "params_b": 8.0,
+   "moe": false,
+   "score": 3.5,
+   "score_source": "ESTIMATE (no AA v5): NVIDIA model card 2026-10-05 benchmarks against Gemma-4-E4B-it (catalog 2.0) and Qwen3.5-4B (catalog 2.0). Bolt wins MultiChallenge 53.1 vs 42.1/51.8, RoleBench 67.1 vs 50.0/53.7, BFCL-v3 68.5 vs 66.4/71.0, ToolSandbox 68.8 vs 65.4/69.5, Tau2-Bench 55.1 vs 38.5/75.1, IFBench 63.8 vs 42.8/58.9, LongMemEval 72.1 vs 71.0/66.9; loses Tau2 to Qwen3.5-4B. -> 3.5, vendor-reported.",
+   "layers": 42,
+   "kv_heads": 2,
+   "head_dim": 512,
+   "ctx_max": 65536,
+   "tool_calling": true,
+   "repo": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-BF16",
+   "active_params_b": 4.0,
+   "kv_layers": 4,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-10-05. NVIDIA post-train of Gemma-4-E4B (gemma4 arch, 8.0B total / 4B effective via per-layer embeddings), built for low-TTFT voice and device assistants. 42 blocks, 18 trailing layers share a KV cache, so only 4 global + 20 sliding-window caches are allocated: 16KiB/token global plus a fixed ~0.1GiB window cache. That makes it the long-context pick of this tier: UD-Q5_K_XL (5.43GiB) plus a 64K cache and buffers is ~6.9GiB, so it runs the full 64K at Q5 on an 8GB machine. Also the cheapest at high context. Vendor states 64K input though the GGUF advertises 131072. DFlash drafter (0.37GiB) is available for speculative decoding. Weaker at hard reasoning and code than the three 9B-class models.",
+   "quants": [
+    {
+     "name": "UD-IQ3_XXS",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-IQ3_XXS.gguf"
+     ],
+     "bytes": 3703968960
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-Q3_K_XL.gguf"
+     ],
+     "bytes": 4219133120
+    },
+    {
+     "name": "UD-Q4_K_XL",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-Q4_K_XL.gguf"
+     ],
+     "bytes": 5060482240
+    },
+    {
+     "name": "UD-Q5_K_XL",
+     "repo": "unsloth/NVIDIA-Nemotron-3.5-Bolt-E4B-GGUF",
+     "files": [
+      "NVIDIA-Nemotron-3.5-Bolt-E4B-UD-Q5_K_XL.gguf"
+     ],
+     "bytes": 5832930496
+    }
+   ],
+   "swa_layers": 20,
+   "swa_kv_heads": 2,
+   "swa_head_dim": 256,
+   "swa_window": 512
+  },
+  {
+   "id": "lfm2.5-8b-a1b",
+   "name": "LFM2.5 8B A1B",
+   "family": "LFM2.5",
+   "vendor": "Liquid AI",
+   "country": "US",
+   "license": "LFM Open License v1.0 (free below a revenue threshold; UNVERIFIED amount)",
+   "params_b": 8.3,
+   "moe": true,
+   "score": 3.0,
+   "score_source": "ESTIMATE: AA per-benchmark run of 2026-11-06 (GPQA Diamond 51.3, HLE 6.9, IFBench 55.6, tau2 16.1) is below Gemma 4 12B (catalog 3.5) and above Qwen3.5 4B (2.0); set 3.0. AA has no v5 Intelligence Index for it. Composite is UNVERIFIED.",
+   "layers": 24,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 128000,
+   "tool_calling": true,
+   "repo": "LiquidAI/LFM2.5-8B-A1B",
+   "active_params_b": 1.5,
+   "kv_layers": 6,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-05-28 (AA model page). Hybrid MoE: 8.3B total, 1.5B active (32 experts, 4 used), 24 blocks of which 18 are double-gated convolutions and only 6 are GQA attention, so the KV cache is small. 128K context, 128K vocab, 10 languages. Q4_0 at 32K with q4_0 KV is ~5.2 GiB (64K ~5.5), Q4_K_M at 32K is ~5.5 GiB. Edge/CPU friendly and fast; weaker knowledge and heavy coding than the K2 models. LFM Open License v1.0.",
+   "quants": [
+    {
+     "name": "Q4_0",
+     "repo": "LiquidAI/LFM2.5-8B-A1B-GGUF",
+     "files": [
+      "LFM2.5-8B-A1B-Q4_0.gguf"
+     ],
+     "bytes": 4844678368
+    },
+    {
+     "name": "Q4_K_M",
+     "repo": "LiquidAI/LFM2.5-8B-A1B-GGUF",
+     "files": [
+      "LFM2.5-8B-A1B-Q4_K_M.gguf"
+     ],
+     "bytes": 5155564768
+    }
+   ]
+  },
+  {
+   "id": "kimi-linear-48b-a3b",
+   "name": "Kimi Linear 48B A3B Instruct",
+   "family": "Kimi Linear",
+   "vendor": "Moonshot AI",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 49.12,
+   "moe": true,
+   "score": 2.0,
+   "score_source": "ESTIMATE (no v5 index): AA v4-era components GPQA 41.2%, HLE 2.5%, AA-LCR 28.0%, LiveCodeBench 37.8%, AIME-2025 36.3% imply a low v5 index (about 2); the legacy fit needs GDPval and CritPt, which AA did not publish for this model. Fetched 2026-11-06. Treat as a long-context specialist, not a general pick.",
+   "layers": 27,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
+   "active_params_b": 3.0,
+   "kv_layers": 7,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2025-10-30. Kimi Delta Attention (linear attention) with 7 full-attention layers out of 27; 48B total, 3B active, 256 experts top-8. 1M context and a very small cache: 1.0GB at 64K, 4.1GB at 256K, 16.5GB at 1M f16 (MLA, one KV head). MIT. AA components fetched 2026-11-06: GPQA 41.2%, HLE 2.5%, AA-LCR 28.0%, LiveCodeBench 37.8%, AIME-2025 36.3%. Dated against 2026 models; kept only because it is the cheapest way to get a real 1M-token window at this memory tier. Tool calling is in the chat template.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF",
+     "files": [
+      "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q4_K_M.gguf"
+     ],
+     "bytes": 30061058720
+    },
+    {
+     "name": "Q5_K_M",
+     "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF",
+     "files": [
+      "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q5_K_M.gguf"
+     ],
+     "bytes": 35097473696
+    },
+    {
+     "name": "Q6_K",
+     "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF",
+     "files": [
+      "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q6_K.gguf"
+     ],
+     "bytes": 40460212128
+    }
+   ]
+  }
+ ]
+}

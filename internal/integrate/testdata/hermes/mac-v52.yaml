@@ -1,0 +1,126 @@
+# Trimmed copy of a Mac Hermes 0.22.5 config.yaml (_config_version 52), keys redacted.
+model:
+  default: deepseek-v4.1-flash
+  provider: custom:spark
+  base_url: 'https://spark.example.ts.net/v1'
+  api_mode: chat_completions
+providers:
+  custom:spark:
+    stale_timeout_seconds: 2400
+    api: https://spark.example.ts.net/v1
+    name: spark
+    default_model: deepseek-v4.1-flash
+    transport: chat_completions
+    models:
+      deepseek-v4.1-flash:
+        context_length: 1000000
+      glm53-exl3-tp3-candidate:
+        context_length: 1000000
+        name: GLM-5.3-Flash EXL3 TP3
+      mimo26-native-qualification:
+        context_length: 300000
+        name: MiMo 2.6 Native TP3 (EXPERIMENTAL reference)
+    context_length: 1000000
+  cerebras:
+    name: Cerebras
+    api: https://api.cerebras.ai/v1
+    key_env: CEREBRAS_API_KEY
+    transport: chat_completions
+    default_model: qwen-3.8-27b
+    discover_models: false
+    models:
+      qwen-3.8-27b:
+        context_length: 131072
+        supports_vision: true
+      gpt-oss-120b:
+        context_length: 131072
+        supports_vision: false
+fallback_providers: []
+toolsets:
+  - hermes-cli
+agent:
+  max_turns: 9999
+  gateway_timeout: 1800
+  restart_drain_timeout: 180
+  api_max_retries: 3
+  service_tier: fast
+  tool_use_enforcement: auto
+  task_completion_guidance: true
+  environment_probe: true
+  environment_hint: ''
+  gateway_timeout_warning: 900
+  clarify_timeout: 600
+  gateway_notify_interval: 180
+  gateway_auto_continue_freshness: 3600
+  image_input_mode: auto
+  disabled_toolsets: []
+  verbose: false
+  reasoning_effort: medium
+display:
+  compact: false
+  personality: uwu
+  resume_display: full
+  resume_exchanges: 10
+  resume_max_user_chars: 300
+  resume_max_assistant_chars: 200
+  resume_max_assistant_lines: 3
+  resume_skip_tool_only: true
+  busy_input_mode: interrupt
+  tui_auto_resume_recent: false
+  tui_agents_nudge: true
+  bell_on_complete: false
+  show_reasoning: true
+  background_process_notifications: concise
+  streaming: true
+  timestamps: false
+paste_collapse_threshold: 5
+paste_collapse_threshold_fallback: 5
+paste_collapse_char_threshold: 2000
+_config_version: 52
+session_reset:
+  mode: both
+  idle_minutes: 1440
+  at_hour: 4
+group_sessions_per_user: true
+custom_providers:
+  - name: spark
+    default_model: deepseek-v4.1-flash
+    extra_body:
+      chat_template_kwargs:
+        enable_thinking: true
+    base_url: https://spark.example.ts.net/v1
+    api_key: REDACTED-KEY
+    context_length: 1000000
+    models:
+      deepseek-v4.1-flash:
+        context_length: 1000000
+        name: DeepSeek-V4.1-Flash TP4 ring (4x Spark)
+      glm53-exl3-tp3-candidate:
+        context_length: 1000000
+        name: GLM-5.3-Flash EXL3 TP3 (alias -> DeepSeek)
+      mimo26-native-qualification:
+        context_length: 300000
+        name: MiMo 2.6 Native TP3 (EXPERIMENTAL reference)
+    models_discovered: true
+
+# ── Fallback Model ────────────────────────────────────────────────────
+# Automatic provider failover when primary is unavailable.
+# Uncomment and configure to enable. Triggers on rate limits (429),
+# overload (529), service errors (503), or connection failures.
+#
+# Supported providers:
+#   openrouter   (OPENROUTER_API_KEY)  — routes to any model
+#   openai-codex (OAuth — hermes auth) — OpenAI Codex
+#   nous         (OAuth — hermes auth) — Nous Portal
+#   zai          (ZAI_API_KEY)         — Z.AI / GLM
+#   kimi-coding  (KIMI_API_KEY)        — Kimi / Moonshot
+#   kimi-coding-cn (KIMI_CN_API_KEY)   — Kimi / Moonshot (China)
+#   minimax      (MINIMAX_API_KEY)     — MiniMax
+#   minimax-cn   (MINIMAX_CN_API_KEY)  — MiniMax (China)
+#   bedrock      (AWS IAM / boto3)     — AWS Bedrock (Converse API)
+#
+# For custom OpenAI-compatible endpoints, add base_url and key_env.
+#
+# fallback_model:
+#   provider: openrouter
+#   model: anthropic/claude-sonnet-4

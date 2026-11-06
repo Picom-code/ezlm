@@ -1,0 +1,23 @@
+llama.cpp v0.9.0: 170 architectures, 45 tensor types; checking 20 files sets
+qwen3.8-27b                    GSQ-RCO-IQ2_XS           ok
+qwen3.8-27b                    GSQ-RCO-IQ2_XS-mtp       ok
+ternary-bonsai-2-27b           Q2_0                     ok
+qwen3.8-27b                    GSQ-RCO-IQ2_S            ok
+qwen3.8-27b                    GSQ-RCO-IQ2_S-mtp        ok
+qwen3.8-27b                    GSQ-RCO-IQ3_XXS-mtp      ok
+qwen3.8-27b                    GSQ-RCO-IQ3_XXS          ok
+qwen3.8-27b                    GSQ-RCO-IQ3_S            ok
+qwen3.8-27b                    GSQ-RCO-IQ3_S-mtp        ok
+qwen3.8-27b                    UD-IQ2_XXS               ok
+qwen3.8-27b                    UD-IQ2_S                 ok
+qwen3.8-27b                    UD-Q2_K_XL               ok
+qwen3.8-27b                    UD-IQ3_XXS               ok
+qwen3.8-27b                    UD-IQ3_S                 ok
+qwen3.8-27b                    UD-Q3_K_XL               ok
+qwen3.8-27b                    UD-IQ4_XS                ok
+qwen3.8-27b                    UD-Q4_K_XL               ok
+qwen3.8-27b                    UD-Q6_K                  ok
+qwen3.8-27b                    UD-Q5_K_XL               ok
+qwen3.8-27b                    Q8_0                     ok
+
+0 file set(s) with errors

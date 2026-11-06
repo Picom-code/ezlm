@@ -1,0 +1,26 @@
+{
+ "id": "qwen3.5-4b",
+ "repo": "Qwen/Qwen3.5-4B",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "xml: a <tools> block of JSON tool schemas in the system turn, then <tool_call><function=NAME><parameter=K>V</parameter></function></tool_call> per call",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": [],
+ "effort_levels_rejected": [],
+ "effort_levels_ignored": [
+  "none",
+  "low",
+  "medium",
+  "high",
+  "xhigh",
+  "max"
+ ],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "Unexpected message role. (role developer, or any role other than system/user/assistant/tool)",
+  "System message must be at the beginning. (system message at index > 0)",
+  "No user query found in messages. (history with no plain user turn, e.g. a tool-only continuation)"
+ ],
+ "notes": "Qwen3.5 GGUF ships one template (no named variants). reasoning_effort is never referenced: all six levels render byte-identical to the no-effort render, so effort is silently ignored, not rejected (at the server level b11960 special-cases effort 'none': it sets enable_thinking=false and drops the kwarg, so 'none' still turns thinking off). Thinking is controlled by enable_thinking at the generation prompt: true emits ' thinking\\n', false or absent emits ' thinking\\n\\n</think>\\n\\n' (an empty think block). llama.cpp b11960 maps a developer message to system before rendering, so a leading developer message works; one in mid-history becomes a non-first system message and raises. Tool parameters render only when tool_call.function.arguments is a mapping; with the OpenAI string form the template emits an empty <function=NAME></function> (b11960 converts string arguments to objects for this template because its caps probe sees object-argument use)."
+}

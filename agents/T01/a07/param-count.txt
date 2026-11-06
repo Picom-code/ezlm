@@ -1,0 +1,32 @@
+gemma-4-e4b file gemma-4-E4B-it-UD-IQ2_M.gguf
+  tensors: 720 gguf ver 3
+  total params: 7.5181 B
+  per-layer embedding table: 2.8186 B ([('per_layer_token_embd.weight', [10752, 262144])])
+  token_embd: 0.6711 B
+  total minus PLE table: 4.6995 B
+  catalog params_b=8.0 active_params_b=4.0 size_label=7.5B
+    2.819B per_layer_token_embd.weight
+    0.671B token_embd.weight
+    0.028B per_layer_model_proj.weight
+    0.026B blk.9.ffn_up.weight
+    0.026B blk.9.ffn_gate.weight
+gemma-4-e2b file gemma-4-E2B-it-UD-IQ2_M.gguf
+  tensors: 601 gguf ver 3
+  total params: 4.6475 B
+  per-layer embedding table: 2.3488 B ([('per_layer_token_embd.weight', [8960, 262144])])
+  token_embd: 0.4027 B
+  total minus PLE table: 2.2986 B
+  catalog params_b=5.12 active_params_b=2.0 size_label=4.6B
+    2.349B per_layer_token_embd.weight
+    0.403B token_embd.weight
+    0.019B blk.34.ffn_up.weight
+    0.019B blk.34.ffn_gate.weight
+    0.019B blk.34.ffn_down.weight
+== gemma-4-e4b size_label=7.5B total=7.5181B
+   blk        4.0009B  (714 tensors)
+   other      3.5172B  (6 tensors)
+   sample other names: ['output_norm.weight', 'per_layer_model_proj.weight', 'per_layer_proj_norm.weight', 'per_layer_token_embd.weight', 'rope_freqs.weight', 'token_embd.weight']
+== gemma-4-e2b size_label=4.6B total=4.6475B
+   other      2.7652B  (6 tensors)
+   blk        1.8822B  (595 tensors)
+   sample other names: ['output_norm.weight', 'per_layer_model_proj.weight', 'per_layer_proj_norm.weight', 'per_layer_token_embd.weight', 'rope_freqs.weight', 'token_embd.weight']

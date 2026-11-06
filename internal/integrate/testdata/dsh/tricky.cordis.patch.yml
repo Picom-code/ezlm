@@ -1,0 +1,21 @@
+# Hand-written: indentless lists, quoted keys, a row without config and
+# comments everywhere.
+-   id: subagent
+    config:
+      maxActiveSubagents: 10
+- "id": 'llm-pi-ai'
+  name: '@deepseek-ai/dsh-llm-pi-ai'
+  config:
+    # routes
+    providers:
+      "local-vllm": # my box
+        api: openai-completions
+        baseURL: http://10.0.0.5:8000/v1
+        models:
+        - id: big
+          contextWindow: 131072
+        # trailing comment inside the provider
+      openrouter: {apiKeyEnv: OPENROUTER_API_KEY}
+    retryPolicy: {mode: normal, maxRetries: 2}
+- id: ui-theme
+  config: {preference: dark}

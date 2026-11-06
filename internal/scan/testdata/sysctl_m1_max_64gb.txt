@@ -1,0 +1,10 @@
+# Apple M1 Max (MacBook Pro 16-inch, 2021): 10-core CPU, 8 performance + 2 efficiency, 64 GB.
+# Synthetic case built from the documented `sysctl -a` format and Apple's specs.
+hw.memsize: 68719476736
+hw.physicalcpu: 10
+hw.logicalcpu: 10
+hw.perflevel0.physicalcpu: 8
+hw.perflevel1.physicalcpu: 2
+hw.optional.arm64: 1
+machdep.cpu.brand_string: Apple M1 Max
+sysctl.proc_translated: 0

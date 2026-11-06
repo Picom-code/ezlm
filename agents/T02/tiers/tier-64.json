@@ -1,0 +1,233 @@
+{
+ "tier": "64",
+ "models": [
+  {
+   "id": "step-3.7-flash",
+   "name": "Step 3.7 Flash",
+   "family": "Step 3.7",
+   "vendor": "StepFun",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 201.37,
+   "moe": true,
+   "score": 11.4,
+   "score_source": "ESTIMATE: no official AA v5 index. Predicted from AA's published legacy components (SciCode 43.9%, CritPt 2.3%) via linear fit on 98 models with an official v5 index (RMSE 5.5 pts) -> 11.4; its other AA components point the same way (Terminal-Bench Hard 35.6%, tau2 98.5%, IFBench 67.3%, GPQA 80.9%). Treat as 11 +/- 5 until AA publishes an index.",
+   "layers": 45,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "unsloth/Step-3.7-Flash-GGUF",
+   "active_params_b": 11.0,
+   "kv_layers": 12,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-05-29. 198B language backbone + 1.8B vision encoder, 288 experts, top-8, ~11B active; 1 full-attention layer in every 4 (12 of 45), the rest use a 512-token sliding window, so KV is small for a 200B model. Official stepfun-ai GGUF repo starts at IQ3_XXS (75.8GB) and does not fit 64GB; these quants are unsloth's. Vision adds the repo's mmproj-F16.gguf (4.0GB): 56.8GB weights + 4.0GB vision + ~2.0GB KV at 32k = 62.7GB, so vision fits only on a clean 64GB machine.",
+   "swa_layers": 33,
+   "swa_kv_heads": 8,
+   "swa_head_dim": 128,
+   "swa_window": 512,
+   "quants": [
+    {
+     "name": "UD-IQ1_M",
+     "files": [
+      "UD-IQ1_M/Step-3.7-Flash-UD-IQ1_M-00001-of-00003.gguf",
+      "UD-IQ1_M/Step-3.7-Flash-UD-IQ1_M-00002-of-00003.gguf",
+      "UD-IQ1_M/Step-3.7-Flash-UD-IQ1_M-00003-of-00003.gguf"
+     ],
+     "bytes": 56750287328
+    },
+    {
+     "name": "UD-IQ2_XXS",
+     "files": [
+      "UD-IQ2_XXS/Step-3.7-Flash-UD-IQ2_XXS-00001-of-00003.gguf",
+      "UD-IQ2_XXS/Step-3.7-Flash-UD-IQ2_XXS-00002-of-00003.gguf",
+      "UD-IQ2_XXS/Step-3.7-Flash-UD-IQ2_XXS-00003-of-00003.gguf"
+     ],
+     "bytes": 61704808928
+    }
+   ]
+  },
+  {
+   "id": "k2-horizon-mova-36b-a4b",
+   "name": "K2 Horizon MoVA 36B A4B",
+   "family": "K2 Horizon",
+   "vendor": "Institute of Foundation Models",
+   "country": "US",
+   "license": "Apache-2.0",
+   "params_b": 37.44,
+   "moe": true,
+   "score": 10.6,
+   "score_source": "ESTIMATE: no official AA v5 index. Predicted from AA's published v5 components (AutomationBench 26%, Terminal-Bench 4.0 0%, GDP.pdf 4.2%, AA-Briefcase 1165 Elo) via linear fit on 107 models with an official v5 index (RMSE 3.0 pts) -> 10.7; a separate legacy-component fit gives 10.5. Treat as 10.6 +/- 3.",
+   "layers": 48,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 524288,
+   "tool_calling": true,
+   "repo": "IFM/K2-Horizon-MoVA-36B-A4B-GGUF",
+   "active_params_b": 4.0,
+   "kv_layers": 48,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-09-03. 100 experts, top-8, 4B active, with Mixture-of-Values attention (64 value experts, top-4). Native 524k context, 2560-wide and only 48 layers, so the whole model fits at Q8_0 in 40GB and still leaves room for a long context. Weights, training data and training code are all public. No vision tower in the GGUF.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "K2-Horizon-MoVA-36B-A4B-Q4_K_M.gguf"
+     ],
+     "bytes": 22368011616
+    },
+    {
+     "name": "Q6_K",
+     "files": [
+      "K2-Horizon-MoVA-36B-A4B-Q6_K.gguf"
+     ],
+     "bytes": 30765365856
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "K2-Horizon-MoVA-36B-A4B-Q8_0.gguf"
+     ],
+     "bytes": 39831174496
+    }
+   ]
+  },
+  {
+   "id": "kimi-linear-48b-a3b",
+   "name": "Kimi Linear 48B A3B",
+   "family": "Kimi Linear",
+   "vendor": "Moonshot AI",
+   "country": "CN",
+   "license": "MIT",
+   "params_b": 49.12,
+   "moe": true,
+   "score": 5.5,
+   "score_source": "ESTIMATE: no AA index and no AA component scores. Placed by hand between Qwen3.5-9B (5.0) and Qwen3.6-35B-A3B (9.5) on the strength of vendor numbers (MMLU-Pro 51.0, RULER-128k 84.3) for a 3B-active hybrid. UNVERIFIED; re-score when AA or LMArena covers it.",
+   "layers": 27,
+   "kv_heads": 1,
+   "head_dim": 576,
+   "ctx_max": 1048576,
+   "tool_calling": true,
+   "repo": "bartowski/moonshotai_Kimi-Linear-48B-A3B-Instruct-GGUF",
+   "active_params_b": 3.0,
+   "kv_layers": 7,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2025-10-30. Hybrid Kimi Delta Attention: only 7 of 27 layers are full MLA attention (kv_lora_rank 512 + 64 rope = 576 per head, one head), so the KV cache is tiny and 1M-token context is practical at 64GB. MIT licence is the most permissive of the big-lab long-context models. 3B active keeps decode fast.",
+   "quants": [
+    {
+     "name": "Q6_K",
+     "files": [
+      "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q6_K.gguf"
+     ],
+     "bytes": 40460212128
+    },
+    {
+     "name": "Q8_0",
+     "files": [
+      "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q8_0/moonshotai_Kimi-Linear-48B-A3B-Instruct-Q8_0-00001-of-00002.gguf",
+      "moonshotai_Kimi-Linear-48B-A3B-Instruct-Q8_0/moonshotai_Kimi-Linear-48B-A3B-Instruct-Q8_0-00002-of-00002.gguf"
+     ],
+     "bytes": 52248386432
+    }
+   ]
+  },
+  {
+   "id": "qwen3-coder-next",
+   "name": "Qwen3 Coder Next",
+   "family": "Qwen3",
+   "vendor": "Alibaba Qwen",
+   "country": "CN",
+   "license": "Apache-2.0",
+   "params_b": 79.67,
+   "moe": true,
+   "score": 5.3,
+   "score_source": "ESTIMATE: no official AA v5 index. Predicted from AA's published v5 components (AutomationBench 1%, Terminal-Bench 4.0 0%, GDP.pdf 2.6%, AA-Briefcase 404 Elo) via linear fit on 107 models with an official v5 index (RMSE 3.0 pts) -> 5.3. The low AA-Briefcase score drags the general index down; for coding agents the model is stronger than that. Legacy-component fit gives 6.9.",
+   "layers": 48,
+   "kv_heads": 2,
+   "head_dim": 256,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "Qwen/Qwen3-Coder-Next-GGUF",
+   "active_params_b": 3.0,
+   "kv_layers": 12,
+   "vision": false,
+   "native_1bit": false,
+   "notes": "Released 2026-02-03. Coding-agent specialist: 512 experts, top-10, 3B active, hybrid Gated DeltaNet with 12 full-attention layers out of 48. Non-thinking only (no  thinking blocks). 256k native context. At Q5_K_M it is 56.7GB, so it is the model to run when the 64GB box is a coding box.",
+   "quants": [
+    {
+     "name": "Q4_K_M",
+     "files": [
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00001-of-00004.gguf",
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00002-of-00004.gguf",
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00003-of-00004.gguf",
+      "Qwen3-Coder-Next-Q4_K_M/Qwen3-Coder-Next-Q4_K_M-00004-of-00004.gguf"
+     ],
+     "bytes": 48410992032
+    },
+    {
+     "name": "Q5_K_M",
+     "files": [
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00001-of-00004.gguf",
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00002-of-00004.gguf",
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00003-of-00004.gguf",
+      "Qwen3-Coder-Next-Q5_K_M/Qwen3-Coder-Next-Q5_K_M-00004-of-00004.gguf"
+     ],
+     "bytes": 56710372768
+    }
+   ]
+  },
+  {
+   "id": "mistral-medium-3.5-128b",
+   "name": "Mistral Medium 3.5 128B",
+   "family": "Mistral Medium",
+   "vendor": "Mistral AI",
+   "country": "FR",
+   "license": "Modified MIT (revenue cap USD 20M/month)",
+   "params_b": 127.7,
+   "moe": false,
+   "score": 4.6,
+   "score_source": "Artificial Analysis Intelligence Index v5.0 (artificialanalysis.ai, fetched 2026-11-06): 4.65",
+   "layers": 88,
+   "kv_heads": 8,
+   "head_dim": 128,
+   "ctx_max": 262144,
+   "tool_calling": true,
+   "repo": "unsloth/Mistral-Medium-3.5-128B-GGUF",
+   "active_params_b": 127.7,
+   "kv_layers": 88,
+   "vision": true,
+   "native_1bit": false,
+   "notes": "Released 2026-04-29. Dense 128B, unified instruct/reasoning/coding with per-request reasoning effort, multimodal input, 256k context. Lowest score in this tier but the only dense 128B that fits, and dense decode is steadier than MoE on unified memory. The KV cache is the constraint (352KiB/token): IQ2_M (44.1GB) leaves room for a 32k context, Q3_K_S (54.4GB) only about 16k. GGUFs built before the 2026-07 config fix have degraded long-context behaviour, so pin to a recent file. Vision adds mmproj-F16.gguf (5.4GB), which pushes Q3_K_S over 64GB even at 16k; pair vision with IQ2_M.",
+   "quants": [
+    {
+     "name": "UD-IQ2_M",
+     "files": [
+      "Mistral-Medium-3.5-128B-UD-IQ2_M.gguf"
+     ],
+     "bytes": 44109112416
+    },
+    {
+     "name": "Q3_K_S",
+     "files": [
+      "Q3_K_S/Mistral-Medium-3.5-128B-Q3_K_S-00001-of-00003.gguf",
+      "Q3_K_S/Mistral-Medium-3.5-128B-Q3_K_S-00002-of-00003.gguf",
+      "Q3_K_S/Mistral-Medium-3.5-128B-Q3_K_S-00003-of-00003.gguf"
+     ],
+     "bytes": 54366938528
+    },
+    {
+     "name": "UD-Q3_K_XL",
+     "files": [
+      "UD-Q3_K_XL/Mistral-Medium-3.5-128B-UD-Q3_K_XL-00001-of-00003.gguf",
+      "UD-Q3_K_XL/Mistral-Medium-3.5-128B-UD-Q3_K_XL-00002-of-00003.gguf",
+      "UD-Q3_K_XL/Mistral-Medium-3.5-128B-UD-Q3_K_XL-00003-of-00003.gguf"
+     ],
+     "bytes": 62499038624
+    }
+   ]
+  }
+ ]
+}

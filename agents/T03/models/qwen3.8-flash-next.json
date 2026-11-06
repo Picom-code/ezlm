@@ -1,0 +1,24 @@
+{
+ "id": "qwen3.8-flash-next",
+ "repo": "Qwen/Qwen3.8-Flash-Next",
+ "gguf": "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF Q2_0/Qwen3.8-Flash-Next-GSQ-RCO-Q2_0-00001-of-00002.gguf",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "<tools> block in the system turn; calls as <tool_call><function=NAME><parameter=KEY>VALUE</parameter></function></tool_call>; results as <tool_response> inside a user turn",
+ "tools_supported": true,
+ "thinking_toggle": "enable_thinking",
+ "effort_levels_accepted": ["low", "medium", "high", "xhigh"],
+ "effort_levels_rejected": ["none", "max"],
+ "effort_levels_ignored": [],
+ "effort_aliases": {"high": "xhigh"},
+ "system_role": true,
+ "developer_role": true,
+ "known_template_errors": [
+  "Unexpected reasoning effort none. Supported types are xhigh (default), medium, and low.",
+  "Unexpected reasoning effort max. Supported types are xhigh (default), medium, and low.",
+  "System message must be at the beginning.",
+  "Tool call arguments for function \"get_weather\" were passed as a JSON string. Parse them into an object before calling apply_chat_template.",
+  "Tool call is missing a function name.",
+  "No messages provided."
+ ],
+ "notes": "Reads reasoning_effort only; reasoning.effort and thinking.effort shapes are silently ignored and fall back to xhigh. high is remapped to xhigh in the template, so it renders the xhigh instruction rather than raising. medium renders with no reasoning instruction at all (accepted but a no-op). Effort is only validated while enable_thinking is not false: with enable_thinking false, effort none and max render fine and are ignored. llama.cpp always passes enable_thinking, so the 'undefined means on' branch is dead in practice. A system or developer message after the first turn raises 'System message must be at the beginning.'; consecutive leading system/developer messages are merged into one. The template accepts developer as a system-equivalent role at the start."
+}

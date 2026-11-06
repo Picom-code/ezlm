@@ -1,0 +1,16 @@
+{
+ "id": "muse-glimmer-30b",
+ "repo": "meta-models/Muse-Glimmer-30B",
+ "template_source": "tokenizer.chat_template",
+ "tool_call_format": "atem: a <atem:function_calls><atem:invoke name=\"f\"><atem:parameter name=\"k\">v</atem:parameter></atem:invoke></atem:function_calls> block, regex-parsed, inside a `<|start|>assistant to=<tool><|message|>` turn; tool results are `<|start|>tool <name><|message|><tool_output name=\"<name>\">...</tool_output><|eot|>`",
+ "tools_supported": true,
+ "thinking_toggle": "none",
+ "effort_levels_accepted": ["low", "medium", "high", "xhigh", "max", "minimal"],
+ "effort_levels_rejected": [],
+ "system_role": true,
+ "developer_role": false,
+ "known_template_errors": [
+  "Onyx ATEM chat template requires tool_call.function.arguments to be a dict (mapping); a JSON string cannot be parsed in the HF jinja sandbox."
+ ],
+ "notes": "Template reads reasoning_strength, not reasoning_effort, and validates nothing: any string renders as the literal line 'Reasoning strength: <value>.' The template has no enable_thinking or thinking handling, so thinking_on and thinking_off render byte-identical prompts (verified). b11960's caps_apply_reasoning_effort binds reasoning_effort and reasoning_strength to the same value (common/jinja/caps.cpp:31-36), so OpenAI reasoning_effort does reach the prompt. reasoning_effort \"none\" is dropped by the server (server-common.cpp:1497-1506), so it falls back to the template default \"high\": sending none means high reasoning, not none. A developer role renders without error but the message is silently dropped (output equals a plain user turn). Tool calls must carry object arguments; a JSON string raises."
+}

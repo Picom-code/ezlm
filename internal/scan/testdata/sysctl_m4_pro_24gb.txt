@@ -1,0 +1,11 @@
+# Apple M4 Pro (MacBook Pro 14-inch, 2024): 12-core CPU, 8 performance + 4 efficiency, 24 GB.
+# Synthetic case built from the documented `sysctl -a` format and Apple's specs.
+hw.memsize: 25769803776
+hw.physicalcpu: 12
+hw.logicalcpu: 12
+hw.perflevel0.physicalcpu: 8
+hw.perflevel1.physicalcpu: 4
+hw.optional.arm64: 1
+machdep.cpu.brand_string: Apple M4 Pro
+sysctl.proc_translated: 0
+iogpu.wired_limit_mb: 0

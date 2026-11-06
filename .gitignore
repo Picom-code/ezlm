@@ -1,0 +1,11 @@
+.build/
+macos/build/
+windows/EZLM/bin/
+windows/EZLM/obj/
+windows/EZLM/Engine/
+windows/EZLM/Engine-arm64/
+/bin/
+__pycache__/
+*.test
+*.exe
+.DS_Store

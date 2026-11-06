@@ -1,0 +1,145 @@
+{
+  "tier": "4",
+  "models": [
+    {
+      "id": "nanbeige4.2-3b",
+      "name": "Nanbeige4.2 3B",
+      "family": "Nanbeige 4.2",
+      "vendor": "Nanbeige",
+      "country": "CN",
+      "license": "Apache-2.0",
+      "params_b": 4.0,
+      "moe": false,
+      "score": 7.8,
+      "score_source": "ESTIMATE (no Artificial Analysis index as of 2026-11-06; model is absent from artificialanalysis.ai): mapped from the vendor benchmark table (Nanbeige model card, 2026-07-21) against AA v5.0.1-scored peers. The vendor table puts it above Qwen3.5-9B (catalog score 5.0) and Gemma 4 12B (catalog 3.5) on every row: GPQA-Diamond 87.4, HLE 17.8, LiveCodeBench-V6 72.5, SWE-bench Verified 63.6, Terminal-Bench 2.0 44.1, IF-Bench 54.6. AA has only partial components for the older sibling Nanbeige4.1-3B (HLE 10.9, GPQA 84.9), so the small-model AA floor-compression is applied by hand. Treat as UNVERIFIED; plausible range 6.5-9.5.",
+      "layers": 22,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 262144,
+      "tool_calling": true,
+      "repo": "bartowski/Nanbeige_Nanbeige4.2-3B-GGUF",
+      "active_params_b": 4.0,
+      "kv_layers": 22,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-07-21. 4B total / 3B non-embedding dense decoder, 256K native context, thinking mode controlled through the chat template. Vendor card (2026-07-21, evaluations in thinking mode with preserve_thinking=true) also reports SWE-bench Pro 46.9, GDPval 74.3, AA-LCR 58.7 and Recruit-Bench 63.3; all are vendor-run, no independent re-run yet. 22 layers x 8 KV heads x 128 means 88 KiB/token at f16, so a 4 GB plan uses q4_0 KV and 8-16K context. GGUF metadata and chat template verified from the bartowski files.",
+      "quants": [
+        {
+          "name": "Q3_K_M",
+          "files": [
+            "Nanbeige_Nanbeige4.2-3B-Q3_K_M.gguf"
+          ],
+          "bytes": 2242313376
+        },
+        {
+          "name": "IQ4_XS",
+          "files": [
+            "Nanbeige_Nanbeige4.2-3B-IQ4_XS.gguf"
+          ],
+          "bytes": 2441753760
+        },
+        {
+          "name": "Q4_K_M",
+          "files": [
+            "Nanbeige_Nanbeige4.2-3B-Q4_K_M.gguf"
+          ],
+          "bytes": 2684023968
+        }
+      ]
+    },
+    {
+      "id": "k2-horizon-3.7b",
+      "name": "K2 Horizon 3.7B",
+      "family": "K2 Horizon",
+      "vendor": "Institute of Foundation Models",
+      "country": "AE",
+      "license": "Apache-2.0",
+      "params_b": 3.7,
+      "moe": false,
+      "score": 7.0,
+      "score_source": "ESTIMATE (Artificial Analysis has published v5.0.1 component scores but no index yet; fetched 2026-11-06): HLE 13.9, GPQA-Diamond 69.2, SciCode 22.0, AA-LCR 62.3, Terminal-Bench 2.1 28.1, tau2-Banking 19.6, GDPval 888.8, FrontierCode 2.0 0.9, AutomationBench 14.7. A kNN fit over the 44 AA-scored models that share those components gives 6.4; rounded to 7.0 for the strong terminal and tool-use rows. The vendor table (IFM model card, 2026-09-03) reports SWE-bench Verified 65.6, Terminal-Bench 2.1 39.7 and BFCL v4 64.6. Treat as UNVERIFIED; plausible range 5.5-8.5.",
+      "layers": 36,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ctx_max": 524288,
+      "tool_calling": true,
+      "repo": "bartowski/K2-Horizon-3.7B-GGUF",
+      "active_params_b": 3.7,
+      "kv_layers": 36,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-09-03. Dense 3.7B-core decoder with a native 524,288-token context and an anti-doom-loop post-training stage (FTPO) aimed at long agent runs. Vendor card (2026-09-03) reports SWE-bench Verified 65.6 (mini-swe-agent), Terminal-Bench 2.1 39.7, BFCL v4 64.6, tau3-Banking 17.7, GPQA-Diamond 68.9, HLE 14.0, AIME 2026 90.8. AA's independent run reproduces the HLE/GPQA numbers almost exactly. The 36x8 KV layout is expensive (144 KiB/token at f16): on 4 GB use q4_0 KV at 8-16K, where IQ3_XXS (2.16 GiB) leaves room for the plan. Q4_K_M (3.03 GiB) does not fit a 4 GB budget.",
+      "quants": [
+        {
+          "name": "IQ3_XXS",
+          "files": [
+            "K2-Horizon-3.7B-IQ3_XXS.gguf"
+          ],
+          "bytes": 2316707104
+        },
+        {
+          "name": "Q3_K_M",
+          "files": [
+            "K2-Horizon-3.7B-Q3_K_M.gguf"
+          ],
+          "bytes": 2507130144
+        },
+        {
+          "name": "IQ3_M",
+          "files": [
+            "K2-Horizon-3.7B-IQ3_M.gguf"
+          ],
+          "bytes": 2738820384
+        }
+      ]
+    },
+    {
+      "id": "minicpm5-2b",
+      "name": "MiniCPM5 2B",
+      "family": "MiniCPM5",
+      "vendor": "OpenBMB",
+      "country": "CN",
+      "license": "Apache-2.0",
+      "params_b": 2.52,
+      "moe": false,
+      "score": 5.8,
+      "score_source": "ESTIMATE (Artificial Analysis has published v5.0.1 component scores but no index yet; fetched 2026-11-06): HLE 8.9, GPQA-Diamond 70.2, SciCode 26.3, AA-LCR 59.3, Terminal-Bench 2.1 8.6, tau2-Banking 20.8, GDPval 714.9, HLE-Diamond 3.8, CritPT v2 Hard 0.3, AutomationBench 1.8. A kNN fit over the 44 AA-scored models sharing those components gives 5.9, rounded down to 5.8 for the weak Terminal-Bench row. The vendor card (OpenBMB, 2026-09-07) calls it 2B-class SOTA. Treat as UNVERIFIED; plausible range 4.8-6.8.",
+      "layers": 42,
+      "kv_heads": 2,
+      "head_dim": 128,
+      "ctx_max": 131072,
+      "tool_calling": true,
+      "repo": "openbmb/MiniCPM5-2B-GGUF",
+      "active_params_b": 2.52,
+      "kv_layers": 42,
+      "vision": false,
+      "native_1bit": false,
+      "notes": "Released 2026-09-07. 2,516,756,480 total / 1,981,982,720 non-embedding parameters, 42 layers, 131,072-token context, built for on-device assistants and coding/tool workflows. Only 2 KV heads keep the cache small (42 KiB/token at f16), so Q4_K_M plus 64K context with q4_0 KV still fits a 4 GB budget (2.77 GiB total). Emits XML-style tool calls; llama.cpp needs --jinja, SGLang has a native minicpm5 parser. Q4_K_M is the official file; IQ4_XS and Q5_K_M are bartowski files in the same quant list.",
+      "quants": [
+        {
+          "name": "IQ4_XS",
+          "repo": "bartowski/MiniCPM5-2B-GGUF",
+          "files": [
+            "MiniCPM5-2B-IQ4_XS.gguf"
+          ],
+          "bytes": 1463942368
+        },
+        {
+          "name": "Q4_K_M",
+          "files": [
+            "MiniCPM5-2B-Q4_K_M.gguf"
+          ],
+          "bytes": 1561318368
+        },
+        {
+          "name": "Q5_K_M",
+          "repo": "bartowski/MiniCPM5-2B-GGUF",
+          "files": [
+            "MiniCPM5-2B-Q5_K_M.gguf"
+          ],
+          "bytes": 1920175328
+        }
+      ]
+    }
+  ]
+}

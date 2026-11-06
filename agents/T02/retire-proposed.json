@@ -1,0 +1,69 @@
+{
+  "retire": [
+    {
+      "id": "qwen3.6-27b",
+      "reason": "Superseded by qwen3.8-27b: same 27.8B dense class, higher score (20.1 vs 12.0 catalog estimate) and a smaller minimum quant (7.27GB vs 9.57GB). The catalog note already calls it a fallback. Replace with qwen3.8-27b.",
+      "evidence": "Artificial Analysis Intelligence Index v5.0, qwen3.8-27b 20.1: https://artificialanalysis.ai/models/qwen3-8-27b (accessed 2026-11-06); catalog score 12.0 is an ESTIMATE."
+    },
+    {
+      "id": "qwen3.6-35b-a3b",
+      "reason": "Outclassed at the same 11-12GB footprint by flint (39.8B total, 2.5B active, Apache-2.0, 262K ctx, tool use): SWE-bench Verified 74.2 and Terminal-Bench 2.1 54.9 vs 9.5 catalog score for qwen3.6-35b-a3b. Replace with flint for coding/agentic use, or qwen3.8-27b when a dense general model is preferred.",
+      "evidence": "flint model card, 2026-10-21: https://huggingface.co/RecursiveSI/flint (accessed 2026-11-06); GGUF UD-IQ2_XXS 11.86GB."
+    },
+    {
+      "id": "qwen3.5-122b-a10b",
+      "reason": "Dominated in the 48GB tier: nemotron-3.5-super-vl-120b-a12b scores 13.6 vs 7.5 at a comparable 46.1GB minimum, with 1M context, vision and US origin. Replace with nemotron-3.5-super-vl-120b-a12b.",
+      "evidence": "Artificial Analysis Intelligence Index v5.0, Nemotron 3.5 Super VL 13.6: https://artificialanalysis.ai/models/nemotron-3-5-super-vl (accessed 2026-11-06); catalog score 7.5 for qwen3.5-122b-a10b is an ESTIMATE."
+    },
+    {
+      "id": "qwen3.5-9b",
+      "reason": "Same Qwen3.5-9B base, but MiMo-V2.6-Distill-Qwen-9B is a newer agentic SFT that wins on every agentic row of its card (SWE 61.1 vs 60.0, SWE Pro 44.6 vs 32.0, AutomationBench 30.3 vs 5.0, Terminal-Bench 2.1 37.1 vs 27.0) at the same 3.5-5.8GB quant sizes and keeps the multimodal mmproj. Replace with MiMo-V2.6-Distill-Qwen-9B.",
+      "evidence": "MiMo-V2.6-Distill-Qwen-9B model card, 2026-09-21: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B (accessed 2026-11-06); GGUFs from bartowski, IQ2_M 3.54GB to Q8_0 9.55GB."
+    },
+    {
+      "id": "gemma-4-31b",
+      "reason": "Outclassed by qwen3.8-27b: 20.1 vs 8.0 catalog estimate (AA v5.0 lists Gemma 4 31B reasoning at 4.4), at a smaller 7.27GB minimum vs 8.53GB, with vision and tool calling. Replace with qwen3.8-27b.",
+      "evidence": "Artificial Analysis Intelligence Index v5.0: https://artificialanalysis.ai/models/qwen3-8-27b and https://artificialanalysis.ai/models/gemma-4-31b (accessed 2026-11-06)."
+    },
+    {
+      "id": "gemma-4-26b-a4b",
+      "reason": "Outclassed by qwen3.8-27b: 20.1 vs 5.5 catalog estimate, at 7.27GB vs 9.92GB minimum, with better coding and agentic scores. Replace with qwen3.8-27b.",
+      "evidence": "Artificial Analysis Intelligence Index v5.0: https://artificialanalysis.ai/models/qwen3-8-27b (accessed 2026-11-06); catalog score 5.5 for gemma-4-26b-a4b is an ESTIMATE."
+    },
+    {
+      "id": "gpt-oss-120b",
+      "reason": "Stale since August 2025. Nemotron-3.5-super-vl-120b-a12b is also US-origin and scores 13.6 vs 7.0 catalog estimate at 46.1GB vs 63.0GB minimum, with vision and 1M context. Replace with nemotron-3.5-super-vl-120b-a12b.",
+      "evidence": "Artificial Analysis Intelligence Index v5.0, Nemotron 3.5 Super VL 13.6: https://artificialanalysis.ai/models/nemotron-3-5-super-vl (accessed 2026-11-06); gpt-oss-120b release date 2025-08-04: https://huggingface.co/openai/gpt-oss-120b."
+    },
+    {
+      "id": "gpt-oss-20b",
+      "reason": "Stale since August 2025. qwen3.8-27b scores 20.1 vs 5.0 catalog estimate at 7.27GB vs 11.87GB minimum, with vision. Replace with qwen3.8-27b; if US origin is required, use nemotron-3.5-bolt-74b-a9b (11.5, 20.31GB) instead.",
+      "evidence": "Artificial Analysis Intelligence Index v5.0: https://artificialanalysis.ai/models/qwen3-8-27b (accessed 2026-11-06); gpt-oss-20b release date 2025-08-04: https://huggingface.co/openai/gpt-oss-20b."
+    },
+    {
+      "id": "devstral-small-2-24b",
+      "reason": "A December 2025 coding agent, outclassed by flint (39.8B-A2.5B, Apache-2.0, 262K ctx): SWE-bench Verified 74.2 and Terminal-Bench 2.1 54.9 at an 11.86GB IQ2 minimum vs 9.41GB. Replace with flint; qwen3.8-27b is the fallback when EU origin matters less than quality.",
+      "evidence": "flint model card, 2026-10-21: https://huggingface.co/RecursiveSI/flint (accessed 2026-11-06)."
+    },
+    {
+      "id": "nemotron-3.5-lightning-30b-a3b",
+      "reason": "Same NVIDIA OpenMDW family as nemotron-3.5-bolt-74b-a9b, which scores 11.5 vs 5.5 at 20.31GB vs 18.90GB minimum. The low-bit quants of Lightning barely shrink, so the size gap is small. Replace with nemotron-3.5-bolt-74b-a9b.",
+      "evidence": "Catalog scores and quant sizes: internal/catalog/catalog.json; nemotron-3.5-bolt-74b-a9b card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-BF16 (accessed 2026-11-06)."
+    },
+    {
+      "id": "granite-4.2-8b",
+      "reason": "K2-Horizon-7B is the same Apache-2.0 small-dense class and wins the vendor's same-harness comparison: SWE-bench Verified 72.4 vs 47.7, HLE 19.5 vs 9.7, at 5.59GB Q4 vs 4.35GB Q3, with 512K context and tool calling. Replace with K2-Horizon-7B; IFM is MBZUAI-led, so this trades IBM/US enterprise origin for quality.",
+      "evidence": "K2-Horizon-7B model card, 2026-09-01: https://huggingface.co/IFM/K2-Horizon-7B (accessed 2026-11-06)."
+    },
+    {
+      "id": "granite-4.2-3b",
+      "reason": "K2-Horizon-3.7B is the same Apache-2.0 small-dense class and wins the vendor's same-harness comparison: SWE-bench Verified 65.6 vs 32.2, HLE 14.0 vs 6.6, GPQA Diamond 68.9 vs 55.9, at 3.16GB Q4 vs 1.46GB Q2, with 512K context. Replace with K2-Horizon-3.7B; IFM is MBZUAI-led, so this trades IBM/US enterprise origin for quality.",
+      "evidence": "K2-Horizon-3.7B model card, 2026-09-01: https://huggingface.co/IFM/K2-Horizon-3.7B (accessed 2026-11-06)."
+    },
+    {
+      "id": "bonsai-8b-1bit",
+      "reason": "March 2026 1-bit model, superseded by the newer Ternary Bonsai 2 line at the same size: ternary-bonsai-2-4b is 1.21GB vs 1.16GB, scores the same 2.0 catalog estimate, and adds vision. Retire; keep ternary-bonsai-2-4b for the sub-2GB tier.",
+      "evidence": "PrismML model cards: https://huggingface.co/prism-ml/Bonsai-8B-gguf (2026-03-18) and https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf (2026-09-23)."
+    }
+  ]
+}
