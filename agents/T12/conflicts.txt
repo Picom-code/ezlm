@@ -160,7 +160,7 @@ CONFLICT windows/EZLM/Chat.cs:228 problem: kept 'Two sentences, and a glyph used
 CONFLICT windows/EZLM/Chat.cs:228 proposed_text: kept 'It remembers what you tell it about yourself (only here; see the memory button). Type / for commands.' from a10.csv, dropped 'It remembers what you tell it about yourself. Open ✦ memory to edit that or turn it off. Type / for commands.' from a15.csv
 CONFLICT macos/Sources/EZLM/ChatView.swift:130 problem: kept "'only here' is ambiguous: only in this chat, or only on this Mac?" from a07.csv, dropped "Same hint as Windows but with a glyph in prose and an unclear '(only here; see ✦ memory)'." from a15.csv
 CONFLICT macos/Sources/EZLM/ChatView.swift:130 proposed_text: kept 'It remembers what you tell it about yourself, only on this Mac. See ✦ memory. Type / for commands.' from a07.csv, dropped 'It remembers what you tell it about yourself. Open ✦ memory to edit that or turn it off. Type / for commands.' from a15.csv
-merged 280 rows from 14 files -> /Users/patrickmoorhead/ezlm-agents/work/T12/agents/T12/strings.csv
+merged 280 rows from 14 files -> ~/ezlm-agents/work/T12/agents/T12/strings.csv
 dropped 68 duplicate rows, skipped 0 malformed
 per owner task:
   frozen       91

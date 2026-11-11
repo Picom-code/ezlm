@@ -1,4 +1,4 @@
-catalog: file:/Users/patrickmoorhead/ezlm-agents/work/subs/T02/a04/agents/T02/tiers/tier-12.json
+catalog: file:~/ezlm-agents/work/subs/T02/a04/agents/T02/tiers/tier-12.json
 
 === RTX 4070 12GB / Linux / 32GB DDR5  (GPU budget 11.52 GB, RAM budget 27.00 GB, CPU bandwidth 60 GB/s)
 qwen3.8-27b            UD-IQ2_XXS       ctx=65536  kv=f16   mode=gpu     ncpumoe=0   eff=17.69 tok/s= 44.7 gpu=11.40GB ram=0.00GB spec=
