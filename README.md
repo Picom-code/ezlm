@@ -24,16 +24,14 @@ run well, sets it up, and hands you a private URL and API key. No account, no cl
 
 ## How it works
 
-```
-  1  scan ...... processor, memory, graphics card, disk, and what's already using them
-  2  choose .... the smartest model that runs well here (or pick Balanced / Smartest / Fastest)
-  3  install ... downloads the AI engine and the model; cancel any time, it resumes where it stopped
-  4  ready ..... chat in EZLM, or use your URL and key in any app that speaks the OpenAI API
-```
+1. **Scan.** Checks your processor, memory, graphics card and disk, and what's already using them.
+2. **Choose.** Picks the smartest model that runs well here. Pick Balanced, Smartest or Fastest if you want a say.
+3. **Install.** Downloads the AI engine and the model. Cancel any time; it picks up where it stopped.
+4. **Ready.** Chat in EZLM right away, or use your URL and key in any app that speaks the OpenAI API.
 
 ## What you get
 
-| | |
+| Feature | What it does |
 |---|---|
 | **Chat built in** | Talk to your model inside EZLM. It remembers what you tell it, and you can see and edit everything it keeps. |
 | **Switch models any time** | Your address, keys and connected apps stay the same. The current model keeps answering while a new one downloads. |
